@@ -32,3 +32,6 @@
 | `TAO_Authoring_Function_Ideation_Action_Plan_Migration_Roadmap_v33_36_COLLAPSIBLE_GAP_REGISTER.html` (and v33_35 if available) | Roadmap + Quarter View | Contract names the v33 family + v10 as the *stable* behaviour references. v10 is present and verified (drag/resize/snap), so v33 is **nice-to-have corroboration**, not required to recover required behaviours. | **NO** for Phase 2. **Possibly yes** before Phase 7 (Roadmap) if v10 turns out to lack branch-expansion/quarter-report details — request Product supply then, and only then. |
 
 No other missing artifacts.
+
+## Phase 3 addendum (2026-10-15)
+The API/shared-state contract introduced no new reference dependencies and no changes to any module's designated behaviour reference. Non-blocking technical note for Phase 9 CI hardening: `fastapi.testclient` emits a `StarletteDeprecationWarning` on httpx 0.28 (see Phase 3 test suite); evaluate `httpx2` when CI is hoisted. No action this phase.
