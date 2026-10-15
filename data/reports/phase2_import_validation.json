@@ -1,0 +1,219 @@
+{
+  "checks": [
+    {
+      "actual": 135,
+      "check": "count:capabilities",
+      "expected": 135,
+      "status": "PASS"
+    },
+    {
+      "actual": 8,
+      "check": "count:sources",
+      "expected": 8,
+      "status": "PASS"
+    },
+    {
+      "actual": 224,
+      "check": "count:source_capabilities",
+      "expected": 224,
+      "status": "PASS"
+    },
+    {
+      "actual": 28,
+      "check": "count:jira_tickets",
+      "expected": 28,
+      "status": "PASS"
+    },
+    {
+      "actual": 32,
+      "check": "count:capability_jira",
+      "expected": 32,
+      "status": "PASS"
+    },
+    {
+      "actual": 6,
+      "check": "count:markets",
+      "expected": 6,
+      "status": "PASS"
+    },
+    {
+      "actual": 135,
+      "check": "count:roadmap_timing",
+      "expected": 135,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "count:customers",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "count:milestones",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "referential:source_caps_with_unknown_cap",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "referential:cap_sources_unknown_ref",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "referential:cap_jira_unknown_ref",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "referential:cap_markets_unknown_ref",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "referential:timing_unknown_cap",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "no_duplicate_cap_ids",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 0,
+      "check": "retired_CAP-0135_absent",
+      "expected": 0,
+      "status": "PASS"
+    },
+    {
+      "actual": 133,
+      "check": "admission_NULL_meaning_UNSET",
+      "expected": 133,
+      "status": "PASS"
+    },
+    {
+      "actual": 2,
+      "check": "admission_Candidate",
+      "expected": 2,
+      "status": "PASS"
+    },
+    {
+      "actual": "135/135",
+      "check": "budgets_NULL_not_zero",
+      "expected": "135/135",
+      "status": "PASS"
+    },
+    {
+      "actual": [
+        "CAP-0071",
+        "CAP-0126",
+        "CAP-0128",
+        "CAP-0131",
+        "CAP-0133"
+      ],
+      "check": "scope_review_marks_s3",
+      "expected": [
+        "CAP-0071",
+        "CAP-0126",
+        "CAP-0128",
+        "CAP-0131",
+        "CAP-0133"
+      ],
+      "status": "PASS"
+    },
+    {
+      "actual": 2,
+      "check": "cap_0134_0136_governance_s8",
+      "expected": 2,
+      "status": "PASS"
+    },
+    {
+      "actual": 1,
+      "check": "src_jira_001_registered_s5",
+      "expected": 1,
+      "status": "PASS"
+    },
+    {
+      "actual": [
+        "Assessment-led Learning",
+        "Governed Formative",
+        "Higher Education",
+        "MEXCBT / Uchida",
+        "Professional / Credentialing",
+        "Traditional / K-12"
+      ],
+      "check": "markets_exact_six_s26",
+      "expected": [
+        "Assessment-led Learning",
+        "Governed Formative",
+        "Higher Education",
+        "MEXCBT / Uchida",
+        "Professional / Credentialing",
+        "Traditional / K-12"
+      ],
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "PCR-117": "EVIDENCE_ONLY",
+        "PCR-139": "NEEDS_DECOMPOSITION",
+        "PCR-201": "NON_CAPABILITY",
+        "PCR-215": "NEEDS_DECOMPOSITION"
+      },
+      "check": "pcr_treatments_s6",
+      "expected": {
+        "PCR-117": "EVIDENCE_ONLY",
+        "PCR-139": "NEEDS_DECOMPOSITION",
+        "PCR-201": "NON_CAPABILITY",
+        "PCR-215": "NEEDS_DECOMPOSITION"
+      },
+      "status": "PASS"
+    },
+    {
+      "actual": 24,
+      "check": "linked_jira_tickets",
+      "expected": 24,
+      "status": "PASS"
+    },
+    {
+      "actual": 17,
+      "check": "caps_with_jira_links",
+      "expected": 17,
+      "status": "PASS"
+    }
+  ],
+  "counts": {
+    "capabilities": 135,
+    "capability_jira": 32,
+    "capability_markets": 696,
+    "capability_sources": 211,
+    "customers": 0,
+    "jira_tickets": 28,
+    "markets": 6,
+    "milestones": 0,
+    "roadmap_timing": 135,
+    "source_capabilities": 224,
+    "sources": 8
+  },
+  "kpi": {
+    "capability_market_links": 696,
+    "capability_source_links": 211,
+    "caps_with_jira_links": 17
+  },
+  "phase": 2,
+  "summary": {
+    "fail": 0,
+    "pass": 26
+  }
+}
