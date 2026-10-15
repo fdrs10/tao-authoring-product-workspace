@@ -98,6 +98,13 @@ def list_capabilities(
                   WHERE cm.cap_id = c.cap_id), '[]'::json) AS market_colors,
         (SELECT count(*) FROM capability_jira cj
           WHERE cj.cap_id = c.cap_id) AS jira_link_count,
+        COALESCE((SELECT json_agg(json_build_object(
+                    'jira_key', cj.jira_key, 'status', j.status,
+                    'target_release', j.target_release, 'url', j.jira_url)
+                  ORDER BY cj.jira_key)
+                  FROM capability_jira cj JOIN jira_tickets j
+                  ON j.jira_key = cj.jira_key
+                  WHERE cj.cap_id = c.cap_id), '[]'::json) AS jira,
         (SELECT count(*) FROM capability_sources cs
           WHERE cs.cap_id = c.cap_id) AS source_link_count
       FROM capabilities c
