@@ -102,7 +102,10 @@ label.fld .lbl { display: block; font-size: 11px; color: var(--ink-2); margin-bo
 .notice.info { color: var(--ink-2); }
 
 .modal-overlay {
-  position: fixed; inset: 0; background: rgba(30,34,40,.32); z-index: 500;
+  /* Starts BELOW the sticky app header (41px): the persistent nav stays
+     visible and clickable while any pane/drawer/modal is open — an overlay
+     pinned over the nav otherwise traps the user (overnight QA defect #1). */
+  position: fixed; top: 41px; left: 0; right: 0; bottom: 0; background: rgba(30,34,40,.32); z-index: 500;
   display: flex; justify-content: flex-end;
 }
 .modal-drawer {

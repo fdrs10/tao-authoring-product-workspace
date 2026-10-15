@@ -54,7 +54,8 @@ const catColor = (c) => CAT_COLORS[c] || 'grey';
 async function loadCaps(filters) {
   const q = new URLSearchParams();
   if (filters.admission === 'UNSET') q.set('admission', 'UNSET');
-  else if (filters.admission && filters.admission !== 'All') q.set('admission', filters.admission);
+  else if (filters.admission === 'All') q.set('admission', '');  // explicit empty: the API would otherwise apply its COMMITTED default
+  else if (filters.admission) q.set('admission', filters.admission);
   if (filters.market) q.set('market', filters.market);
   if (filters.category) q.set('category', filters.category);
   const qs = q.toString();

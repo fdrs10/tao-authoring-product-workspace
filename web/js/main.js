@@ -19,7 +19,10 @@ function setActive(route) {
   });
 }
 
-async function route() {
+// Serialized routing: concurrent renders (cap:changed bursts, quick filter
+// changes) must interleave destructively — last requested render wins.
+let routeChain = Promise.resolve();
+async function runRoute() {
   const hash = location.hash || '#/ideation/01';
   const parts = hash.replace(/^#\//, '').split('/');
   const [root, sub] = parts;
@@ -37,6 +40,11 @@ async function route() {
   }
 }
 
+function route() {
+  routeChain = routeChain.then(runRoute).catch(() => {});
+  return routeChain;
+}
+
 // universal CAP-ID interaction (§7/§23)
 window.addEventListener('open-cap', (e) => openCapModal(e.detail));
 // cross-view refresh when canonical data changes via the modal/editors
@@ -49,5 +57,12 @@ chip.addEventListener('click', () => {
   if (v !== null) { setUserRef(v); chip.textContent = getUserRef(); }
 });
 
-window.addEventListener('hashchange', () => route().catch(() => {}));
+window.addEventListener('hashchange', () => {
+  // Real navigation closes any open overlay (source drill-down pane, CAP
+  // drawer, quarter/milestone modals): an overlay pinned to document.body
+  // otherwise blocks the nav bar entirely. In-view re-renders (cap:changed)
+  // keep overlays — only genuine navigation clears them.
+  document.querySelectorAll('.modal-overlay').forEach((n) => n.remove());
+  route().catch(() => {});
+});
 route();

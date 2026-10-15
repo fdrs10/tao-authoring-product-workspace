@@ -233,3 +233,32 @@ def test_market_legend_with_colours(page: Page):
               "Governed Formative", "Assessment-led Learning", "MEXCBT / Uchida"]:
         expect(legend).to_contain_text(m)
     assert legend.locator(".dot").count() == 6
+
+
+# ---------- overnight QA regression (defects found & fixed) ----------
+
+def test_source_pane_does_not_block_navigation(page: Page):
+    """Defect: the drill-down overlay covered the sticky nav — navigation was
+    impossible while a pane was open. Overlay now starts below the header and
+    clears on navigation."""
+    page.goto("/#/sources")
+    page.locator('[data-testid="open-source"]').first.click()
+    expect(page.locator('[data-testid="pane-overlay"]')).to_be_visible()
+    # nav stays clickable while the pane is open
+    page.locator('#main-nav a[data-route="ideation"]').click(timeout=5000)
+    expect(page.locator('[data-testid="pane-overlay"]')).to_have_count(0)
+    expect(page.locator("#app-main")).to_contain_text("V2 Position")
+
+
+def test_roadmap_admission_all_shows_all_states(page: Page):
+    """Defect: 'All states' omitted the admission param, so the API applied its
+    COMMITTED default and the view showed nothing. All now sends admission=''."""
+    page.goto("/#/roadmap")
+    expect(page.locator("[data-testid='roadmap-empty']")).to_be_visible()  # governed-style: no COMMITTED caps in e2e seed
+    page.locator('[data-testid="rfilter-admission"]').select_option("All")
+    # e2e seed: only CAP-9001 has a roadmap_timing row → exactly 1 bar,
+    # regardless of admission (CANDIDATE seed value) — All must include it.
+    expect(page.locator('[data-testid="cap-bar"]')).to_have_count(1, timeout=15000)
+    # switching to UNSET must NOT show the CANDIDATE cap (UNSET ≠ fuzzy-All)
+    page.locator('[data-testid="rfilter-admission"]').select_option("UNSET")
+    expect(page.locator('[data-testid="cap-bar"]')).to_have_count(0, timeout=15000)
