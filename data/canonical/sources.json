@@ -1,0 +1,65 @@
+[
+  {
+    "Source ID": "SRC-3X-001",
+    "Document / Source": "TAO Authoring - feature list",
+    "Owner": "Dragos Ivan",
+    "Type": "Product Capability Baseline",
+    "Input form": "User-provided Confluence copy/paste",
+    "Reference / upstream materials": "Item creation | User Guide; Test assembly | User Guide; Content banking | User Guide; Product Requirements Document (PRD) | Features",
+    "Status": "REGISTERED"
+  },
+  {
+    "Source ID": "SRC-V1-001",
+    "Document / Source": "TAO Studio - feature list",
+    "Owner": "Dragos Ivan",
+    "Type": "Product Capability Baseline",
+    "Input form": "User-provided Confluence copy/paste",
+    "Reference / upstream materials": "TAO3.x-Studio.pdf; tao-studio-sales-capability-map.pdf; module_1...module_10 source packages",
+    "Status": "REGISTERED"
+  },
+  {
+    "Source ID": "SRC-NEW-001",
+    "Document / Source": "TAO Authoring Strategic Initiative",
+    "Owner": "Internal / Product",
+    "Type": "Internal Needs & Strategic Initiative",
+    "Input form": "User-provided text",
+    "Reference / upstream materials": "Includes HK-dir, NYSED, HKD-2281, RFP 2201 and other internal/customer references",
+    "Status": "REGISTERED"
+  },
+  {
+    "Source ID": "SRC-COMP-001",
+    "Document / Source": "TAO AI Competitor Intelligence Report",
+    "Owner": "Internal strategic use",
+    "Type": "Competitive Intelligence",
+    "Input form": "User-provided report text",
+    "Reference / upstream materials": "August 2026; Learnosity/Questionmark, ETS/PSI, Surpass, Cambium, Pearson, Duolingo English Test",
+    "Status": "REGISTERED"
+  },
+  {
+    "Source ID": "SRC-OECD-001",
+    "Document / Source": "OECD Digital Education Outlook 2026: Exploring Effective Uses of Generative AI in Education",
+    "Owner": "OECD",
+    "Type": "External Research Evidence",
+    "Input form": "Uploaded PDF",
+    "Reference / upstream materials": "OECD 2026",
+    "Status": "REGISTERED"
+  },
+  {
+    "Source ID": "SRC-HTML-001",
+    "Document / Source": "Existing TAO Authoring HTML capability seed",
+    "Owner": "Prior artifact",
+    "Type": "Legacy Working Register",
+    "Input form": "TAO_Authoring_v36_9_FIXED_REFERENCE_DIAGRAM.html",
+    "Reference / upstream materials": "Requires evidence reconciliation before promotion",
+    "Status": "REGISTERED"
+  },
+  {
+    "Source ID": "SRC-GAP-001",
+    "Document / Source": "TAO Authoring - TAO Studio gap analysis",
+    "Owner": "Dragos Ivan",
+    "Type": "Derived Product Analysis",
+    "Input form": "Confluence copy/paste",
+    "Reference / upstream materials": "TAO Authoring feature list; TAO Studio feature list; internal capability materials as of 2 Sep 2026",
+    "Status": "INGESTED — 129 comparison rows"
+  }
+]

@@ -1,0 +1,458 @@
+[
+  {
+    "key": "PCR-117",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-117",
+    "summary": "Authoring improvements - NYSED feedback",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Functional Analysis",
+    "targetRelease": "",
+    "dueDate": "",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "[https://docs.google.com/document/d/10jwFZ77kmaJ-UxDISU-81p70HbW_aBaT5UykdcF71dc/edit?tab=t.0#heading=h.1buzgdlp8sf5|https://docs.google.com/document/d/10jwFZ77kmaJ-UxDISU-81p70HbW_aBaT5UykdcF71dc/edit?tab=t.0#heading=h.1buzgdlp8sf5|smart-link] ",
+    "jiraEstimateHours": null,
+    "capIds": [],
+    "capabilityTreatment": "EVIDENCE_ONLY",
+    "reconciliationRationale": "Generic NYSED feedback container. Capabilities must be extracted from the referenced evidence, not from the Jira title."
+  },
+  {
+    "key": "PCR-139",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-139",
+    "summary": "Dev - TAO authoring facelift finalization",
+    "status": "Backlog",
+    "lifecycle": "DoD - Development",
+    "targetRelease": "",
+    "dueDate": "04/Dec/25 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "",
+    "jiraEstimateHours": null,
+    "capIds": [],
+    "capabilityTreatment": "NEEDS_DECOMPOSITION",
+    "reconciliationRationale": "Facelift/delivery umbrella. Too broad to be a canonical capability; map specific child requirements to capabilities."
+  },
+  {
+    "key": "PCR-172",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-172",
+    "summary": "UI for TTS Speech Specification",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Discovery/Contract Initiation",
+    "targetRelease": "",
+    "dueDate": "",
+    "issueType": "Epic",
+    "assignee": "Christophe Noël",
+    "description": "h2. Intro\n\nThere could be many reasons why to specify a certain text for TTS:\n\n# Equations\n# symbols / units\n# Languages with different number names per gender (e.g. Icelandic, Hebrew)\n# Singular / plural\n# etc\n\nConsider the following item:\n\n!Screenshot 2026-01-08 at 12.32.38.png|width=328,alt=\"Screenshot 2026-01-08 at 12.32.38.png\"!\n\nIn the first line we want the distance to be read “one meter”, while in the second line we want “three meter{color:#ff5630}s{color}”.\n\nCurrently, to to that, we need to wrap the element in discussion in the following way:\n\n{code:html}<span data-pron=\"text to be read\"> ...element... </span>{code}\n\nSo for our item, we should do:\n\n{code:html}The distance between points A and B is <span data-pron=\"one meter\">1m</span>\n<div>The distance between points B and C is <span data-pron=\"three meters\">3m</span></div>{code}\n\nBesides needing to enable the source editor, this requires messing up with the HTML code, which might end up bad very quickly.\n\n----\n\nThe idea behind this ticket is to create a UI for this process, so we can avoid HTML editing when it’s possible.\n\nAs a content creator, I would like to:\n\n# Enter my text\n# Highlight the relevant element (e.g. “3m”)\n# Click on a toolbar button:\n\n!Screenshot 2026-01-08 at 12.44.45.png|width=1002,alt=\"Screenshot 2026-01-08 at 12.44.45.png\"!\n\n# Get a popup box in which I can enter the relevant text (e.g. “three meters”)\n# Confirm / OK / Done\n# Have the highlighted part wrapped with the span element, done behind the scenes",
+    "jiraEstimateHours": null,
+    "capIds": [
+      "CAP-0134"
+    ]
+  },
+  {
+    "key": "PCR-196",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-196",
+    "summary": "Certify TAO Authoring for QTI 3 Entry Level",
+    "status": "In Development",
+    "lifecycle": "DoD - Development",
+    "targetRelease": "release-2026-12",
+    "dueDate": "",
+    "issueType": "Epic",
+    "assignee": "Bartlomiej Marszal",
+    "description": "{panel:bgColor=#deebff}\n*Context*\n\nPlease refer to [https://oat-sa.atlassian.net/browse/RFE-818|https://oat-sa.atlassian.net/browse/RFE-818|smart-link] and [https://oat-sa.atlassian.net/wiki/spaces/OAT/pages/2170093587/RFE-818+QTI+3.x+support|https://oat-sa.atlassian.net/wiki/spaces/OAT/pages/2170093587/RFE-818+QTI+3.x+support|smart-link] for context.\n\nThe goal of this RFE is to prepare for and obtain the QTI 3 Entry Level certification: Import, author, deliver, and export QTI 3 packages with basic features.\n\n(!) {color:#ff5630}*In this phase, QTI 3 support is limited to a few features that already exist in QTI 2.2.*{color}\n{panel}\n\n{panel:bgColor=#fffae6}\nThis Epic is a follow up to [https://oat-sa.atlassian.net/browse/PCR-12|https://oat-sa.atlassian.net/browse/PCR-12|smart-link] as some new gaps have been identified to reach the certification. These gaps are listed under some of the child tasks, such as:\n\n* [https://oat-sa.atlassian.net/browse/AUT-4473|https://oat-sa.atlassian.net/browse/AUT-4473|smart-link] \n* [https://oat-sa.atlassian.net/browse/AUT-4474|https://oat-sa.atlassian.net/browse/AUT-4474|smart-link] \n* [https://oat-sa.atlassian.net/browse/AUT-4475|https://oat-sa.atlassian.net/browse/AUT-4475|smart-link] \n* [https://oat-sa.atlassian.net/browse/AUT-4704|https://oat-sa.atlassian.net/browse/AUT-4704|smart-link] \n* [https://oat-sa.atlassian.net/browse/AUT-4705|https://oat-sa.atlassian.net/browse/AUT-4705|smart-link] \n* [https://oat-sa.atlassian.net/browse/AUT-4209|https://oat-sa.atlassian.net/browse/AUT-4209|smart-link] \n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance Criteria:*\n\n# TAO Authoring (3.x/Construct) can import a QTI3 package *with the support of QTI 2.2 features only*\n# TAO Authoring (3.x/Construct) can export a QTI 3 package with all the features currently supported.\n# TAO is successfully certified for QTI 3 Entry Level\n## Solve the gaps documented the subtasks mentioned above\n{panel}\n\n{panel:bgColor=#eae6ff}\n*How/what to test*\n\n* The QTI 3 certification process is similar to the QTI 2.2 certification process explained here: [https://oat-sa.atlassian.net/wiki/spaces/IMS/pages/1737458071/QTI+2.2+Certification+Application|https://oat-sa.atlassian.net/wiki/spaces/IMS/pages/1737458071/QTI+2.2+Certification+Application|smart-link] \n* The certification content is gathered in this page: [https://oat-sa.atlassian.net/wiki/spaces/IMS/pages/2853568523/QTI+3+Basic+Level+Conformance+Test+Suite|https://oat-sa.atlassian.net/wiki/spaces/IMS/pages/2853568523/QTI+3+Basic+Level+Conformance+Test+Suite|smart-link] In particular, look at the zip file for the test samples and the Excel sheets for what to test.\n{panel}",
+    "jiraEstimateHours": 408.02,
+    "capIds": [
+      "CAP-0062",
+      "CAP-0063",
+      "CAP-0100"
+    ]
+  },
+  {
+    "key": "PCR-201",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-201",
+    "summary": "[BA] On hold",
+    "status": "Blocked",
+    "lifecycle": "DoR - Discovery/Contract Initiation",
+    "targetRelease": "",
+    "dueDate": "",
+    "issueType": "Task",
+    "assignee": "Julien Sébire",
+    "description": "[Placeholder for progress tracking]",
+    "jiraEstimateHours": null,
+    "capIds": [],
+    "capabilityTreatment": "NON_CAPABILITY",
+    "reconciliationRationale": "Placeholder/tracking item without a defined Authoring capability."
+  },
+  {
+    "key": "PCR-215",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-215",
+    "summary": "[PLACEHOLDER] Test Authoring Tool Usability Improvements",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Discovery/Contract Initiation",
+    "targetRelease": "",
+    "dueDate": "",
+    "issueType": "Epic",
+    "assignee": "Julien Sébire",
+    "description": "Test Authoring Tool Usability Improvements",
+    "jiraEstimateHours": null,
+    "capIds": [],
+    "capabilityTreatment": "NEEDS_DECOMPOSITION",
+    "reconciliationRationale": "Usability-improvements umbrella. Requires decomposition into specific author behaviours before capability mapping."
+  },
+  {
+    "key": "PCR-299",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-299",
+    "summary": "Strict topology for items with baseline of attributes required (to allow consistent reporting)",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Discovery/Contract Initiation",
+    "targetRelease": "release-2026-12",
+    "dueDate": "01/Dec/26 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "Possibly already existing functionality with mandatory properties in TAO 3.x",
+    "jiraEstimateHours": null,
+    "capIds": [
+      "CAP-0050"
+    ]
+  },
+  {
+    "key": "PCR-308",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-308",
+    "summary": "[TAO Authoring] Improved test assembly items search",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Discovery/Contract Initiation",
+    "targetRelease": "release-2026-12",
+    "dueDate": "06/Nov/26 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\nCurrently, TAO’s Test Assembly is using a very old and rudimentary implementation of displaying and searching items to be added to the test. It has a rudimentary mechanism to search for metadata, which is not properly displaying all metadata and is difficult to use overall.\n{panel}\n\nWe should consider leveraging the Advanced Search for finding items and filtering by the metadata.\n\nWe can also alternatively think of a mechanism to search for items using the Advanced Search, or even browse them, then tag / select them, then pasting or dropping them in the test.\n\n{panel:bgColor=#eae6ff}\n*AS A* TAO Administrator or System Manager,\n\n*I WANT* to easily find items in the item bank using existing metadata\n\n*SO THAT* I can make sure that the test content accurately represents the assessment needs and requirements\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance Criteria:*\n\n# TBD\n{panel}",
+    "jiraEstimateHours": null,
+    "capIds": [
+      "CAP-0054"
+    ]
+  },
+  {
+    "key": "PCR-321",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-321",
+    "summary": "Improved test assembly item reordering",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "release-2026-12",
+    "dueDate": "",
+    "issueType": "Epic",
+    "assignee": "Karol Stelmaczonek",
+    "description": "{panel:bgColor=#deebff}\nCurrently, TAO’s Test Assembly is using a very rudimentary way of reordering items within a section, because they must be moved *one-by-one,* and *new items are always appended at the end of a section*. More so, there is no possibility to move an item from one section to another, within the same test part or to another test part.\n\n*Why it matters:* high-frequency author workflow pain; decreases assembly time and raises the risk of ordering mistakes in long assessments.\n\n*Goal*: A more efficient assembly experience should support drag-and-drop reordering and, where possible, the ability to move more than one item at the same time. This would reduce manual effort, decrease assembly time, and lower the risk of ordering mistakes.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*AS A* TAO author,\n*I WANT* to be able to reorder items more efficiently, through drag-and-drop, and insert new items directly where needed in a test assembly\n\n*SO THAT* I can build and maintain large tests more quickly, with less manual work and fewer ordering errors.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance Criteria:*\n\n# The author should be able to move items to any position in the test, through a direct operation, preferably through drag-and-drop {color:#FF991F}*[ UX NEEDED ]*{color}\n!move-items.png|width=445,alt=\"move-items.png\"!\n# The author should be able to select & move multiple items at once from/to any position in the test, through a direct operation, preferably through drag-and-drop {color:#FF991F}*[ UX NEEDED ]*{color}\n# The author should be able to add new items, to any position within the test {color:#FF991F}*[ UX NEEDED ]*{color}\n# The author should be able to move items within the same section, or between sections, within the same test-part or to another test-part\n# the author should be able to move an entire section or test-part to a different location in the test, through the same mechanism\n## all the content underneath those moved sections / test-parts should move together with their parent.\n{panel}",
+    "jiraEstimateHours": 0.0,
+    "capIds": [
+      "CAP-0021"
+    ]
+  },
+  {
+    "key": "PCR-318",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-318",
+    "summary": "Enhance asset selection search across resources",
+    "status": "Backlog",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "release-2026-12",
+    "dueDate": "31/Dec/26 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\nImprovement of search capabilities across assets when inserting into another resource, including search by metadata, partial name/label, etc.\n\n*Why it matters*: reduces time spent hunting items; increases reuse.\n\n*Goal:* TAO should improve asset search capabilities when authors insert an asset into another resource (item, shared stimulus, etc.), making it easier to find the right asset using richer, more flexible search criteria.\n\nThis feature extends the current search capabilities so that authors can more efficiently locate assets when inserting them into items or other resources. The improvement should support search by metadata, partial name or label, and other relevant attributes, reducing the time spent manually browsing large asset libraries. In addition, when a user changes an asset that is already assigned, the search should open in the folder containing the asset, with the current asset selected.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a* TAO author\n\n*I want* to be able to search assets (images, audios, videos, shared stimuli) more effectively when inserting them into another resource\n\n*so* that I can quickly find the correct asset, improve reuse, and reduce time spent hunting through the asset repository.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria* {color:#FF991F}*[ UX NEEDED ]*{color}\n\n# {color:#FF5630}*[ MUST ]*{color} *GIVEN* an author is inserting an asset into another resource in TAO 3.x\n*WHEN* the user opens the asset selection dialog\n*THEN* the system provides search capabilities that help locate assets efficiently\n*AND* browse capability to select a folder and see its contents\n# {color:#FF5630}*[ MUST ]*{color} *GIVEN* the asset selection dialog displays a list of assets, with or without a search applied\n*WHEN* assets are displayed from the selected folder or as search results, including assets located in subfolders\n*THEN* the dialog shall display at least the following fields for each asset:\n#* Label\n#* Location\n#* Last modified on\n# {color:#FF5630}*[ MUST ]*{color} *GIVEN* an author is inserting an asset into another resource in TAO 3.x\n*WHEN* the user opens the asset selection dialog\n*THEN* the search and its filters apply to the folder selected in the dialog and all subfolders\n# {color:#FF5630}*[ MUST ]*{color} *GIVEN* an author is inserting an asset into another resource in TAO 3.x\n*WHEN* the user searches by a partial asset name or label\n*THEN* the system returns matching assets based on partial text, not only exact matches\n# {color:#FF5630}*[ MUST ]*{color} *GIVEN* an author is inserting an asset into another resource in TAO 3.x\n*WHEN* the user searches using available metadata fields\n*THEN* the system returns assets matching the selected metadata criteria\n# {color:#FF991F}*[ NICE TO HAVE ]*{color} *GIVEN* an author filters assets by usage status\n*WHEN* the Used filter is applied\n*THEN* the system shall return assets referenced by at least one resource\n*AND WHEN* the Unused filter is applied\n*THEN* the system shall return assets not referenced by any resource.\n# {color:#FF991F}*[ NICE TO HAVE ]*{color} *GIVEN* an author is inserting an asset into another resource in TAO 3.x\n*WHEN* the user searches for assets used in a specific resource\n*THEN* the system allows the user to identify assets referenced in a given item, or other supported resource\n# {color:#FF5630}*[ MUST ]*{color} *GIVEN* an author is changing an asset already assigned to a resource in TAO 3.x\n*WHEN* the user opens the asset search/selection dialog to replace the current asset\n*THEN* the dialog opens in the folder containing the current asset, with that asset already selected\n# {color:#FF5630}*[ MUST ]*{color} *GIVEN* an author is browsing the list of available assets\n*WHEN* the user opens the asset search/selection dialog to add a new asset or replace the current asset\n*THEN*  the assets shall be ordered alphabetically by asset name, using case-insensitive ascending sorting.\n# {color:#FF5630}*[ MUST ]*{color} *GIVEN* the asset selection dialog displays a list of assets, with or without a search applied\n*WHEN* the author selects a visible field as the sorting criterion\n*THEN* the assets shall be ordered by the selected field\n*AND* sorting shall be available for the following fields:\n#* Label (case-insensitive alphabetic sorting, ascending and descending)\n#* Location (case-insensitive alphabetic sorting, ascending and descending)\n#* Last modified on (chronological order, ascending and descending)\n{panel}\n\n{panel:bgColor=#fffae6}\nFor Metadata Search leverage the Advanced Search\n\n!image-20260504-121910.png|width=414,alt=\"image-20260504-121910.png\"!\n{panel}",
+    "jiraEstimateHours": 136.0,
+    "capIds": [
+      "CAP-0054",
+      "CAP-0039"
+    ]
+  },
+  {
+    "key": "PCR-322",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-322",
+    "summary": "Enhance Match Interaction layout controls",
+    "status": "Backlog",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "release-2026-12",
+    "dueDate": "",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\nThe *Match Interaction* does not provide sufficient layout controls. In particular, authors cannot control:\n\n# Manage text alignment of\n#* *column headers*,\n#* *row labels*,\n# Manage *column widths* according to content, ideally with *auto-fit behavior* similar to standard *TAO tables*.\n# Manage interline of\n#* *prompt*\n#* *column headers*\n#* *row labels*\n\n!image-20260504-122511.png|width=1055,alt=\"image-20260504-122511.png\"!\n\n*Why it matters:* it creates presentation and readability issues, limits authoring flexibility, and leads to manual formatting workarounds.\n\n*Goal*: TAO should provide improved layout controls for the Match Interaction, so authors can\nformat content more clearly and consistently.\n\n\n\nThis feature improves the authoring experience for Match Interactions by adding missing layout controls. Authors need more flexibility to manage the presentation of column headers, row labels, and column widths.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a* TAO author\n\n*I want to* be able to control the layout of Match Interactions more precisely\n\n*so* that I can improve readability, reduce formatting workarounds, and present content in a clearer and more consistent way.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria* {color:#FF991F}*[ UX NEEDED ]*{color}\n\n# {color:#FF5630}*[ MUST ]*{color} GIVEN an author is editing a Match Interaction in TAO 3.x\nWHEN the user configures the interaction layout\nTHEN the system allows control of the alignment of column headers\n# {color:#FF5630}*[ MUST ]*{color} GIVEN an author is editing a Match Interaction in TAO 3.x\nWHEN the user configures the interaction layout\nTHEN the system allows control of the alignment of row labels\n# {color:#FF5630}*[ MUST ]*{color} GIVEN an author is editing a Match Interaction in TAO 3.x\nWHEN the user configures the interaction layout\nTHEN the system allows column widths to be resized by TAO Author\n# {color:#FF5630}*[ MUST ]*{color}  GIVEN an author is editing a Match Interaction in TAO 3.x\nWHEN the user wants columns to adapt to the content\nTHEN the system supports column width behavior comparable to auto-fit in standard TAO tables\n# {color:#FF5630}*[ MUST ]*{color} GIVEN an author is editing a Match Interaction in TAO 3.x\nWHEN the user configures the interaction layout\nTHEN the system allows control of the interline of the prompt\n# {color:#FF5630}*[ MUST ]*{color} GIVEN an author is editing a Match Interaction in TAO 3.x\nWHEN the user configures the interaction layout\nTHEN the system allows control of the interline of the column headers\n# {color:#FF5630}*[ MUST ]*{color} GIVEN an author is editing a Match Interaction in TAO 3.x\nWHEN the user configures the interaction layout\nTHEN the system allows control of the interline of the row labels\n# {color:#FF5630}*[ MUST ]*{color} GIVEN an author previews or runs a Match Interaction on TAO Advance\nWHEN the interaction is shown \nTHEN the interaction is displayed according to the author-defined configuration\n# {color:#FF5630}*[ MUST ]*{color} GIVEN an Test Taker taking a test on TAO Advance with Text Accomodation tool\nWHEN it changes the line height\nTHEN the interline is scaled accordingly\n{panel}\n\n{panel:bgColor=#fffae6}\nSome of the improvements will be extended to other interactions, but they have lower priority  on INVALSI side\n{panel}",
+    "jiraEstimateHours": 0.0,
+    "capIds": [
+      "CAP-0013"
+    ]
+  },
+  {
+    "key": "PCR-305",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-305",
+    "summary": "Easier debugging of scoring rules",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Functional Analysis",
+    "targetRelease": "",
+    "dueDate": "",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "*High level estimate (PdM): L*\n\nTo improve scoring troubleshooting, the proposal is to introduce an easier way to debug scoring at the test level for both manual and automatic scoring.\n\nToday, troubleshooting scoring can be difficult. For complex scoring scenarios, easier test-level debugging would help users understand how final scores are produced, identify issues faster, and reduce reliance on technical rule inspection.\n\nThe scope should focus on:\n\n* definition of a simpler test-level scoring debugging approach\n* support for both manual and automatic scoring\n* clearer visibility into how test-level scores are calculated\n* validation that the proposed approach addresses the main scoring troubleshooting needs identified so far\n\n{panel:bgColor=#eae6ff}\nSome potential ideas that can help shape the solution:\n\n* [https://oat-sa.atlassian.net/wiki/spaces/OAT/pages/4210458733/Visibility+of+Deliveries+for+external+users#FR3---Allow-direct-delivery-and-grading-preview-in-Authoring|https://oat-sa.atlassian.net/wiki/spaces/OAT/pages/4210458733/Visibility+of+Deliveries+for+external+users#FR3---Allow-direct-delivery-and-grading-preview-in-Authoring|smart-link] (FR3 - to allow direct grading preview in Authoring)\n* [https://oat-sa.atlassian.net/browse/PCR-319|https://oat-sa.atlassian.net/browse/PCR-319|smart-link]  - as a mean to have multiple tabs available during the test preview (for Advance, Grader, etc.)\n{panel}",
+    "jiraEstimateHours": 0.0,
+    "capIds": [
+      "CAP-0136"
+    ]
+  },
+  {
+    "key": "PCR-260",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-260",
+    "summary": "Improved alignment of bulleted or numbered lists",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "release-2026-10",
+    "dueDate": "30/Oct/26 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\nCurrently, TAO provides options for text editing and list display, but the available formatting does not clearly support aligning the list marker itself together with the text in prompts. This creates inconsistent visual formatting when authors try to align bullet lists within interaction prompts. In particular, both center alignment and right alignment do not correctly align the bullet point or number together with the related text.\n\n*Current behavior*\n\nWhen authors apply center or right alignment to bulleted or numbered lists in areas using CKEditor, the text may appear aligned but the bullet point or number remains misaligned or left-positioned, resulting in inconsistent formatting.\n\n*Desired behavior*\n\nWhen authors apply left, center, or right alignment to a bulleted or numbered list in areas using CKEditor, both the list marker (bullet or number) and the related text should be aligned together as one visual unit.\n\n!image-20260601-064557.png|width=615,alt=\"image-20260601-064557.png\"!\n\n\n\n*Why it matters*\n\nImproves visual consistency; reduces manual formatting workarounds.\n\n*Requirement*\n\nTAO should support correct alignment of bulleted and numbered lists inside interaction prompts and, more generally, in any area where CKEditor is available, so that both the list marker and the related text are aligned together.\n\nThis feature extends the current formatting capabilities so that authors can align one or more words together with the bullet point or number, rather than aligning only the text content while leaving the marker misaligned. The improvement should provide a way to manage this formatting directly in CKEditor, improving layout consistency and reducing the need for manual formatting alternatives.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a* TAO author,\n\n*I want to* be able to align bulleted or numbered text in any interaction and any place where CKEditor is available, including the bullet point or number itself\n*so that* I can format consistently, improve presentation quality, and avoid manual workarounds.\n\n*Scope*\n-Common Interactions\n-Text Block\n-Graphic Interactions\n-Text Reader PCI\n-Text Block used in a passage\n-Anywhere CKEditor is available\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria* \n\nGIVEN an author creates a bulleted or numbered list in a CKEditor-enabled area,\nWHEN the author applies left, center, or right alignment,\nTHEN the bullet/number and the related text are aligned together as one visual unit\n\nGIVEN an author uses any area where CKEditor is available,\nWHEN the content with an aligned bulleted or numbered list is saved, reopened, previewed, and delivered at runtime,\nTHEN the formatting is preserved and rendered consistently in authoring and at runtime\n{panel}",
+    "jiraEstimateHours": 64.0,
+    "capIds": [
+      "CAP-0013",
+      "CAP-0006"
+    ]
+  },
+  {
+    "key": "PCR-261",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-261",
+    "summary": "Line spacing formatting capability",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "release-2026-11-lts",
+    "dueDate": "30/Oct/26 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\n{color:#FF5630}*[ TO BE VALIDATED ]*{color} \nCurrently, TAO does not provide a native authoring option to configure interline spacing directly in the CKEditor. As a result, authors cannot control line spacing at authoring time and may need to rely on runtime-only accessibility tools or manual formatting workarounds.\n\n*Why it matters*\nGives authors more control over readability and text layout; avoids reliance on runtime-only accessibility tools.\n\n\n\n*Requirement*\nTAO should allow authors to configure interline spacing directly in *Text Block*, *Text Reader*, and anywhere CKEditor is used during item authoring.\n\nThis feature extends the current text editing capabilities so that authors can define interline spacing according to their design needs directly inside the item editor. The improvement should provide a native authoring configuration for spacing between lines, rather than limiting this functionality to accessibility tools available only at delivery time. This would allow authors to better control readability, page layout, and text presentation from the start.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a* TAO author,\n\n*I want to* to be able to configure interline spacing directly in *Text Block*, T*ext Reader*, and anywhere CKEditor is used,\n\n*so that* I can control readability and text layout at authoring time according to the needs of the item.\n\n*Scope*\n\n-Text Reader PCI\n\n-Text block\n\n-Text block in a passage\n\n-Common interactions (Match Interaction should be covered in [https://oat-sa.atlassian.net/browse/INV-1209|https://oat-sa.atlassian.net/browse/INV-1209|smart-link] [https://oat-sa.atlassian.net/browse/TETSN-263|https://oat-sa.atlassian.net/browse/TETSN-263|smart-link] )\n-Graphic interactions\n\n-Anywhere CKEditor is available\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria* \n\nGIVEN an author is working in an area where CKEditor is available,\n\nWHEN the author accesses the editor toolbar,\n\nTHEN the interline spacing commands are consistently available\n\n\n\nGIVEN an author is working in an area where CKEditor is available,\nWHEN the author selects an interline spacing option,\nTHEN the spacing between lines is applied to the selected text or paragraph in the editor\n\n\n\nGIVEN an author uses any area where CKEditor is available,\n\nWHEN the content with an interline spacing is saved, reopened, previewed, and delivered at runtime,\n\nTHEN the configured interline spacing is preserved and rendered consistently in authoring and at runtime in *TAO Advance*\n{panel}\n\n{panel:bgColor=#fffae6}\n*Technical considerations*\nThis request may have different implementation implications depending on the editor version in use.\n*CKEditor 4* does not appear to support interline spacing natively in the same way as more recent editor versions, so implementation may require a dedicated plugin/custom configuration.\n*CKEditor 5* appears to offer more modern formatting extensibility and may support this capability more natively.\n\n*_Analysis/estimation should therefore include_*:\n\n# Validate CKEditor4 capabilities and if it is possible to add interline command to it\n# Estimation of this approach\n# Validate CKEditor5 capabilities and if it is possible migrate CKeditor4 to CKEditor5 without impact on Current Gen runtime\n# Estimation of this approach\n{panel}",
+    "jiraEstimateHours": 0.0,
+    "capIds": [
+      "CAP-0013",
+      "CAP-0006"
+    ]
+  },
+  {
+    "key": "PCR-262",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-262",
+    "summary": "Extend text alignment capabilities across all interactions",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "",
+    "dueDate": "30/Oct/26 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\nAt the moment, these editing and layout options are either unavailable or inconsistent depending on the interaction type. Some formatting controls are only available in specific components\n\n*Why it matters*\nImproves formatting consistency across item types; gives authors more flexibility in text presentation.\n\n*Requirement*\nTAO should extend text alignment to additional interactions wherever text formatting is supported.\n\nThis feature extends the current text alignment capabilities so that authors can apply text alignment consistently across different interaction types. The improvement should make justified alignment available anywhere CKEditor is used. This would reduce formatting limitations, improve consistency across items, and allow authors to better match the intended design of assessment content.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a* TAO author,\n\n*I want* to be able to apply text alignment anywhere CKEditor is used\n\n*so that* I can format text consistently across item types and improve the visual presentation of my items.\n\nAt the moment, these editing and layout options are either unavailable or inconsistent depending on the interaction type. Some formatting controls are only available in specific components, while others require workarounds or cannot be configured directly by the author.\n\n*Scope*\n-Common interactions\n-Text block\n-Graphic interactions\n-Text Reader PCI\n-Text block in a passage\n\n-Anywhere CKEditor is available\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria* \n\nGIVEN an author is working in an area where CKEditor is available,\nWHEN the author accesses the editor toolbar,\nTHEN the text alignment commands are consistently available\n\nGIVEN an author is working in an area where text alignment is supported,\nWHEN the author applies right, left or justified alignment,\nTHEN the selected text or paragraph is aligned correctly in the editor\n\nGIVEN an author uses any area where CKEditor is available,\n\nWHEN the content with alignment configuration is saved, reopened, previewed, and delivered at runtime,\n\nTHEN the configured alignment is preserved and rendered consistently in authoring and at runtime in *TAO Advance*\n{panel}\n\n{panel:bgColor=#deebff}\n*Note 1*\nThis request should therefore be considered mainly as a functional consistency check to ensure that, in the latest version, text alignment capabilities are correctly supported and rendered across all relevant areas in scope.\n{panel}",
+    "jiraEstimateHours": 120.0,
+    "capIds": [
+      "CAP-0013"
+    ]
+  },
+  {
+    "key": "PCR-263",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-263",
+    "summary": "Text indentation formatting capability",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "",
+    "dueDate": "30/Oct/26 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\n{color:#FF5630}*[ TO BE VALIDATED ]*{color} \n\nImprovement of text editing capabilities to allow authors to apply and manage *indentation* directly in authoring.\n\nAt the moment, TAO does not provide a clear, consistent way for authors to manage indentation directly in the editor across all relevant areas in scope. This limits formatting control and may require manual layout workarounds.\n\n*Why it matters*\nImproves formatting control; supports clearer text hierarchy and better readability in text-based content.\n\n*Requirement*\nTAO should allow authors to apply indentation directly in the authoring editor, so that text can be structured more clearly and presented with better visual organization.\n\nThis feature extends the current text editing capabilities so that authors can control indentation natively during authoring. The improvement should support common indentation use cases such as managing the indentation of *paragraphs*, *bulleted and numbered lists*, structuring content more clearly, and improving the visual presentation of text. \n\nThis would fill a gap in text formatting options and reduce the need for manual layout workarounds.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a* TAO author,\n\n*I want* to be able to apply indentation directly in authoring\n\n*so that* I can structure paragraphs and bulleted/numbered lists more clearly, improve readability, and avoid manual formatting workarounds.\n\n*Scope:*\n\n-Text Reader PCI\n\n-Text block\n-Text block in a passage\n-Common interaction\n\n-Graphic interaction\n\n-Anywhere CKEditor is available\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria* \n\nGIVEN an author is working in an area where CKEditor is available,\nWHEN the author accesses the editor toolbar,\nTHEN the indentation commands are consistently available\n\nGIVEN an author is working in an area where indentation is supported,\nWHEN the author applies indentation,\nTHEN the content is indented correctly in the editor\n\nGIVEN an author uses any area where CKEditor is available,\n\nWHEN the content with indentation is saved, reopened, previewed, and delivered at runtime,\nTHEN the configured indentation is preserved and rendered in authoring and at runtime in *TAO Advance*\n{panel}\n\n{panel:bgColor=#fffae6}\n*Technical considerations*\n\nA quick check suggests that indentation may be available in both CKEditor 4 and CKEditor 5, but this should be formally validated during analysis.\n{panel}",
+    "jiraEstimateHours": 0.0,
+    "capIds": [
+      "CAP-0013",
+      "CAP-0006"
+    ]
+  },
+  {
+    "key": "PCR-264",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-264",
+    "summary": "Improve column width management and repeatability across items ",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "",
+    "dueDate": "30/Oct/26 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\nImprovement of layout capabilities to allow authors to manage *Text Block and other interactions with more precision and consistency* across items.\n\nAt the moment, the width resizing does not provide a clear, measurable reference, so it is difficult for authors to reproduce the same width from one item to another with confidence. This leads to manual adjustments, inconsistent formatting across items, and unnecessary duplication when authors want to preserve the same layout.\n\n*Why it matters*\nImproves layout consistency; reduces repetitive manual work; makes it easier for authors to maintain a uniform presentation across items.\n*Requirement*\nTAO should allow authors to manage width resizing in a more measurable and repeatable way, so that the same width can be applied consistently across items without duplicating the item.\n\nThe improvement should support a reusable width reference, standard widths, or another UX solution that allows authors to reproduce the same width across multiple items in a consistent and reliable way. This would reduce layout inconsistencies, improve efficiency during authoring.\n\n*UX Consideration* {color:#FF991F}*[ UX NEEDED ]*{color}\n*_A UX proposal is needed_* to define the most appropriate way to give authors a clear and reusable width reference across items, for example through a ruler-like aid or another usable solution.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a* TAO author,\n*I want* to be able to manage width resizing width more precisely and reuse the same width across items\n\n*so that* I can maintain a consistent layout, reduce manual formatting work, and avoid duplicating items just to preserve the same sizing.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria*\nGIVEN an author is working with an item,\nWHEN the author resize the width,\nTHEN the width can be set in a more measurable and repeatable way than with the current visual resizing only\n\nGIVEN an author wants to reproduce the same  width across multiple items,\nWHEN the author applies the chosen width configuration,\nTHEN the same width can be applied consistently without duplicating an existing item\n{panel}",
+    "jiraEstimateHours": 0.0,
+    "capIds": [
+      "CAP-0013"
+    ]
+  },
+  {
+    "key": "PCR-265",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-265",
+    "summary": "Granular column width management",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "",
+    "dueDate": "30/Oct/26 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\n {color:#FF5630}*[ TO BE VALIDATED ]*{color} \nImprovement of layout configuration so that authors can manage the *width of columns* in a more granular way, instead of relying only on the fixed column positions currently available in TAO.\nAt the moment, TAO offers column-based layout management with fixed positions. This limits the author’s ability to fine-tune the distribution of space between columns and makes it difficult to adapt the layout precisely to specific content needs.\n\n*Why it matters*\nImproves layout flexibility; supports more precise control of item structure; reduces limitations caused by fixed column configurations.\n\n*Requirement*\nTAO should allow authors to configure column widths more flexibly and precisely, so that layouts can be adapted to the specific needs of the item rather than being constrained by fixed column positions.\n\nThis feature would extend the current layout capabilities by supporting more granular control of column widths during authoring. The improvement should enable authors to better distribute space between columns and create layouts that more accurately reflect the intended design and content structure of the item.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a* TAO author*,*\n\n*I want* to be able to manage column widths in a more granular way\n\n*so that* I can create layouts that better fit my content and avoid being constrained by fixed column positions.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria* \n\nGIVEN an author is working in an area where column-based layout is available,\nWHEN the author configures the layout,\nTHEN the column widths can be managed in a more granular way than with the current fixed-position behavior\n\nGIVEN an author uses a layout with configured column widths,\nWHEN the content is saved, reopened, previewed, and delivered at runtime,\nTHEN the configured column widths are preserved and rendered in authoring and at runtime in  *TAO Advance*\n{panel}\n\n{panel:bgColor=#fffae6}\n*Technical considerations*\n\nThis request *_requires a preliminary feasibility analysis_*.\n\nThe analysis should determine whether more granular or continuous column width management can be supported within the current architecture, and then *_provide an estimation based on the implementation options identified_*.\n{panel}",
+    "jiraEstimateHours": 0.0,
+    "capIds": [
+      "CAP-0013"
+    ]
+  },
+  {
+    "key": "PCR-267",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-267",
+    "summary": "Image resizing in Graphic Interactions",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "",
+    "dueDate": "01/Nov/26 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\nImprovement of authoring capabilities in *Graphic Interactions* to allow authors to resize the *background image* directly in the interaction editor, in line with the sizing flexibility available for media in other interaction types.\n\nAt the moment, the TAO permits selecting a background graphic for Graphic Interactions and placing hotspots, points, or related graphical areas on top of it, but does not allow resizing the background image directly in authoring.\n\n*Why it matters*\nImproves flexibility during authoring, supports better control of content layout, and increases consistency across interaction types.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a T*AO author*,*\n\n*I want* to be able to resize background images in Graphic Interactions(Hotspot, Graphic Order, Graphic Associate, Graphic Gap, and Select Point) and have related hotspots, points, and graphical areas updated accordingly\n\n*so that* I can better control the layout, adapt images to the intended presentation, and preserve the correct positioning of interactive areas without manual rework.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria* \n\nGIVEN an author is working in a Graphic Interaction that uses a background image,\nWHEN the author resizes the background image in authoring,\nTHEN the image size is updated directly in the editor\n\nGIVEN an author resizes the background image in a Graphic Interaction,\nWHEN the related hotspots, points, or other graphical response areas already exist,\nTHEN those elements are repositioned and scaled accordingly so that they remain correctly aligned with the image\n\nGIVEN an author uses a Graphic Interaction with a resized background image,\nWHEN the content is saved, reopened, previewed, and delivered at runtime,\nTHEN the configured image size and the related graphical areas are preserved and rendered consistently in authoring and at runtime in both *Current Gen and TAO Advance.*\n{panel}",
+    "jiraEstimateHours": null,
+    "capIds": [
+      "CAP-0004"
+    ]
+  },
+  {
+    "key": "PCR-268",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-268",
+    "summary": "Size and position coordinates editing for hotspots and drop zones in Graphic Interactions",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "",
+    "dueDate": "01/Nov/26 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\n {color:#FF5630}*[ TO BE VALIDATED ]*{color}  \nIntroduce the ability to resize and position *hotspots* and *drop zones* in *Graphic Interactions* by entering exact numeric values, such as *Left*, *Top*, *Width*, and *Height*, instead of relying only on manual drag-and-resize handles.\n\nCurrently, resizing and positioning of hotspots and drop zones are managed through graphical resize points only, which makes precise layout adjustments more difficult and less consistent, especially when exact placement is required.\n\n*Why it matters*\nImproves precision during authoring, makes layout adjustments more efficient, and supports more consistent sizing and positioning of hotspots and drop zones when exact values are needed.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a TAO author,*\n\n*I want* to be able to resize and position hotspots and drop zones by entering exact numeric values\n\n*so that* I can create more precise and consistent Graphic Interactions and avoid relying only on manual drag-and-resize actions.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria* \n\nGIVEN an author is working in a Graphic Interaction with hotspots or drop zones,\nWHEN the author selects one of these elements,\nTHEN numeric fields for positioning and sizing are available and editable, including at least *Left*, *Top*, *Width*, and *Height*\n\nGIVEN an author enters numeric values for *Left*, *Top*, *Width*, or *Height*,\nWHEN the values are applied,\nTHEN the selected hotspot or drop zone is updated accordingly in the editor\n\nGIVEN an author configures hotspots or drop zones using numeric values,\nWHEN the content is saved, reopened, previewed, and delivered at runtime,\nTHEN the configured size and position are preserved and rendered consistently in authoring and at runtime in  *TAO Advance*\n{panel}\n\n{panel:bgColor=#fffae6}\n*Technical considerations*\nTechnical validation is required before estimation, including verification of which Graphic Interactions can support numeric positioning and sizing consistently.\n{panel}",
+    "jiraEstimateHours": 0.0,
+    "capIds": [
+      "CAP-0004"
+    ]
+  },
+  {
+    "key": "PCR-269",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-269",
+    "summary": "Prevent line breaks inside selected expressions",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Discovery/Contract Initiation",
+    "targetRelease": "",
+    "dueDate": "01/Nov/26 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\n {color:#FF5630}*[ TO BE VALIDATED ]*{color} \nImprovement of text editing capabilities to prevent selected inline expressions or compact text strings from being split across two lines when space is limited.\n\nCurrently, some compact expressions or short inline strings may wrap in a non-desired way, even when they should remain visually grouped. This can affect not only coordinate expressions such as *A(-1;2)*, but also other compact notations or text fragments that authors may want to preserve on a single line. Since LaTeX is not used for these cases because of text-to-speech constraints, authors need another way to preserve the visual integrity of selected inline content.\n\n*Why it matters*\nImproves readability and formatting consistency; avoids unwanted line breaks in inline expressions or short text strings that should remain visually grouped.\n\n*Requirement*\nTAO should provide a way in authoring to keep selected inline expressions or compact text strings on a single line, so that they are not split unexpectedly when space is limited.\n\nThis feature would extend the current text editing capabilities by allowing authors to preserve the visual grouping of specific inline content without relying on LaTeX. It should support cases where a short block of text, notation, or mathematical expression needs to remain intact for readability and presentation purposes, while remaining compatible with text-to-speech requirements.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a* TAO author*,*\n\n*I want* to be able to prevent selected inline expressions or text strings from breaking across two lines\n\n*so that* I can preserve readability, keep important content visually consistent, and avoid unwanted line wrapping in content.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria* \n\nGIVEN an author is working in an area where CKEditor is available,\nWHEN the author applies the supported no-break behavior to a selected inline expression or text string,\nTHEN the selected content remains on a single line in the editor\n\nGIVEN an author uses inline content with no-break behavior applied,\nWHEN the content is saved, reopened, previewed, and delivered at runtime,\nTHEN the selected content remains visually grouped and is not split across two lines in authoring or at runtime in *TAO Advance.*\n{panel}\n\n{panel:bgColor=#fffae6}\n*Possible implementation*\nA possible implementation could be based on applying a dedicated no-break behavior to selected inline content, for example, through a wrapper element and related styling rules.\n\nExample:\n*HTML*\n\n{noformat}<span class=\"no-break\">A(-1;2)</span>{noformat}\n\n\n\nCSS\n\n{noformat}.no-break {\n  white-space: nowrap !important;\n  word-break: keep-all !important;\n  overflow-wrap: normal !important;\n  word-wrap: normal !important;\n  hyphens: none !important;\n}{noformat}\n\n\n\n*Technical considerations*\nThis request requires deeper technical validation before estimation.\n\nThe analysis should identify the most appropriate solution to support this behavior in authoring and runtime (beyond the *Possible implementation*)\n\n\n\n*UX consideration*\n\nUX validation is needed to determine how the feature can be exposed to authors in a usable way.\n{panel}",
+    "jiraEstimateHours": null,
+    "capIds": [
+      "CAP-0013",
+      "CAP-0006"
+    ]
+  },
+  {
+    "key": "PCR-270",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-270",
+    "summary": "Better accessibility support for mathematical expressions",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "",
+    "dueDate": "01/Nov/26 12:00 AM",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\n {color:#FF5630}*[ TO BE VALIDATED ]*{color}\nImprovement of math authoring capabilities to allow authors to insert fractions and other math expressions with a visual rendering comparable to *LaTeX / MathML*, while preserving correct *text-to-speech* output.\n\nCurrently, TAO provides math expressions through the *Formula Editor*. Authors currently lack an easy way to produce mathematical expressions that are both visually clear and correctly interpretable by assistive technologies.\n\nGiven the complexity of the request, further technical analysis is needed, as this requirement appears to go beyond a simple text editing enhancement and may require a more structured solution at rendering and accessibility level.\n\n*Why it matters*\nImproves both visual quality and accessibility for mathematical content, allowing authors to create expressions that are clear for readers and correctly interpretable by assistive technologies.\n*Requirement*\nTAO should provide a way for authors to insert fractions and other math expressions in regular content with high-quality visual rendering and reliable text-to-speech output.\n\nThis feature would extend the current math authoring capabilities by allowing authors to create mathematical content that is both visually robust and accessible, without relying on solutions that compromise text-to-speech compatibility.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a* TAO author*,*\n\n*I want* to be able to insert fractions and other math expressions with high-quality visual rendering and correct text-to-speech output\n\n*so that* I can create mathematical content that is both visually clear and accessible.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria* \n\nGIVEN an author is working in an area where mathematical content can be authored,\nWHEN the author inserts a supported fraction or other supported math expression,\nTHEN the expression is rendered clearly and in a visually acceptable way in the editor\n\nGIVEN an author uses supported mathematical content in authored text,\nWHEN the content is saved, reopened, previewed, and delivered at runtime,\nTHEN the mathematical rendering is preserved and displayed consistently in authoring and at runtime in  *TAO Advance*\n\nGIVEN an author uses supported mathematical content in authored text,\nWHEN the content is read through text-to-speech or other assistive technology,\nTHEN the expression is interpreted correctly in an accessible way\n{panel}\n\n{panel:bgColor=#fffae6}\n*Possible solution direction*\nTAO should support a mechanism that allows mathematical expressions to be displayed with high visual quality while also permitting authors a way to provide a dedicated text alternative that can be used for text-to-speech purposes.\n\nThe text alternative should be stored with the mathematical expression in a way that ensures the expression remains both visually clear and accessible.\n\n*Technical considerations*\n\nThis request *_requires significant technical validation_* before estimation.\n\nThe analysis should identify the most appropriate solution to support this behavior in authoring and runtime.\n\n*UX consideration*\n\nUX validation may be useful to determine how authors should create and edit accessible mathematical content in a usable way.\n\n*Reference*: [https://oat-sa.atlassian.net/browse/TR-5878|https://oat-sa.atlassian.net/browse/TR-5878|smart-link] \n[https://oat-sa.atlassian.net/wiki/spaces/OAT/pages/2583199775|https://oat-sa.atlassian.net/wiki/spaces/OAT/pages/2583199775|smart-link] \n[https://help.learnosity.com/hc/en-us/articles/360017697818-Creating-accessible-math-content|https://help.learnosity.com/hc/en-us/articles/360017697818-Creating-accessible-math-content|smart-link] \n{panel}",
+    "jiraEstimateHours": null,
+    "capIds": [
+      "CAP-0007"
+    ]
+  },
+  {
+    "key": "PCR-309",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-309",
+    "summary": "Inheritance of categories / test-taker tools by newly added items",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Discovery/Contract Initiation",
+    "targetRelease": "",
+    "dueDate": "",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\n{color:#36B37E}*[ PRODUCT FEATURE ]*{color} {color:#FF5630}*[ TAO3.X ]*{color}\n\n\nImprovement of test authoring behavior so that newly inserted items in a *section* or *part* can automatically inherit the relevant flags/settings configured at *section* or *part* level.\n\nCurrently, newly added items do not automatically inherit the flags/settings from the parent section or part. From product perspective, this is the expected behavior, but for *INVALSI* it appears that up to *November 2023* items were inheriting those configurations automatically. This creates a discrepancy between past behavior and current behavior, and may lead to additional manual work and configuration inconsistencies.\n\n*Why it matters*\nReduces repetitive manual configuration; improves consistency across items; aligns authoring behavior with previous INVALSI expectations.\n\n*Requirement*\nTAO should provide a way to apply section/part-level flags and settings to newly inserted items, or make this behavior configurable where needed.\n\nThis feature would improve authoring efficiency by reducing the need to manually reapply the same flags/settings to each newly created item. It should also ensure a more consistent configuration of items within the same section or part, especially in contexts where inheritance was previously expected.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a TAO author,*\n\n*I want* newly inserted items in a section to inherit the relevant flags/settings from that section or part\n\n*so that* I can avoid repetitive manual configuration and keep item settings consistent.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria*\n\n# Newly added items automatically inherit item-level settings that are enabled on *all* existing items in the parent section\n# Newly added items automatically inherit item-level settings that are enabled on *all* existing items in the parent test-part\n# The following settings are supported by the inheritance mechanism:\n#* Categories\n#* Test-Taker Tools\n#* Test navigation / Informational item usage\n# A notification is displayed after adding a new item if one or more settings were inherited automatically mentioning the items and the settings inherited. {color:#00B8D9}*[ UX-NEEDED ]*{color} \n# Inherited settings are persisted after saving and reopening the test.\n# Inherited settings are correctly reflected during test preview and runtime delivery.\n{panel}\n\n{panel:bgColor=#fffae6}\n# *UX consideration (PdM and UX should define how the feature should be implemented before estimation)*\nUX to define together with PdM how the feature should be implemented, (i.e.: adding an inherit flag)\n# *Technical note*\nFrom product perspective, the current non-inheritance behavior is understood to be expected.\nHowever, for *INVALSI*, previous behavior reportedly allowed inheritance up to *November 2023*.\nAnalysis is therefore needed to clarify:\n## whether this was a dedicated INVALSI customization,\n## whether the behavior should be restored,\n## or whether inheritance should be made explicitly configurable.\n# The categories and the test-taker tools are set / persisted at the item level, but they are displayed visually in an aggregated way also to the section level, which explains the expectation they are inherited. However, there is no information set at the section level about the default or set categories and test-taker tools\n{panel}",
+    "jiraEstimateHours": null,
+    "capIds": [
+      "CAP-0028",
+      "CAP-0027"
+    ]
+  },
+  {
+    "key": "PCR-324",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-324",
+    "summary": "Text alignment in Text Entry",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "release-2026-12",
+    "dueDate": "",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\n{color:#36B37E}*[ PRODUCT FEATURE ]*{color} {color:#FF5630}*[ TAO3.X ]*{color}  {color:#FF5630}*[ TAO ADVANCE(NEXTGEN) ]*{color} \n\nImprovement of authoring capabilities so that the author can define how the *student’s answer text* is aligned inside the *Text Entry* field, for example *left-aligned, centered, or right-aligned*\n\n!image-20260702-081131.png|width=618,alt=\"image-20260702-081131.png\"!\n\n\n\n*Requirement*\nTAO should allow the author to configure the alignment of the text that the student will enter inside the Text Entry field.\n\nThis feature would extend the current editing capabilities by allowing the author, at item creation time, to decide whether the student’s response should appear left-aligned, centered, or right-aligned within the Text Entry box.\n\n*Scope*\n\n* Text Entry\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a TAO author,*\n\n*I want* to be able to define the alignment of the text entered by the student inside the Text Entry field\n\n*so that* I can control the visual presentation of the response area according to the needs of the item.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance criteria* \n\nGIVEN an author is configuring a *Text Entry* interaction,\nWHEN the author selects the input text alignment option,\nTHEN the author can choose whether the student’s input will be left-aligned, centered, or right-aligned inside the response field.\n\nGIVEN an author has configured the alignment of the student input in a *Text Entry*  interaction,\nWHEN the item is saved, reopened, previewed, and delivered at runtime,\nTHEN the configured input alignment is preserved and applied consistently in authoring and at runtime in *TAO Advance*.\n{panel}\n\n{panel:bgColor=#fffae6}\n*Technical consideration*\nThe feature should work consistently for RTL and LTR languages.\n\n\n\n*UX consideration (this can be done after high-level estimation)*\n\nUX validation may be useful to determine how the feature should be exposed to authors in a usable way.\n{panel}",
+    "jiraEstimateHours": null,
+    "capIds": [
+      "CAP-0003"
+    ]
+  },
+  {
+    "key": "PCR-325",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-325",
+    "summary": "Rotation of hotspots and drop zones in Graphic Interactions",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "release-2026-12",
+    "dueDate": "",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\n{color:#36B37E}*[ PRODUCT FEATURE ]*{color} {color:#FF5630}*[ TAO3.X ]*{color}   {color:#FF5630}*[ TAO ADVANCE(NEXTGEN) ]*{color}\n\nImprovement of graphic interaction authoring capabilities to allow authors to *rotate hotspots and drop zones*, instead of being limited to the default non-rotated shapes.\n\nCurrently, hotspots and drop zones can be positioned and resized, but not rotated. This limits the author’s ability to adapt the interactive area to the intended visual design. For example, a square cannot be used as a diamond shape at an arbitrary angle, even when that would better match the underlying graphic.\n\n*Why it matters*\nImproves flexibility in graphic authoring; allows better matching between interactive areas and the visual content; reduces the need for imprecise workarounds.\n\n*Requirement*\nTAO should allow authors to rotate hotspots and drop zones in Graphic Interactions.\n\nThis feature would extend the current graphic authoring capabilities by allowing authors to define the rotation angle of graphical response areas. The improvement should support use cases where a standard square or rectangular area needs to be displayed and used at a different angle, or where a rotated hotspot/drop zone would better fit the image structure.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a TAO author,*\n\n*I want* to be able to rotate hotspots and drop zones in Graphic Interactions\n\n*so that* I can better adapt the interactive areas to the visual layout and avoid workarounds when non-rotated shapes are not sufficient.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance Criteria*\n\nGIVEN an author is working in a Graphic Interaction with hotspots or drop zones,\nWHEN the author applies a rotation to one of these elements,\nTHEN the selected hotspot or drop zone is rotated accordingly in the editor.\n\nGIVEN an author uses a Graphic Interaction with rotated hotspots or drop zones,\nWHEN the content is saved, reopened, previewed, and delivered at runtime,\nTHEN the configured rotation is preserved and rendered consistently in authoring and at runtime in *TAO Advance*.\n{panel}\n\n{panel:bgColor=#fffae6}\n*Technical considerations*\n\nTechnical validation is required before estimation.\n\nThe analysis should identify the most appropriate solution to support rotation of hotspots and drop zones in authoring and runtime.\n\n\n\n*UX consideration  (this can be done after high-level estimation)*\n\nUX validation may be useful to determine how rotation should be exposed to authors in a usable way.\n\n \n{panel}",
+    "jiraEstimateHours": null,
+    "capIds": [
+      "CAP-0004"
+    ]
+  },
+  {
+    "key": "PCR-326",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-326",
+    "summary": "Configurable max-length warning in Text Entry",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "release-2026-12",
+    "dueDate": "",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\n{color:#36B37E}*[ PRODUCT FEATURE ]*{color} {color:#FF5630}*[ TAO3.X ]*{color}  {color:#FF5630}*[ TAO ADVANCE(NEXTGEN) ]*{color}\n\nImprovement of *Text Entry* behavior so that authors can keep a *maximum character constraint* while deciding whether the related TAO warning/instruction message is shown to the candidate.\n\n\n\nCurrently, TAO Advance provides the ability to “Remove Instructions” at item level, TAO-generated instructions from the following interactions: [+Choice+|https://userguide.taotesting.com/user-documentation/latest/public/choice-interaction], [+Order+|https://userguide.taotesting.com/user-documentation/latest/public/order-interaction], [+Associate+|https://userguide.taotesting.com/user-documentation/latest/public/associate-interaction], [+Match+|https://userguide.taotesting.com/user-documentation/latest/public/match-interaction], [+Hottext+|https://userguide.taotesting.com/user-documentation/latest/public/hottext-interaction], [+File Upload+|https://userguide.taotesting.com/user-documentation/latest/public/file-upload-interaction], [+Graphic Hotspot+|https://userguide.taotesting.com/user-documentation/latest/public/hotspot-interaction], [+Graphic Order+|https://userguide.taotesting.com/user-documentation/latest/public/graphic-order-interaction], [+Graphic Associate+|https://userguide.taotesting.com/user-documentation/latest/public/graphic-associate-interaction], or [+Graphic Select Point+|https://userguide.taotesting.com/user-documentation/latest/public/select-point-interaction] interactions (*existing feature for the above should be extended to Current Gen Test Runner*).\n\nAs a result, authors cannot currently keep the maximum character constraint active in Text Entry while independently controlling whether the related warning/instruction message is displayed.\n\n!image-20260702-081800.png|width=379,alt=\"image-20260702-081800.png\"!\n\n\n\n*Why it matters*\nImproves control over candidate-facing messaging; reduces unnecessary on-screen guidance when not desired; gives authors more flexibility in how Text Entry constraints are presented.\n\n*Requirement*\nTAO should allow authors to configure whether the warning/instruction message related to the maximum character constraint in *Text Entry* is displayed, independently from the constraint itself.\n\nThis feature would extend the current Text Entry configuration by separating:\n\n* the *enforcement of the maximum character limit*\n* from the *display of the related message/instruction*\n\nThis would allow authors to keep the validation behavior while deciding whether the candidate should see the related message.\n\n*Scope*\n\n* Text Entry\n* Evaluate if this should be extended to other not covered interactions\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a TAO author,*\n\n*I want* to be able to keep the maximum character constraint in Text Entry while choosing whether the related warning/instruction message is shown\n\n*so that* I can control the candidate experience more precisely without losing the validation rule.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance Criteria*\n\nGIVEN an author configures a maximum character constraint in a *Text Entry* interaction,\nWHEN the author chooses to Remove Instruction,\nTHEN the maximum character constraint remains active but the message is not shown to the candidate.\n\nGIVEN a Text Entry interaction is configured with a maximum character constraint and Remove Instruction,\nWHEN the item is saved, reopened, previewed, and delivered at runtime,\nTHEN both the constraint behavior and the message visibility setting are preserved consistently in authoring and runtime.\n{panel}\n\n{panel:bgColor=#fffae6}\n*Technical / Functional notes*\n\n None.\n{panel}",
+    "jiraEstimateHours": null,
+    "capIds": [
+      "CAP-0003"
+    ]
+  },
+  {
+    "key": "PCR-327",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-327",
+    "summary": "Configurable row and cell background styling in TAO tables",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Technical Analysis",
+    "targetRelease": "release-2026-12",
+    "dueDate": "",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "{panel:bgColor=#deebff}\n{color:#36B37E}*[ PRODUCT FEATURE ]*{color}  {color:#FF5630}*[ TAO3.X ]*{color}   {color:#FF5630}*[ TAO ADVANCE(NEXTGEN) ]*{color}\n\nImprovement of TAO table formatting so that authors can decide whether table rows should use alternating background colors or not, and can configure the background of specific rows and/or cells.\n\nCurrently, table background styling does not appear to be configurable enough for the required use cases. In particular, authors may need all rows to have the same background, for example all white, and only selected rows or cells highlighted with a different color. In addition.\nThe current behavior differs between *Current gen* and *Next gen*.\n\n*Why it matters*\nImproves layout flexibility; supports clearer visual design of tabular content; allows authors to highlight only the relevant rows or cells instead of relying on default row styling.\n\n*Requirement*\nTAO should allow authors to configure table row and cell backgrounds more flexibly, including the possibility to disable alternating row backgrounds and apply custom background colors to selected rows and/or cells.\n\nThis feature would extend the current table formatting capabilities by giving authors more control over the visual presentation of tables. It should support use cases where all rows need the same background, alternate color for the rows , as well as cases where only one row, one column, or one or more specific cells should be highlighted.\n{panel}\n\n{panel:bgColor=#eae6ff}\n*As a TAO author,*\n\n*I want* to be able to decide whether TAO tables use alternating row backgrounds and to configure the background of specific rows and/or cells\n\n*so that* I can create tables with the visual structure and highlighting needed for my content.\n{panel}\n\n{panel:bgColor=#e3fcef}\n*Acceptance Criteria*\n\nGIVEN an author is working with a TAO table,\nWHEN the author configures the table background behavior,\nTHEN the author can choose whether alternating row backgrounds are applied or not.\n\nGIVEN an author is working with a TAO table,\nWHEN the author applies a background color to a selected row, column, or cell,\nTHEN the selected area is displayed with the configured background color in the editor.\n\nGIVEN an author uses a table with configured row and/or cell backgrounds,\nWHEN the content is saved, reopened, previewed, and delivered at runtime,\nTHEN the configured table background styling is preserved and rendered consistently in authoring and at runtime in  *Next gen*.\n\n\n{panel}\n\n{panel:bgColor=#fffae6}\n*UX consideration (this can be done after high-level estimation)*\n\nUX validation may be useful to determine how the feature should be exposed to authors in a usable way.\n{panel}\n\n{panel:bgColor=#fffae6}\n*Technical requirements*\n\nConsider applying the styles using CSS variables  Check --styleeditor\n{panel}",
+    "jiraEstimateHours": null,
+    "capIds": [
+      "CAP-0013"
+    ]
+  },
+  {
+    "key": "PCR-375",
+    "url": "https://oat-sa.atlassian.net/browse/PCR-375",
+    "summary": "Improve guided navigation for tests",
+    "status": "Placeholder",
+    "lifecycle": "DoR - Discovery/Contract Initiation",
+    "targetRelease": "release-2026-12",
+    "dueDate": "",
+    "issueType": "Epic",
+    "assignee": "",
+    "description": "Followup for [https://oat-sa.atlassian.net/browse/HKD-1750|https://oat-sa.atlassian.net/browse/HKD-1750|smart-link] and [https://oat-sa.atlassian.net/browse/PCR-170|https://oat-sa.atlassian.net/browse/PCR-170|smart-link] \n\nSee also comment here for some potential improvement:[https://oat-sa.atlassian.net/browse/HKD-1750?focusedCommentId=363227|https://oat-sa.atlassian.net/browse/HKD-1750?focusedCommentId=363227|smart-link] \n\nOverall, the solution should be user-friendly and we should make sure to avoid any potential problems caused by the impossibility to navigate anymore by the test-takers.\n\n\n\nGuided navigation can be triggered by:\n\n* timers (minimum time required)\n* sequential setting for media interactions\n* Entry code PCI?",
+    "jiraEstimateHours": null,
+    "capIds": [
+      "CAP-0025"
+    ]
+  }
+]

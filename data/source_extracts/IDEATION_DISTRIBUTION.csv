@@ -1,0 +1,38 @@
+Ideation Sheet,Strategic Category,Decision / Treatment,MoSCoW,Capability Count,Global CAP-IDs
+V1 Carry-forward,Create & Design,EVOLVE / ENHANCE,COULD,5,"CAP-0007, CAP-0013, CAP-0021, CAP-0025, CAP-0026"
+V1 Carry-forward,Create & Design,KEEP AS-IS,COULD,8,"CAP-0003, CAP-0004, CAP-0010, CAP-0016, CAP-0020, CAP-0024, CAP-0027, CAP-0028"
+V1 Carry-forward,Create & Design,KEEP AS-IS,SHOULD,1,CAP-0101
+V1 Carry-forward,Manage & Govern,EVOLVE / ENHANCE,MUST,1,CAP-0081
+V1 Carry-forward,Manage & Govern,EVOLVE / ENHANCE,SHOULD,1,CAP-0008
+V1 Carry-forward,Manage & Govern,KEEP AS-IS,SHOULD,9,"CAP-0044, CAP-0053, CAP-0055, CAP-0077, CAP-0078, CAP-0079, CAP-0087, CAP-0102, CAP-0111"
+V1 Carry-forward,Collaborate & Assure Quality,EVOLVE / ENHANCE,COULD,2,"CAP-0029, CAP-0030"
+V1 Carry-forward,Collaborate & Assure Quality,EVOLVE / ENHANCE,MUST,3,"CAP-0018, CAP-0022, CAP-0023"
+V1 Carry-forward,Collaborate & Assure Quality,EVOLVE / ENHANCE,SHOULD,1,CAP-0019
+V1 Carry-forward,Collaborate & Assure Quality,KEEP AS-IS,COULD,1,CAP-0074
+V1 Carry-forward,Collaborate & Assure Quality,KEEP AS-IS,SHOULD,5,"CAP-0037, CAP-0038, CAP-0045, CAP-0048, CAP-0105"
+V1 Carry-forward,Standards & Portability,EVOLVE / ENHANCE,MUST,9,"CAP-0001, CAP-0015, CAP-0050, CAP-0052, CAP-0076, CAP-0083, CAP-0091, CAP-0093, CAP-0107"
+V1 Carry-forward,Standards & Portability,EVOLVE / ENHANCE,SHOULD,5,"CAP-0006, CAP-0031, CAP-0032, CAP-0086, CAP-0097"
+V1 Carry-forward,Standards & Portability,KEEP AS-IS,SHOULD,25,"CAP-0002, CAP-0034, CAP-0051, CAP-0054, CAP-0060, CAP-0061, CAP-0062, CAP-0063, CAP-0064, CAP-0080, CAP-0082, CAP-0084, CAP-0085, CAP-0088, CAP-0089, CAP-0090, CAP-0092, CAP-0094, CAP-0095, CAP-0096, CAP-0098, CAP-0099, CAP-0100, CAP-0103, CAP-0119"
+V1 Carry-forward,AI-assisted Authoring,EVOLVE / ENHANCE,MUST,5,"CAP-0011, CAP-0012, CAP-0108, CAP-0114, CAP-0117"
+V1 Carry-forward,AI-assisted Authoring,KEEP AS-IS,SHOULD,9,"CAP-0104, CAP-0106, CAP-0109, CAP-0110, CAP-0112, CAP-0113, CAP-0115, CAP-0116, CAP-0118"
+3.x Direct Migration to V2,Create & Design,MIGRATE / RECREATE,COULD,4,"CAP-0009, CAP-0033, CAP-0035, CAP-0071"
+3.x Direct Migration to V2,Create & Design,MIGRATE / RECREATE,SHOULD,2,"CAP-0069, CAP-0070"
+3.x Direct Migration to V2,Manage & Govern,MIGRATE / RECREATE,COULD,1,CAP-0047
+3.x Direct Migration to V2,Manage & Govern,MIGRATE / RECREATE,MUST,2,"CAP-0036, CAP-0058"
+3.x Direct Migration to V2,Manage & Govern,MIGRATE / RECREATE,SHOULD,3,"CAP-0039, CAP-0042, CAP-0046"
+3.x Direct Migration to V2,Manage & Govern,REPLACE WITH NEW APPROACH,SHOULD,2,"CAP-0043, CAP-0056"
+3.x Direct Migration to V2,Collaborate & Assure Quality,MIGRATE / RECREATE,MUST,1,CAP-0057
+3.x Direct Migration to V2,Standards & Portability,MIGRATE / RECREATE,COULD,1,CAP-0075
+3.x Direct Migration to V2,Standards & Portability,MIGRATE / RECREATE,MUST,2,"CAP-0005, CAP-0068"
+3.x Direct Migration to V2,Standards & Portability,MIGRATE / RECREATE,SHOULD,5,"CAP-0014, CAP-0017, CAP-0059, CAP-0067, CAP-0072"
+3.x Direct Migration to V2,AI-assisted Authoring,MIGRATE / RECREATE,MUST,1,CAP-0049
+New Needs & Gaps / Developments,Create & Design,DEVELOP / VALIDATE,MUST,1,CAP-0123
+New Needs & Gaps / Developments,Manage & Govern,DEVELOP / VALIDATE,MUST,4,"CAP-0122, CAP-0124, CAP-0125, CAP-0133"
+New Needs & Gaps / Developments,Collaborate & Assure Quality,DEVELOP / VALIDATE,MUST,2,"CAP-0120, CAP-0132"
+New Needs & Gaps / Developments,Collaborate & Assure Quality,DEVELOP / VALIDATE,SHOULD,2,"CAP-0127, CAP-0128"
+New Needs & Gaps / Developments,Standards & Portability,DEVELOP / VALIDATE,MUST,1,CAP-0121
+New Needs & Gaps / Developments,AI-assisted Authoring,DEVELOP / VALIDATE,MUST,1,CAP-0131
+New Needs & Gaps / Developments,AI-assisted Authoring,DEVELOP / VALIDATE,SHOULD,3,"CAP-0126, CAP-0129, CAP-0130"
+Discontinued,Create & Design,DISCONTINUE / VALIDATE,WON'T,1,CAP-0073
+Discontinued,Manage & Govern,DISCONTINUE / VALIDATE,WON'T,2,"CAP-0040, CAP-0041"
+Discontinued,Standards & Portability,DISCONTINUE / VALIDATE,WON'T,2,"CAP-0065, CAP-0066"

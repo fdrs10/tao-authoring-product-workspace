@@ -1,0 +1,4500 @@
+[
+  {
+    "id": "CAP-0001",
+    "name": "Item creation & editing",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Create questions from scratch; edit existing QTI questions; configure question title and identifier; save changes and manage unsaved editing sessions Create items from scratch; edit existing items; save changes; configure identifier, title, instructions and other item properties",
+    "source": "TAO Authoring - feature list | TAO Authoring Strategic Initiative | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-NEW-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-001",
+      "V1-001",
+      "NEW-014",
+      "NEW-015",
+      "NEW-016"
+    ],
+    "v2": "Item creation & editing",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0002",
+    "name": "Standard response interactions",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Choice, Order, Associate, Match, Hottext, Gap Match, Slider, Extended Text, File Upload, Media and other supported standard interactions Choice, Order, Associate, Match, Hottext, Gap Match, Slider, Extended Text, File Upload and Media interactions",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-002",
+      "V1-002"
+    ],
+    "v2": "Standard response interactions",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0003",
+    "name": "Inline interactions",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Inline Choice, Text Entry, End Attempt and other supported inline/block interaction types Inline Choice, Text Entry, End Attempt and other supported inline interaction types",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-003",
+      "V1-003"
+    ],
+    "v2": "Inline interactions",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0004",
+    "name": "Graphical interactions",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Hotspot, Select Point, Graphic Order, Graphic Associate and Graphic Gap Match",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-004",
+      "V1-004"
+    ],
+    "v2": "Graphical interactions",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0005",
+    "name": "Additional/custom PCIs",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Must",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Use Portable Custom Interactions and other installed/custom interaction types within items Extend the standard QTI interaction set using Portable Custom Interactions",
+    "source": "TAO Authoring - feature list | TAO Authoring Strategic Initiative",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-NEW-001"
+    ],
+    "sourceCapIds": [
+      "3X-005",
+      "3X-077",
+      "3X-078",
+      "NEW-019"
+    ],
+    "v2": "Additional/custom PCIs",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0006",
+    "name": "Rich-text authoring",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Create and format textual content using the embedded QTI editor, including common text-formatting and structural elements Create and format textual content, including headings, lists, tables, links and other rich-text elements",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-006",
+      "V1-005"
+    ],
+    "v2": "Rich-text authoring",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0007",
+    "name": "Mathematical content",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Insert and edit mathematical expressions within item content; MathML & LATeX support; Wiris MathType integration Insert and edit mathematical expressions, including MathML-based mathematical content",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-007",
+      "V1-006"
+    ],
+    "v2": "Mathematical content",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0008",
+    "name": "Images & media",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Insert and configure supported images, audio, video and other media within questions Insert and configure images, audio, video and other media assets within items",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-008",
+      "V1-007"
+    ],
+    "v2": "Images & media",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0009",
+    "name": "Passages / shared stimuli",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "3x",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Insert and reuse passages/shared stimuli within authored items Store, manage and reuse passages/shared stimuli",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-009",
+      "3X-040"
+    ],
+    "v2": "Passages / shared stimuli",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0010",
+    "name": "Response configuration & correct answers",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Configure expected/correct responses and interaction-specific response properties",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-010",
+      "V1-008"
+    ],
+    "v2": "Response configuration & correct answers",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0011",
+    "name": "Scoring & response processing",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Configure match-correct scoring, mapped scoring and custom response-processing behaviour Configure applicable scoring and response-processing behaviour",
+    "source": "OECD Digital Education Outlook 2026 | TAO AI Competitor Intelligence Report | TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-COMP-001",
+      "SRC-OECD-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-011",
+      "V1-009",
+      "COMPETITORS-008",
+      "COMPETITORS-010",
+      "OECD-009"
+    ],
+    "v2": "Scoring & response processing",
+    "notes": "Priority basis: P1 · OECD-backed",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P1 · OECD-backed",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0012",
+    "name": "Feedback",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Configure supported feedback associated with responses/outcomes Configure feedback associated with responses and outcomes",
+    "source": "OECD Digital Education Outlook 2026 | TAO AI Competitor Intelligence Report | TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-COMP-001",
+      "SRC-OECD-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-012",
+      "V1-010",
+      "COMPETITORS-005",
+      "OECD-003",
+      "OECD-004"
+    ],
+    "v2": "Feedback",
+    "notes": "Priority basis: P1 · OECD-backed",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P1 · OECD-backed",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0013",
+    "name": "Item styling",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Configure question presentation through the embedded Style Editor and applicable styling/layout controls Configure item presentation using the Item Style Editor and applicable styling options",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-013",
+      "V1-011"
+    ],
+    "v2": "Item styling",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0014",
+    "name": "Item source editing",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Directly inspect/edit the underlying item/QTI source",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-014"
+    ],
+    "v2": "Item source editing",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0015",
+    "name": "Item preview",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Preview authored items before use; support both CurrentGen and NextGen preview experiences Preview questions before use, including library previews of QTI content",
+    "source": "TAO Authoring - feature list | TAO Authoring Strategic Initiative | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-NEW-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-015",
+      "V1-012",
+      "NEW-008"
+    ],
+    "v2": "Item preview",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0016",
+    "name": "Item printing",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Produce a print-oriented representation of the current question Produce a printable representation of an authored item",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-016",
+      "V1-013"
+    ],
+    "v2": "Item printing",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0017",
+    "name": "Item language & writing direction",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Configure item language and writing direction for multilingual/localized content",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-017"
+    ],
+    "v2": "Item language & writing direction",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0018",
+    "name": "Test creation & editing",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Create tests from scratch; edit existing tests; configure test identity and general properties Create tests from scratch or edit existing eligible tests using Studio’s embedded test editor",
+    "source": "TAO Authoring - feature list | TAO Authoring Strategic Initiative | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-NEW-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-018",
+      "V1-014",
+      "NEW-005"
+    ],
+    "v2": "Test creation & editing",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0019",
+    "name": "Test structure",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Build structured assessments using the hierarchy supported by the test editor and Studio assembly workflows Build hierarchical assessments using Test → Test Part → Section → Item structures",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-019",
+      "V1-015"
+    ],
+    "v2": "Test structure",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0020",
+    "name": "Test parts & sections management",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Add, configure and organize applicable test parts and sections Add, configure, rename/reorder and remove parts and sections",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-020",
+      "V1-016"
+    ],
+    "v2": "Test parts & sections management",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0021",
+    "name": "Item placement & organization",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Add multiple items to sections; remove, reorder and move items within the test structure Add questions to sections; remove, reorder and organize questions within a test",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-021",
+      "V1-017"
+    ],
+    "v2": "Item placement & organization",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0022",
+    "name": "Item selection",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Define which items are eligible/selected within test sections during the test execution/delivery Define which questions are used within test sections",
+    "source": "TAO Authoring - feature list | TAO Authoring Strategic Initiative | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-NEW-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-022",
+      "V1-018",
+      "NEW-013"
+    ],
+    "v2": "Item selection",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0023",
+    "name": "Random item selection",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Dynamically select a specified number of items from eligible item pools, during the test execution/delivery Select a specified number of questions randomly from an eligible question set or filtered library pool",
+    "source": "TAO Authoring - feature list | TAO Authoring Strategic Initiative | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-NEW-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-023",
+      "V1-019",
+      "NEW-007"
+    ],
+    "v2": "Random item selection",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0024",
+    "name": "Ordering & shuffling",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Configure fixed versus randomized ordering of applicable items/sections Configure applicable fixed/randomized ordering and shuffling behaviour",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-024",
+      "V1-020"
+    ],
+    "v2": "Ordering & shuffling",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0025",
+    "name": "Navigation configuration",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Configure applicable test navigation behaviour through the embedded test editor Configure linear/non-linear navigation",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-025",
+      "V1-021"
+    ],
+    "v2": "Navigation configuration",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0026",
+    "name": "Time limits",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Configure applicable timing constraints through the embedded test editor Configure timing constraints at all levels of the test structure",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-026",
+      "V1-022"
+    ],
+    "v2": "Time limits",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0027",
+    "name": "Test-taker tools configuration",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Configure applicable tools made available during test delivery",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-027",
+      "V1-023"
+    ],
+    "v2": "Test-taker tools configuration",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0028",
+    "name": "Test/part/section/item settings",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Configure delivery-related behaviour at the different levels of the test hierarchy Configure applicable behaviour at different levels of the test hierarchy",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-028",
+      "V1-024"
+    ],
+    "v2": "Test/part/section/item settings",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0029",
+    "name": "Scoring weights",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Configure weights associated with items/outcomes within the assessment Configure applicable weights associated with questions/outcomes",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-029",
+      "V1-025"
+    ],
+    "v2": "Scoring weights",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0030",
+    "name": "Rubrics & instructions",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Add instructional/rubric content at applicable levels of the test structure Add applicable instructional/rubric content within the test structure",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-030",
+      "V1-026"
+    ],
+    "v2": "Rubrics & instructions",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0031",
+    "name": "Categories",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Configure/use categories within test structures where supported Configure/use applicable QTI categories within test structures",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-031",
+      "V1-027"
+    ],
+    "v2": "Categories",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0032",
+    "name": "Test-level outcome/scoring configuration",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Configure applicable test-level scoring and outcome behaviour Competitor signal: Surpass IQ provides natural-language interaction with assessment information and analytics.",
+    "source": "TAO AI Competitor Intelligence Report | TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-COMP-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-032",
+      "V1-028",
+      "COMPETITORS-006",
+      "COMPETITORS-009"
+    ],
+    "v2": "Test-level outcome/scoring configuration",
+    "notes": "Priority basis: P5 · Competitive evidence",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P5 · Competitive evidence",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0033",
+    "name": "Test XML editing",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "3x",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Inspect and directly edit the underlying test XML using the XML Editor",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-033"
+    ],
+    "v2": "Test XML editing",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0034",
+    "name": "Test preview",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Preview the complete assembled assessment before publication, using applicable preview environments Preview assembled or edited tests before export/publication",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-034",
+      "V1-029"
+    ],
+    "v2": "Test preview",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0035",
+    "name": "Test printing",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "3x",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Produce a printable representation of the assembled test",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-035"
+    ],
+    "v2": "Test printing",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0036",
+    "name": "Hierarchical content organization",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Organize content through TAO’s hierarchical class/folder structure",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-036"
+    ],
+    "v2": "Hierarchical content organization",
+    "notes": "Priority basis: P3 · High-significance 3.x gap",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P3 · High-significance 3.x gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0037",
+    "name": "Item banking",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Store, browse, preview, edit, select and reuse assessment questions Store, browse, select and reuse assessment items",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-037",
+      "V1-032"
+    ],
+    "v2": "Item banking",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0038",
+    "name": "Test banking",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Store, browse, preview, edit and reuse tests Store, browse and manage reusable tests",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-038",
+      "V1-033"
+    ],
+    "v2": "Test banking",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0039",
+    "name": "Asset banking / Asset Manager",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Store and manage reusable images/media/assets independently from individual items",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-039"
+    ],
+    "v2": "Asset banking / Asset Manager",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0040",
+    "name": "Passage stylesheet management",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "disc",
+    "moscow": "Won't",
+    "visibility": "Shared / common core",
+    "scope": "OUT",
+    "description": "Manage styling/stylesheet behaviour associated with reusable passages",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-041"
+    ],
+    "v2": "Passage stylesheet management",
+    "notes": "Priority basis: P8 · Discontinue / validate",
+    "decision": "DISCONTINUE / VALIDATE",
+    "ideationSheet": "Discontinued",
+    "priorityBasis": "P8 · Discontinue / validate",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0041",
+    "name": "Resource class/folder management",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "disc",
+    "moscow": "Won't",
+    "visibility": "Shared / common core",
+    "scope": "OUT",
+    "description": "Create and manage the classes/folders used to structure the content bank",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-042"
+    ],
+    "v2": "Resource class/folder management",
+    "notes": "Priority basis: P8 · Discontinue / validate",
+    "decision": "DISCONTINUE / VALIDATE",
+    "ideationSheet": "Discontinued",
+    "priorityBasis": "P8 · Discontinue / validate",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0042",
+    "name": "Resource copy & duplication",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Copy or duplicate banked resources, including applicable handling of associated permissions/properties",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-043"
+    ],
+    "v2": "Resource copy & duplication",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0043",
+    "name": "Resource movement",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Move resources between classes/folders",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-044"
+    ],
+    "v2": "Resource movement",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Replace with new approach",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0044",
+    "name": "Resource deletion",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Delete individual or multiple resources from the Library Delete/remove resources from the bank",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-045",
+      "V1-036"
+    ],
+    "v2": "Resource deletion",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0045",
+    "name": "Resource properties",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "View resource identity, status, access scope, content type, format, size, source, quality setting, creation/update dates and generated summary View and manage identity/properties associated with banked resources",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-046",
+      "V1-035"
+    ],
+    "v2": "Resource properties",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0046",
+    "name": "Item version history",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Explicitly commit revisions and restore previous item versions Maintain a history of item revisions",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-047",
+      "3X-048"
+    ],
+    "v2": "Item version history",
+    "notes": "Priority basis: P4 · High-significance gap",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P4 · High-significance gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0047",
+    "name": "Item & test usage information",
+    "category": "Manage & Govern",
+    "markets": [
+      "Professional / Credentialing"
+    ],
+    "origin": "3x",
+    "moscow": "Could",
+    "visibility": "Market-specific",
+    "scope": "V2 candidate",
+    "description": "Identify usage/relationships of items and tests within assessment content",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-049"
+    ],
+    "v2": "Item & test usage information",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0048",
+    "name": "Content preview",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Preview applicable banked resources directly from the content-management environment without entering the full authoring workflow Preview supported source documents, questions, tests, stimuli and other Library resources",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-050",
+      "V1-040"
+    ],
+    "v2": "Content preview",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0049",
+    "name": "Item statistics",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "3x",
+    "moscow": "Must",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Access statistical information associated with banked items Bring IRT analysis into test construction, with NYSED worksheet evidence and initial alignment with CAT functionality.",
+    "source": "OECD Digital Education Outlook 2026 | TAO Authoring - feature list | TAO Authoring Strategic Initiative",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-NEW-001",
+      "SRC-OECD-001"
+    ],
+    "sourceCapIds": [
+      "3X-051",
+      "NEW-006",
+      "OECD-008"
+    ],
+    "v2": "Item statistics",
+    "notes": "Priority basis: P1 · OECD-backed",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P1 · OECD-backed",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0050",
+    "name": "Custom metadata schemas",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Configure categories and metadata applicable to different Studio content/document types Define metadata properties/schema associated with content classes",
+    "source": "TAO Authoring - feature list | TAO Authoring Strategic Initiative | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-NEW-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-052",
+      "V1-042",
+      "NEW-009"
+    ],
+    "v2": "Custom metadata schemas",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0051",
+    "name": "Metadata lists / controlled vocabularies",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Define reusable List categories with controlled metadata/tag values Define reusable lists of allowed metadata values",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-053",
+      "V1-043"
+    ],
+    "v2": "Metadata lists / controlled vocabularies",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0052",
+    "name": "Resource classification",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Apply metadata/classification values to items and other applicable resources Apply categories and tags to applicable Library resources",
+    "source": "TAO Authoring - feature list | TAO Authoring Strategic Initiative | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-NEW-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-054",
+      "V1-046",
+      "NEW-012"
+    ],
+    "v2": "Resource classification",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0053",
+    "name": "Basic content search",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Locate Library resources using identifying information such as filenames and tags Locate resources within the content bank using basic identifying information",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-055",
+      "V1-048"
+    ],
+    "v2": "Basic content search",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0054",
+    "name": "Advanced Search",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Search across filenames, metadata, summaries and extracted resource content Search/filter banked resources based on metadata and resource properties",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-056",
+      "V1-049"
+    ],
+    "v2": "Advanced Search",
+    "notes": "Priority basis: P4 · High-significance gap",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P4 · High-significance gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0055",
+    "name": "Compound search criteria",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Combine search text, multiple categories and tags to progressively refine Library results Combine criteria using Include all / Include any / Include none-style logic",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-057",
+      "V1-053"
+    ],
+    "v2": "Compound search criteria",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0056",
+    "name": "Hierarchy-scoped search",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Search within applicable parts/classes of the content-bank hierarchy",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-058"
+    ],
+    "v2": "Hierarchy-scoped search",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Replace with new approach",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0057",
+    "name": "Item status & workflow",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Manage content lifecycle/status, including Draft → Final and configurable/custom workflows Support an end-to-end professional item-authoring workflow, informed by SME functionality input and obligations such as HK-dir and NYSED.",
+    "source": "TAO Authoring - feature list | TAO Authoring Strategic Initiative",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-NEW-001"
+    ],
+    "sourceCapIds": [
+      "3X-059",
+      "NEW-003"
+    ],
+    "v2": "Item status & workflow",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0058",
+    "name": "Read/write permissions",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Manage permissions in relation to the content-bank hierarchy Grant access to applicable folders/classes/resources",
+    "source": "TAO Authoring - feature list | TAO Authoring Strategic Initiative",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-NEW-001"
+    ],
+    "sourceCapIds": [
+      "3X-060",
+      "3X-061",
+      "3X-062",
+      "NEW-001"
+    ],
+    "v2": "Read/write permissions",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0059",
+    "name": "Statistical metadata",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Associate/import externally generated statistical analysis information with items",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-063"
+    ],
+    "v2": "Statistical metadata",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0060",
+    "name": "QTI 2.x import",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Import standards-based QTI assessment packages, including QTI 2.2 Import supported QTI 2.x packages, including QTI 2.2 content",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-064",
+      "V1-060"
+    ],
+    "v2": "QTI 2.x import",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0061",
+    "name": "QTI 2.x export",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Export applicable questions/tests as QTI 2.2 packages Export applicable items/tests as QTI packages",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-065",
+      "V1-061"
+    ],
+    "v2": "QTI 2.x export",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0062",
+    "name": "QTI 3 import",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Import supported QTI 3 assessment content Import QTI 3 assessment content",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-066",
+      "V1-062"
+    ],
+    "v2": "QTI 3 import",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0063",
+    "name": "QTI 3 export",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Export applicable assessment content as QTI 3.0 packages Export assessment content using QTI 3",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-067",
+      "V1-063"
+    ],
+    "v2": "QTI 3 export",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0064",
+    "name": "CSV / tabular item import",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Upload structured CSV question data for conversion into reusable assessment questions/tests Create/import structured assessment items from CSV/tabular files",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-068",
+      "V1-064"
+    ],
+    "v2": "CSV / tabular item import",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0065",
+    "name": "RDF import/export",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "disc",
+    "moscow": "Won't",
+    "visibility": "Shared / common core",
+    "scope": "OUT",
+    "description": "Exchange supported content using TAO’s legacy RDF formats",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-069"
+    ],
+    "v2": "RDF import/export",
+    "notes": "Priority basis: P8 · Discontinue / validate",
+    "decision": "DISCONTINUE / VALIDATE",
+    "ideationSheet": "Discontinued",
+    "priorityBasis": "P8 · Discontinue / validate",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0066",
+    "name": "APIP import/export",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "disc",
+    "moscow": "Won't",
+    "visibility": "Shared / common core",
+    "scope": "OUT",
+    "description": "Exchange applicable APIP assessment packages",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-070"
+    ],
+    "v2": "APIP import/export",
+    "notes": "Priority basis: P8 · Discontinue / validate",
+    "decision": "DISCONTINUE / VALIDATE",
+    "ideationSheet": "Discontinued",
+    "priorityBasis": "P8 · Discontinue / validate",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0067",
+    "name": "Statistical metadata import",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Import externally produced statistical-analysis data associated with items",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-071"
+    ],
+    "v2": "Statistical metadata import",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0068",
+    "name": "Open API extensibility",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Extend applicable TAO 3.x functionality through its plugin/extension architecture Programmatically import/export assessment content using TAO’s Open APIs",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-072",
+      "3X-079",
+      "3X-080"
+    ],
+    "v2": "Open API extensibility",
+    "notes": "Priority basis: P3 · High-significance 3.x gap",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P3 · High-significance 3.x gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0069",
+    "name": "Test publishing",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Publish a completed/assembled test so that it becomes available for delivery",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-073"
+    ],
+    "v2": "Test publishing",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0070",
+    "name": "Publishing to TAO Advance",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Publish authored tests for use by the NextGen TAO Advance delivery environment",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-074"
+    ],
+    "v2": "Publishing to TAO Advance",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0071",
+    "name": "Delivery creation from a test",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "3x",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Create a delivery based on an authored test",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-075"
+    ],
+    "v2": "Delivery creation from a test",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0072",
+    "name": "Large QTI test publishing",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Specialized publishing capability for particularly large QTI assessments",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-076"
+    ],
+    "v2": "Large QTI test publishing",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0073",
+    "name": "Remote Lists (specialized)",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "disc",
+    "moscow": "Won't",
+    "visibility": "Shared / market-configured",
+    "scope": "OUT",
+    "description": "Integrate externally supplied lists; customer-specific capability originally developed for UDIR",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-081"
+    ],
+    "v2": "Remote Lists (specialized)",
+    "notes": "Priority basis: P8 · Discontinue / validate",
+    "decision": "DISCONTINUE / VALIDATE",
+    "ideationSheet": "Discontinued",
+    "priorityBasis": "P8 · Discontinue / validate",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0074",
+    "name": "Booklets (specialized)",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Professional / Credentialing"
+    ],
+    "origin": "v1",
+    "moscow": "Could",
+    "visibility": "Market-specific",
+    "scope": "V2 candidate",
+    "description": "Generate/use specialized booklet-oriented assessment output; functionality associated with BOSA Generate booklet-oriented assessment outputs using Studio’s supported booklet workflow",
+    "source": "TAO Authoring - feature list | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-3X-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "3X-082",
+      "V1-074"
+    ],
+    "v2": "Booklets (specialized)",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0075",
+    "name": "Customer-specific/custom authoring extensions (specialized)",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "3x",
+    "moscow": "Could",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Additional deployed PCIs or authoring extensions that are not necessarily part of the generic TAO product baseline",
+    "source": "TAO Authoring - feature list",
+    "sourceIds": [
+      "SRC-3X-001"
+    ],
+    "sourceCapIds": [
+      "3X-083"
+    ],
+    "v2": "Customer-specific/custom authoring extensions (specialized)",
+    "notes": "Priority basis: P7 · Lower-evidence / narrower scope",
+    "decision": "Migrate / recreate",
+    "ideationSheet": "3.x Direct Migration to V2",
+    "priorityBasis": "P7 · Lower-evidence / narrower scope",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0076",
+    "name": "Taxonomy-driven item pools",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Build section question pools dynamically from Library content matching specified taxonomy/tag criteria Structure assessment around claims, evidence and tasks so generated or interactive assessments remain defensible.",
+    "source": "OECD Digital Education Outlook 2026 | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-OECD-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-030",
+      "OECD-011"
+    ],
+    "v2": "Taxonomy-driven item pools",
+    "notes": "Priority basis: P1 · OECD-backed",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P1 · OECD-backed",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0077",
+    "name": "Content Library",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Centrally store and browse source documents, study materials, questions, tests, and other supported content",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-031"
+    ],
+    "v2": "Content Library",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0078",
+    "name": "Asset / source material management",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Store and manage source files, study materials and supported media/content assets independently from individual questions",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-034"
+    ],
+    "v2": "Asset / source material management",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0079",
+    "name": "Resource download",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Download source or generated resources from the Library",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-037"
+    ],
+    "v2": "Resource download",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0080",
+    "name": "Bulk content operations",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Select multiple Library resources and perform applicable export, conversion, tagging, download, authoring-send and deletion operations",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-038"
+    ],
+    "v2": "Bulk content operations",
+    "notes": "Priority basis: P4 · High-significance gap",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P4 · High-significance gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0081",
+    "name": "Content relationships & provenance",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Track Origin Document, Related Documents, Derived Files and Project Usage relationships between source and generated/converted content Capture process evidence such as interaction traces, conversation logs or clickstreams where appropriate for assessment.",
+    "source": "OECD Digital Education Outlook 2026 | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-OECD-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-039",
+      "OECD-012"
+    ],
+    "v2": "Content relationships & provenance",
+    "notes": "Priority basis: P1 · OECD-backed",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P1 · OECD-backed",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0082",
+    "name": "Task monitoring",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Monitor conversion, generation, import and export processing activities",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-041"
+    ],
+    "v2": "Task monitoring",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0083",
+    "name": "Hierarchical taxonomies",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Define hierarchical metadata structures such as Subject → Unit → Topic Integrate 1EdTech CASE associations so artifacts can be related to standards frameworks.",
+    "source": "TAO Authoring Strategic Initiative | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-NEW-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-044",
+      "NEW-010"
+    ],
+    "v2": "Hierarchical taxonomies",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0084",
+    "name": "Open-value metadata",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Define categories that permit open/free-form metadata values",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-045"
+    ],
+    "v2": "Open-value metadata",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0085",
+    "name": "Content-type-specific metadata",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Associate different metadata/category configurations with questions, tests, study materials and other document types",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-047"
+    ],
+    "v2": "Content-type-specific metadata",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0086",
+    "name": "Semantic search",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Retrieve resources based on semantic similarity to natural-language search terms, not only exact keyword matches Competitor signal: Surpass provides semantic item search for item-bank management.",
+    "source": "TAO AI Competitor Intelligence Report | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-COMP-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-050",
+      "COMPETITORS-003"
+    ],
+    "v2": "Semantic search",
+    "notes": "Priority basis: P4 · High-significance gap",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P4 · High-significance gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0087",
+    "name": "Content match context",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Display matching content fragments explaining why a resource matched a content-aware search",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-051"
+    ],
+    "v2": "Content match context",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0088",
+    "name": "Taxonomy filtering",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Filter Library resources using configured categories and tags",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-052"
+    ],
+    "v2": "Taxonomy filtering",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0089",
+    "name": "Category counts",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Display dynamic counts of matching Library resources for available metadata categories/values",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-054"
+    ],
+    "v2": "Category counts",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0090",
+    "name": "Saved filters",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Save reusable combinations of taxonomy/category filters and apply them to Library views",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-055"
+    ],
+    "v2": "Saved filters",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0091",
+    "name": "AI-assisted tagging",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Generate metadata/tag suggestions for uploaded, converted or generated resources Use GenAI to support classification of educational resources.",
+    "source": "OECD Digital Education Outlook 2026 | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-OECD-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-056",
+      "OECD-006"
+    ],
+    "v2": "AI-assisted tagging",
+    "notes": "Priority basis: P1 · OECD-backed",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P1 · OECD-backed",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0092",
+    "name": "AI tag review",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Accept or reject AI-generated tag suggestions before they become confirmed metadata",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-057"
+    ],
+    "v2": "AI tag review",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0093",
+    "name": "AI tagging configuration",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Configure AI tagging plans/prompts and determine applicable metadata categories Competitor signal: Surpass publicly emphasises an AI management system and enterprise governance controls.",
+    "source": "OECD Digital Education Outlook 2026 | TAO AI Competitor Intelligence Report | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-COMP-001",
+      "SRC-OECD-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-058",
+      "COMPETITORS-007",
+      "OECD-014"
+    ],
+    "v2": "AI tagging configuration",
+    "notes": "Priority basis: P1 · OECD-backed",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P1 · OECD-backed",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0094",
+    "name": "Project-specific metadata configuration",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Override/configure category assignments for individual conversion/generation projects where supported",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-059"
+    ],
+    "v2": "Project-specific metadata configuration",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0095",
+    "name": "Document/source import",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Upload PDF, DOCX and other supported source/exam documents for storage or conversion",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-065"
+    ],
+    "v2": "Document/source import",
+    "notes": "Priority basis: P4 · High-significance gap",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P4 · High-significance gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0096",
+    "name": "Study-material import",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Upload PDF, DOCX, SCORM and other supported reference/study materials for AI-assisted generation",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-066"
+    ],
+    "v2": "Study-material import",
+    "notes": "Priority basis: P4 · High-significance gap",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P4 · High-significance gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0097",
+    "name": "Booklet export",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Export supported questions/tests into booklet-oriented outputs",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-067"
+    ],
+    "v2": "Booklet export",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0098",
+    "name": "DOCX export",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Produce editable DOCX booklet output from supported assessment content",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-068"
+    ],
+    "v2": "DOCX export",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0099",
+    "name": "PDF export",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Produce fixed-layout PDF booklet output from supported assessment content",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-069"
+    ],
+    "v2": "PDF export",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0100",
+    "name": "QTI conformance validation",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Validate applicable assessment content against QTI 3.0 and QTI 2.2 structural requirements and expose Valid/Pending/Invalid status",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-070"
+    ],
+    "v2": "QTI conformance validation",
+    "notes": "Priority basis: P4 · High-significance gap",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P4 · High-significance gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0101",
+    "name": "Publishing to TAO Authoring",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Send supported Studio-authored or generated assessment content to a connected TAO Authoring environment",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-071"
+    ],
+    "v2": "Publishing to TAO Authoring",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0102",
+    "name": "Target folder selection",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Select an applicable destination in TAO Authoring when publishing Studio content",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-072"
+    ],
+    "v2": "Target folder selection",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0103",
+    "name": "Metadata publishing",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Transfer applicable Studio metadata alongside content when publishing to TAO Authoring",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-073"
+    ],
+    "v2": "Metadata publishing",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0104",
+    "name": "AI-assisted full-test conversion",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Convert an existing assessment into a structured digital test",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-075"
+    ],
+    "v2": "AI-assisted full-test conversion",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0105",
+    "name": "Source-to-output review",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Professional / Credentialing"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Market-specific",
+    "scope": "V2 candidate",
+    "description": "Review source material alongside converted assessment content",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-076"
+    ],
+    "v2": "Source-to-output review",
+    "notes": "Priority basis: P4 · High-significance gap",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P4 · High-significance gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0106",
+    "name": "Question generation projects",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Create projects for generating assessment questions from source/study material",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-077"
+    ],
+    "v2": "Question generation projects",
+    "notes": "Priority basis: P4 · High-significance gap",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P4 · High-significance gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0107",
+    "name": "AI-assisted question generation",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Generate new assessment questions based on supplied source material and generation instructions Competitor signal: Surpass Copilot supports AI-assisted item development and related authoring workflows.",
+    "source": "OECD Digital Education Outlook 2026 | TAO AI Competitor Intelligence Report | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-COMP-001",
+      "SRC-OECD-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-078",
+      "COMPETITORS-001",
+      "OECD-001",
+      "OECD-005"
+    ],
+    "v2": "AI-assisted question generation",
+    "notes": "Priority basis: P1 · OECD-backed",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P1 · OECD-backed",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0108",
+    "name": "AI-assisted full-test generation",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Generate a complete assessment based on supplied source material and requirements Leverage AI across item and test development, and use assessment outcomes to inform personalised learning pathways with curriculum partners.",
+    "source": "TAO Authoring Strategic Initiative | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-NEW-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-079",
+      "NEW-002"
+    ],
+    "v2": "AI-assisted full-test generation",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0109",
+    "name": "Source-grounded generation",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Ground generated assessment content in uploaded study/reference material",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-080"
+    ],
+    "v2": "Source-grounded generation",
+    "notes": "Priority basis: P4 · High-significance gap",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P4 · High-significance gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0110",
+    "name": "Generation guidance",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Provide additional instructions that guide an individual content-generation process",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-081"
+    ],
+    "v2": "Generation guidance",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0111",
+    "name": "Conversion guidance",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Provide additional instructions that guide an individual content-conversion process",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-082"
+    ],
+    "v2": "Conversion guidance",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0112",
+    "name": "Output quality levels",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Configure supported processing/quality levels for AI generation and conversion",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-083"
+    ],
+    "v2": "Output quality levels",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0113",
+    "name": "Per-run quality override",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Override applicable default quality settings for an individual generation/conversion run",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-084"
+    ],
+    "v2": "Per-run quality override",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0114",
+    "name": "Generated-content review",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Review generated questions/tests and associated quality information before subsequent use Evaluate generated questions against configured quality criteria",
+    "source": "OECD Digital Education Outlook 2026 | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-OECD-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-085",
+      "V1-091",
+      "OECD-015"
+    ],
+    "v2": "Generated-content review",
+    "notes": "Priority basis: P1 · OECD-backed",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P1 · OECD-backed",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0115",
+    "name": "Test quality evaluation",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Evaluate generated tests against configured quality criteria",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-086"
+    ],
+    "v2": "Test quality evaluation",
+    "notes": "Priority basis: P4 · High-significance gap",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P4 · High-significance gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0116",
+    "name": "Asset quality evaluation",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Evaluate applicable assets against configured quality criteria",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-087"
+    ],
+    "v2": "Asset quality evaluation",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0117",
+    "name": "Configurable evaluation criteria",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education"
+    ],
+    "origin": "v1",
+    "moscow": "Must",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Configure criteria used by Studio when evaluating generated/converted content Cross-competitor signal: strong organisations combine AI with validity, reliability, fairness, governance and human oversight.",
+    "source": "OECD Digital Education Outlook 2026 | TAO AI Competitor Intelligence Report | TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-COMP-001",
+      "SRC-OECD-001",
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-088",
+      "COMPETITORS-014",
+      "OECD-013"
+    ],
+    "v2": "Configurable evaluation criteria",
+    "notes": "Priority basis: P1 · OECD-backed",
+    "decision": "Evolve / enhance",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P1 · OECD-backed",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0118",
+    "name": "Item quality traits",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Evaluate applicable item-quality characteristics through Studio’s quality evaluation mechanisms",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-089"
+    ],
+    "v2": "Item quality traits",
+    "notes": "Priority basis: P4 · High-significance gap",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P4 · High-significance gap",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0119",
+    "name": "AI-assisted metadata generation",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "v1",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Generate metadata/tag suggestions as part of applicable generation/conversion workflows",
+    "source": "TAO Studio - feature list",
+    "sourceIds": [
+      "SRC-V1-001"
+    ],
+    "sourceCapIds": [
+      "V1-090"
+    ],
+    "v2": "AI-assisted metadata generation",
+    "notes": "Priority basis: P6 · Multi-market core",
+    "decision": "Keep as-is",
+    "ideationSheet": "V1 Carry-forward",
+    "priorityBasis": "P6 · Multi-market core",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0120",
+    "name": "Commenting",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "new",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Provide commenting as an initial collaboration/review feature within the professional authoring workflow.",
+    "source": "TAO Authoring Strategic Initiative",
+    "sourceIds": [
+      "SRC-NEW-001"
+    ],
+    "sourceCapIds": [
+      "NEW-004"
+    ],
+    "v2": "Commenting",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0121",
+    "name": "Standards crosswalk / translation",
+    "category": "Standards & Portability",
+    "markets": [
+      "Traditional / K-12",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning"
+    ],
+    "origin": "new",
+    "moscow": "Must",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Translate the standard associated with an artifact from one state standards framework to another while preserving the distinction between CASE associations and application of standards.",
+    "source": "TAO Authoring Strategic Initiative",
+    "sourceIds": [
+      "SRC-NEW-001"
+    ],
+    "sourceCapIds": [
+      "NEW-011"
+    ],
+    "v2": "Standards crosswalk / translation",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0122",
+    "name": "Hybrid Studio / current Authoring access",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "new",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Explore the ability for users to toggle between Studio and current TAO Authoring, subject to cost, migration and commercial implications.",
+    "source": "TAO Authoring Strategic Initiative",
+    "sourceIds": [
+      "SRC-NEW-001"
+    ],
+    "sourceCapIds": [
+      "NEW-017"
+    ],
+    "v2": "Hybrid Studio / current Authoring access",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0123",
+    "name": "More item types and performance-based interactions",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "new",
+    "moscow": "Must",
+    "visibility": "Shared / market-configured",
+    "scope": "V2 candidate",
+    "description": "Expand item types and performance-based interaction support.",
+    "source": "TAO Authoring Strategic Initiative",
+    "sourceIds": [
+      "SRC-NEW-001"
+    ],
+    "sourceCapIds": [
+      "NEW-018"
+    ],
+    "v2": "More item types and performance-based interactions",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0124",
+    "name": "Item production planning",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "new",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Plan item-production activities across the content-development lifecycle, including planned content, ownership/responsibility, deadlines and expected work.",
+    "source": "TAO Authoring Strategic Initiative",
+    "sourceIds": [
+      "SRC-NEW-001"
+    ],
+    "sourceCapIds": [
+      "NEW-020"
+    ],
+    "v2": "Item production planning",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0125",
+    "name": "Item production monitoring",
+    "category": "Manage & Govern",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "new",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Monitor item-production status and progress from a consolidated view, identify delayed/attention-required work, and understand whether production is on track.",
+    "source": "TAO Authoring Strategic Initiative",
+    "sourceIds": [
+      "SRC-NEW-001"
+    ],
+    "sourceCapIds": [
+      "NEW-021"
+    ],
+    "v2": "Item production monitoring",
+    "notes": "Priority basis: P2 · Internal New Development",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P2 · Internal New Development",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0126",
+    "name": "AI-assisted grading and marking",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "new",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Competitor signal: Learnosity/Questionmark and Surpass show AI-assisted grading/marking productisation.",
+    "source": "TAO AI Competitor Intelligence Report",
+    "sourceIds": [
+      "SRC-COMP-001"
+    ],
+    "sourceCapIds": [
+      "COMPETITORS-002"
+    ],
+    "v2": "AI-assisted grading and marking",
+    "notes": "Priority basis: P5 · Competitive evidence",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P5 · Competitive evidence",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0127",
+    "name": "Similarity / enemy-item detection",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "new",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Competitor signal: Surpass provides similarity and enemy-item detection in item-bank workflows.",
+    "source": "TAO AI Competitor Intelligence Report",
+    "sourceIds": [
+      "SRC-COMP-001"
+    ],
+    "sourceCapIds": [
+      "COMPETITORS-004"
+    ],
+    "v2": "Similarity / enemy-item detection",
+    "notes": "Priority basis: P5 · Competitive evidence",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P5 · Competitive evidence",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0128",
+    "name": "Speech scoring",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "new",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Research signal: Cambium research includes speech scoring.",
+    "source": "TAO AI Competitor Intelligence Report",
+    "sourceIds": [
+      "SRC-COMP-001"
+    ],
+    "sourceCapIds": [
+      "COMPETITORS-011"
+    ],
+    "v2": "Speech scoring",
+    "notes": "Priority basis: P5 · Competitive evidence",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P5 · Competitive evidence",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0129",
+    "name": "Bias, explainability and AI-generated response detection",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "new",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Research signal: Cambium covers bias, explainability and AI-generated response detection.",
+    "source": "TAO AI Competitor Intelligence Report",
+    "sourceIds": [
+      "SRC-COMP-001"
+    ],
+    "sourceCapIds": [
+      "COMPETITORS-012"
+    ],
+    "v2": "Bias, explainability and AI-generated response detection",
+    "notes": "Priority basis: P5 · Competitive evidence",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P5 · Competitive evidence",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0130",
+    "name": "AI-native high-stakes assessment design",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "new",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Benchmark signal: Duolingo English Test integrates AI/ML, data science, linguistics, psychometrics and UX research across the assessment lifecycle.",
+    "source": "TAO AI Competitor Intelligence Report",
+    "sourceIds": [
+      "SRC-COMP-001"
+    ],
+    "sourceCapIds": [
+      "COMPETITORS-013"
+    ],
+    "v2": "AI-native high-stakes assessment design",
+    "notes": "Priority basis: P5 · Competitive evidence",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P5 · Competitive evidence",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0131",
+    "name": "Personalised assessment support",
+    "category": "AI-assisted Authoring",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning"
+    ],
+    "origin": "new",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Use AI to support personalised learning/assessment interactions and feedback while keeping pedagogical goals explicit.",
+    "source": "OECD Digital Education Outlook 2026",
+    "sourceIds": [
+      "SRC-OECD-001"
+    ],
+    "sourceCapIds": [
+      "OECD-002"
+    ],
+    "v2": "Personalised assessment support",
+    "notes": "Priority basis: P1 · OECD-backed",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P1 · OECD-backed",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0132",
+    "name": "Psychometric item validation",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "new",
+    "moscow": "Must",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "description": "Validate assessment items for validity and reliability; use human quality/sensitive review as part of the validation workflow.",
+    "source": "OECD Digital Education Outlook 2026",
+    "sourceIds": [
+      "SRC-OECD-001"
+    ],
+    "sourceCapIds": [
+      "OECD-007"
+    ],
+    "v2": "Psychometric item validation",
+    "notes": "Priority basis: P1 · OECD-backed",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P1 · OECD-backed",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0133",
+    "name": "Process-oriented assessment",
+    "category": "Manage & Govern",
+    "markets": [
+      "Professional / Credentialing"
+    ],
+    "origin": "new",
+    "moscow": "Must",
+    "visibility": "Market-specific",
+    "scope": "V2 candidate",
+    "description": "Assess the process used by learners, not only the final product, including planning, monitoring and adaptation.",
+    "source": "OECD Digital Education Outlook 2026",
+    "sourceIds": [
+      "SRC-OECD-001"
+    ],
+    "sourceCapIds": [
+      "OECD-010"
+    ],
+    "v2": "Process-oriented assessment",
+    "notes": "Priority basis: P1 · OECD-backed",
+    "decision": "DEVELOP / VALIDATE",
+    "ideationSheet": "New Needs & Gaps / Developments",
+    "priorityBasis": "P1 · OECD-backed",
+    "reviewStatus": "AI PROPOSED · PRODUCT REVIEW REQUIRED",
+    "start": 6,
+    "dur": 6
+  },
+  {
+    "id": "CAP-0134",
+    "name": "TTS pronunciation specification authoring",
+    "category": "Create & Design",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "Governed Formative",
+      "Assessment-led Learning",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "new",
+    "owner": "Product",
+    "description": "Allow authors to specify alternative text-to-speech pronunciation for selected authored content, including equations, symbols, units, language-specific forms and other expressions that require spoken output different from the visible text.",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "decision": "Develop",
+    "sourceIds": [
+      "SRC-JIRA-001"
+    ],
+    "v2": "TTS pronunciation specification authoring",
+    "notes": "Created from PCR-172.",
+    "start": 0,
+    "dur": 1,
+    "admission": "Candidate"
+  },
+  {
+    "id": "CAP-0136",
+    "name": "Scoring rule debugging and traceability",
+    "category": "Collaborate & Assure Quality",
+    "markets": [
+      "Traditional / K-12",
+      "Professional / Credentialing",
+      "Higher Education",
+      "MEXCBT / Uchida"
+    ],
+    "origin": "new",
+    "owner": "Product",
+    "description": "Provide a clearer test-level way to troubleshoot manual and automatic scoring, showing how final scores are calculated so authors and assessment specialists can identify scoring-rule problems without relying on low-level technical inspection.",
+    "moscow": "Should",
+    "visibility": "Shared / common core",
+    "scope": "V2 candidate",
+    "decision": "Develop",
+    "sourceIds": [
+      "SRC-JIRA-001"
+    ],
+    "v2": "Scoring rule debugging and traceability",
+    "notes": "Created from PCR-305.",
+    "start": 0,
+    "dur": 1,
+    "admission": "Candidate"
+  }
+]

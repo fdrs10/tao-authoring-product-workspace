@@ -1,0 +1,134 @@
+Global CAP-ID,Capability,Strategic Category,Ideation Sheet,MoSCoW,Traditional / K-12,Professional / Credentialing,Higher Education,Governed Formative,Assessment-led Learning,MEXCBT / Uchida,Market Count
+CAP-0001,Item creation & editing,Standards & Portability,V1 Carry-forward,MUST,●,●,●,●,●,●,6
+CAP-0002,Standard response interactions,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0003,Inline interactions,Create & Design,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0004,Graphical interactions,Create & Design,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0005,Additional/custom PCIs,Standards & Portability,3.x Direct Migration to V2,MUST,●,●,,,,●,3
+CAP-0006,Rich-text authoring,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0007,Mathematical content,Create & Design,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0008,Images & media,Manage & Govern,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0009,Passages / shared stimuli,Create & Design,3.x Direct Migration to V2,COULD,●,●,●,,,,3
+CAP-0010,Response configuration & correct answers,Create & Design,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0011,Scoring & response processing,AI-assisted Authoring,V1 Carry-forward,MUST,●,●,,,,●,3
+CAP-0012,Feedback,AI-assisted Authoring,V1 Carry-forward,MUST,●,,●,●,●,,4
+CAP-0013,Item styling,Create & Design,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0014,Item source editing,Standards & Portability,3.x Direct Migration to V2,SHOULD,●,●,●,●,●,●,6
+CAP-0015,Item preview,Standards & Portability,V1 Carry-forward,MUST,●,●,●,●,●,●,6
+CAP-0016,Item printing,Create & Design,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0017,Item language & writing direction,Standards & Portability,3.x Direct Migration to V2,SHOULD,●,●,●,●,●,●,6
+CAP-0018,Test creation & editing,Collaborate & Assure Quality,V1 Carry-forward,MUST,●,●,●,●,●,●,6
+CAP-0019,Test structure,Collaborate & Assure Quality,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0020,Test parts & sections management,Create & Design,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0021,Item placement & organization,Create & Design,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0022,Item selection,Collaborate & Assure Quality,V1 Carry-forward,MUST,●,●,●,,,,3
+CAP-0023,Random item selection,Collaborate & Assure Quality,V1 Carry-forward,MUST,●,●,●,,,,3
+CAP-0024,Ordering & shuffling,Create & Design,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0025,Navigation configuration,Create & Design,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0026,Time limits,Create & Design,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0027,Test-taker tools configuration,Create & Design,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0028,Test/part/section/item settings,Create & Design,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0029,Scoring weights,Collaborate & Assure Quality,V1 Carry-forward,COULD,●,●,,,,●,3
+CAP-0030,Rubrics & instructions,Collaborate & Assure Quality,V1 Carry-forward,COULD,●,●,●,,,,3
+CAP-0031,Categories,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0032,Test-level outcome/scoring configuration,Standards & Portability,V1 Carry-forward,SHOULD,●,●,,,,●,3
+CAP-0033,Test XML editing,Create & Design,3.x Direct Migration to V2,COULD,●,●,●,,,,3
+CAP-0034,Test preview,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0035,Test printing,Create & Design,3.x Direct Migration to V2,COULD,●,●,●,,,,3
+CAP-0036,Hierarchical content organization,Manage & Govern,3.x Direct Migration to V2,MUST,●,●,●,●,●,●,6
+CAP-0037,Item banking,Collaborate & Assure Quality,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0038,Test banking,Collaborate & Assure Quality,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0039,Asset banking / Asset Manager,Manage & Govern,3.x Direct Migration to V2,SHOULD,●,●,●,●,●,●,6
+CAP-0040,Passage stylesheet management,Manage & Govern,Discontinued,WON'T,●,●,●,●,●,●,6
+CAP-0041,Resource class/folder management,Manage & Govern,Discontinued,WON'T,●,●,●,●,●,●,6
+CAP-0042,Resource copy & duplication,Manage & Govern,3.x Direct Migration to V2,SHOULD,●,●,●,●,●,●,6
+CAP-0043,Resource movement,Manage & Govern,3.x Direct Migration to V2,SHOULD,●,●,●,●,●,●,6
+CAP-0044,Resource deletion,Manage & Govern,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0045,Resource properties,Collaborate & Assure Quality,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0046,Item version history,Manage & Govern,3.x Direct Migration to V2,SHOULD,●,●,●,●,●,●,6
+CAP-0047,Item & test usage information,Manage & Govern,3.x Direct Migration to V2,COULD,,●,,,,,1
+CAP-0048,Content preview,Collaborate & Assure Quality,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0049,Item statistics,AI-assisted Authoring,3.x Direct Migration to V2,MUST,●,●,●,,,,3
+CAP-0050,Custom metadata schemas,Standards & Portability,V1 Carry-forward,MUST,●,●,●,●,●,●,6
+CAP-0051,Metadata lists / controlled vocabularies,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0052,Resource classification,Standards & Portability,V1 Carry-forward,MUST,●,●,●,●,●,●,6
+CAP-0053,Basic content search,Manage & Govern,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0054,Advanced Search,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0055,Compound search criteria,Manage & Govern,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0056,Hierarchy-scoped search,Manage & Govern,3.x Direct Migration to V2,SHOULD,●,●,●,●,●,●,6
+CAP-0057,Item status & workflow,Collaborate & Assure Quality,3.x Direct Migration to V2,MUST,●,●,●,●,●,●,6
+CAP-0058,Read/write permissions,Manage & Govern,3.x Direct Migration to V2,MUST,●,●,●,●,●,●,6
+CAP-0059,Statistical metadata,Standards & Portability,3.x Direct Migration to V2,SHOULD,●,●,●,●,●,●,6
+CAP-0060,QTI 2.x import,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0061,QTI 2.x export,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0062,QTI 3 import,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0063,QTI 3 export,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0064,CSV / tabular item import,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0065,RDF import/export,Standards & Portability,Discontinued,WON'T,●,●,●,●,●,●,6
+CAP-0066,APIP import/export,Standards & Portability,Discontinued,WON'T,●,●,●,●,●,●,6
+CAP-0067,Statistical metadata import,Standards & Portability,3.x Direct Migration to V2,SHOULD,●,●,●,●,●,●,6
+CAP-0068,Open API extensibility,Standards & Portability,3.x Direct Migration to V2,MUST,●,●,●,●,●,●,6
+CAP-0069,Test publishing,Create & Design,3.x Direct Migration to V2,SHOULD,●,●,●,●,●,●,6
+CAP-0070,Publishing to TAO Advance,Create & Design,3.x Direct Migration to V2,SHOULD,●,●,●,●,●,●,6
+CAP-0071,Delivery creation from a test,Create & Design,3.x Direct Migration to V2,COULD,●,●,●,,,,3
+CAP-0072,Large QTI test publishing,Standards & Portability,3.x Direct Migration to V2,SHOULD,●,●,●,●,●,●,6
+CAP-0073,Remote Lists (specialized),Create & Design,Discontinued,WON'T,●,●,●,,,,3
+CAP-0074,Booklets (specialized),Collaborate & Assure Quality,V1 Carry-forward,COULD,,●,,,,,1
+CAP-0075,Customer-specific/custom authoring extensions (specialized),Standards & Portability,3.x Direct Migration to V2,COULD,●,●,,,,●,3
+CAP-0076,Taxonomy-driven item pools,Standards & Portability,V1 Carry-forward,MUST,●,●,●,●,●,●,6
+CAP-0077,Content Library,Manage & Govern,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0078,Asset / source material management,Manage & Govern,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0079,Resource download,Manage & Govern,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0080,Bulk content operations,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0081,Content relationships & provenance,Manage & Govern,V1 Carry-forward,MUST,●,●,●,●,●,●,6
+CAP-0082,Task monitoring,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0083,Hierarchical taxonomies,Standards & Portability,V1 Carry-forward,MUST,●,●,●,●,●,●,6
+CAP-0084,Open-value metadata,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0085,Content-type-specific metadata,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0086,Semantic search,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0087,Content match context,Manage & Govern,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0088,Taxonomy filtering,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0089,Category counts,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0090,Saved filters,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0091,AI-assisted tagging,Standards & Portability,V1 Carry-forward,MUST,●,●,●,●,●,●,6
+CAP-0092,AI tag review,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0093,AI tagging configuration,Standards & Portability,V1 Carry-forward,MUST,●,●,●,●,●,●,6
+CAP-0094,Project-specific metadata configuration,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0095,Document/source import,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0096,Study-material import,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0097,Booklet export,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0098,DOCX export,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0099,PDF export,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0100,QTI conformance validation,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0101,Publishing to TAO Authoring,Create & Design,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0102,Target folder selection,Manage & Govern,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0103,Metadata publishing,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0104,AI-assisted full-test conversion,AI-assisted Authoring,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0105,Source-to-output review,Collaborate & Assure Quality,V1 Carry-forward,SHOULD,,●,,,,,1
+CAP-0106,Question generation projects,AI-assisted Authoring,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0107,AI-assisted question generation,Standards & Portability,V1 Carry-forward,MUST,●,●,●,●,●,●,6
+CAP-0108,AI-assisted full-test generation,AI-assisted Authoring,V1 Carry-forward,MUST,●,●,●,●,●,●,6
+CAP-0109,Source-grounded generation,AI-assisted Authoring,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0110,Generation guidance,AI-assisted Authoring,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0111,Conversion guidance,Manage & Govern,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0112,Output quality levels,AI-assisted Authoring,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0113,Per-run quality override,AI-assisted Authoring,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0114,Generated-content review,AI-assisted Authoring,V1 Carry-forward,MUST,●,●,●,●,●,●,6
+CAP-0115,Test quality evaluation,AI-assisted Authoring,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0116,Asset quality evaluation,AI-assisted Authoring,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0117,Configurable evaluation criteria,AI-assisted Authoring,V1 Carry-forward,MUST,●,●,●,,,,3
+CAP-0118,Item quality traits,AI-assisted Authoring,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0119,AI-assisted metadata generation,Standards & Portability,V1 Carry-forward,SHOULD,●,●,●,●,●,●,6
+CAP-0120,Commenting,Collaborate & Assure Quality,New Needs & Gaps / Developments,MUST,●,●,●,●,●,●,6
+CAP-0121,Standards crosswalk / translation,Standards & Portability,New Needs & Gaps / Developments,MUST,●,,●,●,●,,4
+CAP-0122,Hybrid Studio / current Authoring access,Manage & Govern,New Needs & Gaps / Developments,MUST,●,●,●,●,●,●,6
+CAP-0123,More item types and performance-based interactions,Create & Design,New Needs & Gaps / Developments,MUST,●,●,,,,●,3
+CAP-0124,Item production planning,Manage & Govern,New Needs & Gaps / Developments,MUST,●,●,●,●,●,●,6
+CAP-0125,Item production monitoring,Manage & Govern,New Needs & Gaps / Developments,MUST,●,●,●,●,●,●,6
+CAP-0126,AI-assisted grading and marking,AI-assisted Authoring,New Needs & Gaps / Developments,SHOULD,●,●,●,●,●,●,6
+CAP-0127,Similarity / enemy-item detection,Collaborate & Assure Quality,New Needs & Gaps / Developments,SHOULD,●,●,●,●,●,●,6
+CAP-0128,Speech scoring,Collaborate & Assure Quality,New Needs & Gaps / Developments,SHOULD,●,●,●,●,●,●,6
+CAP-0129,"Bias, explainability and AI-generated response detection",AI-assisted Authoring,New Needs & Gaps / Developments,SHOULD,●,●,●,●,●,●,6
+CAP-0130,AI-native high-stakes assessment design,AI-assisted Authoring,New Needs & Gaps / Developments,SHOULD,●,●,●,●,●,●,6
+CAP-0131,Personalised assessment support,AI-assisted Authoring,New Needs & Gaps / Developments,MUST,●,●,●,●,●,,5
+CAP-0132,Psychometric item validation,Collaborate & Assure Quality,New Needs & Gaps / Developments,MUST,●,●,●,●,●,●,6
+CAP-0133,Process-oriented assessment,Manage & Govern,New Needs & Gaps / Developments,MUST,,●,,,,,1
