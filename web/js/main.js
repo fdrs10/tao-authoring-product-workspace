@@ -1,0 +1,53 @@
+// Application shell + hash router (§2). API is authoritative; nothing
+// canonical is cached in JS or LocalStorage (§19: only X-User-Ref as a
+// personal preference).
+
+import { setUserRef, getUserRef } from './api.js';
+import { renderIdeation } from './views/ideation.js';
+import { renderSources } from './views/sources.js';
+import { renderBacklog } from './views/backlog.js';
+import { renderRoadmapPlaceholder } from './views/roadmap.js';
+import { renderMigrationPlaceholder } from './views/migration.js';
+import { openCapModal } from './components/capmodal.js';
+import { el } from './ui.js';
+
+const main = document.getElementById('app-main');
+
+function setActive(route) {
+  document.querySelectorAll('#main-nav a').forEach((a) => {
+    a.classList.toggle('active', a.dataset.route === route);
+  });
+}
+
+async function route() {
+  const hash = location.hash || '#/ideation/01';
+  const parts = hash.replace(/^#\//, '').split('/');
+  const [root, sub] = parts;
+  try {
+    if (root === 'ideation') { setActive('ideation'); await renderIdeation(main, sub || '01'); }
+    else if (root === 'sources') { setActive('sources'); await renderSources(main); }
+    else if (root === 'roadmap') { setActive('roadmap'); await renderRoadmapPlaceholder(main); }
+    else if (root === 'migration') { setActive('migration'); await renderMigrationPlaceholder(main); }
+    else if (root === 'backlog') { setActive('ideation'); await renderBacklog(main); }
+    else { location.hash = '#/ideation/01'; }
+  } catch (err) {
+    main.replaceChildren(el('div', { class: 'notice error' },
+      `Render failed: ${err.detail ? JSON.stringify(err.detail) : err.message}`));
+    throw err; // surfaced in smoke tests as page error
+  }
+}
+
+// universal CAP-ID interaction (§7/§23)
+window.addEventListener('open-cap', (e) => openCapModal(e.detail));
+// cross-view refresh when canonical data changes via the modal/editors
+window.addEventListener('cap:changed', () => { route().catch(() => {}); });
+
+const chip = document.getElementById('user-ref');
+chip.textContent = getUserRef();
+chip.addEventListener('click', () => {
+  const v = prompt('DEV identity (X-User-Ref):', getUserRef());
+  if (v !== null) { setUserRef(v); chip.textContent = getUserRef(); }
+});
+
+window.addEventListener('hashchange', () => route().catch(() => {}));
+route();

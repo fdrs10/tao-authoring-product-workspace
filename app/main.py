@@ -13,7 +13,7 @@ from fastapi import FastAPI
 
 from .config import settings
 from .db import ping
-from .routers import capabilities, customers, jira, roadmap, sources
+from .routers import capabilities, customers, jira, markets, roadmap, sources
 
 
 class JsonFormatter(logging.Formatter):
@@ -45,8 +45,15 @@ log = logging.getLogger("tao.app")
 app = FastAPI(title="TAO Authoring Product Workspace", version=settings.version)
 
 for r in (capabilities.router, sources.router, jira.router,
-          roadmap.router, customers.router):
+          roadmap.router, customers.router, markets.router):
     app.include_router(r)
+
+from pathlib import Path
+
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+
+WEB_DIR = Path(__file__).resolve().parent.parent / "web"
 
 
 @app.get("/health")
@@ -72,3 +79,17 @@ def health_db():
         from fastapi.responses import JSONResponse
         return JSONResponse(status_code=503, content=body)
     return body
+
+
+# --- static frontend (Phase 4) ---
+# API is authoritative; the SPA consumes it. Registered AFTER every API and
+# health route so /api/* and /health* always win over the catch-all.
+if WEB_DIR.exists():
+    app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")
+
+    @app.get("/{full_path:path}", include_in_schema=False)
+    def spa(full_path: str):
+        candidate = WEB_DIR / full_path
+        if full_path and candidate.is_file():
+            return FileResponse(candidate)
+        return FileResponse(WEB_DIR / "index.html")
