@@ -1,0 +1,55 @@
+# Local development environment (NOT the Cloud deployment; §15 keeps the
+# app Cloud-compatible from day one).
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: tao_authoring
+      POSTGRES_USER: tao
+      POSTGRES_PASSWORD: tao_dev_password
+    ports:
+      - "127.0.0.1:54323:5432"
+    volumes:
+      - tao_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tao -d tao_authoring"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  app:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      APP_ENV: local
+      DATABASE_URL: postgresql+psycopg://tao:tao_dev_password@db:5432/tao_authoring
+      PORT: "8080"
+      LOG_FORMAT: json
+    ports:
+      - "127.0.0.1:8080:8080"
+
+  migrate:
+    build: .
+    command: alembic upgrade head
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://tao:tao_dev_password@db:5432/tao_authoring
+
+  import:
+    build: .
+    command: python scripts/import/import_canonical.py
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg://tao:tao_dev_password@db:5432/tao_authoring
+    volumes:
+      - ./data:/app/data:ro   # governed datasets mounted read-only
+      - ./scripts:/app/scripts:ro
+
+volumes:
+  tao_pgdata:
