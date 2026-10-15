@@ -1,0 +1,145 @@
+# CI — runs BEFORE any deployment (Phase 6, contract §4).
+# A failure in any job blocks deployment (deploy.yml requires this workflow's
+# success via workflow_run).
+#
+# Local parity: .venv/bin/python -m pytest tests  (74+ tests, one invocation)
+#                bash scripts/ops/pipeline_from_empty.sh
+
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PIP_NO_CACHE_DIR: "1"
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: tao
+          POSTGRES_PASSWORD: tao_dev_password
+          POSTGRES_DB: postgres
+        ports: ["54323:5432"]
+        options: >-
+          --health-cmd "pg_isready -U tao"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - name: API + export + docstore tests (Phase 3/5/6)
+        run: .venv/bin/pytest tests/api -q -p no:cacheprovider 2>/dev/null || pytest tests/api -q -p no:cacheprovider
+        env:
+          TEST_DATABASE_URL: postgresql://tao:tao_dev_password@localhost:54323/tao_authoring_test
+          TEST_ADMIN_URL: postgresql://tao:tao_dev_password@localhost:54323/postgres
+
+  js-esm-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pytest==9.1.1
+      - name: ESM syntax gate (node --check passes broken ESM; this does not)
+        run: pytest tests/js -q -p no:cacheprovider
+
+  migration-import-pipeline:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: tao
+          POSTGRES_PASSWORD: tao_dev_password
+          POSTGRES_DB: postgres
+        ports: ["54323:5432"]
+        options: >-
+          --health-cmd "pg_isready -U tao"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt alembic==1.20.0
+      - name: empty DB → migrate → import → validate → boot → smoke
+        run: bash scripts/ops/pipeline_from_empty.sh
+        env:
+          PIPELINE_ADMIN_URL: postgresql://tao:tao_dev_password@localhost:54323/postgres
+          PIPELINE_DB_URL: postgresql://tao:tao_dev_password@localhost:54323/tao_authoring_pipeline
+          PIPELINE_APP_PORT: "8097"
+
+  playwright-e2e:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: tao
+          POSTGRES_PASSWORD: tao_dev_password
+          POSTGRES_DB: postgres
+        ports: ["54323:5432"]
+        options: >-
+          --health-cmd "pg_isready -U tao"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements-dev.txt
+      - run: playwright install --with-deps chromium
+      - name: UI E2E (Phase 4 + Phase 5, §55 blank-screen guard)
+        run: pytest tests/ui -q -p no:cacheprovider
+
+  container-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build application image
+        run: docker build -t tao-authoring:ci .
+      - name: Graceful DB failure + $PORT + SPA shell (no DB needed)
+        run: |
+          docker run -d --name smoke -p 8091:8091 -e PORT=8091 \
+            -e LOG_FORMAT=json \
+            -e DATABASE_URL=postgresql+psycopg://tao:x@127.0.0.1:59999/nope \
+            tao-authoring:ci
+          sleep 4
+          code_health=$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8091/health)
+          code_db=$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8091/health/db)
+          code_spa=$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8091/)
+          docker rm -f smoke >/dev/null
+          [ "$code_health" = "200" ] || { echo "/health expected 200, got $code_health"; exit 1; }
+          [ "$code_db" = "503" ]     || { echo "/health/db expected 503 when DB down, got $code_db"; exit 1; }
+          [ "$code_spa" = "200" ]    || { echo "SPA shell expected 200, got $code_spa"; exit 1; }
+          echo "container smoke OK (health=200, db-down=503, spa=200)"
+
+  # Deployment gate: every job above must pass. The actual deployment lives in
+  # deploy.yml (workflow_run after ci on main) and additionally requires the
+  # 'gcp-dev' GitHub Environment + Cloud Run/SQL credentials, which are NOT
+  # yet provisioned (see PHASE_6_REPORT.md §external inputs).
+  all-green:
+    needs: [api-tests, js-esm-gate, migration-import-pipeline, playwright-e2e, container-smoke]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "CI gate passed — deployment may proceed (deploy.yml)"

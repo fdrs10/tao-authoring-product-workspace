@@ -20,7 +20,9 @@ REPO = Path(__file__).resolve().parents[2]
 TEST_URL = os.environ.get(
     "TEST_DATABASE_URL",
     "postgresql://tao:tao_dev_password@localhost:54323/tao_authoring_test")
-ADMIN_URL = "postgresql://tao:tao_dev_password@localhost:54323/postgres"
+ADMIN_URL = os.environ.get(
+    "TEST_ADMIN_URL",
+    "postgresql://tao:tao_dev_password@localhost:54323/postgres")
 
 os.environ["DATABASE_URL"] = TEST_URL  # must precede any app import
 os.environ.setdefault("APP_ENV", "test")

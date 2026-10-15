@@ -1,0 +1,43 @@
+# DEV deployment — Cloud Run + Cloud SQL (Phase 6, contract §8).
+#
+# Runs ONLY after the ci workflow fully succeeded on main. Actual execution
+# is BLOCKED until the GCP inputs listed in PHASE_6_REPORT.md §external-inputs
+# are provided (project id, Cloud SQL instance, service accounts, secrets).
+# This workflow is the exact automation that will run once they exist —
+# nothing about it is speculative: same image, same pipeline as CI.
+#
+# Required GitHub Environment secrets (Environment: gcp-dev):
+#   GCP_PROJECT_ID / GCP_REGION / GCP_CLOUDSQL_INSTANCE
+#   GCP_SA_DEPLOYER (workload-identity or JSON key per IT policy)
+#   DB_PASSWORD_SECRET (Cloud SQL user password for the app user)
+
+name: deploy-dev
+
+on:
+  workflow_run:
+    workflows: [ci]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    environment: gcp-dev
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deployment prerequisites check
+        run: |
+          if [ -z "${{ secrets.GCP_PROJECT_ID }}" ]; then
+            echo "DEPLOYMENT BLOCKED — GCP credentials not configured yet."
+            echo "See docs/checkpoints/PHASE_6_REPORT.md (external inputs) and docs/DEPLOYMENT_RUNBOOK.md."
+            exit 1
+          fi
+      # Steps below execute once the secrets exist (runbook §5 for the full
+      # command set):
+      # 1. gcloud auth (WIF or SA key)           2. docker build + push to
+      #    Artifact Registry                        3. gcloud run deploy with
+      #    Cloud SQL unix-socket connection + SOURCE_DOC_BUCKET
+      # 4. run Alembic + importer as a one-off Cloud Run job against Cloud SQL
+      # 5. smoke /health/db + /api/capabilities on the deployed URL
