@@ -52,5 +52,8 @@ export const endpoints = {
   roadmap: (params = '') => `/api/roadmap${params}`,
   roadmapTiming: (id) => `/api/roadmap/${encodeURIComponent(id)}`,
   milestones: () => '/api/milestones',
+  milestone: (id) => `/api/milestones/${encodeURIComponent(id)}`,
+  outcomes: () => '/api/outcomes',
+  outcome: (h) => `/api/outcomes/${encodeURIComponent(h)}`,
   customers: () => '/api/customers',
 };

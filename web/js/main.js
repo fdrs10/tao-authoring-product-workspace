@@ -6,8 +6,8 @@ import { setUserRef, getUserRef } from './api.js';
 import { renderIdeation } from './views/ideation.js';
 import { renderSources } from './views/sources.js';
 import { renderBacklog } from './views/backlog.js';
-import { renderRoadmapPlaceholder } from './views/roadmap.js';
-import { renderMigrationPlaceholder } from './views/migration.js';
+import { renderRoadmap } from './views/roadmap.js';
+import { renderMigration } from './views/migration.js';
 import { openCapModal } from './components/capmodal.js';
 import { el } from './ui.js';
 
@@ -26,8 +26,8 @@ async function route() {
   try {
     if (root === 'ideation') { setActive('ideation'); await renderIdeation(main, sub || '01'); }
     else if (root === 'sources') { setActive('sources'); await renderSources(main); }
-    else if (root === 'roadmap') { setActive('roadmap'); await renderRoadmapPlaceholder(main); }
-    else if (root === 'migration') { setActive('migration'); await renderMigrationPlaceholder(main); }
+    else if (root === 'roadmap') { setActive('roadmap'); await renderRoadmap(main); }
+    else if (root === 'migration') { setActive('migration'); await renderMigration(main); }
     else if (root === 'backlog') { setActive('ideation'); await renderBacklog(main); }
     else { location.hash = '#/ideation/01'; }
   } catch (err) {
