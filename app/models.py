@@ -73,6 +73,13 @@ class RoadmapTimingPatch(BaseModel):
     duration_months: int = Field(ge=1)
 
 
+class OutcomePatch(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    version: int = Field(ge=1)
+    narrative: str | None = None
+
+
 class MilestoneCreate(BaseModel):
     model_config = ConfigDict(extra="forbid")
 

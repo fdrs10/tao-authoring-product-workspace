@@ -114,11 +114,13 @@ def patch_roadmap_timing(cap_id: str, body: RoadmapTimingPatch,
                              {"start_month": body.start_month,
                               "duration_months": body.duration_months},
                              ["start_month", "duration_months"])
+                new_version = row[2] + 1
         except HTTPException:
             conn.rollback()
             raise
         conn.commit()
-    return {"updated": True, "cap_id": cap_id}
+    return {"updated": True, "cap_id": cap_id,
+            "version": new_version if row is not None else 2}
 
 
 @router.get("/milestones")
