@@ -41,10 +41,12 @@ def _commit(cap: str, start: int, dur: int, admission: str = "COMMITTED"):
 
 def _milestone(mid: str, name: str, pos: int, scope_type: str = "global",
                scope_ref: str | None = None):
+    """Create a fixture milestone; tolerate the governed baseline (M1–M6 now
+    ship with the product — UAT STRUCTURAL UPDATE §22)."""
     r = httpx.post(f"{BASE_API}/api/milestones", headers=H, json={
         "milestone_id": mid, "name": name, "position_month": pos,
         "scope_type": scope_type, "scope_ref": scope_ref})
-    assert r.status_code == 201, r.text
+    assert r.status_code in (201, 409), r.text
 
 
 def _roadmap_timing(cap: str) -> dict:
@@ -219,7 +221,7 @@ def test_jira_target_release_display_only(page: Page):
     _commit("CAP-9002", 1, 2)   # CAP-9002 carries jira PCR-TEST-1 (seeded link)
     page.goto("/#/roadmap")
     bar = page.locator('[data-testid="cap-bar"][data-cap="CAP-9002"]')
-    expect(bar).to_have_count(2)   # one per governed market band (D-R1)
+    expect(bar).to_have_count(1)   # D-R1 confirmed: each CAP renders exactly once (market = filter, not lane)
     title = bar.first.get_attribute("title")
     assert "PCR-TEST-1" in title                    # evidence visible (§9)
     row = _roadmap_timing("CAP-9002")
@@ -230,15 +232,19 @@ def test_jira_target_release_display_only(page: Page):
 
 def test_milestone_lines_render_and_drag_persists(page: Page):
     _commit("CAP-9001", 0, 3)
-    _milestone("M1", "Fixture milestone one", 4)
+    _milestone("MT1", "Fixture milestone one", 4)
     page.goto("/#/roadmap")
-    line = page.locator('[data-testid="milestone-line"][data-ms="M1"]')
-    expect(line).to_have_count(1)
-    expect(page.locator('[data-testid="milestone-label"]')).to_have_text("Fixture milestone one")
-    track = _track_of(page, line)
-    _drag(page, line, track.bounding_box()["width"] / 27 * 2)   # 4 → 6
+    page.locator('[data-testid="rfilter-admission"]').select_option("All")  # D-R3 default is COMMITTED
+    line = page.locator('[data-testid="milestone-line"][data-ms="MT1"]')
+    # D-R1: a global milestone renders on every category lane (labelled once
+    # per category) — assert presence, drag the first instance.
+    expect(line.first).to_be_visible(timeout=10000)
+    # baseline M1–M6 exist; the fixture label appears on its own line(s)
+    expect(page.locator('[data-testid="milestone-label"]', has_text="Fixture milestone one").first).to_be_visible()
+    track = _track_of(page, line.first)
+    _drag(page, line.first, track.bounding_box()["width"] / 27 * 2)   # 4 → 6
     row = [m for m in httpx.get(f"{BASE_API}/api/milestones").json()["items"]
-           if m["milestone_id"] == "M1"][0]
+           if m["milestone_id"] == "MT1"][0]
     assert row["position_month"] == 6
 
 
@@ -256,36 +262,38 @@ def test_quarter_view_report(page: Page):
 
 # ---------- Migration (§12–§15) ----------
 
-def test_migration_empty_states_are_honest(page: Page):
+def test_migration_states_are_honest(page: Page):
+    """Since the UAT structural update the M1–M6 baseline ships as governed
+    data (§22/§23); customers remain honestly empty (D3)."""
     page.goto("/#/migration")
-    expect(page.locator('[data-testid="milestones-empty"]')).to_contain_text("never invents")
+    expect(page.locator('[data-testid="milestone-row"]')).to_have_count(6)
     expect(page.locator('[data-testid="customers-empty"]')).to_contain_text("D3")
 
 
 def test_migration_derived_availability_and_shared_milestones(page: Page):
     _commit("CAP-9001", 0, 3)          # ends month 3 → unlocked before M1@4
     _commit("CAP-9004", 3, 4)          # 3..7 → in flight during M1→M2
-    _milestone("M1", "Fixture M1", 4)
-    _milestone("M2", "Fixture M2", 12)
+    _milestone("MT1", "Fixture M1", 4)
+    _milestone("MT2", "Fixture M2", 12)
     page.goto("/#/migration")
-    expect(page.locator('[data-testid="milestone-row"]')).to_have_count(2)
-    iv1 = page.locator('[data-testid="interval-row"][data-interval="1"]')  # M1 → M2
+    expect(page.locator('[data-testid="milestone-row"]', has_text="Fixture")).to_have_count(2)
+    iv1 = page.locator('[data-testid="interval-row"]', has_text="MT1 → M2")  # M1 → M2
     expect(iv1.locator('[data-testid="interval-unlocked"][data-cap="CAP-9001"]')).to_have_count(1)
     expect(iv1.locator('[data-testid="interval-inflight"][data-cap="CAP-9004"]')).to_have_count(1)
 
 
 def test_migration_timing_change_updates_derivation(page: Page):
     _commit("CAP-9001", 0, 3)
-    _milestone("M1", "Fixture M1", 4)
-    _milestone("M2", "Fixture M2", 12)
+    _milestone("MT1", "Fixture M1", 4)
+    _milestone("MT2", "Fixture M2", 12)
     page.goto("/#/migration")
-    iv1 = page.locator('[data-testid="interval-row"][data-interval="1"]')
+    iv1 = page.locator('[data-testid="interval-row"]', has_text="MT1 → M2")
     expect(iv1.locator('[data-testid="interval-unlocked"][data-cap="CAP-9001"]')).to_have_count(1)
     # Product moves the work → derivation follows (no manual duplication, §13)
     _commit("CAP-9001", 5, 4)          # now in flight during M1→M2
     page.reload()                       # same-hash goto would not re-render
     page.wait_for_timeout(600)
-    iv1 = page.locator('[data-testid="interval-row"][data-interval="1"]')
+    iv1 = page.locator('[data-testid="interval-row"]', has_text="MT1 → M2")
     expect(iv1.locator('[data-testid="interval-unlocked"][data-cap="CAP-9001"]')).to_have_count(0)
     expect(iv1.locator('[data-testid="interval-inflight"][data-cap="CAP-9001"]')).to_have_count(1)
 
@@ -298,7 +306,7 @@ def test_customer_transition_interval_and_blockers(page: Page):
         "blockers": "data migration; training",
         "earliest_milestone_interval": "M1 -> M2"})
     assert r.status_code == 201
-    _milestone("M1", "Fixture M1", 4)
+    _milestone("MT1", "Fixture M1", 4)
     page.goto("/#/migration")
     row = page.locator('[data-testid="customer-row"][data-customer="CUST-FIX-1"]')
     expect(row.locator('[data-testid="cust-interval"]')).to_have_text("M1 -> M2")
@@ -307,18 +315,18 @@ def test_customer_transition_interval_and_blockers(page: Page):
 
 def test_milestone_edit_reflected_in_both_views(page: Page):
     _commit("CAP-9001", 0, 3)
-    _milestone("M1", "Fixture M1", 4)
+    _milestone("MT1", "Fixture M1", 4)
     page.goto("/#/migration")
-    page.locator('[data-testid="ms-edit-M1"]').click()
+    page.locator('[data-testid="ms-edit-MT1"]').click()
     page.locator('[data-testid="ms-pos"]').select_option("8")
     page.locator('[data-testid="ms-save"]').click()
     # shared dataset: API updated
     row = [m for m in httpx.get(f"{BASE_API}/api/milestones").json()["items"]
-           if m["milestone_id"] == "M1"][0]
+           if m["milestone_id"] == "MT1"][0]
     assert row["position_month"] == 8
     # roadmap view shows the moved line (re-render fetches fresh milestones)
     page.goto("/#/roadmap")
-    line = page.locator('[data-testid="milestone-line"][data-ms="M1"]')
+    line = page.locator('[data-testid="milestone-line"][data-ms="MT1"]')
     expect(line).to_have_count(1)
     left = line.evaluate("el => parseFloat(el.style.left)")
     assert abs(left - ((8 + 0.5) / 27 * 100)) < 0.5

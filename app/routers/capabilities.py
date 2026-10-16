@@ -27,7 +27,8 @@ CAP_COLS = """
   cap_id, working_name, description, strategic_category, moscow,
   visibility, scope, origin, owner, decision, v2_mapping, ideation_sheet,
   roadmap_admission, analysis_budget_hours, execution_budget_hours,
-  notes, review_status, version, created_at, updated_at
+  notes, review_status, version, created_at, updated_at,
+  extraction_origin, product_review_status, product_rationale
 """
 
 LIST_FILTER = {
@@ -106,7 +107,12 @@ def list_capabilities(
                   ON j.jira_key = cj.jira_key
                   WHERE cj.cap_id = c.cap_id), '[]'::json) AS jira,
         (SELECT count(*) FROM capability_sources cs
-          WHERE cs.cap_id = c.cap_id) AS source_link_count
+          WHERE cs.cap_id = c.cap_id) AS source_link_count,
+        COALESCE((SELECT json_agg(cs.source_id ORDER BY cs.source_id)
+                  FROM capability_sources cs
+                  WHERE cs.cap_id = c.cap_id), '[]'::json) AS sources,
+        EXISTS (SELECT 1 FROM source_capabilities sc
+                WHERE sc.canonical_cap_id = c.cap_id) AS traceable
       FROM capabilities c
       {("WHERE " + " AND ".join(where)) if where else ""}
       ORDER BY c.cap_id
@@ -115,6 +121,14 @@ def list_capabilities(
         cur.execute(sql, params)
         cols = [d.name for d in cur.description]
         rows = [dict(zip(cols, r)) for r in cur.fetchall()]
+    # §9 traceability rule: every CAP needs ≥1 Source Capability, unless it was
+    # explicitly created by Product (PRODUCT_CREATED + rationale).
+    for row in rows:
+        row["traceability_status"] = (
+            "OK" if row["traceable"] or (
+                row.get("extraction_origin") == "PRODUCT_CREATED"
+                and row.get("product_rationale"))
+            else "TRACEABILITY_REVIEW_REQUIRED")
     return {"count": len(rows), "items": rows}
 
 
@@ -174,6 +188,11 @@ def get_capability(cap_id: str, conn: psycopg.Connection = Depends(db_conn)):
     cap["total_budget_hours"] = (
         None if (a is None and e is None) else (a or 0) + (e or 0))
     cap["capability_version"] = cap["version"]
+    cap["traceability_status"] = (
+        "OK" if cap["source_capabilities"] or (
+            cap.get("extraction_origin") == "PRODUCT_CREATED"
+            and cap.get("product_rationale"))
+        else "TRACEABILITY_REVIEW_REQUIRED")
     return cap
 
 

@@ -14,6 +14,7 @@ export async function getMarkets() {
 const ADMISSIONS = ['', 'COMMITTED', 'CANDIDATE', 'BACKLOG', 'DEFERRED', 'NOT PLANNED'];
 const CATEGORIES = ['Create & Design', 'Manage & Govern', 'Collaborate & Assure Quality', 'Standards & Portability', 'AI-assisted Authoring'];
 const MOSCOW = ['', 'Must', 'Should', 'Could', "Won't"];
+const PRODUCT_REVIEW_OPTIONS = ['', 'REVIEW_REQUIRED', 'CONFIRMED', 'CONFIRMED_WITH_CHANGES', 'REJECTED'];
 
 export async function openCapModal(capId) {
   closeCapModal();
@@ -67,8 +68,21 @@ function renderDetail(drawer, cap, markets, justSaved = false) {
     kv('MoSCoW', moscowBadge(cap.moscow)),
     kv('Roadmap Admission', admissionBadge(cap.roadmap_admission)),
     kv('Visibility', cap.visibility), kv('Scope', cap.scope),
-    kv('Owner', cap.owner), kv('Origin', cap.origin),
+    kv('Owner', cap.owner), kv('Origin (ideation provenance)', cap.origin),
     kv('Decision', cap.decision), kv('V2 mapping', el('pre', {}, cap.v2_mapping)),
+    kv('Origin / Extraction provenance', el('span', {
+      class: 'badge', dataset: { testid: 'extraction-origin' },
+      title: 'How this information entered the system — historical provenance, never overwritten by review',
+    }, cap.extraction_origin || '— (recorded during source reconstruction)')),
+    kv('Product Review', el('span', {
+      class: `badge ${cap.product_review_status ? 'ok-badge' : 'dim'}`,
+      dataset: { testid: 'product-review' },
+      title: 'Editable Product decision — separate from extraction provenance',
+    }, cap.product_review_status || 'NOT REVIEWED YET')),
+    cap.product_rationale ? kv('Product rationale', el('pre', {}, cap.product_rationale)) : null,
+    cap.traceability_status === 'TRACEABILITY_REVIEW_REQUIRED' ? el('div', {
+      class: 'notice warn small', dataset: { testid: 'traceability-warning' } },
+      'TRACEABILITY_REVIEW_REQUIRED — no Source Capability reconciles to this CAP yet (or it is a Product-created capability without rationale).') : null,
     el('div', { class: 'notice warn small' },
       `Product Roadmap timing ≠ Jira Target Release — they are different truths (§35). Timing: start M${cap.roadmap_timing ? cap.roadmap_timing.start_month : '—'}, duration ${cap.roadmap_timing ? cap.roadmap_timing.duration_months : '—'} months.`),
     el('h3', {}, 'Sources & Evidence'),
@@ -112,10 +126,12 @@ function renderEdit(drawer, cap, markets) {
       el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Visibility'), el('input', { type: 'text', name: 'visibility', value: cap.visibility || '' })),
       el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Owner'), el('input', { type: 'text', name: 'owner', value: cap.owner || '' })),
       el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Decision'), el('input', { type: 'text', name: 'decision', value: cap.decision || '' })),
+      el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Product Review (separate from extraction provenance)'), sel('product_review_status', PRODUCT_REVIEW_OPTIONS, cap.product_review_status ?? undefined)),
       el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Ideation sheet'), el('input', { type: 'text', name: 'ideation_sheet', value: cap.ideation_sheet || '' })),
       el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Analysis Budget (hours)'), num('analysis_budget_hours', cap.analysis_budget_hours)),
       el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Execution Budget (hours)'), num('execution_budget_hours', cap.execution_budget_hours))),
     el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Full description'), el('textarea', { name: 'description', rows: '4', style: 'width:100%' }, cap.description || '')),
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Product rationale (required once Origin = PRODUCT_CREATED)'), el('textarea', { name: 'product_rationale', rows: '2', style: 'width:100%', dataset: { testid: 'product-rationale' } }, cap.product_rationale || '')),
     el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Notes'), el('input', { type: 'text', name: 'notes', value: cap.notes || '' , style: 'width:100%'})),
     el('h3', {}, 'Markets'), el('div', { dataset: { testid: 'mk-checkboxes' } }, markets.map(mkRow)),
     el('h3', {}, `Jira links (0..N) — delivery evidence`), 
@@ -140,7 +156,8 @@ async function save(e, cap, markets) {
   const numVal = (n) => { const v = g(n).value; return v === '' ? null : Number(v); };
   const body = { version: cap.version };
   const fields = ['working_name', 'strategic_category', 'moscow', 'roadmap_admission',
-    'visibility', 'owner', 'decision', 'ideation_sheet', 'notes'];
+    'visibility', 'owner', 'decision', 'ideation_sheet', 'notes',
+    'product_review_status', 'product_rationale'];
   for (const f of fields) {
     const v = g(f).value;
     const norm = v === '' ? null : v;

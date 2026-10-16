@@ -41,7 +41,8 @@ async function runRoute() {
 }
 
 function route() {
-  routeChain = routeChain.then(runRoute).catch(() => {});
+  routeChain = routeChain.then(runRoute)
+    .catch((err) => console.error("route failed:", err && (err.message || err)));
   return routeChain;
 }
 

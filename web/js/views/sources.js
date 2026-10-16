@@ -29,15 +29,19 @@ async function renderSourceList(body) {
   body.replaceChildren();
   const srcs = await api.get(endpoints.sources());
   body.appendChild(table(
-    ['SRC-ID', 'Document', 'Owner', 'Type', 'Date / Version', 'Extracted', 'Location', 'Actions'],
+    ['SRC-ID', 'Document', 'Owner', 'Type', 'Date / Version', 'Extracted', 'Artifact', 'Actions'],
     srcs.items.map((s) => el('tr', { dataset: { testid: 'source-row' } },
       el('td', { class: 'mono' }, s.source_id),
       el('td', {}, el('strong', {}, s.title)),
       el('td', {}, s.owner || '—'),
       el('td', {}, s.source_type || '—'),
       el('td', {}, [s.source_date, s.version_label].filter(Boolean).join(' · ') || '—'),
-      el('td', { class: 'right' }, String(s.extracted_capability_count)),
-      el('td', { class: 'small mono' }, s.document_uri || '—'),
+      el('td', { class: 'right', dataset: { testid: 'extracted-count' } }, String(s.extracted_capability_count)),
+      el('td', {}, el('span', {
+        class: s.document_available ? 'badge ok-badge' : 'badge dim',
+        dataset: { testid: 'artifact-availability' },
+        title: s.document_uri || 'no artifact registered',
+      }, s.document_available ? 'available' : 'unavailable')),
       el('td', {},
         el('button', { dataset: { testid: 'open-source', src: s.source_id }, onclick: () => openSourceDetail(s.source_id) }, 'Open Source'),
         ' ',
@@ -55,6 +59,34 @@ async function openSourceDetail(sourceId) {
         ['Summary', s.summary],
       ].flatMap(([k, v]) => [el('div', { class: 'k' }, k), el('div', { class: 'v' }, v || '—')])),
     );
+    // §3: Open Source opens the ACTUAL artifact — or states explicitly that it
+    // is unavailable. Never a fake action, never an invented URL.
+    const docSection = el('div', { class: 'source-doc', dataset: { testid: 'source-artifact' } });
+    pane.appendChild(docSection);
+    fetch(`${endpoints.source(sourceId)}/document`)
+      .then(async (res) => {
+        if (!res.ok) {
+          docSection.appendChild(notice('warn',
+            'Source document unavailable — the original artifact could not be recovered. '
+            + 'See docs/SOURCE_DOCUMENT_COVERAGE_REPORT.md; Product may supply it as a source package.'));
+          return;
+        }
+        const ctype = res.headers.get('content-type') || '';
+        docSection.appendChild(el('h3', {}, 'Original artifact'));
+        if (ctype.includes('text/plain') || ctype.includes('markdown')) {
+          const text = await res.text();
+          docSection.appendChild(el('pre', {
+            class: 'doc-preview', dataset: { testid: 'doc-preview' },
+            style: 'max-height:340px;overflow:auto;border:1px solid var(--border-2);background:var(--bg-alt);padding:8px;font-size:10.5px;white-space:pre-wrap',
+          }, text));
+        } else {
+          docSection.appendChild(el('p', { class: 'small' },
+            `Artifact available (${ctype}). Open/download below — rendering is not forced in-app.`));
+        }
+        docSection.appendChild(el('div', { class: 'open-links' },
+          el('a', { class: 'btn', href: `${endpoints.source(sourceId)}/document`, target: '_blank', rel: 'noopener', dataset: { testid: 'doc-open' } }, 'Open raw artifact')));
+      })
+      .catch(() => docSection.appendChild(notice('warn', 'Source document unavailable.')));
     if (s.source_type === 'Operational / Delivery Evidence') {
       pane.appendChild(el('h3', {}, 'Jira backlog tickets (delivery evidence — never capability truth)'));
       api.get(endpoints.jira()).then((j) => {

@@ -11,6 +11,9 @@ from pydantic import BaseModel, ConfigDict, Field
 
 ADMISSION = ("COMMITTED", "CANDIDATE", "BACKLOG", "DEFERRED", "NOT PLANNED")
 MOSCOW = ("Must", "Should", "Could", "Won't")
+PRODUCT_REVIEW = ("REVIEW_REQUIRED", "CONFIRMED", "CONFIRMED_WITH_CHANGES", "REJECTED")
+EXTRACTION_ORIGIN = ("SOURCE_DEFINED", "AI_EXTRACTED", "AI_ABSTRACTED",
+                     "PRODUCT_CREATED", "MANUAL_EXTRACTION")
 STRATEGIC_CATEGORIES = (
     "Create & Design",
     "Manage & Govern",
@@ -45,6 +48,11 @@ class CapabilityPatch(BaseModel):
     notes: str | None = None
     review_status: str | None = None
     markets: list[str] | None = None  # market names; full replacement set
+    # UAT structural update: Product Review is the separate editable Product
+    # field; extraction provenance (extraction_origin) is historical and is
+    # NOT patchable here.
+    product_review_status: str | None = None
+    product_rationale: str | None = None
 
     def validate_enums(self) -> list[str]:
         errs = []
@@ -54,6 +62,8 @@ class CapabilityPatch(BaseModel):
             errs.append(f"moscow must be one of {MOSCOW} or null")
         if not _enum_ok(self.strategic_category, STRATEGIC_CATEGORIES):
             errs.append("strategic_category must be one of the five canonical categories")
+        if not _enum_ok(self.product_review_status, PRODUCT_REVIEW):
+            errs.append(f"product_review_status must be one of {PRODUCT_REVIEW} or null")
         return errs
 
 
@@ -102,6 +112,28 @@ class MilestonePatch(BaseModel):
     scope_ref: str | None = None
     description: str | None = None
     position_month: int | None = Field(default=None, ge=0)
+
+
+class FeatureCreate(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    feat_id: str = Field(min_length=1, max_length=40, pattern=r"^FEAT-[0-9]{4,}$")
+    name: str = Field(min_length=1, max_length=300)
+    description: str | None = None
+    owner: str | None = None
+    status: str | None = None
+    notes: str | None = None
+
+
+class FeaturePatch(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    version: int = Field(ge=1)
+    name: str | None = Field(default=None, min_length=1, max_length=300)
+    description: str | None = None
+    owner: str | None = None
+    status: str | None = None
+    notes: str | None = None
 
 
 class CustomerCreate(BaseModel):

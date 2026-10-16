@@ -48,7 +48,15 @@ ON CONFLICT DO NOTHING;
 INSERT INTO sources (source_id, title, source_type, owner, status, document_uri)
 VALUES
  ('SRC-TEST-001','Test Source Doc','TestType','Owner S','REGISTERED','data/raw/test.pdf'),
- ('SRC-JIRA-001','Current Authoring Jira Backlog','Operational / Delivery Evidence',NULL,'REGISTERED','data/raw/JIRA_current_backlog.csv');
+ ('SRC-JIRA-001','Current Authoring Jira Backlog','Operational / Delivery Evidence',NULL,'REGISTERED','data/raw/JIRA_current_backlog.csv'),
+ ('SRC-3X-001','TAO Authoring - feature list','Product Capability Baseline','Dragos Ivan','REGISTERED',NULL),
+ ('SRC-V1-001','TAO Studio - feature list','Product Capability Baseline','Dragos Ivan','REGISTERED',NULL),
+ ('SRC-NEW-001','TAO Authoring Strategic Initiative','Strategic Initiative','Product','REGISTERED',NULL),
+ ('SRC-COMP-001','TAO AI Competitor Intelligence Report','Competitor Intelligence','Product','REGISTERED',NULL),
+ ('SRC-OECD-001','OECD Digital Education Outlook 2026: Exploring Effective Uses of Generative AI in Education','External Report','OECD','REGISTERED',NULL),
+ ('SRC-HTML-001','Existing TAO Authoring HTML capability seed','Product Capability Baseline',NULL,'REGISTERED',NULL),
+ ('SRC-GAP-001','TAO Authoring - TAO Studio gap analysis','Gap Analysis','Product','REGISTERED',NULL)
+ON CONFLICT (source_id) DO NOTHING;
 INSERT INTO source_capabilities (source_capability_id, source_id, original_name,
   original_description, canonical_cap_id, reconciliation_relationship, evidence_reference)
 VALUES ('SC-TEST-0001','SRC-TEST-001','Original alpha','orig alpha desc','CAP-9001','EVOLVES','§3.2');
@@ -95,13 +103,23 @@ def server():
                    cwd=REPO, env={**os.environ, "DATABASE_URL":
                                   TEST_URL.replace("postgresql://", "postgresql+psycopg://")},
                    check=True, capture_output=True, text=True)
+    # governed baselines that ship with the product (idempotent imports):
+    # M1–M6 milestone dataset + source-document materialization/coverage
+    for script in ("scripts/import/import_milestones.py",
+                   "scripts/import/materialize_source_documents.py"):
+        subprocess.run([sys.executable, script], cwd=REPO,
+                       env={**os.environ, "DATABASE_URL":
+                            TEST_URL.replace("postgresql://", "postgresql+psycopg://")},
+                       check=True, capture_output=True, text=True)
 
     proc = subprocess.Popen(
         [sys.executable, "-m", "uvicorn", "app.main:app", "--port", str(PORT)],
         cwd=REPO, env={**os.environ, "DATABASE_URL":
                        TEST_URL.replace("postgresql://", "postgresql+psycopg://"),
                        "APP_ENV": "test", "LOG_FORMAT": "text"},
-        stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        # DEVNULL: an unread PIPE fills (~64KB) and BLOCKS the server mid-run
+        # (late-session Page.goto timeouts). Diagnostics use /health polling.
+        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     for i in range(60):
         try:
             if httpx.get(f"{BASE}/health/db", timeout=2).status_code == 200:
@@ -124,6 +142,14 @@ def page(server):
     with psycopg.connect(TEST_URL, autocommit=True) as conn:
         conn.execute("TRUNCATE " + ", ".join(TRUNCATE) + " RESTART IDENTITY CASCADE")
         conn.execute(SEED)
+    # governed baselines are re-applied after truncation (both imports are
+    # deterministic + idempotent): M1–M6 milestones, source artifacts/URI
+    for script in ("scripts/import/import_milestones.py",
+                   "scripts/import/materialize_source_documents.py"):
+        subprocess.run([sys.executable, script], cwd=REPO,
+                       env={**os.environ, "DATABASE_URL":
+                            TEST_URL.replace("postgresql://", "postgresql+psycopg://")},
+                       check=True, capture_output=True, text=True)
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page(base_url=server)

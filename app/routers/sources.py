@@ -11,6 +11,8 @@ Source Truth is preserved verbatim; Product interpretation lives only on
 the canonical side (§18).
 """
 
+from pathlib import Path
+
 from fastapi import APIRouter, Depends, HTTPException
 import psycopg
 
@@ -36,7 +38,61 @@ def list_sources(conn: psycopg.Connection = Depends(db_conn)):
         cur.execute(sql)
         cols = [d.name for d in cur.description]
         rows = [dict(zip(cols, r)) for r in cur.fetchall()]
+    for row in rows:
+        row["document_available"] = _document_path(row.get("document_uri")) is not None
     return {"count": len(rows), "items": rows}
+
+
+def _document_path(document_uri: str | None):
+    """Resolve a registered document_uri to a repo file path, or None.
+
+    Supported references: 'local://<source>/<name>' (artifact store) and
+    legacy repo-relative 'data/...' paths (governed raw files). Path escapes
+    are refused. Absent files → None (Source document unavailable).
+    """
+    if not document_uri:
+        return None
+    repo = Path(__file__).resolve().parents[2]
+    if document_uri.startswith("local://"):
+        rel = document_uri.split("://", 1)[1]
+        candidate = repo / "data" / "source-documents" / rel
+    else:
+        candidate = (repo / document_uri).resolve()
+    try:
+        candidate = candidate.resolve()
+        candidate.relative_to(repo)
+    except (ValueError, OSError):
+        return None
+    return candidate if candidate.is_file() else None
+
+
+@router.get("/{source_id}/document")
+def get_source_document(source_id: str,
+                        conn: psycopg.Connection = Depends(db_conn)):
+    """Open Source: stream the registered original artifact.
+
+    404 (machine-readable) when the Source has no recoverable artifact —
+    the UI shows 'Source document unavailable' and never a fake action.
+    """
+    from fastapi.responses import FileResponse
+
+    with conn.cursor() as cur:
+        cur.execute("SELECT document_uri FROM sources WHERE source_id=%s",
+                    (source_id,))
+        if cur.rowcount == 0:
+            raise HTTPException(status_code=404,
+                                detail={"error": "source_not_found",
+                                        "source_id": source_id})
+        uri = cur.fetchone()[0]
+    path = _document_path(uri)
+    if path is None:
+        raise HTTPException(
+            status_code=404,
+            detail={"error": "source_document_unavailable",
+                    "source_id": source_id,
+                    "message": "the original artifact could not be recovered; "
+                               "see docs/SOURCE_DOCUMENT_COVERAGE_REPORT.md"})
+    return FileResponse(path, filename=path.name)
 
 
 @router.get("/{source_id}")

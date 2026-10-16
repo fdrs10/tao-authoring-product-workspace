@@ -46,8 +46,7 @@ export async function renderBacklog(container) {
     const res = await api.get(endpoints.capabilities(q));
     countNote.textContent = `${res.count} capabilities${state.moscow === 'Must' ? ' — default MoSCoW=MUST (set MoSCoW · All for the full universe)' : ''}`;
     mount.replaceChildren(
-      table(['CAP', 'Capability', 'Category', 'Markets', 'MoSCoW', 'Admission', 'Jira', 'Jira status', 'Target release'], res.items.map((c) => {
-        const jiraFirst = (c.jira || [])[0] || {};
+      table(['CAP', 'Capability', 'Category', 'Markets', 'MoSCoW', 'Admission', 'Visibility', 'Source(s)'], res.items.map((c) => {
         const badge = el('span', { dataset: { testid: 'adm-badge' } }, admissionBadge(c.roadmap_admission));
         const sel = el('select', { dataset: { testid: 'adm-edit', cap: c.cap_id }, style: 'font-size:11.5px' },
           ADM.map((o) => el('option', { value: o, ...(o === (c.roadmap_admission ?? '') ? { selected: '' } : {}) }, o === '' ? 'UNSET' : o)));
@@ -68,9 +67,13 @@ export async function renderBacklog(container) {
           el('td', {}, marketDotsFor(c.markets, markets)),
           el('td', {}, moscowBadge(c.moscow)),
           el('td', {}, badge, ' ', sel),
-          el('td', {}, c.jira && c.jira.length ? el('a', { class: 'cap-link mono', href: jiraFirst.url || '#', target: '_blank', rel: 'noopener' }, jiraFirst.jira_key) : el('span', { class: 'dim' }, '—')),
-          el('td', {}, jiraFirst.status ? el('span', { class: 'badge' }, jiraFirst.status) : ''),
-          el('td', {}, jiraFirst.target_release || ''));
+          el('td', { dataset: { testid: 'visibility-cell' } }, c.visibility || '—'),
+          (() => {
+            const srcList = c.sources || [];
+            return el('td', { class: 'small', dataset: { testid: 'sources-cell', sources: srcList.join(',') },
+              title: srcList.join(', ') || 'no sources linked' },
+              srcList.length ? `${srcList.length} source${srcList.length === 1 ? '' : 's'}` : '—');
+          })());
       }))
     );
     mount.appendChild(marketLegend(markets));

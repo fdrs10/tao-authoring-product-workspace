@@ -2,7 +2,7 @@
 // Admission field edited inline here, in Backlog and in the CAP editor (§11).
 
 import { api, endpoints } from '../api.js';
-import { el, capLink, moscowBadge, moscowBadge as MB, admissionBadge, reviewBadge, marketDotsFor, marketLegend, notice, table } from '../ui.js';
+import { el, capLink, moscowBadge, admissionBadge, reviewBadge, marketDotsFor, marketLegend, notice, table, capFilterBar } from '../ui.js';
 import { getMarkets } from '../components/capmodal.js';
 
 const ADM = ['', 'COMMITTED', 'CANDIDATE', 'BACKLOG', 'DEFERRED', 'NOT PLANNED'];
@@ -32,24 +32,33 @@ async function persistAdmission(select, cap, statusEl) {
 export async function renderCrossAnalysis(container) {
   const markets = await getMarkets();
   const caps = await api.get(endpoints.capabilities());
+  const sources = await api.get(endpoints.sources());
   container.appendChild(el('div', { class: 'small dim' },
     `Canonical capability universe: ${caps.count}. Product decision → final V2 capability. Roadmap Admission editable inline (same field as Backlog/Edit). UNSET preserved.`));
-  container.appendChild(table(
-    ['CAP', 'Capability', 'Category', 'Markets', 'MoSCoW', 'Decision', 'V2 mapping', 'Admission'],
-    caps.items.map((c) => {
-      const badge = el('span', { dataset: { testid: 'adm-badge' } }, admissionBadge(c.roadmap_admission));
-      const sel = admissionInline(c);
-      sel.addEventListener('change', () => persistAdmission(sel, c, badge));
-      return el('tr', { dataset: { testid: 'xanalysis-row' } },
-        el('td', {}, capLink(c.cap_id)),
-        el('td', {}, c.working_name, ' ', reviewBadge(c.review_status)),
-        el('td', {}, c.strategic_category),
-        el('td', {}, marketDotsFor(c.markets, markets)),
-        el('td', {}, moscowBadge(c.moscow)),
-        el('td', {}, c.decision || '—'),
-        el('td', { class: 'small dim' }, (c.v2_mapping || '—').slice(0, 60)),
-        el('td', {}, badge, ' ', sel));
-      }))
-  );
-  container.appendChild(marketLegend(markets));
+  const { bar, apply } = capFilterBar({ markets, sources: sources.items });
+  container.appendChild(bar);
+  const mount = el('div');
+  container.appendChild(mount);
+  const draw = () => {
+    const filtered = apply(caps.items);
+    mount.replaceChildren();
+    mount.appendChild(table(
+      ['CAP', 'Capability', 'Category', 'Markets', 'MoSCoW', 'Decision', 'V2 mapping', 'Admission'],
+      filtered.map((c) => {
+        const badge = el('span', { dataset: { testid: 'adm-badge' } }, admissionBadge(c.roadmap_admission));
+        const sel = admissionInline(c);
+        sel.addEventListener('change', () => persistAdmission(sel, c, badge));
+        return el('tr', { dataset: { testid: 'xanalysis-row' } },
+          el('td', {}, capLink(c.cap_id)),
+          el('td', {}, c.working_name, ' ', reviewBadge(c.review_status)),
+          el('td', {}, c.strategic_category),
+          el('td', {}, marketDotsFor(c.markets, markets)),
+          el('td', {}, moscowBadge(c.moscow)),
+          el('td', {}, c.decision || '—'),
+          el('td', { class: 'small dim' }, (c.v2_mapping || '—').slice(0, 60)),
+          el('td', {}, badge, ' ', sel));
+      })));
+    mount.appendChild(marketLegend(markets));
+  };
+  draw();
 }

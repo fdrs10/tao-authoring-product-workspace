@@ -3,7 +3,7 @@
 // Sheets 02–05 are API-backed decision-sheet foundations; 06 = Cross-analysis.
 
 import { api, endpoints } from '../api.js';
-import { el, capLink, moscowBadge, admissionBadge, reviewBadge, marketDotsFor, marketLegend, notice, table } from '../ui.js';
+import { el, capLink, moscowBadge, admissionBadge, reviewBadge, marketDotsFor, marketLegend, notice, table, capFilterBar } from '../ui.js';
 import { getMarkets } from '../components/capmodal.js';
 import { renderCrossAnalysis } from './crossAnalysis.js';
 
@@ -59,25 +59,36 @@ function renderV2Position(content) {
 async function renderSheet(content, sheetName, isDisc) {
   content.appendChild(el('h1', {}, sheetName + (isDisc ? ' (OUT — not a V2 summand)' : '')));
   content.appendChild(el('div', { class: 'notice info' }, 'Loading…'));
-  const [caps, markets] = await Promise.all([
+  const [caps, markets, sources] = await Promise.all([
     api.get(endpoints.capabilities(`?ideation_sheet=${encodeURIComponent(sheetName)}`)),
     getMarkets(),
+    api.get(endpoints.sources()),
   ]);
   content.querySelector('.notice.info')?.remove();
   if (caps.count === 0) { content.appendChild(notice('info', 'No capabilities on this sheet.')); return; }
-  const groups = {};
-  for (const c of caps.items) (groups[c.decision || '(no decision)'] ||= []).push(c);
-  for (const [decision, rows] of Object.entries(groups).sort()) {
-    content.appendChild(el('h2', {}, `${decision} (${rows.length})`));
-    content.appendChild(table(['CAP', 'Capability', 'Category', 'Markets', 'MoSCoW', 'Admission', isDisc ? '' : ''], rows.map((c) =>
-      el('tr', { dataset: { testid: 'sheet-row' } },
-        el('td', {}, capLink(c.cap_id)),
-        el('td', {}, c.working_name, ' ', reviewBadge(c.review_status)),
-        el('td', {}, c.strategic_category),
-        el('td', {}, marketDotsFor(c.markets, markets)),
-        el('td', {}, moscowBadge(c.moscow)),
-        el('td', {}, admissionBadge(c.roadmap_admission)),
-        isDisc ? el('td', {}, el('span', { class: 'badge disc' }, 'OUT')) : el('td', {})))));
-  }
+  const { bar, apply } = capFilterBar({ markets, sources: sources.items });
+  content.appendChild(bar);
+  const mount = el('div', { dataset: { testid: 'sheet-mount' } });
+  content.appendChild(mount);
+  const draw = () => {
+    const filtered = apply(caps.items);
+    mount.replaceChildren();
+    if (!filtered.length) { mount.appendChild(notice('info', 'No capabilities match the current filters.')); return; }
+    const groups = {};
+    for (const c of filtered) (groups[c.decision || '(no decision)'] ||= []).push(c);
+    for (const [decision, rows] of Object.entries(groups).sort()) {
+      mount.appendChild(el('h2', {}, `${decision} (${rows.length})`));
+      mount.appendChild(table(['CAP', 'Capability', 'Category', 'Markets', 'MoSCoW', 'Admission', isDisc ? '' : ''], rows.map((c) =>
+        el('tr', { dataset: { testid: 'sheet-row' } },
+          el('td', {}, capLink(c.cap_id)),
+          el('td', {}, c.working_name, ' ', reviewBadge(c.review_status)),
+          el('td', {}, c.strategic_category),
+          el('td', {}, marketDotsFor(c.markets, markets)),
+          el('td', {}, moscowBadge(c.moscow)),
+          el('td', {}, admissionBadge(c.roadmap_admission)),
+          isDisc ? el('td', {}, el('span', { class: 'badge disc' }, 'OUT')) : el('td', {}, c.visibility || '—')))));
+    }
+  };
+  draw();
   content.appendChild(marketLegend(markets));
 }

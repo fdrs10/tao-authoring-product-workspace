@@ -10,7 +10,7 @@
 // instead), invented baseline content, commitment-type marks, random ids.
 
 import { api, endpoints } from '../api.js';
-import { el, moscowBadge, admissionBadge, marketDotsFor, marketLegend, notice } from '../ui.js';
+import { el, capLink, moscowBadge, admissionBadge, marketDotsFor, marketLegend, notice } from '../ui.js';
 import { openCapModal, getMarkets } from '../components/capmodal.js';
 
 // ---- recovered timeline model (v10 months[]/quarters[], verbatim window) --
@@ -36,11 +36,11 @@ const CAT_COLORS = {
   'Collaborate & Assure Quality': 'green', 'Standards & Portability': 'teal',
   'AI-assisted Authoring': 'orange',
 };
-const SHARED_BAND = 'Shared / common core (all markets)';
 
 // ---- session state (in-memory only; canonical state always from the API) --
 const session = {
   mode: 'roadmap',            // 'roadmap' | 'outcome'
+  roadmapView: 'capabilities', // §19: 'capabilities' | 'features' — same Product data
   horizon: 'full',
   expanded: new Set(),        // `${category}::${band}` — independent branches
   filters: { market: '', moscow: '', visibility: '', admission: 'COMMITTED' },
@@ -63,18 +63,16 @@ async function loadCaps(filters) {
   return res.items;
 }
 
-// D-R1 middle band rule: shared/common-core caps in one band; market-facing
-// caps appear under each governed market.
-function bandGroups(caps) {
+// D-R1 (Product-confirmed): the Roadmap hierarchy is Strategic Category →
+// Capability. Market is NOT a hierarchy level — it is metadata + a filter.
+// Every canonical capability appears exactly once when Market = All; no bar
+// is duplicated because a capability applies to several markets.
+function categoryLanes(caps) {
   const groups = new Map();
   for (const c of caps) {
-    const keys = c.visibility === 'Shared / common core'
-      ? [SHARED_BAND]
-      : (c.markets && c.markets.length ? c.markets : [SHARED_BAND]);
-    for (const k of keys) {
-      if (!groups.has(k)) groups.set(k, []);
-      groups.get(k).push(c);
-    }
+    const k = c.strategic_category;
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(c);
   }
   return groups;
 }
@@ -353,46 +351,41 @@ function renderFull(container, caps, markets) {
 
   for (const cat of cats) {
     const catCaps = caps.filter((c) => c.strategic_category === cat);
-    const groups = bandGroups(catCaps);
-    const bandKeys = [...groups.keys()].sort((a, b) => (a === SHARED_BAND ? -1 : b === SHARED_BAND ? 1 : a.localeCompare(b)));
     const color = catColor(cat);
     const group = el('div', { class: 'cat-group', dataset: { testid: 'cat-group', cat } });
     group.appendChild(el('div', { class: `category cat-${color}` },
       el('div', {}, cat),
-      el('small', {}, `${bandKeys.length} bands · ${catCaps.length} capabilities`)));
+      el('small', {}, `${catCaps.length} capabilities`)));
     const body = el('div', { class: 'category-body' });
-    let firstBand = true;
-    for (const band of bandKeys) {
-      const key = `${cat}::${band}`;
-      const expanded = session.expanded.has(key);
-      const bandCaps = groups.get(band);
-      const lane = el('div', { class: 'lane', dataset: { testid: 'band-row', band } });
-      const label = el('div', { class: 'band' },
-        el('div', { class: 'band-name' },
-          el('span', {}, band),
-          el('button', {
-            class: `lane-add${expanded ? ' expanded' : ''}`,
-            dataset: { testid: 'band-toggle', cat, band },
-            title: expanded ? 'Collapse capabilities' : 'Expand capabilities',
-            onclick: () => {
-              if (session.expanded.has(key)) session.expanded.delete(key);
-              else session.expanded.add(key);
-              window.dispatchEvent(new CustomEvent('cap:changed'));
-            },
-          }, expanded ? '−' : '+')),
-        el('small', {}, `${bandCaps.length}`));
-      const track = el('div', { class: 'track', dataset: { band } },
-        el('div', { class: 'month-grid', style: `grid-template-columns:repeat(${TOTAL},1fr)` },
-          Array.from({ length: TOTAL }, () => el('span'))));
-      for (const c of bandCaps) if (c.start_month !== null) track.appendChild(renderBar(c, true));
-      for (const m of milestonesFor(cat)) {
-        track.appendChild(renderMilestoneLine(m, track, cat, true, firstBand && m.scope_type === 'global'));
-      }
-      lane.appendChild(label); lane.appendChild(track);
-      body.appendChild(lane);
-      if (expanded) body.appendChild(renderDrilldown(cat, band, bandCaps, markets));
-      firstBand = false;
+    // D-R1: ONE capability lane per strategic category — each canonical
+    // capability renders exactly once here.
+    const key = `${cat}::capabilities`;
+    const expanded = session.expanded.has(key);
+    const lane = el('div', { class: 'lane', dataset: { testid: 'band-row', band: 'Capabilities' } });
+    const label = el('div', { class: 'band' },
+      el('div', { class: 'band-name' },
+        el('span', {}, 'Capabilities'),
+        el('button', {
+          class: `lane-add${expanded ? ' expanded' : ''}`,
+          dataset: { testid: 'band-toggle', cat, band: 'Capabilities' },
+          title: expanded ? 'Collapse capabilities' : 'Expand capabilities',
+          onclick: () => {
+            if (session.expanded.has(key)) session.expanded.delete(key);
+            else session.expanded.add(key);
+            window.dispatchEvent(new CustomEvent('cap:changed'));
+          },
+        }, expanded ? '−' : '+')),
+      el('small', {}, `${catCaps.length}`));
+    const track = el('div', { class: 'track', dataset: { band: 'Capabilities' } },
+      el('div', { class: 'month-grid', style: `grid-template-columns:repeat(${TOTAL},1fr)` },
+        Array.from({ length: TOTAL }, () => el('span'))));
+    for (const c of catCaps) if (c.start_month !== null) track.appendChild(renderBar(c, true));
+    for (const m of milestonesFor(cat)) {
+      track.appendChild(renderMilestoneLine(m, track, cat, true, m.scope_type === 'global'));
     }
+    lane.appendChild(label); lane.appendChild(track);
+    body.appendChild(lane);
+    if (expanded) body.appendChild(renderDrilldown(cat, 'Capabilities', catCaps, markets));
     group.appendChild(body);
     container.appendChild(group);
   }
@@ -437,22 +430,23 @@ function renderHorizon(container, caps, markets) {
   wrap.appendChild(el('div', { class: 'small dim', style: 'margin:2px 0 8px' },
     `${HORIZON_LABELS.find(([k]) => k === session.horizon)[1]} · ${monthLabel(w0)} → ${monthLabel(w1)} · ${count} months — report view over the same Roadmap data (edit timing in Full view).`));
   const head = el('div', { class: 'hz-header', style: `grid-template-columns:190px 230px repeat(${qCount},1fr)` },
-    el('div', {}, 'Strategic Category'), el('div', {}, 'Big Rock / Market'),
+    el('div', {}, 'Strategic Category'), el('div', {}, 'Capabilities'),
     Array.from({ length: qCount }, (_, qi) => el('div', { class: 'q' }, QUARTERS[Math.floor(w0 / 3) + qi] || '')));
   wrap.appendChild(head);
   const cats = [...new Set(caps.map((c) => c.strategic_category))].sort();
   let any = false;
   for (const cat of cats) {
     const catCaps = caps.filter((c) => c.strategic_category === cat);
-    const groups = bandGroups(catCaps);
-    for (const [band, bandCaps] of [...groups.entries()].sort(([a], [b]) => (a === SHARED_BAND ? -1 : b === SHARED_BAND ? 1 : a.localeCompare(b)))) {
+    // D-R1: one row per category — each capability appears exactly once
+    {
+      const bandCaps = catCaps;
       const visible = bandCaps.filter((c) => c.start_month !== null
         && c.start_month < w1 + 1 && c.start_month + (c.duration_months ?? 1) > w0);
       if (!visible.length && !bandCaps.length) continue;
       any = any || visible.length > 0;
       const row = el('div', { class: 'hz-row', dataset: { testid: 'hz-row' } },
         el('div', { class: 'hz-cat' }, cat),
-        el('div', { class: 'hz-band' }, band),
+        el('div', { class: 'hz-band' }, 'Capabilities'),
         el('div', { class: 'hz-track', style: `--cols:${count}` },
           el('div', { class: 'hz-grid', style: `grid-template-columns:repeat(${count},1fr)` },
             Array.from({ length: count }, (_, i) => el('span', { class: i % 3 === 0 ? 'qsep' : '' }, MONTHS[w0 + i].m)))));
@@ -543,14 +537,14 @@ function openQuarter(qi, caps) {
   }
   const grid = el('div', { class: 'month-detail', dataset: { testid: 'quarter-grid' } });
   grid.appendChild(el('div', { class: 'md-head' }, 'Strategic Category'));
-  grid.appendChild(el('div', { class: 'md-head' }, 'Big Rock / Market'));
+  grid.appendChild(el('div', { class: 'md-head' }, 'Capabilities'));
   for (let x = 0; x < 3; x++) grid.appendChild(el('div', { class: 'md-head' }, monthLabel(mi + x)));
   const cats = [...new Set(caps.map((c) => c.strategic_category))].sort();
   for (const cat of cats) {
-    const groups = bandGroups(caps.filter((c) => c.strategic_category === cat));
-    for (const [band, bandCaps] of [...groups.entries()].sort(([a], [b]) => (a === SHARED_BAND ? -1 : b === SHARED_BAND ? 1 : a.localeCompare(b)))) {
+    const bandCaps = caps.filter((c) => c.strategic_category === cat);
+    {
       grid.appendChild(el('div', { class: 'md-cell cat' }, cat));
-      grid.appendChild(el('div', { class: 'md-cell band-name' }, band));
+      grid.appendChild(el('div', { class: 'md-cell band-name' }, 'Capabilities'));
       for (let off = 0; off < 3; off++) {
         const mth = mi + off;
         const active = bandCaps.filter((c) => c.start_month !== null
@@ -593,6 +587,153 @@ function renderRules(container) {
   container.appendChild(panel);
 }
 
+// ---- Features view (§12–§15/§19) ------------------------------------------
+// Feature = Product-managed composition of canonical capabilities. This view
+// shows the same canonical data from the composition side: each lane is a
+// Feature; the bars are its constituent capabilities (DERIVED coverage — no
+// second planning truth). Composition is a Product decision; nothing is
+// auto-grouped. Jira Epics and Source Capabilities are never Features.
+async function renderFeaturesView(container, markets) {
+  const feats = (await api.get(endpoints.features())).items;
+  container.appendChild(el('div', { class: 'small dim', style: 'margin:0 0 8px', dataset: { testid: 'features-note' } },
+    'Feature view — Product-managed composition of canonical capabilities. Bars are derived from constituent capability timing (no independent Feature timing until Product defines it). Composition is a Product decision; never auto-generated.'));
+  container.appendChild(el('div', { class: 'actions', style: 'margin-bottom:8px' },
+    el('button', { dataset: { testid: 'feat-add' }, onclick: () => openFeatureEditor() }, '+ Feature')));
+  if (!feats.length) {
+    container.appendChild(el('div', { dataset: { testid: 'features-empty' } },
+      notice('info', 'No Features defined yet. Product creates Features explicitly (FEAT-xxxx) and composes them from canonical capabilities — the app never invents Features or feature groupings.')));
+  }
+  for (const f of feats) {
+    const group = el('div', { class: 'cat-group', dataset: { testid: 'feature-group', feat: f.feat_id } });
+    group.appendChild(el('div', { class: 'category cat-grey' },
+      el('div', { class: 'mono', style: 'font-size:10px' }, f.feat_id),
+      el('div', {}, f.name),
+      el('small', {}, `${f.status || '—'} · ${f.capabilities.length} capabilities · v${f.version}`)));
+    const body = el('div', { class: 'category-body' });
+    const lane = el('div', { class: 'lane' });
+    const label = el('div', { class: 'band' },
+      el('div', { class: 'band-name' }, el('span', {}, f.description || f.name)),
+      el('button', { dataset: { testid: `feat-edit-${f.feat_id}` }, onclick: () => openFeatureEditor(f) }, 'Edit'));
+    const track = el('div', { class: 'track' },
+      el('div', { class: 'month-grid', style: `grid-template-columns:repeat(${TOTAL},1fr)` },
+        Array.from({ length: TOTAL }, () => el('span'))));
+    for (const c of f.capabilities) {
+      if (c.start_month === null || c.start_month === undefined) continue;
+      track.appendChild(renderBar({ ...c, working_name: c.working_name, cap_id: c.cap_id, jira: [], moscow: c.moscow, roadmap_admission: c.roadmap_admission, strategic_category: c.strategic_category }, false, true));
+    }
+    if (f.derived_timing_window) {
+      const w = f.derived_timing_window;
+      track.appendChild(el('div', {
+        class: 'feature-derived-outline', dataset: { testid: 'feature-derived' },
+        style: `left:${w.start_month / TOTAL * 100}%;width:${Math.max(1, (w.end_month_exclusive - w.start_month)) / TOTAL * 100}%`,
+        title: `Derived coverage from constituent capabilities: months ${w.start_month}–${w.end_month_exclusive - 1} (no independent Feature timing)`,
+      }));
+    }
+    lane.appendChild(label); lane.appendChild(track);
+    body.appendChild(lane);
+    if (f.capabilities.length) {
+      const capsRow = el('div', { class: 'drilldown' },
+        el('div', { class: 'small dim', style: 'padding:4px 8px' }, 'Constituent canonical capabilities:'));
+      for (const c of f.capabilities) {
+        capsRow.appendChild(el('div', { class: 'drill-row' },
+          el('div', { class: 'drill-label' },
+            capLink(c.cap_id), el('span', { class: 'drill-name' }, c.working_name), moscowBadge(c.moscow), admissionBadge(c.roadmap_admission),
+            el('button', {
+              class: 'danger small', dataset: { testid: `feat-unlink-${f.feat_id}-${c.cap_id}` },
+              onclick: async () => { await api.del(`${endpoints.features()}/${f.feat_id}/capabilities/${c.cap_id}`); window.dispatchEvent(new CustomEvent('cap:changed')); },
+            }, 'remove')),
+          el('div', { class: 'drill-track' })));
+      }
+      body.appendChild(capsRow);
+    }
+    group.appendChild(body);
+    container.appendChild(group);
+  }
+}
+
+function openFeatureEditor(f = null) {
+  document.querySelectorAll('.modal-overlay[data-featmodal]').forEach((n) => n.remove());
+  const overlay = el('div', { class: 'modal-overlay', dataset: { featmodal: '1', testid: 'feat-modal' } });
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+  const drawer = el('div', { class: 'modal-drawer', style: 'width:min(620px,94vw)' });
+  overlay.appendChild(drawer);
+  document.body.appendChild(overlay);
+  const isEdit = !!f;
+  drawer.appendChild(el('h1', {}, isEdit ? `Edit Feature · ${f.feat_id}` : 'New Feature (Product-managed composition)'));
+  const sel = (name, options, current) => el('select', { name },
+    options.map((o) => el('option', { value: o, ...(o === (current ?? '') ? { selected: '' } : {}) }, o === '' ? '— choose —' : o)));
+  drawer.appendChild(el('div', { class: 'edit-form', dataset: { testid: 'feat-form' } },
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Feature ID (governed, e.g. FEAT-0001)'),
+      el('input', { type: 'text', name: 'feat_id', dataset: { testid: 'feat-id' }, disabled: isEdit, value: f?.feat_id || '' })),
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Feature name'),
+      el('input', { type: 'text', name: 'name', dataset: { testid: 'feat-name' }, value: f?.name || '' })),
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Description'),
+      el('textarea', { name: 'description', rows: 2, style: 'width:100%' }, f?.description || '')),
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Product owner / PM'),
+      el('input', { type: 'text', name: 'owner', value: f?.owner || '' })),
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Status'),
+      el('input', { type: 'text', name: 'status', value: f?.status || '', placeholder: 'e.g. Draft / Committed' })),
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Notes'),
+      el('input', { type: 'text', name: 'notes', value: f?.notes || '', style: 'width:100%' })),
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Add constituent capability (CAP-ID)'),
+      el('div', { style: 'display:flex;gap:6px' },
+        el('input', { type: 'text', name: 'add_cap', placeholder: 'CAP-xxxx', dataset: { testid: 'feat-add-cap' }, style: 'width:160px' }),
+        el('button', { dataset: { testid: 'feat-add-cap-btn' }, onclick: () => addFeatureCap(overlay, isEdit ? f : null) }, 'Add link'))),
+    el('div', { class: 'actions', style: 'margin-top:12px' },
+      el('button', { class: 'primary', dataset: { testid: 'feat-save' }, onclick: () => saveFeature(overlay, isEdit ? f : null) }, 'Save'),
+      el('button', { onclick: () => overlay.remove() }, 'Cancel'))));
+  // link management row for existing links
+  if (isEdit && f.capabilities.length) {
+    drawer.appendChild(el('h3', {}, 'Constituent capabilities'));
+    for (const c of f.capabilities) {
+      drawer.appendChild(el('div', { class: 'jira-row' },
+        el('span', { class: 'mono' }, c.cap_id), el('span', { class: 'small' }, c.working_name),
+        el('button', { class: 'danger small', onclick: async (e) => {
+          await api.del(`${endpoints.features()}/${f.feat_id}/capabilities/${c.cap_id}`);
+          e.target.closest('.jira-row').remove();
+        } }, 'remove link')));
+    }
+  }
+}
+
+async function addFeatureCap(overlay, f) {
+  const capId = overlay.querySelector('[name="add_cap"]').value.trim();
+  if (!capId) return;
+  if (!f) { overlay.querySelector('.modal-drawer').appendChild(notice('warn', 'Save the Feature first, then add capability links.')); return; }
+  try {
+    await api.post(`${endpoints.features()}/${f.feat_id}/capabilities/${capId}`);
+    window.dispatchEvent(new CustomEvent('cap:changed'));
+  } catch (err) {
+    overlay.querySelector('.modal-drawer').appendChild(notice('error',
+      err.status === 404 ? `Not found: ${JSON.stringify(err.detail)}`
+        : err.status === 409 ? 'Link already exists.' : `Add failed: ${err.message}`));
+  }
+}
+
+async function saveFeature(overlay, existing) {
+  const g = (n) => overlay.querySelector(`[name="${n}"]`);
+  const body = {
+    name: g('name').value.trim(), description: g('description').value.trim() || null,
+    owner: g('owner').value.trim() || null, status: g('status').value.trim() || null,
+    notes: g('notes').value.trim() || null,
+  };
+  if (!body.name) { overlay.querySelector('.modal-drawer').appendChild(notice('error', 'Feature name is required.')); return; }
+  try {
+    if (existing) await api.patch(`${endpoints.features()}/${existing.feat_id}`, { ...body, version: existing.version });
+    else {
+      const id = g('feat_id').value.trim();
+      if (!id) { overlay.querySelector('.modal-drawer').appendChild(notice('error', 'Feature ID is required (governed, e.g. FEAT-0001).')); return; }
+      await api.post(endpoints.features(), { feat_id: id, ...body });
+    }
+    overlay.remove();
+    window.dispatchEvent(new CustomEvent('cap:changed'));
+  } catch (err) {
+    overlay.querySelector('.modal-drawer').appendChild(notice('error',
+      err.status === 409 ? `Conflict: feature now v${err.detail?.current_version}.`
+        : `Save failed: ${JSON.stringify(err.detail || err.message)}`));
+  }
+}
+
 // ---- entry -------------------------------------------------------------------
 export async function renderRoadmap(container) {
   container.replaceChildren();
@@ -603,7 +744,7 @@ export async function renderRoadmap(container) {
   container.appendChild(el('div', { class: 'small dim', style: 'margin-bottom:6px' },
     'Editable executive roadmap · Oct 2026 → Dec 2028 (27 months) · TAO Studio becomes the common authoring environment; TAO 3.x Authoring is progressively retired. Product timing only — Jira release fields are delivery evidence, never timing.'));
 
-  // toolbar: view switch, horizons, filters, milestone add
+  // toolbar: view switch (Roadmap | Outcome), Capabilities | Features (§19), horizons, filters, milestone add
   const bar = el('div', { class: 'road-toolbar' },
     el('div', { class: 'seg' },
       el('button', {
@@ -614,11 +755,22 @@ export async function renderRoadmap(container) {
         class: session.mode === 'outcome' ? 'active' : '', dataset: { testid: 'view-outcome' },
         onclick: () => { session.mode = 'outcome'; window.dispatchEvent(new CustomEvent('cap:changed')); },
       }, 'Outcome')),
+    el('div', { class: 'seg', dataset: { testid: 'roadmap-content-switch' } },
+      el('button', {
+        class: session.mode === 'roadmap' && session.roadmapView === 'capabilities' ? 'active' : '',
+        dataset: { testid: 'content-capabilities' },
+        onclick: () => { session.mode = 'roadmap'; session.roadmapView = 'capabilities'; window.dispatchEvent(new CustomEvent('cap:changed')); },
+      }, 'Capabilities'),
+      el('button', {
+        class: session.mode === 'roadmap' && session.roadmapView === 'features' ? 'active' : '',
+        dataset: { testid: 'content-features' },
+        onclick: () => { session.mode = 'roadmap'; session.roadmapView = 'features'; window.dispatchEvent(new CustomEvent('cap:changed')); },
+      }, 'Features')),
     el('div', { class: 'seg' },
       HORIZON_LABELS.map(([k, label]) => el('button', {
-        class: session.mode === 'roadmap' && session.horizon === k ? 'active' : '',
+        class: session.mode === 'roadmap' && session.roadmapView === 'capabilities' && session.horizon === k ? 'active' : '',
         dataset: { testid: `hz-${k}` },
-        onclick: () => { session.mode = 'roadmap'; session.horizon = k; window.dispatchEvent(new CustomEvent('cap:changed')); },
+        onclick: () => { session.mode = 'roadmap'; session.roadmapView = 'capabilities'; session.horizon = k; window.dispatchEvent(new CustomEvent('cap:changed')); },
       }, label))),
     el('div', { class: 'seg grow' },
       el('button', { dataset: { testid: 'ms-add' }, onclick: () => openMilestoneEditor() }, '+ Milestone')),
@@ -627,7 +779,10 @@ export async function renderRoadmap(container) {
 
   // filters (§16) — never reset timing/expansion/outcome (session state)
   const fsel = (key, title, options) => el('label', { class: 'f' }, title,
-    el('select', { dataset: { testid: `rfilter-${key}` } },
+    el('select', { dataset: { testid: `rfilter-${key}` },
+      // inline handler: survives re-render races (a select replaced between
+      // interaction and dispatch still updates state — QA-verified defect)
+      onchange: (e) => { session.filters[key] = e.target.value; window.dispatchEvent(new CustomEvent('cap:changed')); } },
       options.map(([v, l]) => el('option', { value: v, ...(session.filters[key] === v ? { selected: '' } : {}) }, l))));
   const fbar = el('div', { class: 'filter-bar', dataset: { testid: 'roadmap-filters' } },
     fsel('admission', 'Roadmap admission', [
@@ -655,6 +810,9 @@ export async function renderRoadmap(container) {
   if (session.mode === 'outcome') {
     view.replaceChildren();
     await renderOutcome(view);
+  } else if (session.roadmapView === 'features') {
+    view.replaceChildren();
+    await renderFeaturesView(view, markets);
   } else {
     view.replaceChildren();
     if (session.horizon === 'full') renderFull(view, narrowed, markets);
@@ -662,8 +820,5 @@ export async function renderRoadmap(container) {
   }
   renderRules(container);
 
-  fbar.addEventListener('change', (e) => {
-    const k = e.target.dataset?.testid?.replace('rfilter-', '');
-    if (k) { session.filters[k] = e.target.value; window.dispatchEvent(new CustomEvent('cap:changed')); }
-  });
+  // (filter selects carry inline handlers — no bubbled listener needed here)
 }

@@ -24,6 +24,10 @@
 3. **Dense roadmap lanes overlap bars** in shared/market bands when many caps share months — expand a band (v10 behaviour) for individual access. Enhancement candidate.
 4. **Audit events are write-only** in the API (recorded with actor/before/after; no read endpoint yet) — enhancement candidate.
 
+## Structural update (2026-10-16) — supersede sections above where they differ
+
+M1–M6 milestone baseline is now governed data (editable UAT baseline); Roadmap hierarchy is Strategic Category → Capability (Market = filter only, each CAP renders once); Features (FEAT-xxxx) are available as Product-managed compositions; CAP drawer shows Origin/extraction provenance + editable Product Review + traceability; Ideation sheets and Backlog carry the new filter/column layers. See docs/UAT_STRUCTURAL_CHANGE_REPORT.md + docs/uat/PRODUCT_UAT_TEST_CASES.md.
+
 ## Fixed during overnight QA (included in this candidate's working tree, tag untouched)
 
 - Drill-down overlay trapped navigation (could not click nav links while a pane was open).

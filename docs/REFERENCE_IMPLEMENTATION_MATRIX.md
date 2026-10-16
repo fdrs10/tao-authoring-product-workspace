@@ -47,3 +47,14 @@ The API/shared-state contract introduced no new reference dependencies and no ch
 New governed schema/API: `roadmap_outcomes` table + `GET/PATCH /api/outcomes` (versioned, audited, Alembic `0002_roadmap_outcomes`); `PATCH /api/roadmap/{cap}` now returns the new timing version. New permanent JS gate: `tests/js/test_web_esm_syntax.py` (10 files) — plain `node --check` silently PASSES broken ESM (verified 2026-10-15), which had masked two real parse errors during Phases 4–5.
 
 Visual evidence: `docs/evidence/phase5/{roadmap_full,roadmap_horizon_0_6,roadmap_outcome,migration}.png`.
+
+
+## UAT structural update addendum (2026-10-16)
+
+Product-confirmed changes applied (docs/UAT_STRUCTURAL_CHANGE_REPORT.md):
+- **D-R1 CONFIRMED (supersedes the Phase 5 provisional market-band rule):** Roadmap hierarchy is Strategic Category → Capability; Market = metadata + filter + legend only; every canonical CAP renders exactly once at Market=All (tested).
+- **D-M1 CONFIRMED:** Migration availability = derived from Roadmap timing vs the shared M1–M6 baseline (unlocked-before-interval vs in-flight).
+- **New module: Feature** (composition entity, FEAT-xxxx, M:N with Capabilities, derived coverage only — docs/FEATURE_MODEL.md).
+- **Provenance split:** `extraction_origin` (historical) vs editable `product_review_status` (REVIEW_REQUIRED/CONFIRMED/CONFIRMED_WITH_CHANGES/REJECTED) — traceability rule §9 enforced via `traceability_status`.
+- **Milestones:** M1–M6 recovered from v35.6 are the Product-confirmed editable UAT baseline (`data/milestones/milestones_baseline.json`, idempotent importer).
+- New reference contract: docs/SOURCE_RECONSTRUCTION_CONTRACT.md (source-package ingestion for the upcoming source-by-source stage).

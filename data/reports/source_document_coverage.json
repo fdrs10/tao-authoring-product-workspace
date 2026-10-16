@@ -1,0 +1,87 @@
+{
+ "generated_by": "scripts/import/materialize_source_documents.py",
+ "principle": "PostgreSQL keeps Source metadata/lineage (Product Truth); object/document storage keeps artifacts only",
+ "rows": [
+  {
+   "source_id": "SRC-3X-001",
+   "human_name": "TAO Authoring - feature list",
+   "original_artifact": "not materialised",
+   "repository_location": null,
+   "openable": false,
+   "extracted_source_capabilities": 0,
+   "problem_or_action": "original was Confluence paste / supplied analysis text; never materialised into the handoff"
+  },
+  {
+   "source_id": "SRC-COMP-001",
+   "human_name": "TAO AI Competitor Intelligence Report",
+   "original_artifact": "not materialised",
+   "repository_location": null,
+   "openable": false,
+   "extracted_source_capabilities": 0,
+   "problem_or_action": "original was Confluence paste / supplied analysis text; never materialised into the handoff"
+  },
+  {
+   "source_id": "SRC-GAP-001",
+   "human_name": "TAO Authoring - TAO Studio gap analysis",
+   "original_artifact": "data/raw/SRC_GAP_TAO_3X_VS_STUDIO_V1.txt",
+   "repository_location": "local://SRC-GAP-001/SRC_GAP_TAO_3X_VS_STUDIO_V1.txt",
+   "openable": true,
+   "extracted_source_capabilities": 0,
+   "problem_or_action": "document_uri connected"
+  },
+  {
+   "source_id": "SRC-HTML-001",
+   "human_name": "Existing TAO Authoring HTML capability seed",
+   "original_artifact": "not materialised",
+   "repository_location": null,
+   "openable": false,
+   "extracted_source_capabilities": 0,
+   "problem_or_action": "original was Confluence paste / supplied analysis text; never materialised into the handoff"
+  },
+  {
+   "source_id": "SRC-JIRA-001",
+   "human_name": "Current Authoring Jira Backlog",
+   "original_artifact": "data/raw/JIRA_current_backlog.csv",
+   "repository_location": "local://SRC-JIRA-001/JIRA_current_backlog.csv",
+   "openable": true,
+   "extracted_source_capabilities": 0,
+   "problem_or_action": "document_uri connected"
+  },
+  {
+   "source_id": "SRC-NEW-001",
+   "human_name": "TAO Authoring Strategic Initiative",
+   "original_artifact": "not materialised",
+   "repository_location": null,
+   "openable": false,
+   "extracted_source_capabilities": 0,
+   "problem_or_action": "original was Confluence paste / supplied analysis text; never materialised into the handoff"
+  },
+  {
+   "source_id": "SRC-OECD-001",
+   "human_name": "OECD Digital Education Outlook 2026: Exploring Effective Uses of Generative AI in Education",
+   "original_artifact": "data/raw/SRC-OECD-001_OECD_Digital_Education_Outlook_2026.pdf",
+   "repository_location": "local://SRC-OECD-001/OECD_Digital_Education_Outlook_2026.pdf",
+   "openable": true,
+   "extracted_source_capabilities": 0,
+   "problem_or_action": "document_uri connected"
+  },
+  {
+   "source_id": "SRC-TEST-001",
+   "human_name": "Test Source Doc",
+   "original_artifact": "(external Jira export was registered with document_uri)",
+   "repository_location": "data/raw/test.pdf",
+   "openable": true,
+   "extracted_source_capabilities": 1,
+   "problem_or_action": "original was Confluence paste / supplied analysis text; never materialised into the handoff"
+  },
+  {
+   "source_id": "SRC-V1-001",
+   "human_name": "TAO Studio - feature list",
+   "original_artifact": "not materialised",
+   "repository_location": null,
+   "openable": false,
+   "extracted_source_capabilities": 0,
+   "problem_or_action": "original was Confluence paste / supplied analysis text; never materialised into the handoff"
+  }
+ ]
+}

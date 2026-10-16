@@ -1,0 +1,80 @@
+{
+  "dataset": "migration-milestones-product-baseline",
+  "product_baseline_status": "PRODUCT_BASELINE_CONFIRMED_UAT",
+  "source_lineage": "TAO_Authoring_v35_6_MIGRATION_DIAGRAM (legacy/TAO_Authoring_v35_6_MIGRATION_DIAGRAM(1).zip, md5 e873d77d55dcbd9f7006f64149bcedad) — confirmed by Product as the editable UAT baseline (UAT STRUCTURAL UPDATE §22)",
+  "position_month_convention": "0 = Oct 2026 on the 27-month roadmap window (v10 months array); M1 Dec 2026 = 2, M6 Dec 2028 = 26",
+  "milestones": [
+    {
+      "milestone_id": "M1",
+      "name": "Target Authoring agreed",
+      "milestone_date": "2026-12-01",
+      "date_label": "Dec 2026",
+      "position_month": 2,
+      "scope_type": "global",
+      "scope_ref": null,
+      "description": "Agree the target product and the outcomes that must be preserved or improved.",
+      "product_baseline_status": "PRODUCT_BASELINE_CONFIRMED_UAT",
+      "source_lineage": "TAO_Authoring_v35_6_MIGRATION_DIAGRAM"
+    },
+    {
+      "milestone_id": "M2",
+      "name": "Migration foundation proven",
+      "milestone_date": "2027-06-01",
+      "date_label": "Jun 2027",
+      "position_month": 8,
+      "scope_type": "global",
+      "scope_ref": null,
+      "description": "Prove content fidelity, migration tooling and the critical product foundation.",
+      "product_baseline_status": "PRODUCT_BASELINE_CONFIRMED_UAT",
+      "source_lineage": "TAO_Authoring_v35_6_MIGRATION_DIAGRAM"
+    },
+    {
+      "milestone_id": "M3",
+      "name": "First production cutovers",
+      "milestone_date": "2027-09-01",
+      "date_label": "Sep 2027",
+      "position_month": 11,
+      "scope_type": "global",
+      "scope_ref": null,
+      "description": "Move the first real customers to Studio without routine fallback to 3.x.",
+      "product_baseline_status": "PRODUCT_BASELINE_CONFIRMED_UAT",
+      "source_lineage": "TAO_Authoring_v35_6_MIGRATION_DIAGRAM"
+    },
+    {
+      "milestone_id": "M4",
+      "name": "No new 3.x Authoring deployments",
+      "milestone_date": "2027-12-01",
+      "date_label": "Dec 2027",
+      "position_month": 14,
+      "scope_type": "global",
+      "scope_ref": null,
+      "description": "Studio becomes the default for new standard-fit Authoring implementations.",
+      "product_baseline_status": "PRODUCT_BASELINE_CONFIRMED_UAT",
+      "source_lineage": "TAO_Authoring_v35_6_MIGRATION_DIAGRAM"
+    },
+    {
+      "milestone_id": "M5",
+      "name": "3.x read-only / final exceptions",
+      "milestone_date": "2028-09-01",
+      "date_label": "Sep 2028",
+      "position_month": 23,
+      "scope_type": "global",
+      "scope_ref": null,
+      "description": "Active Authoring creation moves to Studio; only governed exceptions remain.",
+      "product_baseline_status": "PRODUCT_BASELINE_CONFIRMED_UAT",
+      "source_lineage": "TAO_Authoring_v35_6_MIGRATION_DIAGRAM"
+    },
+    {
+      "milestone_id": "M6",
+      "name": "TAO 3.x Authoring EOL",
+      "milestone_date": "2028-12-01",
+      "date_label": "Dec 2028",
+      "position_month": 26,
+      "scope_type": "global",
+      "scope_ref": null,
+      "description": "Reach zero active production Authoring dependency on 3.x.",
+      "product_baseline_status": "PRODUCT_BASELINE_CONFIRMED_UAT",
+      "source_lineage": "TAO_Authoring_v35_6_MIGRATION_DIAGRAM"
+    }
+  ]
+}
