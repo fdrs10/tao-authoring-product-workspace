@@ -58,3 +58,12 @@ Product-confirmed changes applied (docs/UAT_STRUCTURAL_CHANGE_REPORT.md):
 - **Provenance split:** `extraction_origin` (historical) vs editable `product_review_status` (REVIEW_REQUIRED/CONFIRMED/CONFIRMED_WITH_CHANGES/REJECTED) — traceability rule §9 enforced via `traceability_status`.
 - **Milestones:** M1–M6 recovered from v35.6 are the Product-confirmed editable UAT baseline (`data/milestones/milestones_baseline.json`, idempotent importer).
 - New reference contract: docs/SOURCE_RECONSTRUCTION_CONTRACT.md (source-package ingestion for the upcoming source-by-source stage).
+
+
+## November Outcomes addendum (2026-10-16) — FINAL UAT EVOLUTION
+
+Implemented (docs/NOVEMBER_PRODUCT_OUTCOMES.md, docs/CUSTOMER_MIGRATION_PLAN_MODEL.md):
+- **Customer Migration Plans**: per-customer application of the ONE common Migration Path — context/need/dependencies/migration/validation model (Alembic 0004, 7 customer columns), derived readiness states (PRODUCT DECISION REQUIRED / BLOCKED BY ROADMAP CAPABILITY / CUSTOMER VALIDATION REQUIRED / READY FOR PROPOSED INTERVAL / MIGRATION EXCEPTION), Roadmap timing consumed (never duplicated), optimistic concurrency + audit. Migration screen split: Migration Path | Customer Plans.
+- **November Outcomes overview**: NOVEMBER OUTCOMES nav entry (orientation layer only — no Product Truth stored).
+- **M1–M6 shared** across Roadmap, common Migration Path and Customer Plans (single dataset, edit propagates).
+- Reference contract for the upcoming stage: docs/SOURCE_RECONSTRUCTION_CONTRACT.md (source packages, one Source at a time — NOT started).

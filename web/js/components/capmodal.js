@@ -33,7 +33,10 @@ export async function openCapModal(capId) {
 }
 
 export function closeCapModal() {
-  document.querySelectorAll('.modal-overlay').forEach((n) => n.remove());
+  // Remove ONLY the CAP drawer overlay — other open layers (source drill-down
+  // pane, customer-plan pane, quarter modal) are independent and must survive
+  // closing a CAP drawer opened on top of them.
+  document.querySelectorAll('.modal-overlay[data-testid="cap-modal"]').forEach((n) => n.remove());
 }
 
 function kv(k, v) {

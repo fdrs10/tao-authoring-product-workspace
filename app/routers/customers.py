@@ -20,7 +20,9 @@ router = APIRouter(prefix="/api/customers", tags=["customers"])
 CUST_COLS = """
   customer_id, name, current_use, min_functionality_today,
   min_functionality_studio, desired_outcome, value_opportunity, blockers,
-  earliest_milestone_interval, validation_status, notes, version
+  earliest_milestone_interval, validation_status, notes, version,
+  current_environment, relevant_markets, proposed_migration_window,
+  customer_dependencies, assumptions, exceptions, customer_feedback
 """
 
 
@@ -47,6 +49,8 @@ def list_customers(conn: psycopg.Connection = Depends(db_conn)):
         cur.execute(sql)
         cols = [d.name for d in cur.description]
         rows = [dict(zip(cols, r)) for r in cur.fetchall()]
+        for row in rows:
+            row["migration_plan"] = _migration_plan(cur, row)
     return {"count": len(rows), "items": rows}
 
 
@@ -68,7 +72,88 @@ def get_customer(customer_id: str,
         cust["required_capabilities"] = [
             dict(zip([d.name for d in cur.description], r))
             for r in cur.fetchall()]
+        cust["migration_plan"] = _migration_plan(cur, cust)
     return cust
+
+
+# ---- Customer Migration Plan derivation (FINAL UAT EVOLUTION §10/§14) ------
+# The plan CONSUMES Product Roadmap truth — it never stores a second timing.
+# Readiness states are explainable from the underlying data (§14), no scores.
+
+def _migration_plan(cur, cust: dict) -> dict:
+    """Derive the Customer Migration Plan view from canonical truth:
+    required capabilities + their Roadmap timing + availability by the
+    proposed interval's start milestone + shared milestones."""
+    cur.execute("SELECT milestone_id, name, position_month FROM milestones "
+                "ORDER BY position_month NULLS LAST, milestone_id")
+    milestones = [dict(zip([d.name for d in cur.description], r))
+                  for r in cur.fetchall()]
+    by_id = {m["milestone_id"]: m for m in milestones}
+
+    interval = (cust.get("earliest_milestone_interval") or "").upper()
+    start_mid = interval.split("->")[0].strip() if "->" in interval else None
+    start_pos = by_id[start_mid]["position_month"] if start_mid in by_id else None
+
+    cur.execute(
+        """SELECT c.cap_id, c.working_name, c.roadmap_admission,
+                  r.start_month, r.duration_months
+           FROM customer_capabilities cc
+           JOIN capabilities c ON c.cap_id = cc.cap_id
+           LEFT JOIN roadmap_timing r ON r.cap_id = c.cap_id
+           WHERE cc.customer_id=%s ORDER BY c.cap_id""", (cust["customer_id"],))
+    cols = [d.name for d in cur.description]
+    required = []
+    for r in cur.fetchall():
+        row = dict(zip(cols, r))
+        end = (row["start_month"] + (row["duration_months"] or 0)
+               if row["start_month"] is not None else None)
+        row["roadmap_end_month"] = end
+        row["available_by_interval_start"] = (
+            True if start_pos is None else (end is not None and end <= start_pos))
+        row["dependency"] = (
+            "available" if row["available_by_interval_start"]
+            else ("untimed — dependent on Roadmap planning" if end is None
+                  else f"Roadmap timing completes month {end}, after the "
+                       f"proposed interval start (month {start_pos})"))
+        # features composed around this capability (composition only)
+        cur.execute(
+            """SELECT f.feat_id, f.name FROM feature_capabilities fc
+               JOIN features f ON f.feat_id = fc.feat_id
+               WHERE fc.cap_id=%s ORDER BY f.feat_id""", (row["cap_id"],))
+        row["features"] = [dict(zip([d.name for d in cur.description], fr))
+                           for fr in cur.fetchall()]
+        required.append(row)
+
+    blocked = [c for c in required if not c["available_by_interval_start"]]
+    validated = (cust.get("validation_status") or "") in (
+        "Customer validated", "Migration committed")
+    if not cust.get("earliest_milestone_interval"):
+        readiness = "PRODUCT DECISION REQUIRED"
+        reason = "no proposed milestone interval yet — Product must propose one"
+    elif blocked:
+        readiness = "BLOCKED BY ROADMAP CAPABILITY"
+        reason = (f"{len(blocked)} of {len(required)} required capabilities are "
+                  f"not available by the proposed interval start")
+    elif not validated:
+        readiness = "CUSTOMER VALIDATION REQUIRED"
+        reason = "all required capabilities available; customer validation status is not yet committed"
+    else:
+        readiness = "READY FOR PROPOSED INTERVAL"
+        reason = "all required capabilities available by the proposed interval start and customer validated"
+    if (cust.get("validation_status") or "").lower().startswith("migration exception"):
+        readiness, reason = "MIGRATION EXCEPTION", "recorded as a migration exception by Product"
+
+    return {
+        "milestones": milestones,
+        "proposed_interval": cust.get("earliest_milestone_interval"),
+        "interval_start_milestone": start_mid,
+        "required_capabilities": required,
+        "available_by_interval_start": len(required) - len(blocked),
+        "blocked_count": len(blocked),
+        "blocked_capability_ids": [c["cap_id"] for c in blocked],
+        "readiness_status": readiness,
+        "readiness_reason": reason,
+    }
 
 
 @router.post("", status_code=201)

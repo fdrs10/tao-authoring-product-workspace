@@ -57,4 +57,5 @@ export const endpoints = {
   outcome: (h) => `/api/outcomes/${encodeURIComponent(h)}`,
   features: () => '/api/features',
   customers: () => '/api/customers',
+  customer: (id) => `/api/customers/${encodeURIComponent(id)}`,
 };

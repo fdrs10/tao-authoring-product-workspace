@@ -76,3 +76,11 @@ Log findings with: page, CAP-ID/step, your `user_ref`, expected vs actual, scree
 - **Milestones/customers**: governed datasets pending (D2/D3) — functionality is live, data is not supplied.
 - **Identity**: temporary `user_ref` convention until IdP integration (documented swap point in `app/identity.py`).
 - Roadmap bars appear only for capabilities **with timing** (135 seeded timings exist; admission decides visibility).
+
+
+## November Outcomes & Customer Migration Plans (structural update)
+
+- **NOVEMBER OUTCOMES** (nav): orientation over the five outcomes — Authoring Product Definition (Ideation & Target Scope), Product Backlog, Product Roadmap, Common Migration Path, Customer Migration Plans — with links, dependencies and required Product input.
+- **Migration Path | Customer Plans** switch inside MIGRATION PATH: the common path (M1–M6, shared) stays on the first tab; per-customer plans live on the second.
+- Customer Migration Plans: register a customer (Product-supplied ID/name), link required CAP-xxxx, propose an interval (M3 -> M4 — TS codes refused), record blockers/assumptions/exceptions/window/validation. Readiness is derived from Roadmap truth: READY FOR PROPOSED INTERVAL / BLOCKED BY ROADMAP CAPABILITY (blocking CAPs listed) / CUSTOMER VALIDATION REQUIRED / PRODUCT DECISION REQUIRED / MIGRATION EXCEPTION. Plan edits persist with actor + version; stale edits 409.
+- No invented customers, dates or requirements — the honest empty state remains until Product supplies governed data.

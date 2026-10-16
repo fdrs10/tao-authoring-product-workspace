@@ -150,6 +150,15 @@ class CustomerCreate(BaseModel):
     earliest_milestone_interval: str | None = None
     validation_status: str | None = None
     notes: str | None = None
+    # Customer Migration Plan (FINAL UAT EVOLUTION §9) — customer-side context
+    # only; Product Roadmap timing is consumed, never duplicated.
+    current_environment: str | None = None
+    relevant_markets: str | None = None
+    proposed_migration_window: str | None = None
+    customer_dependencies: str | None = None
+    assumptions: str | None = None
+    exceptions: str | None = None
+    customer_feedback: str | None = None
 
 
 class CustomerPatch(BaseModel):
@@ -166,3 +175,10 @@ class CustomerPatch(BaseModel):
     earliest_milestone_interval: str | None = None
     validation_status: str | None = None
     notes: str | None = None
+    current_environment: str | None = None
+    relevant_markets: str | None = None
+    proposed_migration_window: str | None = None
+    customer_dependencies: str | None = None
+    assumptions: str | None = None
+    exceptions: str | None = None
+    customer_feedback: str | None = None
