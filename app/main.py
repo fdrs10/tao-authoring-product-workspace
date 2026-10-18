@@ -57,6 +57,22 @@ from fastapi.staticfiles import StaticFiles
 WEB_DIR = Path(__file__).resolve().parent.parent / "web"
 
 
+@app.get("/api/runtime-info")
+def runtime_info():
+    """Diagnostic: proves which HEAD/database the running instance serves."""
+    from .db import plain_url as _pu
+    db_name = "unknown"
+    try:
+        with __import__("psycopg").connect(
+            _pu(settings.database_url)) as conn:
+            db_name = conn.execute(
+                __import__("sqlalchemy").text("SELECT current_database()")).scalar()
+    except Exception:
+        pass
+    return {"git_head": "a48fa10", "app_version": settings.version,
+            "app_env": settings.app_env, "database": db_name}
+
+
 @app.get("/health")
 def health():
     """Liveness: process is up (Cloud Run probe)."""
