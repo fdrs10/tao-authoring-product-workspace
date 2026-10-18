@@ -1,0 +1,864 @@
+---
+artifact_status: RECOVERED_FROM_EXISTING_SOURCE_DOCUMENT
+author: Dragos Ivan
+date: 2026-09-11
+origin: OAT Confluence / Product
+scope: TAO Authoring vs TAO Studio evidenced capability comparison
+source_id: SRC-GAP-001
+source_type: Derived Product Analysis
+status: ACTIVE
+title: TAO Authoring - TAO Studio gap analysis
+---
+
+# TAO Authoring - TAO Studio gap analysis
+
+\<PARSED TEXT FOR PAGE: 1 / 122\> This document was built using AI
+(ChatGPT), using existing product documentation and internal capability
+materials available as of 2 September 2026. It compares evidenced
+capabilities, not feature stability, reliability, usability, scalability
+or maturity. This distinction is particularly important for TAO Studio,
+which is a newer product and is still closing some governance and
+migration gaps relative to TAO Authoring.
+
+Reference materials used Feature list Purpose Evidence principle
+Comparative statuses 1. Item Authoring Assessment 2. Test Authoring &
+Assembly Assessment 3. Content Banking & Management Assessment 4.
+Metadata, Search & Governance Assessment 5. Import, Export &
+Interoperability 6. Publishing & Delivery Preparation Assessment 7.
+Extensibility & Specialized Capabilities 8. AI-Assisted Content Creation
+& Conversion Overall Gap Assessment Areas of Broad Equivalence Core item
+authoring Core test authoring Core QTI interoperability TAO Authoring
+--- Main Advantages Content governance Version management Extensibility
+Dedicated assessment-resource management Advanced/direct editing
+Publishing and delivery integration TAO Studio --- Main Advantages
+AI-assisted content creation Source-document workflows Content discovery
+Metadata intelligence Quality evaluation Content provenance Bulk and
+transformation workflows QTI conformance validation Fundamentally
+Different Approaches Content Organization Content Lifecycle \<PARSED
+TEXT FOR PAGE: 2 / 122\> Position Within TAO Areas Requiring Further
+Validation Migration Conclusion: TAO Studio vs TAO Authoring Overall
+conclusion Migration position Where Studio can already act as the
+primary authoring solution Workflow compatibility as a migration gate
+Enterprise customer constraints Enterprise migration gates Where Studio
+is not yet a 1:1 replacement Content governance and permissions PCI and
+extensibility Direct QTI/XML editing Legacy interoperability Specialized
+content management Folder-based content organization Should Studio and
+Authoring coexist? As a permanent target architecture As a migration,
+Enterprise, or exception architecture Migration decision Recommended
+product position Overall conclusion Reference materials used Item
+creation \| User Guide
+
+Test assembly \| User Guide
+
+Content banking \| User Guide
+
+Product Requirements Document (PRD) \| Features
+
+TAO3.x-Studio.pdf
+
+tao-studio-sales-capability-map.pdf
+
+module_9_generation.zip module_8_conversion.zip module_7_editor.zip
+module_6_library_characteristics.zip module_5_search_filters.zip
+module_4_import_export.zip module_3_taxonomy_setup.zip
+module_2_user_preferences.zip module_1_dashboard.zip
+module_10_assembly.zip
+
+Feature list Purpose This analysis provides a bidirectional,
+evidence-based comparison of TAO Authoring and TAO Studio.
+
+It identifies:
+
+Capabilities that are broadly equivalent. \<PARSED TEXT FOR PAGE: 3 /
+122\> Capabilities where TAO Authoring has an advantage.
+
+Capabilities where TAO Studio has an advantage.
+
+Areas where the products address similar needs through different
+approaches.
+
+Areas where the available evidence is insufficient to make a reliable
+determination.
+
+The analysis is based on the consolidated TAO Authoring feature list TAO
+Authoring \\- feature list.md and TAO Studio feature list TAO Studio \\-
+feature list.md.
+
+Evidence principle The analysis takes a conservative but
+current-evidence-based approach to TAO Studio capabilities.
+
+A capability is considered present in Studio when it is supported by
+product/user documentation or by a recent internal capability document
+that explicitly describes the capability as currently available.
+Roadmap-only capabilities are not treated as shipped. Where the evidence
+is only an internal capability description rather than independently
+verified product documentation, the capability may be accepted but the
+confidence is reduced where appropriate.
+
+Similarity between Studio's forked item/test editors and the TAO 3.x
+editors is considered supporting evidence only for the established
+item/test editing scope; it is not used to infer content- bank,
+permissions, extensibility or platform capabilities.
+
+Not evidenced does not mean not supported. It means that the available
+evidence is insufficient to confidently claim support.
+
+Comparative statuses Equivalent --- available evidence supports
+substantially equivalent capability.
+
+Broadly equivalent --- the same general capability exists, but complete
+feature parity is not established.
+
+Authoring advantage --- Authoring has an evidenced capability or
+materially stronger implementation that is not equivalently evidenced in
+Studio.
+
+Studio advantage --- Studio has an evidenced capability or materially
+stronger implementation that is not equivalently evidenced in Authoring.
+
+Different approach --- both products address the area, but through
+sufficiently different models that treating either as simply having a
+gap would be misleading.
+
+Inconclusive --- available evidence is insufficient to determine the
+comparison reliably.
+
+1.  Item Authoring Capability \<PARSED TEXT FOR PAGE: 4 / 122\> TAO
+    Authoring
+
+TAO Studio
+
+Comparative status
+
+Significance
+
+Confidence
+
+Analysis / rationale
+
+Comments
+
+Item creation & editing
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+Core item creation and editing are evidenced in both products.
+
+Standard response interactions
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+Both support the standard QTI interaction set represented in the feature
+inventories.
+
+Inline interactions \<PARSED TEXT FOR PAGE: 5 / 122\> Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+Inline Choice, Text Entry, End Attempt and related interactions are
+evidenced in both.
+
+Graphical interactions
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+The standard graphical interaction set is represented in both products.
+
+Custom interactions / PCI
+
+Full PCI use/extensibility
+
+PCI ZIP upload and preview evidenced; full authoring/use parity not
+established
+
+AUTHORING ADVANTAGE
+
+HIGH
+
+HIGH
+
+Studio can ingest PCI packages and generate/preview their HTML, but the
+evidence does not establish Authoring-equivalent PCI installation,
+authoring and extension behaviour. \<PARSED TEXT FOR PAGE: 6 / 122\>
+Rich-text authoring
+
+Supported
+
+Supported
+
+BROADLY EQUIVALENT
+
+LOW
+
+HIGH
+
+Rich-text editing is supported in both. Complete feature-level parity
+has not been established.
+
+Mathematical content
+
+MathML, LaTeX and Wiris MathType
+
+Mathematical expressions including MathML
+
+AUTHORING ADVANTAGE
+
+MEDIUM
+
+MEDIUM
+
+Studio mathematical authoring is evidenced, but the available evidence
+does not establish the broader MathType/LaTeX capability documented for
+Authoring.
+
+Images & media
+
+Supported
+
+Supported
+
+BROADLY EQUIVALENT
+
+LOW
+
+HIGH
+
+Studio explicitly supports images/media as Library resources and within
+the embedded item editor. Exact format/configuration parity is not
+established. \<PARSED TEXT FOR PAGE: 7 / 122\> Passages / shared stimuli
+
+Supported and reusable
+
+Stimulus/passages supported in Library and editor
+
+BROADLY EQUIVALENT
+
+MEDIUM
+
+HIGH
+
+Studio can upload stimulus/passages and use Library stimulus in the
+embedded editor. Dedicated passage-management parity is addressed
+separately.
+
+Response configuration & correct answers
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+Core response configuration is evidenced in both editors.
+
+Scoring & response processing
+
+Match-correct, mapped and custom processing
+
+Match-correct and mapped scoring evidenced
+
+BROADLY EQUIVALENT
+
+MEDIUM
+
+HIGH \<PARSED TEXT FOR PAGE: 8 / 122\> Studio explicitly evidences
+match-correct and mapped scoring. Custom response-processing parity
+remains unverified.
+
+Feedback
+
+Supported
+
+Supported
+
+BROADLY EQUIVALENT
+
+LOW
+
+HIGH
+
+Feedback is explicitly evidenced in the Studio embedded item editor;
+exact feature-level parity is not established.
+
+Item styling
+
+Item Style Editor
+
+Embedded Style Editor
+
+BROADLY EQUIVALENT
+
+LOW
+
+HIGH
+
+The Studio capability map explicitly identifies the Style Editor; exact
+feature-level parity is not independently verified.
+
+Item source editing
+
+Direct QTI source editing
+
+Not evidenced
+
+AUTHORING ADVANTAGE
+
+MEDIUM \<PARSED TEXT FOR PAGE: 9 / 122\> HIGH
+
+Direct source editing is documented for Authoring and not evidenced in
+Studio.
+
+Item preview
+
+CurrentGen and NextGen preview
+
+Item preview
+
+BROADLY EQUIVALENT
+
+LOW
+
+HIGH
+
+Both preview items, although Authoring explicitly supports multiple
+preview environments.
+
+Item printing
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+LOW
+
+HIGH
+
+Printing is evidenced in both.
+
+Item language & writing direction
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+--- \<PARSED TEXT FOR PAGE: 10 / 122\> HIGH
+
+The Studio item editor explicitly exposes language and writing-direction
+properties.
+
+Assessment The standard item-authoring core is the strongest area of
+equivalence between the products.
+
+The standard editor overlap is stronger than the previous draft
+suggested. Studio now has explicit evidence for language/writing
+direction, stimulus use, match-correct/mapped scoring, feedback and
+style editing. The main remaining Authoring advantages in this area are
+full PCI extensibility, direct source editing, richer evidenced
+mathematical tooling, and dedicated passage-management capabilities.
+
+2.  Test Authoring & Assembly Capability
+
+TAO Authoring
+
+TAO Studio
+
+Comparative status
+
+Significance
+
+Confidence
+
+Analysis / rationale
+
+Comments
+
+Test creation & editing
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+Core test creation and editing exist in both. \<PARSED TEXT FOR PAGE: 11
+/ 122\> Test structure
+
+Test → Test Part → Section → Item
+
+Structured assessment hierarchy
+
+BROADLY EQUIVALENT
+
+LOW
+
+HIGH
+
+Studio supports structured assessments through its embedded test editor.
+
+Test parts & sections
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+Evidenced in both.
+
+Item placement & organization
+
+Supported
+
+Supported
+
+BROADLY EQUIVALENT
+
+LOW
+
+MEDIUM
+
+Studio capability exists, but detailed coverage has medium confidence.
+\<PARSED TEXT FOR PAGE: 12 / 122\> Item selection
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+Evidenced in both.
+
+Random item selection
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+Both can randomly select questions from eligible pools.
+
+Ordering & shuffling
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+Evidenced in both. \<PARSED TEXT FOR PAGE: 13 / 122\> Navigation
+configuration
+
+Supported
+
+Supported
+
+BROADLY EQUIVALENT
+
+MEDIUM
+
+HIGH
+
+Both configure navigation; complete setting parity has not been
+established.
+
+Time limits
+
+Supported throughout test structure
+
+Supported
+
+BROADLY EQUIVALENT
+
+MEDIUM
+
+HIGH
+
+Timing configuration is present in both.
+
+Test-taker tools
+
+Supported
+
+Supported
+
+BROADLY EQUIVALENT
+
+MEDIUM
+
+MEDIUM
+
+Studio support is evidenced, but detailed parity is not established.
+\<PARSED TEXT FOR PAGE: 14 / 122\> Test hierarchy settings
+
+Supported
+
+Supported
+
+BROADLY EQUIVALENT
+
+MEDIUM
+
+HIGH
+
+Both expose configuration at multiple test hierarchy levels.
+
+Scoring weights
+
+Supported
+
+Supported
+
+BROADLY EQUIVALENT
+
+MEDIUM
+
+HIGH
+
+Studio explicitly evidences weights in the embedded TAO 3.x test
+creator.
+
+Rubrics & instructions
+
+Supported
+
+Supported
+
+BROADLY EQUIVALENT
+
+LOW
+
+HIGH
+
+Studio explicitly evidences rubrics/instructions in the embedded test
+creator. \<PARSED TEXT FOR PAGE: 15 / 122\> Categories
+
+Supported
+
+Supported
+
+BROADLY EQUIVALENT
+
+LOW
+
+HIGH
+
+Categories are explicitly evidenced in the Studio embedded test creator.
+
+Test-level scoring/outcomes
+
+Supported
+
+Supported
+
+BROADLY EQUIVALENT
+
+MEDIUM
+
+MEDIUM
+
+Studio support exists, but exact scope is less strongly evidenced.
+
+Test XML editing
+
+Supported
+
+Not evidenced
+
+AUTHORING ADVANTAGE
+
+MEDIUM
+
+HIGH
+
+Direct XML editing is explicitly available in Authoring and not
+evidenced in Studio. \<PARSED TEXT FOR PAGE: 16 / 122\> Test preview
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+Both provide test preview.
+
+Test printing
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+The August Studio capability map explicitly lists print in the embedded
+TAO 3.x test creator.
+
+Taxonomy-driven item pools
+
+Not evidenced
+
+Supported
+
+STUDIO ADVANTAGE
+
+HIGH
+
+HIGH
+
+Studio can build question pools from Library content matching
+taxonomy/tag criteria. \<PARSED TEXT FOR PAGE: 17 / 122\> Assessment The
+standard test assembly experience is broadly comparable based on the
+available evidence.
+
+Studio has a significant additional capability through taxonomy-driven
+item pools, connecting its Library metadata model directly to assessment
+assembly.
+
+Authoring retains an evidenced advantage for direct XML manipulation.
+
+3.  Content Banking & Management This is an area where direct feature
+    matching can be misleading because the products use significantly
+    different content-management models.
+
+Capability
+
+TAO Authoring
+
+TAO Studio
+
+Comparative status
+
+Significance
+
+Confidence
+
+Analysis / rationale
+
+Comments
+
+Primary content repository
+
+Hierarchical content bank
+
+Content Library
+
+DIFFERENT APPROACH
+
+HIGH
+
+HIGH
+
+Both manage reusable content but use fundamentally different
+organizational models.
+
+Hierarchical content organization
+
+Classes/folders \<PARSED TEXT FOR PAGE: 18 / 122\> Not evidenced
+
+AUTHORING ADVANTAGE
+
+HIGH
+
+HIGH
+
+Authoring provides explicit hierarchical resource organization. Studio
+emphasizes metadata/taxonomy instead.
+
+Item banking
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+Both store, browse and reuse assessment questions/items.
+
+Test banking
+
+Supported
+
+Supported
+
+EQUIVALENT
+
+---
+
+HIGH
+
+Both maintain reusable tests.
+
+Asset management \<PARSED TEXT FOR PAGE: 19 / 122\> Dedicated Asset
+Manager
+
+Library source/material/asset management
+
+DIFFERENT APPROACH
+
+MEDIUM
+
+HIGH
+
+Both manage assets, but through different repository models.
+
+Passage management
+
+Dedicated passage management
+
+Stimulus/passages supported, but no equivalent dedicated manager
+evidenced
+
+AUTHORING ADVANTAGE
+
+MEDIUM
+
+HIGH
+
+Studio supports stimulus/passages as Library/editor resources, but a
+dedicated passage- management model equivalent to Authoring is not
+evidenced.
+
+Passage stylesheets
+
+Supported
+
+Not evidenced
+
+AUTHORING ADVANTAGE
+
+MEDIUM
+
+HIGH
+
+Specific to Authoring's passage model.
+
+Folder/class management \<PARSED TEXT FOR PAGE: 20 / 122\> Supported
+
+Not applicable to evidenced Studio model
+
+DIFFERENT APPROACH
+
+HIGH
+
+HIGH
+
+Studio uses a different organizational model based around its Library
+and metadata.
+
+Resource copy/duplication
+
+Supported
+
+No physical move/copy semantics evidenced
+
+AUTHORING ADVANTAGE
+
+MEDIUM
+
+HIGH
+
+Studio uses retagging and project membership rather than Authoring-style
+physical copy/move semantics.
+
+Resource movement
+
+Between folders/classes
+
+Not applicable/evidenced
+
+DIFFERENT APPROACH
+
+LOW
+
+HIGH
+
+Closely tied to Authoring's hierarchical organization model. \<PARSED
+TEXT FOR PAGE: 21 / 122\> Resource deletion
+
+Supported
+
+Supported, including bulk deletion
+
+STUDIO ADVANTAGE
+
+LOW
+
+HIGH
+
+Both delete content; Studio explicitly supports multi-resource deletion.
+
+Resource properties
+
+Supported
+
+Extensive Library properties

@@ -89,3 +89,11 @@ Log findings with: page, CAP-ID/step, your `user_ref`, expected vs actual, scree
 ## Reports / Deliverables (structural update)
 
 **REPORTS / DELIVERABLES** (nav): the five November deliverables as governed report contracts (D1–D5) with target dates, section completeness (AVAILABLE / INCOMPLETE / PRODUCT DECISION REQUIRED / NOT APPLICABLE) and versioned generation. **Preview Report** opens a publication-style document (not an app screenshot) — print-friendly via "Print / Save as PDF". D5 requires selecting a governed customer; **Generate Customer Migration Pilot Set** packages selected D5 plans (DEPP/INVALSI/NSA/NCCER only when governed records exist — never invented). Generating never mutates Product Truth.
+
+
+## Source-analysis funnel (controlled ingestion — current reality)
+
+- **Ideation** now leads with **00 · Capability Candidates** — the active population (34 reconciled candidates from 426 evidence signals). Toggles: All | Focus Capabilities (15) | MEXCBT / Uchida only.
+- **SOURCES & EVIDENCE** shows the funnel banner (9 Sources → 426 Signals → 34 Candidates → 15 Focus) and the tabs: Source Registry, Capabilities, Extracted Authoring Evidence, Capability Analysis, Capability Candidates, Focus Capability Sets, Customers.
+- The previous 135-capability baseline is preserved as HISTORICAL (population=historical) — never mixed into the active views.
+- Governance: promote analysed evidence to a new Candidate (rationale required); mark a Candidate NOT SELECTED FOR IDEATION (rationale required) — both audited, never silent.

@@ -1,0 +1,110 @@
+[
+  {
+    "source_id": "SRC-3X-001",
+    "title": "TAO Authoring - feature list",
+    "owner_proposer": "Dragos Ivan",
+    "source_type": "Product Capability Baseline",
+    "evidence_class": "Existing Product Baseline",
+    "input_form": "User-provided Confluence content",
+    "status": "REGISTERED",
+    "authority": "HIGH",
+    "extraction_rule": "Literal feature list; names/descriptions preserved",
+    "artifact": "SRC-3X-001__SRC-3X-001_TAO_Authoring_Feature_List.md"
+  },
+  {
+    "source_id": "SRC-V1-001",
+    "title": "TAO Studio - feature list",
+    "owner_proposer": "Dragos Ivan",
+    "source_type": "Product Capability Baseline",
+    "evidence_class": "Existing Product Baseline",
+    "input_form": "User-provided Confluence content",
+    "status": "REGISTERED",
+    "authority": "HIGH",
+    "extraction_rule": "Literal feature list; names/descriptions preserved",
+    "artifact": "SRC-V1-001__SRC-V1-001_TAO_Studio_Feature_List.md"
+  },
+  {
+    "source_id": "SRC-GAP-001",
+    "title": "TAO Authoring - TAO Studio gap analysis",
+    "owner_proposer": "Dragos Ivan",
+    "source_type": "Derived Product Analysis",
+    "evidence_class": "Gap / Comparative Evidence",
+    "input_form": "Confluence content",
+    "status": "REGISTERED",
+    "authority": "HIGH",
+    "extraction_rule": "Comparison evidence; not itself product truth",
+    "artifact": "SRC-GAP-001__SRC-GAP-001_TAO_Authoring_TAO_Studio_Gap_Analysis.md"
+  },
+  {
+    "source_id": "SRC-NEW-001",
+    "title": "TAO Authoring Strategic Initiative / New Developments",
+    "owner_proposer": "Internal / Product",
+    "source_type": "Internal Needs & Strategic Initiative",
+    "evidence_class": "Internal Product Need / Customer Evidence",
+    "input_form": "User-provided text",
+    "status": "REGISTERED",
+    "authority": "HIGH",
+    "extraction_rule": "Narrative extraction; Authoring scope gate applied",
+    "artifact": "SRC-NEW-001__SRC-NEW-001_TAO_Authoring_Strategic_Initiative_New_Developments.md"
+  },
+  {
+    "source_id": "SRC-COMP-001",
+    "title": "TAO AI Competitor Intelligence Report",
+    "owner_proposer": "Internal strategic use",
+    "source_type": "Competitive Intelligence",
+    "evidence_class": "Market / Competitive Evidence",
+    "input_form": "Internal report",
+    "status": "REGISTERED",
+    "authority": "MEDIUM-HIGH",
+    "extraction_rule": "Only Authoring-relevant competitor signals retained",
+    "artifact": "SRC-COMP-001__SRC-COMP-001_TAO_AI_Competitor_Intelligence_Report.md"
+  },
+  {
+    "source_id": "SRC-JIRA-001",
+    "title": "Current Authoring Jira Backlog",
+    "owner_proposer": "Product / Engineering",
+    "source_type": "Operational / Delivery Evidence",
+    "evidence_class": "Delivery Evidence",
+    "input_form": "Jira CSV export",
+    "status": "REGISTERED",
+    "authority": "HIGH",
+    "extraction_rule": "Jira does not define capability identity; specific tickets are delivery signals",
+    "artifact": "SRC-JIRA-001__JIRA (1).csv"
+  },
+  {
+    "source_id": "SRC-OECD-001",
+    "title": "OECD Digital Education Outlook 2026",
+    "owner_proposer": "Mack",
+    "source_type": "External Research Evidence",
+    "evidence_class": "Market / External Evidence",
+    "input_form": "Uploaded PDF",
+    "status": "REGISTERED",
+    "authority": "HIGH",
+    "extraction_rule": "Authoring-only extraction; Chapter 12 is primary assessment-authoring evidence",
+    "artifact": "SRC-OECD-001__SRC-OECD-001_OECD_Digital_Education_Outlook_2026.pdf"
+  },
+  {
+    "source_id": "SRC-NYSED-001",
+    "title": "3.x Features and Enhancements (NYSED)",
+    "owner_proposer": "Dan",
+    "source_type": "Customer / VoC Requirements Evidence",
+    "evidence_class": "Customer / VoC",
+    "input_form": "Uploaded DOCX",
+    "status": "REGISTERED",
+    "authority": "HIGH",
+    "extraction_rule": "Needs/gaps from NYSED; not claims of existing product capability",
+    "artifact": "SRC-NYSED-001__3.x features and enhancements (NYSED).docx"
+  },
+  {
+    "source_id": "SRC-STRATEGY-001",
+    "title": "OAT Market Portfolio and Product Strategy 2027-2029",
+    "owner_proposer": "Miguel",
+    "source_type": "Strategic Product Source",
+    "evidence_class": "STRATEGY - HIGH AUTHORITY",
+    "input_form": "Uploaded DOCX",
+    "status": "REGISTERED",
+    "authority": "VERY HIGH",
+    "extraction_rule": "Strategic authority. Extract Authoring only; preserve target/market/mode",
+    "artifact": "SRC-STRATEGY-001__OAT 18 + 18 Months Strategy - Product and Markets.docx"
+  }
+]

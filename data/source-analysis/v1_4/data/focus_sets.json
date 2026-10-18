@@ -1,0 +1,244 @@
+{
+  "Traditional / K-12": [
+    {
+      "family_id": "F05",
+      "capability": "Preview, print, accessibility & multilingual authoring"
+    },
+    {
+      "family_id": "F07",
+      "capability": "Blueprints, forms & equivalent-form design"
+    },
+    {
+      "family_id": "F09",
+      "capability": "Repository, banking, folders & content organization"
+    },
+    {
+      "family_id": "F11",
+      "capability": "Metadata, taxonomy & classification"
+    },
+    {
+      "family_id": "F12",
+      "capability": "Standards & CASE alignment"
+    },
+    {
+      "family_id": "F02",
+      "capability": "Interaction coverage & complex item types"
+    },
+    {
+      "family_id": "F15",
+      "capability": "Versioning, provenance, usage & audit history"
+    }
+  ],
+  "Professional / Credentialing": [
+    {
+      "family_id": "F17",
+      "capability": "Workflow, comments, review & approval"
+    },
+    {
+      "family_id": "F07",
+      "capability": "Blueprints, forms & equivalent-form design"
+    },
+    {
+      "family_id": "F16",
+      "capability": "Permissions, RBAC, identity & entitlements"
+    },
+    {
+      "family_id": "F04",
+      "capability": "Response, scoring, feedback & rubrics"
+    },
+    {
+      "family_id": "F09",
+      "capability": "Repository, banking, folders & content organization"
+    },
+    {
+      "family_id": "F15",
+      "capability": "Versioning, provenance, usage & audit history"
+    },
+    {
+      "family_id": "F24",
+      "capability": "Production planning, monitoring & campaigns"
+    }
+  ],
+  "Higher Education": [
+    {
+      "family_id": "F30",
+      "capability": "Faculty/course authoring workspace"
+    },
+    {
+      "family_id": "F04",
+      "capability": "Response, scoring, feedback & rubrics"
+    },
+    {
+      "family_id": "F17",
+      "capability": "Workflow, comments, review & approval"
+    },
+    {
+      "family_id": "F05",
+      "capability": "Preview, print, accessibility & multilingual authoring"
+    },
+    {
+      "family_id": "F03",
+      "capability": "Rich text, math, media & layout authoring"
+    },
+    {
+      "family_id": "F11",
+      "capability": "Metadata, taxonomy & classification"
+    },
+    {
+      "family_id": "F10",
+      "capability": "Search, discovery & similarity"
+    }
+  ],
+  "Governed Formative": [
+    {
+      "family_id": "F08",
+      "capability": "Templates & guided authoring"
+    },
+    {
+      "family_id": "F12",
+      "capability": "Standards & CASE alignment"
+    },
+    {
+      "family_id": "F09",
+      "capability": "Repository, banking, folders & content organization"
+    },
+    {
+      "family_id": "F10",
+      "capability": "Search, discovery & similarity"
+    },
+    {
+      "family_id": "F11",
+      "capability": "Metadata, taxonomy & classification"
+    },
+    {
+      "family_id": "F15",
+      "capability": "Versioning, provenance, usage & audit history"
+    },
+    {
+      "family_id": "F19",
+      "capability": "AI-assisted item generation"
+    }
+  ],
+  "Assessment-led Learning": [
+    {
+      "family_id": "F31",
+      "capability": "Assessment-led learning content blocks"
+    },
+    {
+      "family_id": "F11",
+      "capability": "Metadata, taxonomy & classification"
+    },
+    {
+      "family_id": "F08",
+      "capability": "Templates & guided authoring"
+    },
+    {
+      "family_id": "F09",
+      "capability": "Repository, banking, folders & content organization"
+    },
+    {
+      "family_id": "F10",
+      "capability": "Search, discovery & similarity"
+    },
+    {
+      "family_id": "F13",
+      "capability": "QTI interoperability & conformance"
+    },
+    {
+      "family_id": "F19",
+      "capability": "AI-assisted item generation"
+    }
+  ],
+  "MEXCBT / Uchida": [
+    {
+      "family_id": "F02",
+      "capability": "Interaction coverage & complex item types"
+    },
+    {
+      "family_id": "F03",
+      "capability": "Rich text, math, media & layout authoring"
+    },
+    {
+      "family_id": "F04",
+      "capability": "Response, scoring, feedback & rubrics"
+    },
+    {
+      "family_id": "F05",
+      "capability": "Preview, print, accessibility & multilingual authoring"
+    },
+    {
+      "family_id": "F06",
+      "capability": "Test creation, structure & assembly"
+    },
+    {
+      "family_id": "F11",
+      "capability": "Metadata, taxonomy & classification"
+    },
+    {
+      "family_id": "F13",
+      "capability": "QTI interoperability & conformance"
+    }
+  ],
+  "Cross-market Focus Set": [
+    {
+      "family_id": "F09",
+      "capability": "Repository, banking, folders & content organization"
+    },
+    {
+      "family_id": "F10",
+      "capability": "Search, discovery & similarity"
+    },
+    {
+      "family_id": "F11",
+      "capability": "Metadata, taxonomy & classification"
+    },
+    {
+      "family_id": "F15",
+      "capability": "Versioning, provenance, usage & audit history"
+    },
+    {
+      "family_id": "F16",
+      "capability": "Permissions, RBAC, identity & entitlements"
+    },
+    {
+      "family_id": "F17",
+      "capability": "Workflow, comments, review & approval"
+    },
+    {
+      "family_id": "F05",
+      "capability": "Preview, print, accessibility & multilingual authoring"
+    },
+    {
+      "family_id": "F13",
+      "capability": "QTI interoperability & conformance"
+    },
+    {
+      "family_id": "F07",
+      "capability": "Blueprints, forms & equivalent-form design"
+    },
+    {
+      "family_id": "F02",
+      "capability": "Interaction coverage & complex item types"
+    },
+    {
+      "family_id": "F03",
+      "capability": "Rich text, math, media & layout authoring"
+    },
+    {
+      "family_id": "F04",
+      "capability": "Response, scoring, feedback & rubrics"
+    },
+    {
+      "family_id": "F12",
+      "capability": "Standards & CASE alignment"
+    },
+    {
+      "family_id": "F19",
+      "capability": "AI-assisted item generation"
+    },
+    {
+      "family_id": "F22",
+      "capability": "Responsible AI governance & oversight"
+    }
+  ]
+}

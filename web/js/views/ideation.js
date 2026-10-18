@@ -23,9 +23,13 @@ const SHEET_TO_FILTER = {
   '05': 'Discontinued',
 };
 
-export async function renderIdeation(container, sheetNum = '01') {
+export async function renderIdeation(container, sheetNum = '00') {
   container.replaceChildren();
-  const idx = el('div', { class: 'ideation-index' }, SHEETS.map((s) =>
+  if (sheetNum === '00') return renderCandidates(container);
+  const idx = el('div', { class: 'ideation-index' },
+    el('a', { class: `idx-item ${sheetNum === '00' ? 'active' : ''}`, href: '#/ideation/00', dataset: { testid: 'ideation-idx-00' } },
+      el('span', { class: 'num' }, '00'), 'Capability Candidates (active)'),
+    SHEETS.map((s) =>
     el('a', { class: `idx-item ${s.n === sheetNum ? 'active' : ''}`, href: `#/ideation/${s.n}`, dataset: { testid: `ideation-idx-${s.n}` } },
       el('span', { class: 'num' }, s.n), s.title)));
   const content = el('div', { dataset: { testid: 'ideation-content' } });
@@ -41,6 +45,42 @@ export async function renderIdeation(container, sheetNum = '01') {
   }
   const filter = SHEET_TO_FILTER[sheetNum];
   if (filter) return renderSheet(content, filter, sheetNum === '05');
+}
+
+async function renderCandidates(container) {
+  container.appendChild(el('h1', {}, '00 · Capability Candidates — active Ideation population'));
+  container.appendChild(el('div', { class: 'small dim', style: 'margin-bottom:8px' },
+    'The active working population comes from the final Source analysis (34 reconciled candidates from 426 evidence signals).',
+    el('br'),
+    'The 15 Cross-market Focus Capabilities are a Product recommendation — a focus view, not a filter on truth. The historical 135-capability baseline is preserved separately (population = HISTORICAL_BASELINE_V1).'));
+  const view = { mode: 'all', includeNotSelected: false };
+  const toolbar = el('div', { class: 'road-toolbar' },
+    el('div', { class: 'seg' },
+      el('button', { class: 'active', dataset: { testid: 'cand-all' }, onclick: (e) => { view.mode = 'all'; e.target.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('active')); e.target.classList.add('active'); draw(); } }, 'All Candidates'),
+      el('button', { dataset: { testid: 'cand-focus' }, onclick: (e) => { view.mode = 'focus'; e.target.parentElement.querySelectorAll('button').forEach(b => b.classList.remove('active')); e.target.classList.add('active'); draw(); } }, 'Focus Capabilities')),
+    el('button', { dataset: { testid: 'cand-mexcbt' }, onclick: (e) => { view.mexcbt = !view.mexcbt; e.target.classList.toggle('active', view.mexcbt); draw(); } }, 'MEXCBT / Uchida only'),
+    el('button', { dataset: { testid: 'cand-include-not-selected' }, onclick: (e) => { view.includeNotSelected = !view.includeNotSelected; e.target.classList.toggle('active', view.includeNotSelected); draw(); } }, 'Include not-selected'));
+  container.appendChild(toolbar);
+  const mount = el('div', { dataset: { testid: 'candidates-mount' } });
+  container.appendChild(mount);
+  const res = await api.get(endpoints.candidates());
+  const draw = () => {
+    let rows = res.items;
+    if (!view.includeNotSelected) rows = rows.filter((c) => c.ideation_disposition === 'ACTIVE FOR IDEATION');
+    if (view.mode === 'focus') rows = rows.filter((c) => c.is_focus);
+    if (view.mexcbt) rows = rows.filter((c) => c.mexcbt_signals > 0);
+    mount.replaceChildren(...rows.map((c) => el('div', { class: 'mig-band', dataset: { testid: 'candidate-row', candidate: c.candidate_id } },
+      el('h3', {}, `${c.candidate_id} · ${c.name}`,
+        c.is_focus ? el('span', { class: 'badge ok-badge', style: 'margin-left:8px' }, 'FOCUS') : null,
+        el('span', { class: 'badge', style: 'margin-left:8px' }, c.ideation_disposition)),
+      el('div', { class: 'small' },
+        `${c.signals} evidence signals · ${c.independent_sources} independent sources · Evidence strength ${c.evidence_strength} · Cross-market leverage ${c.cross_market_leverage} · Strategy alignment ${c.strategy_alignment}`),
+      el('div', { class: 'small dim' }, `Markets: ${c.markets || '—'} · MEXCBT direct signals: ${c.mexcbt_signals}`),
+      c.focus_markets ? el('div', { class: 'small dim' }, `Focus in: ${c.focus_markets}`) : null,
+      c.disposition_rationale ? el('div', { class: 'small dim' }, `Rationale: ${c.disposition_rationale}`) : null,
+      el('div', { class: 'small dim mono' }, `Source IDs: ${c.source_ids}`))));
+  };
+  draw();
 }
 
 function renderV2Position(content) {

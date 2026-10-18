@@ -74,3 +74,9 @@ Implemented (docs/NOVEMBER_PRODUCT_OUTCOMES.md, docs/CUSTOMER_MIGRATION_PLAN_MOD
 Implemented (docs/REPORTS_DELIVERABLES_MODEL.md + docs/REPORT_TEMPLATE_CONTRACTS.md):
 - Five governed report contracts D1–D5 with fixed target dates and predefined section structures; publication-style print-friendly HTML previews + versioned generation snapshots (`report_generations`, Alembic 0005); Pilot Set packaging for governed customers only (DEPP/INVALSI/NSA/NCCER refused until governed).
 - New main-nav section REPORTS / DELIVERABLES (#/reports). Reports consume canonical data only — generation never mutates Product Truth (tested).
+
+
+## Source-analysis ingestion addendum (2026-10-16) — CONTROLLED OPERATION
+
+- Funnel materialised: 9 Sources → 426 evidence signals (`source_evidence`) → 34 Capability Candidates (active population, `capability_candidates` + `capabilities.population='SOURCE_ANALYSIS_CANDIDATE'`) → 15 Cross-market Focus Capabilities. Previous 135 marked `HISTORICAL_BASELINE_V1` (preserved, never active). Package: TAO_Authoring_Capability_Evidence_Focus_Guide_v1_4_VERIFIED (md5 e4d70bb9…), manifest in data/import-manifests/.
+- New screens: Sources funnel tabs (Registry / Evidence / Analysis / Candidates / Focus), Ideation 00 Capability Candidates (All | Focus | MEXCBT toggles), population rule on capabilities (default active; historical on request). Governance: promotion + disposition with rationale/actor/audit/version (docs/CAPABILITY_CANDIDATE_GOVERNANCE.md).

@@ -57,8 +57,21 @@ def list_capabilities(
     ideation_sheet: str | None = None,
     decision: str | None = None,
     origin: str | None = None,
+    population: str | None = None,
 ):
     where, params = [], []
+    # Population rule (CONTROLLED OPERATION §6/§19): default = ACTIVE —
+    # SOURCE_ANALYSIS_CANDIDATE rows when candidates exist, otherwise the
+    # non-historical population; HISTORICAL_BASELINE_V1 never in the default.
+    if population is None or population == "active":
+        where.append("""((SELECT count(*) FROM capabilities c2
+                          WHERE c2.population = 'SOURCE_ANALYSIS_CANDIDATE') = 0
+                         AND c.population IS DISTINCT FROM 'HISTORICAL_BASELINE_V1'
+                         OR c.population = 'SOURCE_ANALYSIS_CANDIDATE')""")
+    elif population == "historical":
+        where.append("c.population = 'HISTORICAL_BASELINE_V1'")
+    elif population == "all":
+        pass
     for qv, col in (
         (category, "c.strategic_category"), (moscow, "c.moscow"),
         (visibility, "c.visibility"), (ideation_sheet, "c.ideation_sheet"),

@@ -64,3 +64,8 @@ Reconciliation output classes (§11): unchanged · description change · merge c
 - [x] UI: Open Source (artifact/unavailable), View Extracted → Source Capability → Canonical CAP navigation; CAP drawer shows Origin/Product Review/traceability; source-package-ready fields exposed
 - [x] Governed import patterns + coverage reporting (`materialize_source_documents.py`, `SOURCE_DOCUMENT_COVERAGE_REPORT.md`)
 - [ ] Per-package importer invocation (written when the first package arrives)
+
+
+## 8. Ingestion executed (2026-10-16) — CONTROLLED OPERATION
+
+The FINAL governed Source-analysis package (`TAO_Authoring_Capability_Evidence_Focus_Guide_v1_4_VERIFIED`, md5 `e4d70bb9…`) has been ingested: 9 Sources, 426 evidence signals (`source_evidence`), 34 Capability Candidates (population `SOURCE_ANALYSIS_CANDIDATE` — the active Ideation population), 15 Cross-market Focus Capabilities; the previous 135 caps marked `HISTORICAL_BASELINE_V1`. See docs/SOURCE_ANALYSIS_INGESTION_REPORT.md + docs/SOURCE_ANALYSIS_FUNNEL_MODEL.md + docs/CAPABILITY_CANDIDATE_GOVERNANCE.md. The Source-by-Source RECONSTRUCTION itself (per-Source review passes 1–5) remains the next Product operation.

@@ -27,7 +27,7 @@
    "repository_location": "local://SRC-GAP-001/SRC_GAP_TAO_3X_VS_STUDIO_V1.txt",
    "openable": true,
    "extracted_source_capabilities": 0,
-   "problem_or_action": "document_uri connected"
+   "problem_or_action": "connected"
   },
   {
    "source_id": "SRC-HTML-001",
@@ -45,11 +45,20 @@
    "repository_location": "local://SRC-JIRA-001/JIRA_current_backlog.csv",
    "openable": true,
    "extracted_source_capabilities": 0,
-   "problem_or_action": "document_uri connected"
+   "problem_or_action": "connected"
   },
   {
    "source_id": "SRC-NEW-001",
    "human_name": "TAO Authoring Strategic Initiative",
+   "original_artifact": "not materialised",
+   "repository_location": null,
+   "openable": false,
+   "extracted_source_capabilities": 0,
+   "problem_or_action": "original was Confluence paste / supplied analysis text; never materialised into the handoff"
+  },
+  {
+   "source_id": "SRC-NYSED-001",
+   "human_name": "3.x features and enhancements (NYSED)",
    "original_artifact": "not materialised",
    "repository_location": null,
    "openable": false,
@@ -63,7 +72,16 @@
    "repository_location": "local://SRC-OECD-001/OECD_Digital_Education_Outlook_2026.pdf",
    "openable": true,
    "extracted_source_capabilities": 0,
-   "problem_or_action": "document_uri connected"
+   "problem_or_action": "connected"
+  },
+  {
+   "source_id": "SRC-STRATEGY-001",
+   "human_name": "OAT 18 + 18 Months Strategy - Product and Markets",
+   "original_artifact": "not materialised",
+   "repository_location": null,
+   "openable": false,
+   "extracted_source_capabilities": 0,
+   "problem_or_action": "original was Confluence paste / supplied analysis text; never materialised into the handoff"
   },
   {
    "source_id": "SRC-TEST-001",

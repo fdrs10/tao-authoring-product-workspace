@@ -8,9 +8,26 @@ import { openCapModal } from '../components/capmodal.js';
 
 export async function renderSources(container) {
   container.replaceChildren();
+  // CONTROLLED OPERATION: Source-analysis funnel (§10) — governed counts
+  const funnel = await api.get(endpoints.funnel()).catch(() => null);
+  if (funnel) {
+    const f = funnel.funnel;
+    container.appendChild(el('div', { class: 'filter-bar', dataset: { testid: 'funnel-banner' } },
+      el('span', { class: 'flow-step' }, `${f.sources} Sources`),
+      el('span', { class: 'flow-arrow' }, '→'),
+      el('span', { class: 'flow-step' }, `${f.evidence_signals} Evidence Signals`),
+      el('span', { class: 'flow-arrow' }, '→'),
+      el('span', { class: 'flow-step' }, `${f.capability_candidates} Capability Candidates`),
+      el('span', { class: 'flow-arrow' }, '→'),
+      el('span', { class: 'flow-step' }, `${f.focus_capabilities} Focus Capabilities`)));
+  }
   const tabs = el('div', { class: 'subtabs' },
-    el('a', { class: 'active', dataset: { tab: 'sources', testid: 'tab-sources' } }, 'Sources'),
+    el('a', { class: 'active', dataset: { tab: 'sources', testid: 'tab-sources' } }, 'Source Registry'),
     el('a', { dataset: { tab: 'capabilities', testid: 'tab-src-capabilities' } }, 'Capabilities'),
+    el('a', { dataset: { tab: 'evidence', testid: 'tab-evidence' } }, 'Extracted Authoring Evidence'),
+    el('a', { dataset: { tab: 'analysis', testid: 'tab-analysis' } }, 'Capability Analysis'),
+    el('a', { dataset: { tab: 'candidates', testid: 'tab-candidates' } }, 'Capability Candidates'),
+    el('a', { dataset: { tab: 'focus', testid: 'tab-focus' } }, 'Focus Capability Sets'),
     el('a', { dataset: { tab: 'customers', testid: 'tab-customers' } }, 'Customers'));
   const body = el('div', { dataset: { testid: 'sources-body' } });
   container.append(el('h1', {}, 'Sources & Evidence'), tabs, body);
@@ -19,10 +36,65 @@ export async function renderSources(container) {
     if (!t) return;
     tabs.querySelectorAll('a').forEach((a) => a.classList.toggle('active', a.dataset.tab === t));
     if (t === 'sources') renderSourceList(body);
+    if (t === 'evidence') renderEvidence(body);
+    if (t === 'analysis') renderAnalysis(body);
+    if (t === 'candidates') renderCandidatesTab(body, 'all');
+    if (t === 'focus') renderCandidatesTab(body, 'focus');
     if (t === 'capabilities') renderAllSourceCaps(body);
     if (t === 'customers') renderCustomers(body);
   });
   await renderSourceList(body);
+}
+
+async function renderEvidence(body) {
+  body.replaceChildren();
+  body.appendChild(el('div', { class: 'small dim', style: 'margin-bottom:6px' },
+    'Extracted Authoring Evidence — the 426-signal evidence universe (Source Truth layer, NOT canonical Product Truth).'));
+  const res = await api.get(endpoints.evidence());
+  body.appendChild(table(['Evidence ID', 'Source', 'Signal', 'Strategic Category', 'Authoring Scope', 'Extraction', 'Treatment'],
+    res.items.map((e) => el('tr', { dataset: { testid: 'evidence-row' } },
+      el('td', { class: 'mono' }, e.evidence_id),
+      el('td', { class: 'mono' }, e.source_id),
+      el('td', {}, e.signal_name),
+      el('td', {}, e.strategic_category || '—'),
+      el('td', { class: 'small' }, e.authoring_scope || '—'),
+      el('td', { class: 'small' }, e.extraction_type || '—'),
+      el('td', { class: 'small' }, e.current_treatment || '—')))));
+}
+
+async function renderAnalysis(body) {
+  body.replaceChildren();
+  body.appendChild(el('div', { class: 'small dim', style: 'margin-bottom:6px' },
+    'Capability Analysis — how the evidence universe became the Candidate set (consolidation, disposition, provenance).'));
+  const res = await api.get(endpoints.evidence());
+  body.appendChild(table(['Evidence / Analysis ID', 'Source', 'Signal', 'Authoring Scope', 'MEXCBT / Uchida', 'Treatment', 'Evidence / Reference'],
+    res.items.map((e) => el('tr', { dataset: { testid: 'analysis-row' } },
+      el('td', { class: 'mono' }, e.evidence_id),
+      el('td', { class: 'mono' }, e.source_id),
+      el('td', {}, e.signal_name),
+      el('td', { class: 'small' }, e.authoring_scope || '—'),
+      el('td', { class: 'small' }, e.mexcbt_relevance || '—'),
+      el('td', { class: 'small' }, e.current_treatment || '—'),
+      el('td', { class: 'small mono' }, e.evidence_reference || '—')))));
+}
+
+async function renderCandidatesTab(body, mode) {
+  body.replaceChildren();
+  body.appendChild(el('div', { class: 'small dim', style: 'margin-bottom:6px' },
+    mode === 'focus'
+      ? 'Focus Capability Sets — the 15 Cross-market Focus Capabilities (Product recommendation, subset of the Candidates).'
+      : 'Capability Candidates — the initial active Product set (34 reconciled candidates).'));
+  const res = await api.get(endpoints.candidates(), mode === 'focus' ? { focus: 'yes' } : {});
+  body.appendChild(table(['Candidate', 'Working Capability', 'Markets', 'MEXCBT / Uchida', 'Signals', 'Strength', 'Cross-market', 'Status'],
+    res.items.map((c) => el('tr', { dataset: { testid: 'candidate-analysis-row' } },
+      el('td', { class: 'mono' }, c.candidate_id),
+      el('td', {}, c.name),
+      el('td', { class: 'small' }, c.markets || '—'),
+      el('td', {}, String(c.mexcbt_signals)),
+      el('td', {}, String(c.signals)),
+      el('td', {}, c.evidence_strength || '—'),
+      el('td', {}, c.cross_market_leverage || '—'),
+      el('td', { class: 'small' }, c.package_status || '—')))));
 }
 
 async function renderSourceList(body) {

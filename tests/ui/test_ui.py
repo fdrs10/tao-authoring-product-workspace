@@ -20,16 +20,19 @@ def test_shell_smoke_renders(page: Page):
     expect(page.locator("#app-main")).to_contain_text("V2 Position")
 
 
-def test_ideation_index_six_entries(page: Page):
+def test_ideation_index_seven_entries(page: Page):
+    """00 Capability Candidates added (CONTROLLED OPERATION §16): the ideation
+    index now leads with the active candidate population."""
     page.goto("/#/ideation/01")
     idx = page.locator(".ideation-index .idx-item")
-    expect(idx).to_have_count(6)
-    expect(idx.nth(0)).to_contain_text("V2 Position")
-    expect(idx.nth(1)).to_contain_text("V1 Carry-forward")
-    expect(idx.nth(2)).to_contain_text("3.x Direct Migration")
-    expect(idx.nth(3)).to_contain_text("New Needs & Gaps")
-    expect(idx.nth(4)).to_contain_text("Discontinued")
-    expect(idx.nth(5)).to_contain_text("Cross-analysis")
+    expect(idx).to_have_count(7)
+    expect(idx.nth(0)).to_contain_text("Capability Candidates")
+    expect(idx.nth(1)).to_contain_text("V2 Position")
+    expect(idx.nth(2)).to_contain_text("V1 Carry-forward")
+    expect(idx.nth(3)).to_contain_text("3.x Direct Migration")
+    expect(idx.nth(4)).to_contain_text("New Needs & Gaps")
+    expect(idx.nth(5)).to_contain_text("Discontinued")
+    expect(idx.nth(6)).to_contain_text("Cross-analysis")
 
 
 def test_v2_position_geometry_and_open_points(page: Page):
