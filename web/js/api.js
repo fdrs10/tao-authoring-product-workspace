@@ -28,6 +28,50 @@ async function request(method, path, body) {
     err.detail = (data && data.detail) || data;
     throw err;
   }
+  return normalizeResponse(data);
+}
+
+// Shared capability response normalizer — guarantees the common contract
+// consumed by Ideation, Cross-analysis, Backlog, Roadmap, Migration and
+// Reports. Prevents "Cannot read properties of undefined (reading 'sources')"
+// and similar errors when the API shape or population changes.
+const CAP_DEFAULTS = {
+  cap_id: '', working_name: '', description: null,
+  strategic_category: null, moscow: null, visibility: null,
+  scope: null, origin: null, owner: null, decision: null,
+  v2_mapping: null, ideation_sheet: null,
+  roadmap_admission: null, analysis_budget_hours: null,
+  execution_budget_hours: null, notes: null, review_status: null,
+  extraction_origin: null, product_review_status: null,
+  product_rationale: null, population: null,
+  markets: [], sources: [], jira: [],
+  source_link_count: 0, jira_link_count: 0,
+  traceable: false, traceability_status: 'TRACEABILITY_REVIEW_REQUIRED',
+  total_budget_hours: null, capability_version: null,
+};
+
+function normalizeCap(item) {
+  if (!item || typeof item !== 'object') return { ...CAP_DEFAULTS };
+  const out = { ...CAP_DEFAULTS };
+  for (const [k, v] of Object.entries(item)) {
+    if (v !== undefined) out[k] = v;
+  }
+  // guaranteed array fields (never undefined)
+  out.markets = Array.isArray(item.markets) ? item.markets : [];
+  out.sources = Array.isArray(item.sources) ? item.sources : [];
+  out.jira = Array.isArray(item.jira) ? item.jira : [];
+  // guaranteed strings (never undefined for .startsWith/.includes calls)
+  out.cap_id = item.cap_id || '';
+  out.population = item.population || '';
+  return out;
+}
+
+function normalizeResponse(data) {
+  if (data && Array.isArray(data.items) && data.items.length
+      && typeof data.items[0] === 'object' && data.items[0] !== null
+      && ('cap_id' in data.items[0] || 'population' in data.items[0])) {
+    return { ...data, items: data.items.map(normalizeCap) };
+  }
   return data;
 }
 
