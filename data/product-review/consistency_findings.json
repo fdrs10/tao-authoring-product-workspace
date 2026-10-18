@@ -1,0 +1,185 @@
+{
+ "generated_by": "consistency pass (analysis only \u2014 nothing executed)",
+ "findings_count": 36,
+ "breakdown": {
+  "FOCUS": 15,
+  "JIRA_NOT_REPRESENTED": 1,
+  "MEXCBT_CRITICAL": 7,
+  "POSSIBLE_OVERLAP": 1,
+  "SINGLE_SOURCE": 6,
+  "WEAK_EVIDENCE": 6
+ },
+ "findings": [
+  {
+   "type": "MEXCBT_CRITICAL",
+   "candidate": "F02",
+   "detail": "3 direct signals"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F02"
+  },
+  {
+   "type": "MEXCBT_CRITICAL",
+   "candidate": "F03",
+   "detail": "2 direct signals"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F03"
+  },
+  {
+   "type": "MEXCBT_CRITICAL",
+   "candidate": "F04",
+   "detail": "1 direct signals"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F04"
+  },
+  {
+   "type": "MEXCBT_CRITICAL",
+   "candidate": "F05",
+   "detail": "1 direct signals"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F05"
+  },
+  {
+   "type": "MEXCBT_CRITICAL",
+   "candidate": "F06",
+   "detail": "1 direct signals"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F07"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F09"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F10"
+  },
+  {
+   "type": "MEXCBT_CRITICAL",
+   "candidate": "F11",
+   "detail": "1 direct signals"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F11"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F12"
+  },
+  {
+   "type": "MEXCBT_CRITICAL",
+   "candidate": "F13",
+   "detail": "1 direct signals"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F13"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F15"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F16"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F17"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F19"
+  },
+  {
+   "type": "WEAK_EVIDENCE",
+   "candidate": "F21",
+   "detail": "1 signals"
+  },
+  {
+   "type": "SINGLE_SOURCE",
+   "candidate": "F21",
+   "detail": "SRC-GAP-001"
+  },
+  {
+   "type": "WEAK_EVIDENCE",
+   "candidate": "F22",
+   "detail": "2 signals"
+  },
+  {
+   "type": "FOCUS",
+   "candidate": "F22"
+  },
+  {
+   "type": "WEAK_EVIDENCE",
+   "candidate": "F29",
+   "detail": "1 signals"
+  },
+  {
+   "type": "SINGLE_SOURCE",
+   "candidate": "F29",
+   "detail": "SRC-STRATEGY-001"
+  },
+  {
+   "type": "WEAK_EVIDENCE",
+   "candidate": "F30",
+   "detail": "1 signals"
+  },
+  {
+   "type": "SINGLE_SOURCE",
+   "candidate": "F30",
+   "detail": "SRC-STRATEGY-001"
+  },
+  {
+   "type": "WEAK_EVIDENCE",
+   "candidate": "F31",
+   "detail": "1 signals"
+  },
+  {
+   "type": "SINGLE_SOURCE",
+   "candidate": "F31",
+   "detail": "SRC-STRATEGY-001"
+  },
+  {
+   "type": "WEAK_EVIDENCE",
+   "candidate": "F32",
+   "detail": "2 signals"
+  },
+  {
+   "type": "SINGLE_SOURCE",
+   "candidate": "F32",
+   "detail": "SRC-OECD-001"
+  },
+  {
+   "type": "SINGLE_SOURCE",
+   "candidate": "F33",
+   "detail": "SRC-COMP-001"
+  },
+  {
+   "type": "POSSIBLE_OVERLAP",
+   "candidates": [
+    "F19",
+    "F20"
+   ],
+   "shared_terms": [
+    "ai-assisted",
+    "generation"
+   ]
+  },
+  {
+   "type": "JIRA_NOT_REPRESENTED",
+   "jira_key": "PCR-201",
+   "detail": "No governed Jira\u2194Capability relationship exists for this record."
+  }
+ ]
+}

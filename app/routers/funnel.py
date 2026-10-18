@@ -115,7 +115,7 @@ def list_candidates(conn: psycopg.Connection = Depends(db_conn),
     with conn.cursor() as cur:
         cur.execute(f"SELECT count(*) FROM capability_candidates {w}", params)
         total = cur.fetchone()[0]
-        cur.execute(f"""SELECT candidate_id, name, markets, signals, independent_sources,
+        cur.execute(f"""SELECT candidate_id, name, COALESCE(cap_id, 'CAND-' || candidate_id) AS cap_id, markets, signals,
                source_ids, evidence_strength, cross_market_leverage, strategy_alignment,
                mexcbt_signals, package_status, is_focus, focus_markets,
                ideation_disposition, disposition_rationale, promotion_rationale,
@@ -124,6 +124,45 @@ def list_candidates(conn: psycopg.Connection = Depends(db_conn),
         cols = [d.name for d in cur.description]
         items = [dict(zip(cols, r)) for r in cur.fetchall()]
     return {"count": total, "items": items}
+
+
+@router.get("/candidates/{candidate_id}")
+def get_candidate(candidate_id: str, conn: psycopg.Connection = Depends(db_conn)):
+    with conn.cursor() as cur:
+        cur.execute("""SELECT candidate_id, name, COALESCE(cap_id, 'CAND-' || candidate_id) AS cap_id, markets, signals,
+               source_ids, evidence_strength, cross_market_leverage, strategy_alignment,
+               mexcbt_signals, package_status, is_focus, focus_markets,
+               ideation_disposition, disposition_rationale, promotion_rationale,
+               cap_id, version, enrichment
+               FROM capability_candidates WHERE candidate_id=%s""", (candidate_id,))
+        if cur.rowcount == 0:
+            raise HTTPException(status_code=404,
+                                detail=f"candidate {candidate_id} not found")
+        cols = [d.name for d in cur.description]
+        row = dict(zip(cols, cur.fetchone()))
+        cur.execute("""SELECT j.jira_key, j.summary, j.status, j.target_release, j.jira_url
+                       FROM capability_jira cj JOIN jira_tickets j ON j.jira_key = cj.jira_key
+                       WHERE cj.cap_id=%s ORDER BY j.jira_key""", (row["cap_id"],))
+        row["jira"] = [dict(zip([d.name for d in cur.description], r)) for r in cur.fetchall()]
+        cur.execute("""SELECT cap_id, description FROM capabilities WHERE cap_id=%s""",
+                    (row["cap_id"],))
+        capr = cur.fetchone()
+        row["capability_description"] = capr[1] if capr else None
+    return row
+
+
+@router.get("/jira-coverage")
+def jira_coverage(conn: psycopg.Connection = Depends(db_conn)):
+    with conn.cursor() as cur:
+        cur.execute("""SELECT jira_key, summary, issue_type, status, target_release,
+                              jira_url, coverage_class, coverage_note
+                       FROM jira_tickets ORDER BY jira_key""")
+        cols = [d.name for d in cur.description]
+        items = [dict(zip(cols, r)) for r in cur.fetchall()]
+    counts = {}
+    for i in items:
+        counts[i["coverage_class"]] = counts.get(i["coverage_class"], 0) + 1
+    return {"count": len(items), "coverage_counts": counts, "items": items}
 
 
 @router.patch("/candidates/{candidate_id}")

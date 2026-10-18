@@ -1,0 +1,27 @@
+{
+ "generated_by": "scripts/product_review/enrich_candidates.py",
+ "jira_records": 1,
+ "coverage_counts": {
+  "D_NON_CAPABILITY_DELIVERY_CONTAINER": 1
+ },
+ "items": [
+  {
+   "jira_key": "PCR-TEST-1",
+   "summary": "Test epic summary",
+   "issue_type": "Epic",
+   "status": "In Progress",
+   "target_release": "R1b",
+   "jira_url": "https://oat-sa.atlassian.net/browse/PCR-TEST-1",
+   "existing_product_relationship": [
+    {
+     "cap_id": "CAP-9002",
+     "population": "SOURCE_ANALYSIS_CANDIDATE",
+     "name": "Beta QTI export"
+    }
+   ],
+   "coverage_class": "D_NON_CAPABILITY_DELIVERY_CONTAINER",
+   "coverage_note": "Epic/container/placeholder work-management record \u2014 not a Product Capability.",
+   "suggested_review_question": null
+  }
+ ]
+}

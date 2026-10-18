@@ -184,16 +184,18 @@ def test_promote_unknown_evidence_404():
 def test_ideation_shows_active_candidates(page: Page):
     _reingest()   # page fixture truncates candidates — re-apply governed ingestion
     page.goto("/#/ideation/00")
-    expect(page.locator('[data-testid="candidate-row"]').first).to_be_visible(timeout=15000)
     rows = page.locator('[data-testid="candidate-row"]')
+    expect(rows.first).to_be_visible(timeout=15000)
     expect(rows).to_have_count(34, timeout=10000)
-    # focus toggle → 15
-    page.locator('[data-testid="cand-focus"]').click()
+    # Focus filter → 15
+    page.locator('[data-testid="candidate-filters"] select[data-cf="focus"]').select_option("yes")
     expect(rows).to_have_count(15, timeout=10000)
-    # MEXCBT filter works independently
-    page.locator('[data-testid="cand-all"]').click()
-    page.locator('[data-testid="cand-mexcbt"]').click()
-    assert page.locator('[data-testid="candidate-row"]').count() >= 0
+    # MEXCBT filter works independently (combined with Focus)
+    page.locator('[data-testid="candidate-filters"] select[data-cf="mexcbt"]').select_option("yes")
+    expect(page.locator('[data-testid="candidate-count"]')).to_contain_text("Showing")
+    # Clear restores 34
+    page.locator('[data-testid="cand-filter-clear"]').click()
+    expect(rows).to_have_count(34, timeout=10000)
 
 
 def test_sources_funnel_banner_and_tabs(page: Page):

@@ -173,13 +173,13 @@ def main() -> int:
             cap_id = f"CAND-{fam}"
             focus_markets = ", ".join(sorted(focus_markets_by_family.get(fam, [])))
             cur.execute(
-                """INSERT INTO capability_candidates (candidate_id, name, markets, signals,
+                """INSERT INTO capability_candidates (candidate_id, name, cap_id, markets, signals,
                      independent_sources, source_ids, evidence_strength,
                      cross_market_leverage, strategy_alignment, mexcbt_signals,
                      package_status, is_focus, focus_markets)
-                   VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                   VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
                    ON CONFLICT (candidate_id) DO NOTHING""",
-                (fam, c["Capability Candidate"], c["Markets"], c["Signals"],
+                (fam, c["Capability Candidate"], cap_id, c["Markets"], c["Signals"],
                  c["Independent Sources"], c["Source IDs"], c["Evidence Strength"],
                  c["Cross-market Leverage"], c["Strategy Alignment"],
                  c["MEXCBT Direct Signals"], c["Status"],

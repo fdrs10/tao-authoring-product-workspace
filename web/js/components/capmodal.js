@@ -27,6 +27,12 @@ export async function openCapModal(capId) {
     const cap = await api.get(endpoints.capability(capId));
     const markets = await getMarkets();
     renderDetail(drawer, cap, markets);
+    if (cap.cap_id.startsWith('CAND-') || (cap.population || '').startsWith('SOURCE_ANALYSIS')) {
+      try {
+        const ce = await api.get(`${endpoints.candidates()}/${cap.cap_id.replace('CAND-', '')}`);
+        renderCandidateEnrichment(drawer, ce.enrichment, ce);
+      } catch (_) { /* enrichment is additive */ }
+    }
   } catch (err) {
     drawer.appendChild(notice('error', `Failed to load ${capId}: ${err.detail || err.message}`));
   }
@@ -41,6 +47,56 @@ export function closeCapModal() {
 
 function kv(k, v) {
   return el('div', { class: 'kv' }, el('div', { class: 'k' }, k), el('div', { class: 'v' }, v ?? el('span', { class: 'dim' }, '—')));
+}
+
+function renderCandidateEnrichment(drawer, e, ce) {
+  if (!e) return;
+  const sec = (t) => el('h3', {}, t);
+  const p = (label, v, marker) => el('div', { class: 'kv' },
+    el('div', { class: 'k' }, label, marker ? el('div', { class: 'small dim' }, marker) : null),
+    el('div', { class: 'v' }, v || el('span', { class: 'dim' }, 'Evidence insufficient to determine')));
+  const pd = e.product_definition || {};
+  const ctx = e.product_context || {};
+  const ev = e.evidence || {};
+  const an = e.analysis_rationale || {};
+  drawer.appendChild(sec('PRODUCT DEFINITION (PRODUCT INTERPRETATION — consolidated from source evidence)'));
+  drawer.append(
+    p('Functional definition', pd.functional_definition),
+    p('What it enables', pd.what_it_enables),
+    p('User / product problem addressed', pd.user_problem_addressed),
+    p('Functional scope', pd.functional_scope),
+    p('Out of scope', pd.out_of_scope));
+  drawer.appendChild(sec('PRODUCT CONTEXT'));
+  drawer.append(
+    p('MEXCBT / Uchida', ctx.mexcbt_signals > 0 ? `${ctx.mexcbt_signals} direct signals` : 'no direct signals recorded'),
+    p('Strategic relevance / alignment', ctx.strategy_alignment),
+    p('Cross-market leverage', ctx.cross_market_leverage),
+    p('Evidence strength', ctx.evidence_strength),
+    p('Focus', ctx.is_focus ? `YES — focus markets: ${ctx.focus_markets || '—'}` : 'NO (not in the Cross-market Focus Set)'));
+  drawer.appendChild(sec('EVIDENCE & RATIONALE'));
+  drawer.append(
+    p('Why this candidate exists', an.why_this_candidate),
+    p('Consolidation rationale', an.consolidation_rationale),
+    p(`Source evidence (${ev.count} signals)`,
+      el('span', { class: 'small mono' }, (ev.signal_ids || []).join(', ')), el('br'),
+      el('span', { class: 'small' }, 'Sources: ' + (ev.sources || []).join(', '))),
+    p('Key evidence references', (ev.key_references || []).join(' · ')),
+    p('Provenance', ev.provenance));
+  drawer.appendChild(sec('DELIVERY EVIDENCE (Jira — work evidence, not Product truth)'));
+  drawer.appendChild(el('div', { dataset: { testid: 'candidate-jira' } },
+    (e.delivery_evidence?.jira || []).length
+      ? table(['Key', 'Summary', 'Status', 'Target Release'],
+          e.delivery_evidence.jira.map((j) => el('tr', {},
+            el('td', {}, el('a', { class: 'mono', href: j.jira_url || '#', target: '_blank', rel: 'noopener' }, j.jira_key)),
+            el('td', { class: 'small' }, j.summary || ''),
+            el('td', {}, j.status || '—'),
+            el('td', {}, j.target_release || '—'))))
+      : el('span', { class: 'dim' }, 'No Jira relationships recorded for this candidate.')));
+  const pr = e.product_review || {};
+  drawer.appendChild(sec('PRODUCT DECISIONS REQUIRED'));
+  drawer.appendChild(el('div', { class: 'notice warn small', dataset: { testid: 'candidate-open-questions' } },
+    (pr.open_questions || []).map((q) => `• ${q}`).join('  ') || 'None recorded.'));
+  drawer.appendChild(p('Uncertainty', pr.uncertainty));
 }
 
 function renderDetail(drawer, cap, markets, justSaved = false) {
