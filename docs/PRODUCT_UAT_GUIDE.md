@@ -84,3 +84,8 @@ Log findings with: page, CAP-ID/step, your `user_ref`, expected vs actual, scree
 - **Migration Path | Customer Plans** switch inside MIGRATION PATH: the common path (M1–M6, shared) stays on the first tab; per-customer plans live on the second.
 - Customer Migration Plans: register a customer (Product-supplied ID/name), link required CAP-xxxx, propose an interval (M3 -> M4 — TS codes refused), record blockers/assumptions/exceptions/window/validation. Readiness is derived from Roadmap truth: READY FOR PROPOSED INTERVAL / BLOCKED BY ROADMAP CAPABILITY (blocking CAPs listed) / CUSTOMER VALIDATION REQUIRED / PRODUCT DECISION REQUIRED / MIGRATION EXCEPTION. Plan edits persist with actor + version; stale edits 409.
 - No invented customers, dates or requirements — the honest empty state remains until Product supplies governed data.
+
+
+## Reports / Deliverables (structural update)
+
+**REPORTS / DELIVERABLES** (nav): the five November deliverables as governed report contracts (D1–D5) with target dates, section completeness (AVAILABLE / INCOMPLETE / PRODUCT DECISION REQUIRED / NOT APPLICABLE) and versioned generation. **Preview Report** opens a publication-style document (not an app screenshot) — print-friendly via "Print / Save as PDF". D5 requires selecting a governed customer; **Generate Customer Migration Pilot Set** packages selected D5 plans (DEPP/INVALSI/NSA/NCCER only when governed records exist — never invented). Generating never mutates Product Truth.

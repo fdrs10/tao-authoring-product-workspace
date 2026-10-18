@@ -9,6 +9,7 @@ import { renderBacklog } from './views/backlog.js';
 import { renderRoadmap } from './views/roadmap.js';
 import { renderMigration } from './views/migration.js';
 import { renderOutcomes } from './views/outcomes.js';
+import { renderReports } from './views/reports.js';
 import { openCapModal } from './components/capmodal.js';
 import { el } from './ui.js';
 
@@ -33,6 +34,7 @@ async function runRoute() {
     else if (root === 'roadmap') { setActive('roadmap'); await renderRoadmap(main); }
     else if (root === 'migration') { setActive('migration'); await renderMigration(main); }
     else if (root === 'outcomes') { setActive('outcomes'); await renderOutcomes(main); }
+    else if (root === 'reports') { setActive('reports'); await renderReports(main); }
     else if (root === 'backlog') { setActive('ideation'); await renderBacklog(main); }
     else { location.hash = '#/ideation/01'; }
   } catch (err) {

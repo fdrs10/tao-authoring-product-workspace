@@ -67,3 +67,10 @@ Implemented (docs/NOVEMBER_PRODUCT_OUTCOMES.md, docs/CUSTOMER_MIGRATION_PLAN_MOD
 - **November Outcomes overview**: NOVEMBER OUTCOMES nav entry (orientation layer only — no Product Truth stored).
 - **M1–M6 shared** across Roadmap, common Migration Path and Customer Plans (single dataset, edit propagates).
 - Reference contract for the upcoming stage: docs/SOURCE_RECONSTRUCTION_CONTRACT.md (source packages, one Source at a time — NOT started).
+
+
+## Reports / Deliverables addendum (2026-10-16) — FINAL STRUCTURAL STEP
+
+Implemented (docs/REPORTS_DELIVERABLES_MODEL.md + docs/REPORT_TEMPLATE_CONTRACTS.md):
+- Five governed report contracts D1–D5 with fixed target dates and predefined section structures; publication-style print-friendly HTML previews + versioned generation snapshots (`report_generations`, Alembic 0005); Pilot Set packaging for governed customers only (DEPP/INVALSI/NSA/NCCER refused until governed).
+- New main-nav section REPORTS / DELIVERABLES (#/reports). Reports consume canonical data only — generation never mutates Product Truth (tested).
