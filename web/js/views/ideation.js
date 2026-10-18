@@ -133,38 +133,100 @@ function renderV2Position(content) {
 }
 
 async function renderSheet(content, sheetName, isDisc) {
-  content.appendChild(el('h1', {}, sheetName + (isDisc ? ' (OUT — not a V2 summand)' : '')));
-  content.appendChild(el('div', { class: 'notice info' }, 'Loading…'));
-  const [caps, markets, sources] = await Promise.all([
-    api.get(endpoints.capabilities(`?ideation_sheet=${encodeURIComponent(sheetName)}`)),
-    getMarkets(),
-    api.get(endpoints.sources()),
-  ]);
-  content.querySelector('.notice.info')?.remove();
-  if (caps.count === 0) { content.appendChild(notice('info', 'No capabilities on this sheet.')); return; }
-  const { bar, apply } = capFilterBar({ markets, sources: sources.items });
-  content.appendChild(bar);
-  const mount = el('div', { dataset: { testid: 'sheet-mount' } });
-  content.appendChild(mount);
-  const draw = () => {
-    const filtered = apply(caps.items);
-    mount.replaceChildren();
-    if (!filtered.length) { mount.appendChild(notice('info', 'No capabilities match the current filters.')); return; }
-    const groups = {};
-    for (const c of filtered) (groups[c.decision || '(no decision)'] ||= []).push(c);
-    for (const [decision, rows] of Object.entries(groups).sort()) {
-      mount.appendChild(el('h2', {}, `${decision} (${rows.length})`));
-      mount.appendChild(table(['CAP', 'Capability', 'Category', 'Markets', 'MoSCoW', 'Admission', isDisc ? '' : ''], rows.map((c) =>
-        el('tr', { dataset: { testid: 'sheet-row' } },
-          el('td', {}, capLink(c.cap_id)),
-          el('td', {}, c.working_name, ' ', reviewBadge(c.review_status)),
-          el('td', {}, c.strategic_category),
-          el('td', {}, marketDotsFor(c.markets, markets)),
-          el('td', {}, moscowBadge(c.moscow)),
-          el('td', {}, admissionBadge(c.roadmap_admission)),
-          isDisc ? el('td', {}, el('span', { class: 'badge disc' }, 'OUT')) : el('td', {}, c.visibility || '—')))));
-    }
+  // §4–§7: analysis lenses over evidence — NOT independent capability universes.
+  const LENS = {
+    'V1 Carry-forward': { sources: ['SRC-V1-001'], label: 'V1 Carry-forward Analysis',
+      question: 'How does V1 evidence contribute to the current Candidates?' },
+    '3.x Direct Migration to V2': { sources: ['SRC-3X-001'], label: '3.x Direct Migration Analysis',
+      question: 'How does 3.x functionality/evidence contribute to the current Candidates?' },
+    'New Needs & Gaps / Developments': { sources: ['SRC-NEW-001', 'SRC-NYSED-001'],
+      label: 'New Needs & Gaps Analysis',
+      question: 'What new-needs evidence exists, and which Candidates absorbed it?' },
   };
-  draw();
-  content.appendChild(marketLegend(markets));
+  if (isDisc) return renderDiscontinuedAnalysis(content);
+  const lens = LENS[sheetName];
+  if (!lens) { content.appendChild(notice('info', 'Analysis lens not defined for this sheet.')); return; }
+
+  content.appendChild(el('h1', {}, lens.label));
+  content.appendChild(el('div', { class: 'small dim', style: 'margin-bottom:8px' },
+    lens.question, ' This is an analysis lens over Product evidence — the historical 135-baseline is preserved separately (population = HISTORICAL_BASELINE_V1).'));
+
+  const [evRes, candRes] = await Promise.all([
+    api.get(endpoints.evidence()),
+    api.get(endpoints.candidates()),
+  ]);
+  const byFamily = {};
+  for (const c of candRes.items) byFamily[c.candidate_id] = c;
+  const signals = evRes.items.filter((e) => lens.sources.includes(e.source_id));
+  const families = {};
+  for (const e of signals) {
+    const f = e.reconciled_family_id;
+    if (f) (families[f] ||= { signals: [], candidate: byFamily[f] }).signals.push(e);
+    else (families.UNREPRESENTED ||= { signals: [], candidate: null }).signals.push(e);
+  }
+  content.appendChild(el('div', { class: 'filter-bar' },
+    el('span', { class: 'badge' }, `${signals.length} evidence signals`),
+    el('span', { class: 'small dim', dataset: { testid: 'lens-count' } },
+      ` · ${Object.keys(families).filter((k) => k !== 'UNREPRESENTED').length} consolidated families`)));
+  const mount = el('div', { dataset: { testid: 'lens-mount' } });
+  content.appendChild(mount);
+
+  for (const [fam, group] of Object.entries(families)) {
+    if (fam === 'UNREPRESENTED') {
+      mount.appendChild(el('div', { class: 'notice warn', dataset: { testid: 'lens-unrepresented' } },
+        `UNREPRESENTED EVIDENCE — PRODUCT REVIEW REQUIRED: ${group.signals.length} signal(s) not consolidated into any current Candidate. `
+        + 'Product may promote via the Capability Analysis area (never automatic).'));
+      continue;
+    }
+    const cand = group.candidate;
+    mount.appendChild(el('div', { class: 'mig-band', dataset: { testid: 'lens-family', family: fam } },
+      el('h3', {}, `${fam} · ${cand ? cand.name : fam}`,
+        cand && cand.is_focus ? el('span', { class: 'badge ok-badge', style: 'margin-left:8px' }, 'FOCUS') : null),
+      el('div', { class: 'small', style: 'margin:2px 0' },
+        `Current definition: consolidated from ${group.signals.length} signal(s).`),
+      table(['Evidence ID', 'Signal', 'Historical CAP reference', 'Treatment', 'What carries forward / Product question'],
+        group.signals.map((e) => el('tr', { dataset: { testid: 'lens-evidence-row' } },
+          el('td', { class: 'mono' }, e.evidence_id),
+          el('td', {}, e.signal_name),
+          el('td', { class: 'small mono' }, e.current_canonical_cap_id || '—'),
+          el('td', { class: 'small' }, e.current_treatment || '—'),
+          el('td', { class: 'small' },
+            cand && cand.is_focus ? 'Carries forward into the Focus set.' : 'Contributes to the active Candidate set — Product review pending.'))))));
+  }
+  if (!signals.length) mount.appendChild(notice('info', AWAITING));
 }
+
+async function renderDiscontinuedAnalysis(content) {
+  // §7: historical decision input — NOT active V2 capabilities.
+  content.appendChild(el('h1', {}, 'Discontinued Analysis — historical decision input'));
+  content.appendChild(el('div', { class: 'small dim', style: 'margin-bottom:8px' },
+    'The historical discontinuation decisions (135-baseline era) preserved as decision evidence. These records do NOT enter the active V2 scope; the active population remains the 34 Capability Candidates.'));
+  const [hist, evRes] = await Promise.all([
+    api.get(endpoints.capabilities() + '?ideation_sheet=Discontinued&population=historical'),
+    api.get(endpoints.evidence()),
+  ]);
+  const evByCap = {};
+  for (const e of evRes.items) {
+    if (e.current_canonical_cap_id) (evByCap[e.current_canonical_cap_id] ||= []).push(e);
+  }
+  if (!hist.items.length) { content.appendChild(notice('info', AWAITING)); return; }
+  content.appendChild(table(
+    ['Historical CAP', 'Capability (HISTORICAL BASELINE V1)', 'Decision', 'Evidence', 'Current Candidate affected', 'Validation required'],
+    hist.items.map((c) => {
+      const linked = evByCap[c.cap_id] || [];
+      const fams = [...new Set(linked.map((e) => e.reconciled_family_id).filter(Boolean))];
+      return el('tr', { dataset: { testid: 'sheet-row' } },
+        el('td', { class: 'mono' }, c.cap_id),
+        el('td', {}, c.working_name),
+        el('td', {}, el('span', { class: 'badge disc' }, 'DISCONTINUED (historical)')),
+        el('td', { class: 'small' }, linked.length ? `${linked.length} signal(s)` : 'no evidence linked'),
+        el('td', { class: 'small' }, fams.length
+          ? `Consolidated into: ${fams.map((f) => byFamily[f] ? byFamily[f].name : f).join(', ')}`
+          : 'No current Candidate affected'),
+        el('td', { class: 'small' }, 'Product to validate the discontinuation against the current Candidate set.'));
+    })));
+  content.appendChild(notice('info',
+    'These are historical decision records (HISTORICAL BASELINE V1). They are not active V2 capabilities and do not count toward the 34-Candidate population.'));
+}
+
+const AWAITING = 'Awaiting Product data';

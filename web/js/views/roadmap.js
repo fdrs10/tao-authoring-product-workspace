@@ -53,6 +53,7 @@ const catColor = (c) => CAT_COLORS[c] || 'grey';
 
 async function loadCaps(filters) {
   const q = new URLSearchParams();
+  q.set('population', 'active');   // the historical baseline never drives the Roadmap (§12)
   if (filters.admission === 'UNSET') q.set('admission', 'UNSET');
   else if (filters.admission === 'All') q.set('admission', '');  // explicit empty: the API would otherwise apply its COMMITTED default
   else if (filters.admission) q.set('admission', filters.admission);
@@ -346,7 +347,7 @@ function renderFull(container, caps, markets) {
 
   if (!caps.length) {
     container.appendChild(el('div', { dataset: { testid: 'roadmap-empty' } },
-      notice('info', 'No capabilities match the current Roadmap population. Default population is Roadmap Admission = COMMITTED (§34). Switch Admission to “All” to review other states; UNSET stays distinct from BACKLOG.')));
+      notice('info', 'No capabilities match the current Roadmap population. Default population is Roadmap Admission = COMMITTED (§34). Switch Admission to “All” to review other states; UNSET stays distinct from BACKLOG. Roadmap Admission is a Product decision — the historical baseline (135 CAPs) is never inherited.')));
   }
 
   for (const cat of cats) {

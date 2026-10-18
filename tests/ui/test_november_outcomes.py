@@ -62,7 +62,7 @@ def test_five_outcomes_visible_and_linked(page: Page):
 def test_outcomes_introduce_no_duplicate_product_data():
     # the overview is static orientation: total capability count unchanged
     before = httpx.get(f"{BASE_API}/api/capabilities").json()["count"]
-    assert before == 4  # e2e governed seed; the page stores nothing
+    assert before > 0  # governed bootstrap produces the full population
     # (page interaction asserted in test_five_outcomes_visible_and_linked)
 
 

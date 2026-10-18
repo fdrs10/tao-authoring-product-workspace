@@ -31,10 +31,15 @@ async function persistAdmission(select, cap, statusEl) {
 
 export async function renderCrossAnalysis(container) {
   const markets = await getMarkets();
-  const caps = await api.get(endpoints.capabilities());
+  const caps = await api.get(endpoints.capabilities() + '?population=active');
   const sources = await api.get(endpoints.sources());
+  const funnel = await api.get(endpoints.funnel()).catch(() => null);
+  const f = funnel ? funnel.funnel : null;
+  const header = f
+    ? `${f.capability_candidates} Active Capability Candidates · ${f.focus_capabilities} Focus Capabilities · ${f.evidence_signals} Evidence Signals · ${f.sources} Sources`
+    : `Active capability population: ${caps.count}`;
   container.appendChild(el('div', { class: 'small dim' },
-    `Canonical capability universe: ${caps.count}. Product decision → final V2 capability. Roadmap Admission editable inline (same field as Backlog/Edit). UNSET preserved.`));
+    header, '. Product decision → final V2 capability. Roadmap Admission editable inline (same field as Backlog/Edit). UNSET preserved.'));
   const { bar, apply } = capFilterBar({ markets, sources: sources.items });
   container.appendChild(bar);
   const mount = el('div');

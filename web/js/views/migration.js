@@ -67,7 +67,7 @@ export async function renderMigration(container) {
   container.replaceChildren();
   const [msRes, capsRes, custRes] = await Promise.all([
     api.get(endpoints.milestones()),
-    api.get(endpoints.roadmap('')),                    // all admission states; derivation filters below
+    api.get(endpoints.roadmap('') + (endpoints.roadmap('').includes('?') ? '&' : '?') + 'population=active'),  // CURRENT Product population only (§13)
     api.get(endpoints.customers()),
   ]);
   const milestones = msRes.items;
@@ -100,7 +100,9 @@ function renderCommonPath(container, { milestones, caps, customers }) {
   const valueBand = el('div', { class: 'mig-band', dataset: { testid: 'mig-band-value' } },
     el('h2', {}, 'VALUE / ROADMAP CAPABILITIES UNLOCKED'),
     el('div', { class: 'small dim', style: 'margin-bottom:6px' },
-      `Derived from Roadmap timing + milestones for Roadmap Admission = COMMITTED (${committed.length} capabilities). Change Roadmap timing and this view changes — Migration owns no timing.`));
+      `Derived from Roadmap timing + milestones for Roadmap Admission = COMMITTED (${committed.length} capabilities). Change Roadmap timing and this view changes — Migration owns no timing.`,
+      committed.length === 0 ? el('div', { class: 'notice warn small', dataset: { testid: 'migration-awaiting' } },
+        'Awaiting Product Roadmap Admission — no current Candidates are Roadmap-admitted yet, so no capability availability can be derived. The historical baseline is never inherited.') : null));
   const ivs = intervals(milestones);
   for (const [i, iv] of ivs.entries()) {
     const unlocked = committed.filter((c) => c.start_month !== null

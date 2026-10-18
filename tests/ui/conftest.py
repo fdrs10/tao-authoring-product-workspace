@@ -154,9 +154,14 @@ def page(server):
     # deterministic + idempotent): M1–M6 milestones, source artifacts/URI, and
     # the FINAL Source-analysis package. NOTE: TRUNCATE sources CASCADE wipes
     # source_evidence — the ingestion must re-run after every truncation.
+    pkg = os.path.join(REPO, "data", "source-analysis", "v1_4")
     for script in ("scripts/import/import_milestones.py",
-                   "scripts/import/materialize_source_documents.py"):
-        subprocess.run([sys.executable, script], cwd=REPO,
+                   "scripts/import/materialize_source_documents.py",
+                   "scripts/import/ingest_source_analysis.py"):
+        args = [sys.executable, script]
+        if "ingest" in script:
+            args.append(pkg)
+        subprocess.run(args, cwd=REPO,
                        env={**os.environ, "DATABASE_URL":
                             TEST_URL.replace("postgresql://", "postgresql+psycopg://")},
                        check=True, capture_output=True, text=True)

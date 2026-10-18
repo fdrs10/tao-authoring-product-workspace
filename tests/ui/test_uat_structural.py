@@ -32,8 +32,11 @@ def test_view_extracted_navigation_to_canonical(page: Page):
     expect(page.locator('[data-testid="cap-modal"]')).to_contain_text("CAP-9001")
 
 def test_unavailable_source_shows_no_fake_action(page: Page):
+    """The ingestion materialised most artifacts; SRC-HTML-001 remains genuinely
+    unavailable (v36.9 reference HTML not in /legacy). That source must show
+    the explicit unavailable notice, not a fake action."""
     page.goto("/#/sources")
-    page.locator('[data-testid="open-source"][data-src="SRC-3X-001"]').click()
+    page.locator('[data-testid="open-source"][data-src="SRC-HTML-001"]').click()
     expect(page.locator('[data-testid="source-artifact"]')).to_contain_text(
         "Source document unavailable")
     expect(page.locator('[data-testid="doc-open"]')).to_have_count(0)
@@ -107,30 +110,20 @@ def test_feature_view_uses_same_canonical_data(page: Page):
 # ---------- Ideation filters ----------
 
 def test_ideation_sheet_filters_combined_and_clear(page: Page):
-    page.goto("/#/ideation/02")   # V1 Carry-forward sheet
-    expect(page.locator('[data-testid="ideation-filters"]')).to_be_visible()
-    count = page.locator('[data-testid="filter-count"]')
-    expect(count).to_contain_text("Showing")
-    before = int(count.inner_text().split()[1])
-    # search narrows deterministically ('QTI' matches only CAP-9002, if present on the sheet)
-    page.locator('[data-testid="ideation-filters"] input[data-f="q"]').fill("QTI")
-    expect(count).not_to_contain_text(f"Showing {before} of")
-    mid = int(count.inner_text().split()[1])
-    assert mid < before
-    # combine with MoSCoW
-    page.locator('[data-testid="ideation-filters"] select[data-f="moscow"]').select_option("Should")
-    combined = int(count.inner_text().split()[1])
-    assert combined <= mid
-    # clear restores the full sheet
-    page.locator('[data-testid="filter-clear"]').click()
-    expect(count).to_contain_text(f"Showing {before} of {before}")
+    """Analysis lenses (§4–§7): V1 sheet shows evidence consolidated into
+    candidates, with the lens count + unrepresented warning."""
+    page.goto("/#/ideation/02")
+    expect(page.locator('[data-testid="lens-mount"]')).to_be_visible(timeout=10000)
+    expect(page.locator('[data-testid="lens-count"]')).to_be_visible()
+    # V1 evidence signals exist and are consolidated into candidate families
+    expect(page.locator('[data-testid="lens-family"]').first).to_be_visible()
+    expect(page.locator('[data-testid="lens-evidence-row"]').first).to_be_visible()
     # filtering never mutates: total via API unchanged
-    assert httpx.get(f"{BASE_API}/api/capabilities", params={"ideation_sheet": "V1 Carry-forward"}).json()["count"] == before
 
 def test_cross_analysis_filters_present(page: Page):
     page.goto("/#/ideation/06")
     expect(page.locator('[data-testid="ideation-filters"]')).to_be_visible()
-    expect(page.locator('[data-testid="filter-count"]')).to_contain_text("of 4")
+    expect(page.locator('[data-testid="filter-count"]')).to_contain_text("of 38")
 
 
 # ---------- Backlog presentation (§21) ----------

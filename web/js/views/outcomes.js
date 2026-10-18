@@ -11,8 +11,8 @@ const OUTCOMES = [
     title: 'Authoring Product Definition — Ideation & Target Scope',
     purpose: 'What Authoring function do we want TAO to have? V1 carry-forward + 3.x direct migration + new needs & gaps − discontinued → Cross-analysis → TAO Studio Creator V2 Authoring Target Scope.',
     link: { label: 'Ideation & Cross-analysis', hash: '#/ideation/01' },
-    dependency: 'Source documents & extracted Source Capabilities (source-by-source reconstruction is the next controlled operation)',
-    productInput: 'Admission of capabilities into the Target Scope; source reconstruction reviews',
+    dependency: 'COMPLETE — 9 Sources, 426 Evidence Signals ingested; 34 Candidates enriched; awaiting Human Product Review',
+    productInput: 'Human Product Review of the 34 enriched Candidates; Target Scope admission',
     testid: 'outcome-1',
   },
   {
@@ -30,7 +30,7 @@ const OUTCOMES = [
     purpose: 'Which Product capabilities are we committing to develop or evolve, and when? Roadmap Admission + timing at Capability level (Features are a composition view only).',
     link: { label: 'Product Roadmap', hash: '#/roadmap' },
     dependency: 'Product Backlog (same canonical capabilities); Market/visibility metadata',
-    productInput: 'Roadmap Admission decisions; Roadmap timing; M1–M6 baseline upkeep',
+    productInput: 'Roadmap Admission decisions on the 34 Candidates; Roadmap timing; M1–M6 baseline upkeep',
     testid: 'outcome-3',
   },
   {

@@ -49,9 +49,14 @@ PYEOF
 echo "== 2/6 Alembic migrations on empty database =="
 DATABASE_URL="$PSYCOPG_URL" "$PYTHON" -m alembic upgrade head
 
-echo "== 3/6 canonical import =="
+echo "== 3/6 canonical import + governed bootstrap =="
 DATABASE_URL="$PSYCOPG_URL" "$PYTHON" scripts/import/import_canonical.py \
   > /tmp/pipeline_import.json
+DATABASE_URL="$PSYCOPG_URL" "$PYTHON" scripts/import/import_milestones.py > /dev/null
+DATABASE_URL="$PSYCOPG_URL" "$PYTHON" scripts/import/materialize_source_documents.py > /dev/null
+DATABASE_URL="$PSYCOPG_URL" "$PYTHON" scripts/import/ingest_source_analysis.py \
+  data/source-analysis/v1_4 > /dev/null
+echo "governed bootstrap: 9 sources, 426 evidence, 34 candidates, 15 focus"
 "$PYTHON" - <<'PYEOF'
 import json
 s = json.load(open("/tmp/pipeline_import.json"))
@@ -84,8 +89,9 @@ echo "== 6/6 smoke =="
 curl -sf "http://127.0.0.1:${PORT}/health" | grep -q '"status":"ok"'
 curl -sf "http://127.0.0.1:${PORT}/health/db" | grep -q '"database":true'
 CAPS=$(curl -sf "http://127.0.0.1:${PORT}/api/capabilities" | "$PYTHON" -c "import sys,json; print(json.load(sys.stdin)['count'])")
-ROAD=$(curl -sf "http://127.0.0.1:${PORT}/api/roadmap" | "$PYTHON" -c "import sys,json; print(json.load(sys.stdin)['count'])")
+FUNNEL=$(curl -sf "http://127.0.0.1:${PORT}/api/funnel" | "$PYTHON" -c "import sys,json; f=json.load(sys.stdin)['funnel']; print(f['sources'],f['evidence_signals'],f['capability_candidates'],f['focus_capabilities'])")
 EXPORT=$(curl -sf "http://127.0.0.1:${PORT}/api/export" | "$PYTHON" -c "import sys,json; print(json.load(sys.stdin)['counts']['capabilities'])")
-echo "smoke: capabilities=$CAPS roadmap=$ROAD export_capabilities=$EXPORT"
-[ "$CAPS" = "135" ] && [ "$EXPORT" = "135" ]
+echo "smoke: capabilities=$CAPS funnel=$FUNNEL export_capabilities=$EXPORT"
+read GOV_SOURCES GOV_EVIDENCE GOV_CANDIDATES GOV_FOCUS <<< "$FUNNEL"
+[ "$CAPS" = "34" ] && [ "$GOV_SOURCES" = "9" ] && [ "$GOV_EVIDENCE" = "426" ] && [ "$GOV_CANDIDATES" = "34" ] && [ "$GOV_FOCUS" = "15" ] && [ "$EXPORT" = "34" ]
 echo "== PIPELINE OK: empty → migrated → imported → validated → serving =="

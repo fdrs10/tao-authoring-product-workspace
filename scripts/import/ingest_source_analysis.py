@@ -148,10 +148,29 @@ def main() -> int:
                  r.get("Origin / Extraction Provenance"), r.get("Product Review Status"),
                  package_id))
             inserted_ev += cur.rowcount
+        # backfill per-evidence family linkage from the package's embedded register
+        reg_path = pkg / "data" / "reconciliation_register_enriched.json"
+        if not reg_path.is_file():
+            reg_path = pkg / "data" / "reconciliation_register.json"
+        if reg_path.is_file():
+            reg = json.loads(reg_path.read_text())
+            for r in reg:
+                eid = r.get("Source Capability ID")
+                fam = r.get("Reconciled Family ID")
+                result = r.get("Reconciliation Result")
+                if eid and fam:
+                    cur.execute(
+                        """UPDATE source_evidence
+                           SET reconciled_family_id=%s, reconciliation_result=%s
+                           WHERE evidence_id=%s AND reconciled_family_id IS NULL""",
+                        (fam, result, eid))
+        cur.execute("SELECT count(*) FROM source_evidence WHERE reconciled_family_id IS NOT NULL")
+        linked = cur.fetchone()[0]
         cur.execute("SELECT count(*) FROM source_evidence")
         evidence_total = cur.fetchone()[0]
         manifest["evidence_imported_this_run"] = inserted_ev
         manifest["evidence_total"] = evidence_total
+        manifest["evidence_family_linked"] = linked
 
         # ---- 4. Historical baseline: previous 135 marked, never deleted
         cur.execute("""UPDATE capabilities SET population='HISTORICAL_BASELINE_V1'

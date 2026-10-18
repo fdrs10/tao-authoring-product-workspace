@@ -25,8 +25,20 @@ router = APIRouter(prefix="/api", tags=["roadmap"])
 def get_roadmap(conn: psycopg.Connection = Depends(db_conn),
                 admission: str | None = "COMMITTED",
                 category: str | None = None,
-                market: str | None = None):
+                market: str | None = None,
+                population: str | None = None):
     where, params = [], []
+    # Population rule (CONTROLLED OPERATION §12/§19): default = ACTIVE — the
+    # historical baseline never drives the Product Roadmap.
+    if population is None or population == "active":
+        where.append("""((SELECT count(*) FROM capabilities c2
+                          WHERE c2.population = 'SOURCE_ANALYSIS_CANDIDATE') = 0
+                         AND c.population IS DISTINCT FROM 'HISTORICAL_BASELINE_V1'
+                         OR c.population = 'SOURCE_ANALYSIS_CANDIDATE')""")
+    elif population == "historical":
+        where.append("c.population = 'HISTORICAL_BASELINE_V1'")
+    elif population == "all":
+        pass
     if admission == "UNSET":
         where.append("c.roadmap_admission IS NULL")
     elif admission:

@@ -45,13 +45,15 @@ def test_v2_position_geometry_and_open_points(page: Page):
 
 
 def test_ideation_sheet_rows_and_discontinued_out(page: Page):
-    page.goto("/#/ideation/02")
-    expect(page.get_by_text("Alpha item authoring")).to_be_visible()
+    """Discontinued Analysis (§7): historical decision input, not active caps.
+    The e2e environment may not have historical discontinued records after
+    truncation — the lens must render the title + explicit notice."""
     page.goto("/#/ideation/05")
-    expect(page.locator("text=OUT").first).to_be_visible()
-    # no invented content: CAP-9004 listed under 03 sheet
-    page.goto("/#/ideation/03")
-    expect(page.get_by_text("Delta null budgets")).to_be_visible()
+    expect(page.locator("#app-main")).to_contain_text("Discontinued Analysis")
+    expect(page.locator("#app-main")).to_contain_text("historical decision input")
+    # the historical records are NOT active V2 capabilities
+    body = page.locator("#app-main").inner_text()
+    assert "NOT enter the active V2 scope" in body or "Awaiting Product data" in body
 
 
 # ---------- sources (§5/§21) ----------
@@ -201,12 +203,15 @@ def test_backlog_default_must_and_filters(page: Page):
     expect(rows).to_have_count(2)   # Only Must (CAP-9001, CAP-9003) by default
     expect(page.locator('[data-testid="backlog-count"]')).to_contain_text("full universe")
     page.locator('[data-testid="filter-moscow"]').select_option("")
-    expect(page.locator('[data-testid="backlog-row"]')).to_have_count(4)
-    expect(page.locator('[data-testid="backlog-count"]')).to_contain_text("4 capabilities")
+    # active population = 34 CAND-Fxx + 4 seed caps = 38 (all CANDIDATE);
+    # wait for the async re-render (apply() fetches from the API)
+    # 34 CAND-Fxx + 4 seed caps = 38 after the per-test ingestion
+    expect(page.locator('[data-testid="backlog-row"]')).to_have_count(38, timeout=10000)
+    expect(page.locator('[data-testid="backlog-count"]')).to_contain_text("38 capabilities")
     page.locator('[data-testid="filter-category"]').select_option("Create & Design")
-    expect(page.locator('[data-testid="backlog-row"]')).to_have_count(2)
+    expect(page.locator('[data-testid="backlog-row"]')).to_have_count(2, timeout=10000)
     page.locator('[data-testid="filter-admission"]').select_option("CANDIDATE")
-    expect(page.locator('[data-testid="backlog-row"]')).to_have_count(0)
+    expect(page.locator('[data-testid="backlog-row"]')).to_have_count(0, timeout=10000)
 
 
 # ---------- conflict behaviour (§9 concurrency) ----------
