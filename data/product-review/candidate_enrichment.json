@@ -1,5 +1,3398 @@
 {
  "generated_by": "scripts/product_review/enrich_candidates.py",
- "active_candidates": 0,
- "items": []
+ "active_candidates": 34,
+ "items": [
+  {
+   "candidate_id": "F01",
+   "cap_id": "CAND-F01",
+   "working_name": "Core item authoring & editing",
+   "identity": {
+    "cap_id": "CAND-F01",
+    "working_name": "Core item authoring & editing",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to core item authoring & editing \u2014 consolidated from 11 source evidence signals across 6 independent sources (Item creation & editing, Item creation & editing, Text alignment in Text Entry, Full Professional Item Authoring Workflow, Test Blueprint alignment, Intuitive Item Preview and Editing\u2026).",
+    "what_it_enables": "Item creation & editing (3X-001) ; Item creation & editing (GAP-CAP-001) ; Text alignment in Text Entry (JIRA-PCR-324) ; Full Professional Item Authoring Workflow (NEW-003) ; Test Blueprint alignment (NEW-005)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Item creation & editing, Item creation & editing, Text alignment in Text Entry, Full Professional Item Authoring Workflow, Test Blueprint alignment, Intuitive Item Preview and Editing, Preserve valued TAO 3.x authoring/editing capabilities, Advanced Editor UX/UI evolution, Light editor experience, SME-oriented authoring terminology and guidance, Item creation & editing. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F01: 11 signals consolidated from 6 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment ENABLER / TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 11 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 11,
+     "sources": 6,
+     "package_declared": 11
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "ENABLER / TO_REVIEW",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-001",
+     "GAP-CAP-001",
+     "JIRA-PCR-324",
+     "NEW-003",
+     "NEW-005",
+     "NEW-008",
+     "NEW-014",
+     "NEW-015",
+     "NEW-016",
+     "NYSED-004",
+     "V1-001"
+    ],
+    "signal_names": [
+     "Item creation & editing",
+     "Item creation & editing",
+     "Text alignment in Text Entry",
+     "Full Professional Item Authoring Workflow",
+     "Test Blueprint alignment",
+     "Intuitive Item Preview and Editing",
+     "Preserve valued TAO 3.x authoring/editing capabilities",
+     "Advanced Editor UX/UI evolution",
+     "Light editor experience",
+     "SME-oriented authoring terminology and guidance",
+     "Item creation & editing"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-JIRA-001",
+     "SRC-NEW-001",
+     "SRC-NYSED-001",
+     "SRC-V1-001"
+    ],
+    "count": 11,
+    "key_references": [
+     "PCR-324 | https://oat-sa.atlassian.net/browse/PCR-324 | Status=Placeholder | Target Release=release-2026-12",
+     "Paragraph 14",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 1. Item Authoring \u00b7 Item creation & editing"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F02",
+   "cap_id": "CAND-F02",
+   "working_name": "Interaction coverage & complex item types",
+   "identity": {
+    "cap_id": "CAND-F02",
+    "working_name": "Interaction coverage & complex item types",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to interaction coverage & complex item types \u2014 consolidated from 33 source evidence signals across 7 independent sources (Standard response interactions, Inline interactions, Graphical interactions, Custom interactions (PCI), Response configuration & correct answers, Portable Custom Interaction (PCI) extensibility\u2026).",
+    "what_it_enables": "Standard response interactions (3X-002) ; Inline interactions (3X-003) ; Graphical interactions (3X-004) ; Custom interactions (PCI) (3X-005) ; Response configuration & correct answers (3X-010)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Standard response interactions, Inline interactions, Graphical interactions, Custom interactions (PCI), Response configuration & correct answers, Portable Custom Interaction (PCI) extensibility, Additional/custom PCIs, Customer-specific/custom authoring extensions (specialized), Standard response interactions, Inline interactions, Graphical interactions, Custom interactions / PCI, PCI extensibility, Additional/custom PCIs, Improved alignment of bulleted or numbered lists, Line spacing formatting capability, Extend text alignment capabilities across all interactions, Text indentation formatting capability, Improve column width management and repeatability across items , Image resizing in Graphic Interactions, Size and position coordinates editing for hotspots and drop zones in Graphic Interactions, Enhance Match Interaction layout controls, Rotation of hotspots and drop zones in Graphic Interactions, Configurable max-length warning in Text Entry, Improve guided navigation for tests, More item types and performance-based interactions, Advanced PCI integrations, Item-bank graphical preview, Highest-use complex interaction parity, Standard response interactions, Inline interactions, Graphical interactions, Response configuration & correct answers. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F02: 33 signals consolidated from 7 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 33 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 33,
+     "sources": 7,
+     "package_declared": 33
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 3,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": true,
+    "focus_markets": "MEXCBT / Uchida, Traditional / K-12"
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-002",
+     "3X-003",
+     "3X-004",
+     "3X-005",
+     "3X-010",
+     "3X-077",
+     "3X-078",
+     "3X-083",
+     "GAP-CAP-002",
+     "GAP-CAP-003",
+     "GAP-CAP-004",
+     "GAP-CAP-005",
+     "GAP-CAP-106",
+     "GAP-CAP-107",
+     "JIRA-PCR-260",
+     "JIRA-PCR-261",
+     "JIRA-PCR-262",
+     "JIRA-PCR-263",
+     "JIRA-PCR-264",
+     "JIRA-PCR-267",
+     "JIRA-PCR-268",
+     "JIRA-PCR-322",
+     "JIRA-PCR-325",
+     "JIRA-PCR-326",
+     "JIRA-PCR-375",
+     "NEW-018",
+     "NEW-019",
+     "NYSED-009",
+     "STRAT-017",
+     "V1-002",
+     "V1-003",
+     "V1-004",
+     "V1-008"
+    ],
+    "signal_names": [
+     "Standard response interactions",
+     "Inline interactions",
+     "Graphical interactions",
+     "Custom interactions (PCI)",
+     "Response configuration & correct answers",
+     "Portable Custom Interaction (PCI) extensibility",
+     "Additional/custom PCIs",
+     "Customer-specific/custom authoring extensions (specialized)",
+     "Standard response interactions",
+     "Inline interactions",
+     "Graphical interactions",
+     "Custom interactions / PCI",
+     "PCI extensibility",
+     "Additional/custom PCIs",
+     "Improved alignment of bulleted or numbered lists",
+     "Line spacing formatting capability",
+     "Extend text alignment capabilities across all interactions",
+     "Text indentation formatting capability",
+     "Improve column width management and repeatability across items ",
+     "Image resizing in Graphic Interactions",
+     "Size and position coordinates editing for hotspots and drop zones in Graphic Interactions",
+     "Enhance Match Interaction layout controls",
+     "Rotation of hotspots and drop zones in Graphic Interactions",
+     "Configurable max-length warning in Text Entry",
+     "Improve guided navigation for tests",
+     "More item types and performance-based interactions",
+     "Advanced PCI integrations",
+     "Item-bank graphical preview",
+     "Highest-use complex interaction parity",
+     "Standard response interactions",
+     "Inline interactions",
+     "Graphical interactions",
+     "Response configuration & correct answers"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-JIRA-001",
+     "SRC-NEW-001",
+     "SRC-NYSED-001",
+     "SRC-STRATEGY-001",
+     "SRC-V1-001"
+    ],
+    "count": 33,
+    "key_references": [
+     "PCR-260 | https://oat-sa.atlassian.net/browse/PCR-260 | Status=Placeholder | Target Release=release-2026-10",
+     "PCR-261 | https://oat-sa.atlassian.net/browse/PCR-261 | Status=Placeholder | Target Release=release-2026-11-lts",
+     "PCR-262 | https://oat-sa.atlassian.net/browse/PCR-262 | Status=Placeholder | Target Release=",
+     "PCR-263 | https://oat-sa.atlassian.net/browse/PCR-263 | Status=Placeholder | Target Release=",
+     "PCR-264 | https://oat-sa.atlassian.net/browse/PCR-264 | Status=Placeholder | Target Release=",
+     "PCR-267 | https://oat-sa.atlassian.net/browse/PCR-267 | Status=Placeholder | Target Release=",
+     "PCR-268 | https://oat-sa.atlassian.net/browse/PCR-268 | Status=Placeholder | Target Release=",
+     "PCR-322 | https://oat-sa.atlassian.net/browse/PCR-322 | Status=Backlog | Target Release=release-2026-12",
+     "PCR-325 | https://oat-sa.atlassian.net/browse/PCR-325 | Status=Placeholder | Target Release=release-2026-12",
+     "PCR-326 | https://oat-sa.atlassian.net/browse/PCR-326 | Status=Placeholder | Target Release=release-2026-12"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F03",
+   "cap_id": "CAND-F03",
+   "working_name": "Rich text, math, media & layout authoring",
+   "identity": {
+    "cap_id": "CAND-F03",
+    "working_name": "Rich text, math, media & layout authoring",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to rich text, math, media & layout authoring \u2014 consolidated from 27 source evidence signals across 8 independent sources (Rich-text authoring, Mathematical content, Images & media, Item styling, Asset banking / Asset Manager, Passage stylesheet management\u2026).",
+    "what_it_enables": "Rich-text authoring (3X-006) ; Mathematical content (3X-007) ; Images & media (3X-008) ; Item styling (3X-013) ; Asset banking / Asset Manager (3X-039)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Rich-text authoring, Mathematical content, Images & media, Item styling, Asset banking / Asset Manager, Passage stylesheet management, Compound search criteria, Rich-text authoring, Mathematical content, Images & media, Item styling, Passage stylesheets, Resource copy/duplication, Granular column width management, Prevent line breaks inside selected expressions, Better accessibility support for mathematical expressions, Enhance asset selection search across resources, Configurable row and cell background styling in TAO tables, IRT analysis as part of test construction, Mathematical content in rich-text metadata, Task-specific staged generation workflow, Math chemistry file media and code responses, Rich-text authoring, Mathematical content, Images & media, Item styling, Asset / source material management. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F03: 27 signals consolidated from 8 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 27 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 27,
+     "sources": 8,
+     "package_declared": 27
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 2,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": true,
+    "focus_markets": "Higher Education, MEXCBT / Uchida"
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-006",
+     "3X-007",
+     "3X-008",
+     "3X-013",
+     "3X-039",
+     "3X-041",
+     "3X-057",
+     "GAP-CAP-006",
+     "GAP-CAP-007",
+     "GAP-CAP-008",
+     "GAP-CAP-013",
+     "GAP-CAP-043",
+     "GAP-CAP-045",
+     "JIRA-PCR-265",
+     "JIRA-PCR-269",
+     "JIRA-PCR-270",
+     "JIRA-PCR-318",
+     "JIRA-PCR-327",
+     "NEW-006",
+     "NYSED-008",
+     "OECD-004",
+     "STRAT-032",
+     "V1-005",
+     "V1-006",
+     "V1-007",
+     "V1-011",
+     "V1-034"
+    ],
+    "signal_names": [
+     "Rich-text authoring",
+     "Mathematical content",
+     "Images & media",
+     "Item styling",
+     "Asset banking / Asset Manager",
+     "Passage stylesheet management",
+     "Compound search criteria",
+     "Rich-text authoring",
+     "Mathematical content",
+     "Images & media",
+     "Item styling",
+     "Passage stylesheets",
+     "Resource copy/duplication",
+     "Granular column width management",
+     "Prevent line breaks inside selected expressions",
+     "Better accessibility support for mathematical expressions",
+     "Enhance asset selection search across resources",
+     "Configurable row and cell background styling in TAO tables",
+     "IRT analysis as part of test construction",
+     "Mathematical content in rich-text metadata",
+     "Task-specific staged generation workflow",
+     "Math chemistry file media and code responses",
+     "Rich-text authoring",
+     "Mathematical content",
+     "Images & media",
+     "Item styling",
+     "Asset / source material management"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-JIRA-001",
+     "SRC-NEW-001",
+     "SRC-NYSED-001",
+     "SRC-OECD-001",
+     "SRC-STRATEGY-001",
+     "SRC-V1-001"
+    ],
+    "count": 27,
+    "key_references": [
+     "Chapter 12 p. 218",
+     "PCR-265 | https://oat-sa.atlassian.net/browse/PCR-265 | Status=Placeholder | Target Release=",
+     "PCR-269 | https://oat-sa.atlassian.net/browse/PCR-269 | Status=Placeholder | Target Release=",
+     "PCR-270 | https://oat-sa.atlassian.net/browse/PCR-270 | Status=Placeholder | Target Release=",
+     "PCR-318 | https://oat-sa.atlassian.net/browse/PCR-318 | Status=Backlog | Target Release=release-2026-12",
+     "PCR-327 | https://oat-sa.atlassian.net/browse/PCR-327 | Status=Placeholder | Target Release=release-2026-12",
+     "Paragraph 23",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 1. Item Authoring \u00b7 Images & media",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 1. Item Authoring \u00b7 Item styling",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 1. Item Authoring \u00b7 Mathematical content"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F04",
+   "cap_id": "CAND-F04",
+   "working_name": "Response, scoring, feedback & rubrics",
+   "identity": {
+    "cap_id": "CAND-F04",
+    "working_name": "Response, scoring, feedback & rubrics",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to response, scoring, feedback & rubrics \u2014 consolidated from 20 source evidence signals across 5 independent sources (Scoring & response processing, Feedback, Scoring weights, Rubrics & instructions, Test-level outcome/scoring configuration, Response configuration & correct answers\u2026).",
+    "what_it_enables": "Scoring & response processing (3X-011) ; Feedback (3X-012) ; Scoring weights (3X-029) ; Rubrics & instructions (3X-030) ; Test-level outcome/scoring configuration (3X-032)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Scoring & response processing, Feedback, Scoring weights, Rubrics & instructions, Test-level outcome/scoring configuration, Response configuration & correct answers, Scoring & response processing, Feedback, Scoring weights, Rubrics & instructions, Test-level scoring/outcomes, Easier debugging of scoring rules, Scoring partial credit and reusable rubrics, Item statistics and evidence by authored version, Rubric moderation and anonymous marking configuration, Scoring & response processing, Feedback, Scoring weights, Rubrics & instructions, Test-level outcome/scoring configuration. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F04: 20 signals consolidated from 5 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 20 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 20,
+     "sources": 5,
+     "package_declared": 20
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 1,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": true,
+    "focus_markets": "Higher Education, MEXCBT / Uchida, Professional / Credentialing"
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-011",
+     "3X-012",
+     "3X-029",
+     "3X-030",
+     "3X-032",
+     "GAP-CAP-010",
+     "GAP-CAP-011",
+     "GAP-CAP-012",
+     "GAP-CAP-029",
+     "GAP-CAP-030",
+     "GAP-CAP-032",
+     "JIRA-PCR-305",
+     "STRAT-009",
+     "STRAT-014",
+     "STRAT-031",
+     "V1-009",
+     "V1-010",
+     "V1-025",
+     "V1-026",
+     "V1-028"
+    ],
+    "signal_names": [
+     "Scoring & response processing",
+     "Feedback",
+     "Scoring weights",
+     "Rubrics & instructions",
+     "Test-level outcome/scoring configuration",
+     "Response configuration & correct answers",
+     "Scoring & response processing",
+     "Feedback",
+     "Scoring weights",
+     "Rubrics & instructions",
+     "Test-level scoring/outcomes",
+     "Easier debugging of scoring rules",
+     "Scoring partial credit and reusable rubrics",
+     "Item statistics and evidence by authored version",
+     "Rubric moderation and anonymous marking configuration",
+     "Scoring & response processing",
+     "Feedback",
+     "Scoring weights",
+     "Rubrics & instructions",
+     "Test-level outcome/scoring configuration"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-JIRA-001",
+     "SRC-STRATEGY-001",
+     "SRC-V1-001"
+    ],
+    "count": 20,
+    "key_references": [
+     "PCR-305 | https://oat-sa.atlassian.net/browse/PCR-305 | Status=Placeholder | Target Release=",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 1. Item Authoring \u00b7 Feedback",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 1. Item Authoring \u00b7 Response configuration & correct answers",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 1. Item Authoring \u00b7 Scoring & response processing",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Rubrics & instructions",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Scoring weights",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Test-level scoring/outcomes",
+     "Table 29; Target=2027 H2; Market outcome=Shared scoring configuration; Mode=Build",
+     "Table 29; Target=2028 H1; Market outcome=Psychometric and quality feedback; Mode=Build",
+     "Table 33; Target=2027 H2; Market outcome=Program governance; Mode=Strategic feature"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F05",
+   "cap_id": "CAND-F05",
+   "working_name": "Preview, print, accessibility & multilingual authoring",
+   "identity": {
+    "cap_id": "CAND-F05",
+    "working_name": "Preview, print, accessibility & multilingual authoring",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to preview, print, accessibility & multilingual authoring \u2014 consolidated from 29 source evidence signals across 6 independent sources (Item preview, Item printing, Item language & writing direction, Test preview, Test printing, Content preview\u2026).",
+    "what_it_enables": "Item preview (3X-015) ; Item printing (3X-016) ; Item language & writing direction (3X-017) ; Test preview (3X-034) ; Test printing (3X-035)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Item preview, Item printing, Item language & writing direction, Test preview, Test printing, Content preview, Item preview, Item printing, Item language & writing direction, Test preview, Test printing, Item version history, Content preview, Review comments on preview, PDF output, UI for TTS Speech Specification, Inheritance of categories / test-taker tools by newly added items, Revision/commit item preview, Contextual item preview in test authoring, Accessibility validation and target-player preview, Multilingual variants and translation review, Multilingual and accessibility authoring completeness, Paper form composition and print proofing, Item preview, Item printing, Test preview, Item banking, Test banking, Content preview. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F05: 29 signals consolidated from 6 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 29 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 29,
+     "sources": 6,
+     "package_declared": 29
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 1,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": true,
+    "focus_markets": "Higher Education, MEXCBT / Uchida, Traditional / K-12"
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-015",
+     "3X-016",
+     "3X-017",
+     "3X-034",
+     "3X-035",
+     "3X-050",
+     "GAP-CAP-015",
+     "GAP-CAP-016",
+     "GAP-CAP-017",
+     "GAP-CAP-034",
+     "GAP-CAP-035",
+     "GAP-CAP-051",
+     "GAP-CAP-055",
+     "GAP-CAP-081",
+     "GAP-CAP-096",
+     "JIRA-PCR-172",
+     "JIRA-PCR-309",
+     "NYSED-010",
+     "NYSED-011",
+     "STRAT-007",
+     "STRAT-010",
+     "STRAT-018",
+     "STRAT-021",
+     "V1-012",
+     "V1-013",
+     "V1-029",
+     "V1-032",
+     "V1-033",
+     "V1-040"
+    ],
+    "signal_names": [
+     "Item preview",
+     "Item printing",
+     "Item language & writing direction",
+     "Test preview",
+     "Test printing",
+     "Content preview",
+     "Item preview",
+     "Item printing",
+     "Item language & writing direction",
+     "Test preview",
+     "Test printing",
+     "Item version history",
+     "Content preview",
+     "Review comments on preview",
+     "PDF output",
+     "UI for TTS Speech Specification",
+     "Inheritance of categories / test-taker tools by newly added items",
+     "Revision/commit item preview",
+     "Contextual item preview in test authoring",
+     "Accessibility validation and target-player preview",
+     "Multilingual variants and translation review",
+     "Multilingual and accessibility authoring completeness",
+     "Paper form composition and print proofing",
+     "Item preview",
+     "Item printing",
+     "Test preview",
+     "Item banking",
+     "Test banking",
+     "Content preview"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-JIRA-001",
+     "SRC-NYSED-001",
+     "SRC-STRATEGY-001",
+     "SRC-V1-001"
+    ],
+    "count": 29,
+    "key_references": [
+     "PCR-172 | https://oat-sa.atlassian.net/browse/PCR-172 | Status=Placeholder | Target Release=",
+     "PCR-309 | https://oat-sa.atlassian.net/browse/PCR-309 | Status=Placeholder | Target Release=",
+     "Paragraph 27",
+     "Paragraph 28",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 1. Item Authoring \u00b7 Item language & writing direction",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 1. Item Authoring \u00b7 Item preview",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 1. Item Authoring \u00b7 Item printing",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Test preview",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Test printing",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Content preview"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F06",
+   "cap_id": "CAND-F06",
+   "working_name": "Test creation, structure & assembly",
+   "identity": {
+    "cap_id": "CAND-F06",
+    "working_name": "Test creation, structure & assembly",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to test creation, structure & assembly \u2014 consolidated from 38 source evidence signals across 5 independent sources (Test creation & editing, Test structure, Test parts & sections management, Item placement & organization, Item selection, Random item selection\u2026).",
+    "what_it_enables": "Test creation & editing (3X-018) ; Test structure (3X-019) ; Test parts & sections management (3X-020) ; Item placement & organization (3X-021) ; Item selection (3X-022)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Test creation & editing, Test structure, Test parts & sections management, Item placement & organization, Item selection, Random item selection, Ordering & shuffling, Navigation configuration, Time limits, Test-taker tools configuration, Test/part/section/item settings, Categories, Test creation & editing, Test structure, Test parts & sections, Item placement & organization, Item selection, Random item selection, Ordering & shuffling, Navigation configuration, Time limits, Test-taker tools, Test hierarchy settings, [TAO Authoring] Improved test assembly items search, Improved test assembly item reordering, Assessment assembly and outcomes tagging, Test creation & editing, Test structure, Test parts & sections management, Item placement & organization, Item selection, Random item selection, Ordering & shuffling, Navigation configuration, Time limits, Test-taker tools configuration, Test/part/section/item settings, Categories. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F06: 38 signals consolidated from 5 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 38 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 38,
+     "sources": 5,
+     "package_declared": 38
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 1,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": false,
+    "focus_markets": "MEXCBT / Uchida"
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-018",
+     "3X-019",
+     "3X-020",
+     "3X-021",
+     "3X-022",
+     "3X-023",
+     "3X-024",
+     "3X-025",
+     "3X-026",
+     "3X-027",
+     "3X-028",
+     "3X-031",
+     "GAP-CAP-018",
+     "GAP-CAP-019",
+     "GAP-CAP-020",
+     "GAP-CAP-021",
+     "GAP-CAP-022",
+     "GAP-CAP-023",
+     "GAP-CAP-024",
+     "GAP-CAP-025",
+     "GAP-CAP-026",
+     "GAP-CAP-027",
+     "GAP-CAP-028",
+     "JIRA-PCR-308",
+     "JIRA-PCR-321",
+     "STRAT-011",
+     "V1-014",
+     "V1-015",
+     "V1-016",
+     "V1-017",
+     "V1-018",
+     "V1-019",
+     "V1-020",
+     "V1-021",
+     "V1-022",
+     "V1-023",
+     "V1-024",
+     "V1-027"
+    ],
+    "signal_names": [
+     "Test creation & editing",
+     "Test structure",
+     "Test parts & sections management",
+     "Item placement & organization",
+     "Item selection",
+     "Random item selection",
+     "Ordering & shuffling",
+     "Navigation configuration",
+     "Time limits",
+     "Test-taker tools configuration",
+     "Test/part/section/item settings",
+     "Categories",
+     "Test creation & editing",
+     "Test structure",
+     "Test parts & sections",
+     "Item placement & organization",
+     "Item selection",
+     "Random item selection",
+     "Ordering & shuffling",
+     "Navigation configuration",
+     "Time limits",
+     "Test-taker tools",
+     "Test hierarchy settings",
+     "[TAO Authoring] Improved test assembly items search",
+     "Improved test assembly item reordering",
+     "Assessment assembly and outcomes tagging",
+     "Test creation & editing",
+     "Test structure",
+     "Test parts & sections management",
+     "Item placement & organization",
+     "Item selection",
+     "Random item selection",
+     "Ordering & shuffling",
+     "Navigation configuration",
+     "Time limits",
+     "Test-taker tools configuration",
+     "Test/part/section/item settings",
+     "Categories"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-JIRA-001",
+     "SRC-STRATEGY-001",
+     "SRC-V1-001"
+    ],
+    "count": 38,
+    "key_references": [
+     "PCR-308 | https://oat-sa.atlassian.net/browse/PCR-308 | Status=Placeholder | Target Release=release-2026-12",
+     "PCR-321 | https://oat-sa.atlassian.net/browse/PCR-321 | Status=Placeholder | Target Release=release-2026-12",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Item placement & organization",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Item selection",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Navigation configuration",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Ordering & shuffling",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Random item selection",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Test creation & editing",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Test hierarchy settings",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Test parts & sections"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F07",
+   "cap_id": "CAND-F07",
+   "working_name": "Blueprints, forms & equivalent-form design",
+   "identity": {
+    "cap_id": "CAND-F07",
+    "working_name": "Blueprints, forms & equivalent-form design",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to blueprints, forms & equivalent-form design \u2014 consolidated from 5 source evidence signals across 2 independent sources (Item/test templates, Blueprint coverage and equivalent forms, Blueprint-driven form assembly, Differentiated item and form variants, Blueprint and equivalent-form workflow).",
+    "what_it_enables": "Item/test templates (NEW-013) ; Blueprint coverage and equivalent forms (STRAT-013) ; Blueprint-driven form assembly (STRAT-019) ; Differentiated item and form variants (STRAT-026) ; Blueprint and equivalent-form workflow (STRAT-028)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Item/test templates, Blueprint coverage and equivalent forms, Blueprint-driven form assembly, Differentiated item and form variants, Blueprint and equivalent-form workflow. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F07: 5 signals consolidated from 2 independent sources; evidence strength SUPPORTED; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 5 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 5,
+     "sources": 2,
+     "package_declared": 5
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "SUPPORTED",
+    "is_focus": true,
+    "focus_markets": "Professional / Credentialing, Traditional / K-12"
+   },
+   "evidence": {
+    "signal_ids": [
+     "NEW-013",
+     "STRAT-013",
+     "STRAT-019",
+     "STRAT-026",
+     "STRAT-028"
+    ],
+    "signal_names": [
+     "Item/test templates",
+     "Blueprint coverage and equivalent forms",
+     "Blueprint-driven form assembly",
+     "Differentiated item and form variants",
+     "Blueprint and equivalent-form workflow"
+    ],
+    "sources": [
+     "SRC-NEW-001",
+     "SRC-STRATEGY-001"
+    ],
+    "count": 5,
+    "key_references": [
+     "Table 29; Target=2028 H1; Market outcome=Traditional, certification and Higher Education; Mode=Build",
+     "Table 30; Target=2028 H1; Market outcome=Create defensible forms; Mode=Strategic feature",
+     "Table 31; Target=2028 H1; Market outcome=Support learner needs; Mode=Build",
+     "Table 32; Target=2027 H2; Market outcome=Comparable exam forms; Mode=Build"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F08",
+   "cap_id": "CAND-F08",
+   "working_name": "Templates & guided authoring",
+   "identity": {
+    "cap_id": "CAND-F08",
+    "working_name": "Templates & guided authoring",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to templates & guided authoring \u2014 consolidated from 3 source evidence signals across 2 independent sources (CSV import guidance for authors, Controlled template assembly from approved banks, Assessment templates for compliance and skills checks).",
+    "what_it_enables": "CSV import guidance for authors (NYSED-005) ; Controlled template assembly from approved banks (STRAT-025) ; Assessment templates for compliance and skills checks (STRAT-035)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: CSV import guidance for authors, Controlled template assembly from approved banks, Assessment templates for compliance and skills checks. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F08: 3 signals consolidated from 2 independent sources; evidence strength SUPPORTED; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 3 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 3,
+     "sources": 2,
+     "package_declared": 3
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "SUPPORTED",
+    "is_focus": false,
+    "focus_markets": "Assessment-led Learning, Governed Formative"
+   },
+   "evidence": {
+    "signal_ids": [
+     "NYSED-005",
+     "STRAT-025",
+     "STRAT-035"
+    ],
+    "signal_names": [
+     "CSV import guidance for authors",
+     "Controlled template assembly from approved banks",
+     "Assessment templates for compliance and skills checks"
+    ],
+    "sources": [
+     "SRC-NYSED-001",
+     "SRC-STRATEGY-001"
+    ],
+    "count": 3,
+    "key_references": [
+     "Paragraphs 15 and 45",
+     "Table 31; Target=2027 H2; Market outcome=Enable local flexibility without losing governance; Mode=Build after design proof",
+     "Table 34; Target=2028 H1; Market outcome=Fast partner proof; Mode=Build selectively"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F09",
+   "cap_id": "CAND-F09",
+   "working_name": "Repository, banking, folders & content organization",
+   "identity": {
+    "cap_id": "CAND-F09",
+    "working_name": "Repository, banking, folders & content organization",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to repository, banking, folders & content organization \u2014 consolidated from 32 source evidence signals across 5 independent sources (Passages / shared stimuli, Hierarchical content organization, Item banking, Test banking, Passage / shared stimulus management, Resource class/folder management\u2026).",
+    "what_it_enables": "Passages / shared stimuli (3X-009) ; Hierarchical content organization (3X-036) ; Item banking (3X-037) ; Test banking (3X-038) ; Passage / shared stimulus management (3X-040)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Passages / shared stimuli, Hierarchical content organization, Item banking, Test banking, Passage / shared stimulus management, Resource class/folder management, Resource movement, Resource classification, Content access control (ACL), Passages / shared stimuli, Primary content repository, Hierarchical content organization, Item banking, Test banking, Asset management, Passage management, Folder/class management, Resource movement, Resource classification, Hierarchy-scoped search, Content access control, Target Authoring folder selection, Item-bank multi-selection, Persistent bank folder location, Partial-match item-content search, Permission-aware repository tree visibility, Configurable authoring workflows by subject, Repository hierarchy and metadata, Official item-bank ingestion and release workflow, Content Library, Resource classification, Target folder selection. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F09: 32 signals consolidated from 5 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 32 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 32,
+     "sources": 5,
+     "package_declared": 32
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": true,
+    "focus_markets": "Assessment-led Learning, Governed Formative, Professional / Credentialing, Traditional / K-12"
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-009",
+     "3X-036",
+     "3X-037",
+     "3X-038",
+     "3X-040",
+     "3X-042",
+     "3X-044",
+     "3X-054",
+     "3X-060",
+     "GAP-CAP-009",
+     "GAP-CAP-037",
+     "GAP-CAP-038",
+     "GAP-CAP-039",
+     "GAP-CAP-040",
+     "GAP-CAP-041",
+     "GAP-CAP-042",
+     "GAP-CAP-044",
+     "GAP-CAP-046",
+     "GAP-CAP-062",
+     "GAP-CAP-070",
+     "GAP-CAP-078",
+     "GAP-CAP-104",
+     "NYSED-001",
+     "NYSED-003",
+     "NYSED-012",
+     "NYSED-014",
+     "NYSED-017",
+     "STRAT-002",
+     "STRAT-023",
+     "V1-031",
+     "V1-046",
+     "V1-072"
+    ],
+    "signal_names": [
+     "Passages / shared stimuli",
+     "Hierarchical content organization",
+     "Item banking",
+     "Test banking",
+     "Passage / shared stimulus management",
+     "Resource class/folder management",
+     "Resource movement",
+     "Resource classification",
+     "Content access control (ACL)",
+     "Passages / shared stimuli",
+     "Primary content repository",
+     "Hierarchical content organization",
+     "Item banking",
+     "Test banking",
+     "Asset management",
+     "Passage management",
+     "Folder/class management",
+     "Resource movement",
+     "Resource classification",
+     "Hierarchy-scoped search",
+     "Content access control",
+     "Target Authoring folder selection",
+     "Item-bank multi-selection",
+     "Persistent bank folder location",
+     "Partial-match item-content search",
+     "Permission-aware repository tree visibility",
+     "Configurable authoring workflows by subject",
+     "Repository hierarchy and metadata",
+     "Official item-bank ingestion and release workflow",
+     "Content Library",
+     "Resource classification",
+     "Target folder selection"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-NYSED-001",
+     "SRC-STRATEGY-001",
+     "SRC-V1-001"
+    ],
+    "count": 32,
+    "key_references": [
+     "Paragraph 13",
+     "Paragraph 32",
+     "Paragraph 36",
+     "Paragraph 42",
+     "Paragraph 9-10",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 1. Item Authoring \u00b7 Passages / shared stimuli",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Asset management",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Folder/class management",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Hierarchical content organization",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Item banking"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F10",
+   "cap_id": "CAND-F10",
+   "working_name": "Search, discovery & similarity",
+   "identity": {
+    "cap_id": "CAND-F10",
+    "working_name": "Search, discovery & similarity",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to search, discovery & similarity \u2014 consolidated from 26 source evidence signals across 7 independent sources (Basic content search, Advanced Search, Hierarchy-scoped search, Semantic item search, Similarity / enemy-item detection, Bias, explainability and AI-generated response detection\u2026).",
+    "what_it_enables": "Basic content search (3X-055) ; Advanced Search (3X-056) ; Hierarchy-scoped search (3X-058) ; Semantic item search (COMPETITORS-003) ; Similarity / enemy-item detection (COMPETITORS-004)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Basic content search, Advanced Search, Hierarchy-scoped search, Semantic item search, Similarity / enemy-item detection, Bias, explainability and AI-generated response detection, AI-native high-stakes assessment design, Basic search, Advanced search, Semantic search, Search match context, Taxonomy filtering, Compound search, Category counts, Saved filters, Bulk actions on search results, AI-generated item quality controls, Search filter clone and bulk metadata, Basic content search, Advanced Search, Semantic search, Content match context, Taxonomy filtering, Compound search criteria, Category counts, Saved filters. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F10: 26 signals consolidated from 7 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 26 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 26,
+     "sources": 7,
+     "package_declared": 26
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": true,
+    "focus_markets": "Assessment-led Learning, Governed Formative, Higher Education"
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-055",
+     "3X-056",
+     "3X-058",
+     "COMPETITORS-003",
+     "COMPETITORS-004",
+     "COMPETITORS-012",
+     "COMPETITORS-013",
+     "GAP-CAP-064",
+     "GAP-CAP-065",
+     "GAP-CAP-066",
+     "GAP-CAP-067",
+     "GAP-CAP-068",
+     "GAP-CAP-069",
+     "GAP-CAP-071",
+     "GAP-CAP-072",
+     "NYSED-013",
+     "OECD-005",
+     "STRAT-003",
+     "V1-048",
+     "V1-049",
+     "V1-050",
+     "V1-051",
+     "V1-052",
+     "V1-053",
+     "V1-054",
+     "V1-055"
+    ],
+    "signal_names": [
+     "Basic content search",
+     "Advanced Search",
+     "Hierarchy-scoped search",
+     "Semantic item search",
+     "Similarity / enemy-item detection",
+     "Bias, explainability and AI-generated response detection",
+     "AI-native high-stakes assessment design",
+     "Basic search",
+     "Advanced search",
+     "Semantic search",
+     "Search match context",
+     "Taxonomy filtering",
+     "Compound search",
+     "Category counts",
+     "Saved filters",
+     "Bulk actions on search results",
+     "AI-generated item quality controls",
+     "Search filter clone and bulk metadata",
+     "Basic content search",
+     "Advanced Search",
+     "Semantic search",
+     "Content match context",
+     "Taxonomy filtering",
+     "Compound search criteria",
+     "Category counts",
+     "Saved filters"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-COMP-001",
+     "SRC-GAP-001",
+     "SRC-NYSED-001",
+     "SRC-OECD-001",
+     "SRC-STRATEGY-001",
+     "SRC-V1-001"
+    ],
+    "count": 26,
+    "key_references": [
+     "Chapter 12 pp. 218-219",
+     "Paragraph 33",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Advanced search",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Basic search",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Category counts",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Compound search",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Saved filters",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Search match context",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Semantic search",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Taxonomy filtering"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F11",
+   "cap_id": "CAND-F11",
+   "working_name": "Metadata, taxonomy & classification",
+   "identity": {
+    "cap_id": "CAND-F11",
+    "working_name": "Metadata, taxonomy & classification",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to metadata, taxonomy & classification \u2014 consolidated from 37 source evidence signals across 6 independent sources (Custom metadata schemas, Metadata lists / controlled vocabularies, Statistical metadata, Statistical metadata import, Categories, Taxonomy-driven item pools\u2026).",
+    "what_it_enables": "Custom metadata schemas (3X-052) ; Metadata lists / controlled vocabularies (3X-053) ; Statistical metadata (3X-063) ; Statistical metadata import (3X-071) ; Categories (GAP-CAP-031)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Custom metadata schemas, Metadata lists / controlled vocabularies, Statistical metadata, Statistical metadata import, Categories, Taxonomy-driven item pools, Custom metadata schemas, Controlled vocabularies, Hierarchical taxonomies, Open-value metadata, Content-type-specific metadata, AI-assisted tagging, AI tag review, Project-specific metadata configuration, Statistical metadata, Statistical metadata import, Metadata publishing, AI metadata generation, Strict topology for items with baseline of attributes required (to allow consistent reporting), Metadata management terminology and guidance, File-type metadata support, Controlled AI generation metadata and quality checks, Field-test exposure and psychometric metadata, Program outcomes and accreditation mapping, Competency mapping on shared model, Taxonomy-driven item pools, Custom metadata schemas, Metadata lists / controlled vocabularies, Hierarchical taxonomies, Open-value metadata, Content-type-specific metadata, AI-assisted tagging, AI tag review, AI tagging configuration, Project-specific metadata configuration, Metadata publishing, AI-assisted metadata generation. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F11: 37 signals consolidated from 6 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 37 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 37,
+     "sources": 6,
+     "package_declared": 37
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 1,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": true,
+    "focus_markets": "Assessment-led Learning, Governed Formative, Higher Education, MEXCBT / Uchida, Traditional / K-12"
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-052",
+     "3X-053",
+     "3X-063",
+     "3X-071",
+     "GAP-CAP-031",
+     "GAP-CAP-036",
+     "GAP-CAP-058",
+     "GAP-CAP-059",
+     "GAP-CAP-060",
+     "GAP-CAP-061",
+     "GAP-CAP-063",
+     "GAP-CAP-073",
+     "GAP-CAP-074",
+     "GAP-CAP-076",
+     "GAP-CAP-082",
+     "GAP-CAP-090",
+     "GAP-CAP-105",
+     "GAP-CAP-128",
+     "JIRA-PCR-299",
+     "NYSED-006",
+     "NYSED-007",
+     "STRAT-016",
+     "STRAT-020",
+     "STRAT-033",
+     "STRAT-034",
+     "V1-030",
+     "V1-042",
+     "V1-043",
+     "V1-044",
+     "V1-045",
+     "V1-047",
+     "V1-056",
+     "V1-057",
+     "V1-058",
+     "V1-059",
+     "V1-073",
+     "V1-090"
+    ],
+    "signal_names": [
+     "Custom metadata schemas",
+     "Metadata lists / controlled vocabularies",
+     "Statistical metadata",
+     "Statistical metadata import",
+     "Categories",
+     "Taxonomy-driven item pools",
+     "Custom metadata schemas",
+     "Controlled vocabularies",
+     "Hierarchical taxonomies",
+     "Open-value metadata",
+     "Content-type-specific metadata",
+     "AI-assisted tagging",
+     "AI tag review",
+     "Project-specific metadata configuration",
+     "Statistical metadata",
+     "Statistical metadata import",
+     "Metadata publishing",
+     "AI metadata generation",
+     "Strict topology for items with baseline of attributes required (to allow consistent reporting)",
+     "Metadata management terminology and guidance",
+     "File-type metadata support",
+     "Controlled AI generation metadata and quality checks",
+     "Field-test exposure and psychometric metadata",
+     "Program outcomes and accreditation mapping",
+     "Competency mapping on shared model",
+     "Taxonomy-driven item pools",
+     "Custom metadata schemas",
+     "Metadata lists / controlled vocabularies",
+     "Hierarchical taxonomies",
+     "Open-value metadata",
+     "Content-type-specific metadata",
+     "AI-assisted tagging",
+     "AI tag review",
+     "AI tagging configuration",
+     "Project-specific metadata configuration",
+     "Metadata publishing",
+     "AI-assisted metadata generation"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-JIRA-001",
+     "SRC-NYSED-001",
+     "SRC-STRATEGY-001",
+     "SRC-V1-001"
+    ],
+    "count": 37,
+    "key_references": [
+     "PCR-299 | https://oat-sa.atlassian.net/browse/PCR-299 | Status=Placeholder | Target Release=release-2026-12",
+     "Paragraph 22",
+     "Paragraphs 18-21",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Categories",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Taxonomy-driven item pools",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 AI tag review",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 AI-assisted tagging",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Content-type-specific metadata",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Controlled vocabularies",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Custom metadata schemas"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F12",
+   "cap_id": "CAND-F12",
+   "working_name": "Standards & CASE alignment",
+   "identity": {
+    "cap_id": "CAND-F12",
+    "working_name": "Standards & CASE alignment",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to standards & case alignment \u2014 consolidated from 6 source evidence signals across 3 independent sources (US State Standards-aligned metadata, 1EdTech CASE integration, Standards crosswalk / translation, Curriculum-aligned assessment generation, CASE competency import and export, CASE standards search and browse).",
+    "what_it_enables": "US State Standards-aligned metadata (NEW-009) ; 1EdTech CASE integration (NEW-010) ; Standards crosswalk / translation (NEW-011) ; Curriculum-aligned assessment generation (OECD-009) ; CASE competency import and export (STRAT-012)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: US State Standards-aligned metadata, 1EdTech CASE integration, Standards crosswalk / translation, Curriculum-aligned assessment generation, CASE competency import and export, CASE standards search and browse. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F12: 6 signals consolidated from 3 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 6 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 6,
+     "sources": 3,
+     "package_declared": 6
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Higher Education, Governed Formative",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": true,
+    "focus_markets": "Governed Formative, Traditional / K-12"
+   },
+   "evidence": {
+    "signal_ids": [
+     "NEW-009",
+     "NEW-010",
+     "NEW-011",
+     "OECD-009",
+     "STRAT-012",
+     "STRAT-024"
+    ],
+    "signal_names": [
+     "US State Standards-aligned metadata",
+     "1EdTech CASE integration",
+     "Standards crosswalk / translation",
+     "Curriculum-aligned assessment generation",
+     "CASE competency import and export",
+     "CASE standards search and browse"
+    ],
+    "sources": [
+     "SRC-NEW-001",
+     "SRC-OECD-001",
+     "SRC-STRATEGY-001"
+    ],
+    "count": 6,
+    "key_references": [
+     "Executive Summary / Chapter 1; purpose-built educational GenAI and curricular alignment",
+     "Table 29; Target=2028 H1; Market outcome=K-12 standards and skills alignment; Mode=Build",
+     "Table 31; Target=2027 H2; Market outcome=Find approved items by curriculum expectation; Mode=Build"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F13",
+   "cap_id": "CAND-F13",
+   "working_name": "QTI interoperability & conformance",
+   "identity": {
+    "cap_id": "CAND-F13",
+    "working_name": "QTI interoperability & conformance",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to qti interoperability & conformance \u2014 consolidated from 22 source evidence signals across 5 independent sources (Item source editing, Test XML editing, QTI 2.x import, QTI 2.x export, QTI 3 import, QTI 3 export\u2026).",
+    "what_it_enables": "Item source editing (3X-014) ; Test XML editing (3X-033) ; QTI 2.x import (3X-064) ; QTI 2.x export (3X-065) ; QTI 3 import (3X-066)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Item source editing, Test XML editing, QTI 2.x import, QTI 2.x export, QTI 3 import, QTI 3 export, Large QTI test publishing, Item source editing, Test XML editing, QTI 2.x import, QTI 2.x export, QTI 3 import, QTI 3 export, CSV/tabular item import, QTI conformance validation, Certify TAO Authoring for QTI 3 Entry Level, QTI import export and round-trip fidelity, QTI 2.x import, QTI 2.x export, QTI 3 import, QTI 3 export, QTI conformance validation. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F13: 22 signals consolidated from 5 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 22 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 22,
+     "sources": 5,
+     "package_declared": 22
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 1,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": true,
+    "focus_markets": "Assessment-led Learning, MEXCBT / Uchida"
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-014",
+     "3X-033",
+     "3X-064",
+     "3X-065",
+     "3X-066",
+     "3X-067",
+     "3X-076",
+     "GAP-CAP-014",
+     "GAP-CAP-033",
+     "GAP-CAP-083",
+     "GAP-CAP-084",
+     "GAP-CAP-085",
+     "GAP-CAP-086",
+     "GAP-CAP-087",
+     "GAP-CAP-097",
+     "JIRA-PCR-196",
+     "STRAT-001",
+     "V1-060",
+     "V1-061",
+     "V1-062",
+     "V1-063",
+     "V1-070"
+    ],
+    "signal_names": [
+     "Item source editing",
+     "Test XML editing",
+     "QTI 2.x import",
+     "QTI 2.x export",
+     "QTI 3 import",
+     "QTI 3 export",
+     "Large QTI test publishing",
+     "Item source editing",
+     "Test XML editing",
+     "QTI 2.x import",
+     "QTI 2.x export",
+     "QTI 3 import",
+     "QTI 3 export",
+     "CSV/tabular item import",
+     "QTI conformance validation",
+     "Certify TAO Authoring for QTI 3 Entry Level",
+     "QTI import export and round-trip fidelity",
+     "QTI 2.x import",
+     "QTI 2.x export",
+     "QTI 3 import",
+     "QTI 3 export",
+     "QTI conformance validation"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-JIRA-001",
+     "SRC-STRATEGY-001",
+     "SRC-V1-001"
+    ],
+    "count": 22,
+    "key_references": [
+     "PCR-196 | https://oat-sa.atlassian.net/browse/PCR-196 | Status=In Development | Target Release=release-2026-12",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 1. Item Authoring \u00b7 Item source editing",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 2. Test Authoring & Assembly \u00b7 Test XML editing",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 5. Import, Export & Interoperability \u00b7 CSV/tabular item import",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 5. Import, Export & Interoperability \u00b7 QTI 2.x export",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 5. Import, Export & Interoperability \u00b7 QTI 2.x import",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 5. Import, Export & Interoperability \u00b7 QTI 3 export",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 5. Import, Export & Interoperability \u00b7 QTI 3 import",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 5. Import, Export & Interoperability \u00b7 QTI conformance validation",
+     "Table 29; Target=2027 H1; Market outcome=Portable content across every segment; Mode=Build"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F14",
+   "cap_id": "CAND-F14",
+   "working_name": "Import, export & content conversion",
+   "identity": {
+    "cap_id": "CAND-F14",
+    "working_name": "Import, export & content conversion",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to import, export & content conversion \u2014 consolidated from 20 source evidence signals across 3 independent sources (CSV / tabular item import, RDF import/export, APIP import/export, RDF import/export, APIP import/export, Document/source import\u2026).",
+    "what_it_enables": "CSV / tabular item import (3X-068) ; RDF import/export (3X-069) ; APIP import/export (3X-070) ; RDF import/export (GAP-CAP-088) ; APIP import/export (GAP-CAP-089)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: CSV / tabular item import, RDF import/export, APIP import/export, RDF import/export, APIP import/export, Document/source import, Study-material import, Booklet export, DOCX output, Booklets, Full-test conversion, Conversion guidance, CSV / tabular item import, Document/source import, Study-material import, Booklet export, DOCX export, PDF export, AI-assisted full-test conversion, Conversion guidance. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F14: 20 signals consolidated from 3 independent sources; evidence strength STRONG; cross-market leverage TO_REVIEW; strategy alignment TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 20 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 20,
+     "sources": 3,
+     "package_declared": 20
+    }
+   },
+   "product_context": {
+    "markets": "",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "TO_REVIEW",
+    "cross_market_leverage": "TO_REVIEW",
+    "evidence_strength": "STRONG",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-068",
+     "3X-069",
+     "3X-070",
+     "GAP-CAP-088",
+     "GAP-CAP-089",
+     "GAP-CAP-092",
+     "GAP-CAP-093",
+     "GAP-CAP-094",
+     "GAP-CAP-095",
+     "GAP-CAP-111",
+     "GAP-CAP-113",
+     "GAP-CAP-120",
+     "V1-064",
+     "V1-065",
+     "V1-066",
+     "V1-067",
+     "V1-068",
+     "V1-069",
+     "V1-075",
+     "V1-082"
+    ],
+    "signal_names": [
+     "CSV / tabular item import",
+     "RDF import/export",
+     "APIP import/export",
+     "RDF import/export",
+     "APIP import/export",
+     "Document/source import",
+     "Study-material import",
+     "Booklet export",
+     "DOCX output",
+     "Booklets",
+     "Full-test conversion",
+     "Conversion guidance",
+     "CSV / tabular item import",
+     "Document/source import",
+     "Study-material import",
+     "Booklet export",
+     "DOCX export",
+     "PDF export",
+     "AI-assisted full-test conversion",
+     "Conversion guidance"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-V1-001"
+    ],
+    "count": 20,
+    "key_references": [
+     "TAO Authoring - TAO Studio gap analysis \u00b7 5. Import, Export & Interoperability \u00b7 APIP import/export",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 5. Import, Export & Interoperability \u00b7 Booklet export",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 5. Import, Export & Interoperability \u00b7 DOCX output",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 5. Import, Export & Interoperability \u00b7 Document/source import",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 5. Import, Export & Interoperability \u00b7 RDF import/export",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 5. Import, Export & Interoperability \u00b7 Study-material import",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 7. Extensibility & Specialized Capabilities \u00b7 Booklets",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Conversion guidance",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Full-test conversion"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F15",
+   "cap_id": "CAND-F15",
+   "working_name": "Versioning, provenance, usage & audit history",
+   "identity": {
+    "cap_id": "CAND-F15",
+    "working_name": "Versioning, provenance, usage & audit history",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to versioning, provenance, usage & audit history \u2014 consolidated from 15 source evidence signals across 5 independent sources (Item version history, Version commit & restore, Item & test usage information, Bulk content operations, Commit & restore, Usage information\u2026).",
+    "what_it_enables": "Item version history (3X-047) ; Version commit & restore (3X-048) ; Item & test usage information (3X-049) ; Bulk content operations (GAP-CAP-050) ; Commit & restore (GAP-CAP-052)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Item version history, Version commit & restore, Item & test usage information, Bulk content operations, Commit & restore, Usage information, Content provenance, Task monitoring, Item source/provenance capture, Versioning and audit history, Bulk content operations, Content relationships & provenance, Task monitoring, Output quality levels, Per-run quality override. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F15: 15 signals consolidated from 5 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 15 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 15,
+     "sources": 5,
+     "package_declared": 15
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": true,
+    "focus_markets": "Governed Formative, Professional / Credentialing, Traditional / K-12"
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-047",
+     "3X-048",
+     "3X-049",
+     "GAP-CAP-050",
+     "GAP-CAP-052",
+     "GAP-CAP-053",
+     "GAP-CAP-054",
+     "GAP-CAP-057",
+     "NYSED-018",
+     "STRAT-004",
+     "V1-038",
+     "V1-039",
+     "V1-041",
+     "V1-083",
+     "V1-084"
+    ],
+    "signal_names": [
+     "Item version history",
+     "Version commit & restore",
+     "Item & test usage information",
+     "Bulk content operations",
+     "Commit & restore",
+     "Usage information",
+     "Content provenance",
+     "Task monitoring",
+     "Item source/provenance capture",
+     "Versioning and audit history",
+     "Bulk content operations",
+     "Content relationships & provenance",
+     "Task monitoring",
+     "Output quality levels",
+     "Per-run quality override"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-NYSED-001",
+     "SRC-STRATEGY-001",
+     "SRC-V1-001"
+    ],
+    "count": 15,
+    "key_references": [
+     "Paragraphs 47-49",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Bulk content operations",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Commit & restore",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Content provenance",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Task monitoring",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Usage information",
+     "Table 29; Target=2027 H1; Market outcome=Defensible change control; Mode=Build"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F16",
+   "cap_id": "CAND-F16",
+   "working_name": "Permissions, RBAC, identity & entitlements",
+   "identity": {
+    "cap_id": "CAND-F16",
+    "working_name": "Permissions, RBAC, identity & entitlements",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to permissions, rbac, identity & entitlements \u2014 consolidated from 13 source evidence signals across 6 independent sources (Resource copy & duplication, Item statistics, Read/write permissions, Hierarchical permission management, Booklets (specialized), Read/write permissions\u2026).",
+    "what_it_enables": "Resource copy & duplication (3X-043) ; Item statistics (3X-051) ; Read/write permissions (3X-061) ; Hierarchical permission management (3X-062) ; Booklets (specialized) (3X-082)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Resource copy & duplication, Item statistics, Read/write permissions, Hierarchical permission management, Booklets (specialized), Read/write permissions, Hierarchical permissions, Generated-content review, RBAC for Studio, Read-only authoring permission enforcement, Permissions and entitlements, Author identity SSO and provisioning, Generated-content review. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F16: 13 signals consolidated from 6 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 13 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 13,
+     "sources": 6,
+     "package_declared": 13
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": true,
+    "focus_markets": "Professional / Credentialing"
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-043",
+     "3X-051",
+     "3X-061",
+     "3X-062",
+     "3X-082",
+     "GAP-CAP-079",
+     "GAP-CAP-080",
+     "GAP-CAP-129",
+     "NEW-001",
+     "NYSED-015",
+     "STRAT-005",
+     "STRAT-008",
+     "V1-091"
+    ],
+    "signal_names": [
+     "Resource copy & duplication",
+     "Item statistics",
+     "Read/write permissions",
+     "Hierarchical permission management",
+     "Booklets (specialized)",
+     "Read/write permissions",
+     "Hierarchical permissions",
+     "Generated-content review",
+     "RBAC for Studio",
+     "Read-only authoring permission enforcement",
+     "Permissions and entitlements",
+     "Author identity SSO and provisioning",
+     "Generated-content review"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-NEW-001",
+     "SRC-NYSED-001",
+     "SRC-STRATEGY-001",
+     "SRC-V1-001"
+    ],
+    "count": 13,
+    "key_references": [
+     "Paragraph 37",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Hierarchical permissions",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Read/write permissions",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Generated-content review",
+     "Table 29; Target=2027 H1; Market outcome=Separate programs, partners, districts and faculty workspaces; Mode=Build",
+     "Table 29; Target=2027 H2; Market outcome=Enterprise author access; Mode=Build"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F17",
+   "cap_id": "CAND-F17",
+   "working_name": "Workflow, comments, review & approval",
+   "identity": {
+    "cap_id": "CAND-F17",
+    "working_name": "Workflow, comments, review & approval",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to workflow, comments, review & approval \u2014 consolidated from 11 source evidence signals across 7 independent sources (Open API extensibility, AI-assisted item development, Source-to-output review, Question generation projects, Commenting, Human-reviewed AI item production workflow\u2026).",
+    "what_it_enables": "Open API extensibility (3X-080) ; AI-assisted item development (COMPETITORS-001) ; Source-to-output review (GAP-CAP-114) ; Question generation projects (GAP-CAP-115) ; Commenting (NEW-004)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Open API extensibility, AI-assisted item development, Source-to-output review, Question generation projects, Commenting, Human-reviewed AI item production workflow, Comments review and approval lifecycle, SME assignments blind review and moderation, Content-services intake and acceptance workflow, Booklets (specialized), Source-to-output review. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F17: 11 signals consolidated from 7 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 11 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 11,
+     "sources": 7,
+     "package_declared": 11
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": true,
+    "focus_markets": "Higher Education, Professional / Credentialing"
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-080",
+     "COMPETITORS-001",
+     "GAP-CAP-114",
+     "GAP-CAP-115",
+     "NEW-004",
+     "OECD-002",
+     "STRAT-006",
+     "STRAT-015",
+     "STRAT-029",
+     "V1-074",
+     "V1-076"
+    ],
+    "signal_names": [
+     "Open API extensibility",
+     "AI-assisted item development",
+     "Source-to-output review",
+     "Question generation projects",
+     "Commenting",
+     "Human-reviewed AI item production workflow",
+     "Comments review and approval lifecycle",
+     "SME assignments blind review and moderation",
+     "Content-services intake and acceptance workflow",
+     "Booklets (specialized)",
+     "Source-to-output review"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-COMP-001",
+     "SRC-GAP-001",
+     "SRC-NEW-001",
+     "SRC-OECD-001",
+     "SRC-STRATEGY-001",
+     "SRC-V1-001"
+    ],
+    "count": 11,
+    "key_references": [
+     "Chapter 12 p. 215 and Figure 12.1",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Question generation projects",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Source-to-output review",
+     "Table 29; Target=2027 H2; Market outcome=Shared professional workflow; Mode=Build",
+     "Table 29; Target=2028 H1; Market outcome=Professional and institutional authoring; Mode=Build",
+     "Table 32; Target=2028 H1; Market outcome=Managed item development; Mode=Build workflow and partner"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F18",
+   "cap_id": "CAND-F18",
+   "working_name": "Quality evaluation & validation",
+   "identity": {
+    "cap_id": "CAND-F18",
+    "working_name": "Quality evaluation & validation",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to quality evaluation & validation \u2014 consolidated from 14 source evidence signals across 4 independent sources (Responsible AI validation for high-stakes assessment, Quality levels, Per-run quality override, Question quality evaluation, Test quality evaluation, Asset quality evaluation\u2026).",
+    "what_it_enables": "Responsible AI validation for high-stakes assessment (COMPETITORS-014) ; Quality levels (GAP-CAP-121) ; Per-run quality override (GAP-CAP-122) ; Question quality evaluation (GAP-CAP-123) ; Test quality evaluation (GAP-CAP-124)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Responsible AI validation for high-stakes assessment, Quality levels, Per-run quality override, Question quality evaluation, Test quality evaluation, Asset quality evaluation, Configurable evaluation criteria, Item quality traits, Comparability constraints for generative assessment content, Question quality evaluation, Test quality evaluation, Asset quality evaluation, Configurable evaluation criteria, Item quality traits. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F18: 14 signals consolidated from 4 independent sources; evidence strength STRONG; cross-market leverage MEDIUM; strategy alignment TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 14 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 14,
+     "sources": 4,
+     "package_declared": 14
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "TO_REVIEW",
+    "cross_market_leverage": "MEDIUM",
+    "evidence_strength": "STRONG",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "COMPETITORS-014",
+     "GAP-CAP-121",
+     "GAP-CAP-122",
+     "GAP-CAP-123",
+     "GAP-CAP-124",
+     "GAP-CAP-125",
+     "GAP-CAP-126",
+     "GAP-CAP-127",
+     "OECD-008",
+     "V1-085",
+     "V1-086",
+     "V1-087",
+     "V1-088",
+     "V1-089"
+    ],
+    "signal_names": [
+     "Responsible AI validation for high-stakes assessment",
+     "Quality levels",
+     "Per-run quality override",
+     "Question quality evaluation",
+     "Test quality evaluation",
+     "Asset quality evaluation",
+     "Configurable evaluation criteria",
+     "Item quality traits",
+     "Comparability constraints for generative assessment content",
+     "Question quality evaluation",
+     "Test quality evaluation",
+     "Asset quality evaluation",
+     "Configurable evaluation criteria",
+     "Item quality traits"
+    ],
+    "sources": [
+     "SRC-COMP-001",
+     "SRC-GAP-001",
+     "SRC-OECD-001",
+     "SRC-V1-001"
+    ],
+    "count": 14,
+    "key_references": [
+     "Chapter 12 pp. 217-218",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Asset quality evaluation",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Configurable evaluation criteria",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Item quality traits",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Per-run quality override",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Quality levels",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Question quality evaluation",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Test quality evaluation"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F19",
+   "cap_id": "CAND-F19",
+   "working_name": "AI-assisted item generation",
+   "identity": {
+    "cap_id": "CAND-F19",
+    "working_name": "AI-assisted item generation",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to ai-assisted item generation \u2014 consolidated from 5 source evidence signals across 3 independent sources (AI question generation, AI-assisted standardised item generation, AI item prototype and generation setup, Question generation projects, AI-assisted question generation).",
+    "what_it_enables": "AI question generation (GAP-CAP-116) ; AI-assisted standardised item generation (OECD-001) ; AI item prototype and generation setup (OECD-003) ; Question generation projects (V1-077) ; AI-assisted question generation (V1-078)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: AI question generation, AI-assisted standardised item generation, AI item prototype and generation setup, Question generation projects, AI-assisted question generation. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F19: 5 signals consolidated from 3 independent sources; evidence strength STRONG; cross-market leverage HIGH; strategy alignment TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 5 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 5,
+     "sources": 3,
+     "package_declared": 5
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "TO_REVIEW",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "STRONG",
+    "is_focus": true,
+    "focus_markets": "Assessment-led Learning, Governed Formative"
+   },
+   "evidence": {
+    "signal_ids": [
+     "GAP-CAP-116",
+     "OECD-001",
+     "OECD-003",
+     "V1-077",
+     "V1-078"
+    ],
+    "signal_names": [
+     "AI question generation",
+     "AI-assisted standardised item generation",
+     "AI item prototype and generation setup",
+     "Question generation projects",
+     "AI-assisted question generation"
+    ],
+    "sources": [
+     "SRC-GAP-001",
+     "SRC-OECD-001",
+     "SRC-V1-001"
+    ],
+    "count": 5,
+    "key_references": [
+     "Chapter 12 p. 215",
+     "Chapter 12 pp. 215-219; item factory and item generation at scale",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 AI question generation"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F20",
+   "cap_id": "CAND-F20",
+   "working_name": "AI-assisted test/source-grounded generation",
+   "identity": {
+    "cap_id": "CAND-F20",
+    "working_name": "AI-assisted test/source-grounded generation",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to ai-assisted test/source-grounded generation \u2014 consolidated from 7 source evidence signals across 3 independent sources (AI full-test generation, Source-grounded generation, Generation guidance, AI across item and test development, AI-assisted full-test generation, Source-grounded generation\u2026).",
+    "what_it_enables": "AI full-test generation (GAP-CAP-117) ; Source-grounded generation (GAP-CAP-118) ; Generation guidance (GAP-CAP-119) ; AI across item and test development (NEW-002) ; AI-assisted full-test generation (V1-079)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: AI full-test generation, Source-grounded generation, Generation guidance, AI across item and test development, AI-assisted full-test generation, Source-grounded generation, Generation guidance. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F20: 7 signals consolidated from 3 independent sources; evidence strength STRONG; cross-market leverage TO_REVIEW; strategy alignment ENABLER / TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 7 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 7,
+     "sources": 3,
+     "package_declared": 7
+    }
+   },
+   "product_context": {
+    "markets": "",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "ENABLER / TO_REVIEW",
+    "cross_market_leverage": "TO_REVIEW",
+    "evidence_strength": "STRONG",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "GAP-CAP-117",
+     "GAP-CAP-118",
+     "GAP-CAP-119",
+     "NEW-002",
+     "V1-079",
+     "V1-080",
+     "V1-081"
+    ],
+    "signal_names": [
+     "AI full-test generation",
+     "Source-grounded generation",
+     "Generation guidance",
+     "AI across item and test development",
+     "AI-assisted full-test generation",
+     "Source-grounded generation",
+     "Generation guidance"
+    ],
+    "sources": [
+     "SRC-GAP-001",
+     "SRC-NEW-001",
+     "SRC-V1-001"
+    ],
+    "count": 7,
+    "key_references": [
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 AI full-test generation",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Generation guidance",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 8. AI-Assisted Content Creation & Conversion \u00b7 Source-grounded generation"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F21",
+   "cap_id": "CAND-F21",
+   "working_name": "AI tagging, metadata & semantic enrichment",
+   "identity": {
+    "cap_id": "CAND-F21",
+    "working_name": "AI tagging, metadata & semantic enrichment",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to ai tagging, metadata & semantic enrichment \u2014 consolidated from 1 source evidence signals across 1 independent sources (AI tagging configuration).",
+    "what_it_enables": "AI tagging configuration (GAP-CAP-075)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: AI tagging configuration. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F21: 1 signals consolidated from 1 independent sources; evidence strength SINGLE-SOURCE; cross-market leverage TO_REVIEW; strategy alignment TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 1 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 1,
+     "sources": 1,
+     "package_declared": 1
+    }
+   },
+   "product_context": {
+    "markets": "",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "TO_REVIEW",
+    "cross_market_leverage": "TO_REVIEW",
+    "evidence_strength": "SINGLE-SOURCE",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "GAP-CAP-075"
+    ],
+    "signal_names": [
+     "AI tagging configuration"
+    ],
+    "sources": [
+     "SRC-GAP-001"
+    ],
+    "count": 1,
+    "key_references": [
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 AI tagging configuration"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Functional description is a consolidation of source signal names/descriptions (PRODUCT INTERPRETATION) \u2014 a Product-written definition is required."
+   }
+  },
+  {
+   "candidate_id": "F22",
+   "cap_id": "CAND-F22",
+   "working_name": "Responsible AI governance & oversight",
+   "identity": {
+    "cap_id": "CAND-F22",
+    "working_name": "Responsible AI governance & oversight",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to responsible ai governance & oversight \u2014 consolidated from 2 source evidence signals across 2 independent sources (AI governance and management controls, Responsible AI authoring oversight).",
+    "what_it_enables": "AI governance and management controls (COMPETITORS-007) ; Responsible AI authoring oversight (OECD-010)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: AI governance and management controls, Responsible AI authoring oversight. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F22: 2 signals consolidated from 2 independent sources; evidence strength SUPPORTED; cross-market leverage HIGH; strategy alignment TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 2 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 2,
+     "sources": 2,
+     "package_declared": 2
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Professional / Credentialing, Higher Education, Governed Formative, Assessment-led Learning",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "TO_REVIEW",
+    "cross_market_leverage": "HIGH",
+    "evidence_strength": "SUPPORTED",
+    "is_focus": true,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "COMPETITORS-007",
+     "OECD-010"
+    ],
+    "signal_names": [
+     "AI governance and management controls",
+     "Responsible AI authoring oversight"
+    ],
+    "sources": [
+     "SRC-COMP-001",
+     "SRC-OECD-001"
+    ],
+    "count": 2,
+    "key_references": [
+     "Executive Summary / Chapter 1 / Chapter 12"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Functional description is a consolidation of source signal names/descriptions (PRODUCT INTERPRETATION) \u2014 a Product-written definition is required."
+   }
+  },
+  {
+   "candidate_id": "F23",
+   "cap_id": "CAND-F23",
+   "working_name": "Psychometrics, statistics, IRT & CAT",
+   "identity": {
+    "cap_id": "CAND-F23",
+    "working_name": "Psychometrics, statistics, IRT & CAT",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to psychometrics, statistics, irt & cat \u2014 consolidated from 3 source evidence signals across 2 independent sources (Item statistics, CAT Administration, Hybrid Studio / current Authoring access).",
+    "what_it_enables": "Item statistics (GAP-CAP-056) ; CAT Administration (NEW-007) ; Hybrid Studio / current Authoring access (NEW-017)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Item statistics, CAT Administration, Hybrid Studio / current Authoring access. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F23: 3 signals consolidated from 2 independent sources; evidence strength SUPPORTED; cross-market leverage TO_REVIEW; strategy alignment ENABLER / TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 3 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 3,
+     "sources": 2,
+     "package_declared": 3
+    }
+   },
+   "product_context": {
+    "markets": "",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "ENABLER / TO_REVIEW",
+    "cross_market_leverage": "TO_REVIEW",
+    "evidence_strength": "SUPPORTED",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "GAP-CAP-056",
+     "NEW-007",
+     "NEW-017"
+    ],
+    "signal_names": [
+     "Item statistics",
+     "CAT Administration",
+     "Hybrid Studio / current Authoring access"
+    ],
+    "sources": [
+     "SRC-GAP-001",
+     "SRC-NEW-001"
+    ],
+    "count": 3,
+    "key_references": [
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Item statistics"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F24",
+   "cap_id": "CAND-F24",
+   "working_name": "Production planning, monitoring & campaigns",
+   "identity": {
+    "cap_id": "CAND-F24",
+    "working_name": "Production planning, monitoring & campaigns",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to production planning, monitoring & campaigns \u2014 consolidated from 3 source evidence signals across 2 independent sources (Item production planning, Item production monitoring, Controlled SME item-writing campaigns).",
+    "what_it_enables": "Item production planning (NEW-020) ; Item production monitoring (NEW-021) ; Controlled SME item-writing campaigns (STRAT-027)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Item production planning, Item production monitoring, Controlled SME item-writing campaigns. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F24: 3 signals consolidated from 2 independent sources; evidence strength SUPPORTED; cross-market leverage FOCUSED; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 3 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 3,
+     "sources": 2,
+     "package_declared": 3
+    }
+   },
+   "product_context": {
+    "markets": "Professional / Credentialing",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "FOCUSED",
+    "evidence_strength": "SUPPORTED",
+    "is_focus": false,
+    "focus_markets": "Professional / Credentialing"
+   },
+   "evidence": {
+    "signal_ids": [
+     "NEW-020",
+     "NEW-021",
+     "STRAT-027"
+    ],
+    "signal_names": [
+     "Item production planning",
+     "Item production monitoring",
+     "Controlled SME item-writing campaigns"
+    ],
+    "sources": [
+     "SRC-NEW-001",
+     "SRC-STRATEGY-001"
+    ],
+    "count": 3,
+    "key_references": [
+     "Table 32; Target=2027 H1; Market outcome=Exam-owner content production; Mode=Build"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F25",
+   "cap_id": "CAND-F25",
+   "working_name": "Publishing, delivery handoff & release",
+   "identity": {
+    "cap_id": "CAND-F25",
+    "working_name": "Publishing, delivery handoff & release",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to publishing, delivery handoff & release \u2014 consolidated from 10 source evidence signals across 3 independent sources (Test publishing, Publishing to TAO Advance, Delivery creation from a test, Test publishing, Publishing to TAO Advance / delivery runtime, Delivery creation\u2026).",
+    "what_it_enables": "Test publishing (3X-073) ; Publishing to TAO Advance (3X-074) ; Delivery creation from a test (3X-075) ; Test publishing (GAP-CAP-098) ; Publishing to TAO Advance / delivery runtime (GAP-CAP-099)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Test publishing, Publishing to TAO Advance, Delivery creation from a test, Test publishing, Publishing to TAO Advance / delivery runtime, Delivery creation, Delivery property configuration, Large-test publishing, Publishing to TAO Authoring, Publishing to TAO Authoring. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F25: 10 signals consolidated from 3 independent sources; evidence strength STRONG; cross-market leverage TO_REVIEW; strategy alignment TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 10 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 10,
+     "sources": 3,
+     "package_declared": 10
+    }
+   },
+   "product_context": {
+    "markets": "",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "TO_REVIEW",
+    "cross_market_leverage": "TO_REVIEW",
+    "evidence_strength": "STRONG",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-073",
+     "3X-074",
+     "3X-075",
+     "GAP-CAP-098",
+     "GAP-CAP-099",
+     "GAP-CAP-100",
+     "GAP-CAP-101",
+     "GAP-CAP-102",
+     "GAP-CAP-103",
+     "V1-071"
+    ],
+    "signal_names": [
+     "Test publishing",
+     "Publishing to TAO Advance",
+     "Delivery creation from a test",
+     "Test publishing",
+     "Publishing to TAO Advance / delivery runtime",
+     "Delivery creation",
+     "Delivery property configuration",
+     "Large-test publishing",
+     "Publishing to TAO Authoring",
+     "Publishing to TAO Authoring"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-V1-001"
+    ],
+    "count": 10,
+    "key_references": [
+     "TAO Authoring - TAO Studio gap analysis \u00b7 6. Publishing & Delivery Preparation \u00b7 Delivery creation",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 6. Publishing & Delivery Preparation \u00b7 Delivery property configuration",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 6. Publishing & Delivery Preparation \u00b7 Large-test publishing",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 6. Publishing & Delivery Preparation \u00b7 Publishing to TAO Advance / delivery runtime",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 6. Publishing & Delivery Preparation \u00b7 Publishing to TAO Authoring",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 6. Publishing & Delivery Preparation \u00b7 Test publishing"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F26",
+   "cap_id": "CAND-F26",
+   "working_name": "APIs, plugins & extensibility",
+   "identity": {
+    "cap_id": "CAND-F26",
+    "working_name": "APIs, plugins & extensibility",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to apis, plugins & extensibility \u2014 consolidated from 8 source evidence signals across 2 independent sources (Assessment-content APIs, Plugin / extension capability, Remote Lists (specialized), Assessment-content APIs, Plugin/extension architecture, Open API extensibility\u2026).",
+    "what_it_enables": "Assessment-content APIs (3X-072) ; Plugin / extension capability (3X-079) ; Remote Lists (specialized) (3X-081) ; Assessment-content APIs (GAP-CAP-091) ; Plugin/extension architecture (GAP-CAP-108)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Assessment-content APIs, Plugin / extension capability, Remote Lists (specialized), Assessment-content APIs, Plugin/extension architecture, Open API extensibility, Remote Lists, Customer-specific authoring extensions. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F26: 8 signals consolidated from 2 independent sources; evidence strength SUPPORTED; cross-market leverage TO_REVIEW; strategy alignment TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 8 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 8,
+     "sources": 2,
+     "package_declared": 8
+    }
+   },
+   "product_context": {
+    "markets": "",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "TO_REVIEW",
+    "cross_market_leverage": "TO_REVIEW",
+    "evidence_strength": "SUPPORTED",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-072",
+     "3X-079",
+     "3X-081",
+     "GAP-CAP-091",
+     "GAP-CAP-108",
+     "GAP-CAP-109",
+     "GAP-CAP-110",
+     "GAP-CAP-112"
+    ],
+    "signal_names": [
+     "Assessment-content APIs",
+     "Plugin / extension capability",
+     "Remote Lists (specialized)",
+     "Assessment-content APIs",
+     "Plugin/extension architecture",
+     "Open API extensibility",
+     "Remote Lists",
+     "Customer-specific authoring extensions"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001"
+    ],
+    "count": 8,
+    "key_references": [
+     "TAO Authoring - TAO Studio gap analysis \u00b7 5. Import, Export & Interoperability \u00b7 Assessment-content APIs",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 7. Extensibility & Specialized Capabilities \u00b7 Customer-specific authoring extensions",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 7. Extensibility & Specialized Capabilities \u00b7 Open API extensibility",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 7. Extensibility & Specialized Capabilities \u00b7 Plugin/extension architecture",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 7. Extensibility & Specialized Capabilities \u00b7 Remote Lists"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F28",
+   "cap_id": "CAND-F28",
+   "working_name": "Content operations: copy, move, delete & bulk actions",
+   "identity": {
+    "cap_id": "CAND-F28",
+    "working_name": "Content operations: copy, move, delete & bulk actions",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to content operations: copy, move, delete & bulk actions \u2014 consolidated from 5 source evidence signals across 3 independent sources (Resource deletion, Resource deletion, Resource download, Resource deletion, Resource download).",
+    "what_it_enables": "Resource deletion (3X-045) ; Resource deletion (GAP-CAP-047) ; Resource download (GAP-CAP-049) ; Resource deletion (V1-036) ; Resource download (V1-037)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Resource deletion, Resource deletion, Resource download, Resource deletion, Resource download. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F28: 5 signals consolidated from 3 independent sources; evidence strength STRONG; cross-market leverage TO_REVIEW; strategy alignment TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 5 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 5,
+     "sources": 3,
+     "package_declared": 5
+    }
+   },
+   "product_context": {
+    "markets": "",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "TO_REVIEW",
+    "cross_market_leverage": "TO_REVIEW",
+    "evidence_strength": "STRONG",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-045",
+     "GAP-CAP-047",
+     "GAP-CAP-049",
+     "V1-036",
+     "V1-037"
+    ],
+    "signal_names": [
+     "Resource deletion",
+     "Resource deletion",
+     "Resource download",
+     "Resource deletion",
+     "Resource download"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-V1-001"
+    ],
+    "count": 5,
+    "key_references": [
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Resource deletion",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Resource download"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F29",
+   "cap_id": "CAND-F29",
+   "working_name": "Rights, provenance & content entitlements",
+   "identity": {
+    "cap_id": "CAND-F29",
+    "working_name": "Rights, provenance & content entitlements",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to rights, provenance & content entitlements \u2014 consolidated from 1 source evidence signals across 1 independent sources (Content rights provenance and entitlement model).",
+    "what_it_enables": "Content rights provenance and entitlement model (STRAT-022)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Content rights provenance and entitlement model. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F29: 1 signals consolidated from 1 independent sources; evidence strength SINGLE-SOURCE; cross-market leverage MEDIUM; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 1 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 1,
+     "sources": 1,
+     "package_declared": 1
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12, Governed Formative",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "MEDIUM",
+    "evidence_strength": "SINGLE-SOURCE",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "STRAT-022"
+    ],
+    "signal_names": [
+     "Content rights provenance and entitlement model"
+    ],
+    "sources": [
+     "SRC-STRATEGY-001"
+    ],
+    "count": 1,
+    "key_references": [
+     "Table 31; Target=2027 H1; Market outcome=Govern multi-source K-12 content; Mode=Build"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Functional description is a consolidation of source signal names/descriptions (PRODUCT INTERPRETATION) \u2014 a Product-written definition is required."
+   }
+  },
+  {
+   "candidate_id": "F30",
+   "cap_id": "CAND-F30",
+   "working_name": "Faculty/course authoring workspace",
+   "identity": {
+    "cap_id": "CAND-F30",
+    "working_name": "Faculty/course authoring workspace",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to faculty/course authoring workspace \u2014 consolidated from 1 source evidence signals across 1 independent sources (Faculty workspace and course-copy workflow).",
+    "what_it_enables": "Faculty workspace and course-copy workflow (STRAT-030)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Faculty workspace and course-copy workflow. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F30: 1 signals consolidated from 1 independent sources; evidence strength SINGLE-SOURCE; cross-market leverage FOCUSED; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 1 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 1,
+     "sources": 1,
+     "package_declared": 1
+    }
+   },
+   "product_context": {
+    "markets": "Higher Education",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "FOCUSED",
+    "evidence_strength": "SINGLE-SOURCE",
+    "is_focus": false,
+    "focus_markets": "Higher Education"
+   },
+   "evidence": {
+    "signal_ids": [
+     "STRAT-030"
+    ],
+    "signal_names": [
+     "Faculty workspace and course-copy workflow"
+    ],
+    "sources": [
+     "SRC-STRATEGY-001"
+    ],
+    "count": 1,
+    "key_references": [
+     "Table 33; Target=2027 H2; Market outcome=Self-service adoption; Mode=Strategic feature"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Functional description is a consolidation of source signal names/descriptions (PRODUCT INTERPRETATION) \u2014 a Product-written definition is required."
+   }
+  },
+  {
+   "candidate_id": "F31",
+   "cap_id": "CAND-F31",
+   "working_name": "Assessment-led learning content blocks",
+   "identity": {
+    "cap_id": "CAND-F31",
+    "working_name": "Assessment-led learning content blocks",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to assessment-led learning content blocks \u2014 consolidated from 1 source evidence signals across 1 independent sources (Media and knowledge-check blocks).",
+    "what_it_enables": "Media and knowledge-check blocks (STRAT-036)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Media and knowledge-check blocks. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F31: 1 signals consolidated from 1 independent sources; evidence strength SINGLE-SOURCE; cross-market leverage FOCUSED; strategy alignment DIRECT; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 1 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 1,
+     "sources": 1,
+     "package_declared": 1
+    }
+   },
+   "product_context": {
+    "markets": "Assessment-led Learning",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "DIRECT",
+    "cross_market_leverage": "FOCUSED",
+    "evidence_strength": "SINGLE-SOURCE",
+    "is_focus": false,
+    "focus_markets": "Assessment-led Learning"
+   },
+   "evidence": {
+    "signal_ids": [
+     "STRAT-036"
+    ],
+    "signal_names": [
+     "Media and knowledge-check blocks"
+    ],
+    "sources": [
+     "SRC-STRATEGY-001"
+    ],
+    "count": 1,
+    "key_references": [
+     "Table 34; Target=2028 H1; Market outcome=Assessment-led learning; Mode=Build after paid pilot"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Functional description is a consolidation of source signal names/descriptions (PRODUCT INTERPRETATION) \u2014 a Product-written definition is required."
+   }
+  },
+  {
+   "candidate_id": "F32",
+   "cap_id": "CAND-F32",
+   "working_name": "Authentic interactive language-task authoring",
+   "identity": {
+    "cap_id": "CAND-F32",
+    "working_name": "Authentic interactive language-task authoring",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to authentic interactive language-task authoring \u2014 consolidated from 2 source evidence signals across 1 independent sources (Authentic interactive writing task authoring, Adaptive interactive speaking task authoring).",
+    "what_it_enables": "Authentic interactive writing task authoring (OECD-006) ; Adaptive interactive speaking task authoring (OECD-007)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Authentic interactive writing task authoring, Adaptive interactive speaking task authoring. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F32: 2 signals consolidated from 1 independent sources; evidence strength SINGLE-SOURCE; cross-market leverage MEDIUM; strategy alignment TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 2 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 2,
+     "sources": 1,
+     "package_declared": 2
+    }
+   },
+   "product_context": {
+    "markets": "Professional / Credentialing, Higher Education",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "TO_REVIEW",
+    "cross_market_leverage": "MEDIUM",
+    "evidence_strength": "SINGLE-SOURCE",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "OECD-006",
+     "OECD-007"
+    ],
+    "signal_names": [
+     "Authentic interactive writing task authoring",
+     "Adaptive interactive speaking task authoring"
+    ],
+    "sources": [
+     "SRC-OECD-001"
+    ],
+    "count": 2,
+    "key_references": [
+     "Chapter 12 pp. 216-217",
+     "Chapter 12 pp. 216-218"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Functional description is a consolidation of source signal names/descriptions (PRODUCT INTERPRETATION) \u2014 a Product-written definition is required."
+   }
+  },
+  {
+   "candidate_id": "F33",
+   "cap_id": "CAND-F33",
+   "working_name": "AI-assisted scoring/analytics signals (non-core Authoring evidence)",
+   "identity": {
+    "cap_id": "CAND-F33",
+    "working_name": "AI-assisted scoring/analytics signals (non-core Authoring evidence)",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to ai-assisted scoring/analytics signals (non-core authoring evidence) \u2014 consolidated from 7 source evidence signals across 1 independent sources (AI-assisted grading and marking, AI-assisted formative feedback, Natural-language assessment analytics, Automated constructed-response scoring, Performance-assessment analytics, Automated scoring and writing feedback\u2026).",
+    "what_it_enables": "AI-assisted grading and marking (COMPETITORS-002) ; AI-assisted formative feedback (COMPETITORS-005) ; Natural-language assessment analytics (COMPETITORS-006) ; Automated constructed-response scoring (COMPETITORS-008) ; Performance-assessment analytics (COMPETITORS-009)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: AI-assisted grading and marking, AI-assisted formative feedback, Natural-language assessment analytics, Automated constructed-response scoring, Performance-assessment analytics, Automated scoring and writing feedback, Speech scoring. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F33: 7 signals consolidated from 1 independent sources; evidence strength SINGLE-SOURCE; cross-market leverage TO_REVIEW; strategy alignment TO_REVIEW; package status: EVIDENCE_ONLY / NON-CORE AUTHORING.",
+    "consolidation_rationale": "The analysis grouped 7 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 7,
+     "sources": 1,
+     "package_declared": 7
+    }
+   },
+   "product_context": {
+    "markets": "",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "TO_REVIEW",
+    "cross_market_leverage": "TO_REVIEW",
+    "evidence_strength": "SINGLE-SOURCE",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "COMPETITORS-002",
+     "COMPETITORS-005",
+     "COMPETITORS-006",
+     "COMPETITORS-008",
+     "COMPETITORS-009",
+     "COMPETITORS-010",
+     "COMPETITORS-011"
+    ],
+    "signal_names": [
+     "AI-assisted grading and marking",
+     "AI-assisted formative feedback",
+     "Natural-language assessment analytics",
+     "Automated constructed-response scoring",
+     "Performance-assessment analytics",
+     "Automated scoring and writing feedback",
+     "Speech scoring"
+    ],
+    "sources": [
+     "SRC-COMP-001"
+    ],
+    "count": 7,
+    "key_references": [],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F34",
+   "cap_id": "CAND-F34",
+   "working_name": "Content status & workflow-state automation",
+   "identity": {
+    "cap_id": "CAND-F34",
+    "working_name": "Content status & workflow-state automation",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to content status & workflow-state automation \u2014 consolidated from 3 source evidence signals across 3 independent sources (Item status & workflow, Item status & workflow, Item usage-driven workflow state).",
+    "what_it_enables": "Item status & workflow (3X-059) ; Item status & workflow (GAP-CAP-077) ; Item usage-driven workflow state (NYSED-016)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Item status & workflow, Item status & workflow, Item usage-driven workflow state. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F34: 3 signals consolidated from 3 independent sources; evidence strength STRONG; cross-market leverage FOCUSED; strategy alignment TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 3 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 3,
+     "sources": 3,
+     "package_declared": 3
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "TO_REVIEW",
+    "cross_market_leverage": "FOCUSED",
+    "evidence_strength": "STRONG",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-059",
+     "GAP-CAP-077",
+     "NYSED-016"
+    ],
+    "signal_names": [
+     "Item status & workflow",
+     "Item status & workflow",
+     "Item usage-driven workflow state"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-NYSED-001"
+    ],
+    "count": 3,
+    "key_references": [
+     "Paragraph 41",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 4. Metadata, Search & Governance \u00b7 Item status & workflow"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  },
+  {
+   "candidate_id": "F35",
+   "cap_id": "CAND-F35",
+   "working_name": "Resource properties & source-material continuity",
+   "identity": {
+    "cap_id": "CAND-F35",
+    "working_name": "Resource properties & source-material continuity",
+    "strategic_category": "Awaiting Product data"
+   },
+   "product_definition": {
+    "functional_definition": "Ability to resource properties & source-material continuity \u2014 consolidated from 5 source evidence signals across 5 independent sources (Resource properties, Resource properties, Artifact-attached metadata continuity, Asset and passage usage traceability, Resource properties).",
+    "what_it_enables": "Resource properties (3X-046) ; Resource properties (GAP-CAP-048) ; Artifact-attached metadata continuity (NEW-012) ; Asset and passage usage traceability (NYSED-002) ; Resource properties (V1-035)",
+    "user_problem_addressed": "Evidence insufficient to determine \u2014 the Source package records the signals but no explicit user/product problem statement for this family.",
+    "functional_scope": "Functional scope per consolidated evidence: Resource properties, Resource properties, Artifact-attached metadata continuity, Asset and passage usage traceability, Resource properties. Authoring-scope assessments recorded: IN_SCOPE.",
+    "out_of_scope": "Evidence insufficient to determine \u2014 explicit out-of-scope boundaries require a Product decision.",
+    "interpretation_marker": "PRODUCT INTERPRETATION \u2014 consolidated from source evidence; not a Source-verbatim definition"
+   },
+   "analysis_rationale": {
+    "why_this_candidate": "Survived the 426 \u2192 34 analysis as family F35: 5 signals consolidated from 5 independent sources; evidence strength STRONG; cross-market leverage FOCUSED; strategy alignment ENABLER / TO_REVIEW; package status: RECONCILED CANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED.",
+    "consolidation_rationale": "The analysis grouped 5 evidence signals into this family; per-signal decisions recorded as Reconciliation Result.",
+    "evidence_counts": {
+     "signals": 5,
+     "sources": 5,
+     "package_declared": 5
+    }
+   },
+   "product_context": {
+    "markets": "Traditional / K-12",
+    "mexcbt_signals": 0,
+    "strategy_alignment": "ENABLER / TO_REVIEW",
+    "cross_market_leverage": "FOCUSED",
+    "evidence_strength": "STRONG",
+    "is_focus": false,
+    "focus_markets": null
+   },
+   "evidence": {
+    "signal_ids": [
+     "3X-046",
+     "GAP-CAP-048",
+     "NEW-012",
+     "NYSED-002",
+     "V1-035"
+    ],
+    "signal_names": [
+     "Resource properties",
+     "Resource properties",
+     "Artifact-attached metadata continuity",
+     "Asset and passage usage traceability",
+     "Resource properties"
+    ],
+    "sources": [
+     "SRC-3X-001",
+     "SRC-GAP-001",
+     "SRC-NEW-001",
+     "SRC-NYSED-001",
+     "SRC-V1-001"
+    ],
+    "count": 5,
+    "key_references": [
+     "Paragraph 11",
+     "TAO Authoring - TAO Studio gap analysis \u00b7 3. Content Banking & Management \u00b7 Resource properties"
+    ],
+    "provenance": "Source Truth layer (source_evidence) + package reconciliation register"
+   },
+   "relationships": {
+    "related_candidates": [],
+    "dependencies": "Evidence insufficient to determine",
+    "potential_overlaps": "Consistency review pending (see CANDIDATE_CONSISTENCY_REVIEW)"
+   },
+   "delivery_evidence": {
+    "jira": [],
+    "note": "Jira is delivery/work evidence \u2014 its existence implies no Product decision."
+   },
+   "product_review": {
+    "product_review_status": "not reviewed (enrichment is preparation for review)",
+    "ideation_disposition": "ACTIVE FOR IDEATION",
+    "open_questions": [
+     "Product-written functional definition required",
+     "Strategic Category assignment required"
+    ],
+    "uncertainty": "Consolidation is evidence-backed; a Product-written definition is still required."
+   }
+  }
+ ]
 }

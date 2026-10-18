@@ -21,7 +21,8 @@ def ingested(server):
     for script in ("scripts/import/import_canonical.py",
                    "scripts/import/import_milestones.py",
                    "scripts/import/materialize_source_documents.py",
-                   "scripts/import/ingest_source_analysis.py"):
+                   "scripts/import/ingest_source_analysis.py",
+                   "scripts/product_review/enrich_candidates.py"):
         subprocess.run([sys_path(), script,
                         "/Users/felixdiaz/.kimchi/docs/v1_4_extract/TAO_Authoring_Capability_Evidence_Focus_Guide_v1_4_VERIFIED"
                         if "ingest" in script else ""],

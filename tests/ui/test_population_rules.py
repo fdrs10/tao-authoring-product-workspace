@@ -24,7 +24,8 @@ def ingested(server):
     for script in ("scripts/import/import_canonical.py",
                    "scripts/import/import_milestones.py",
                    "scripts/import/materialize_source_documents.py",
-                   "scripts/import/ingest_source_analysis.py"):
+                   "scripts/import/ingest_source_analysis.py",
+                   "scripts/product_review/enrich_candidates.py"):
         args = [sys.executable, script]
         if "ingest" in script:
             args.append(pkg)
@@ -168,3 +169,55 @@ def test_candidate_api_shape_34_valid_objects():
         assert isinstance(c["jira"], list), f"{c['cap_id']}.jira not list"
         # stable ID
         assert c["cap_id"], f"capability with empty cap_id"
+
+
+def test_reports_response_shape_has_items():
+    """Regression: /api/reports must return {count, items, ...} — the Reports
+    screen iterates res.items. The 'res.items is not iterable' defect occurred
+    when the endpoint returned an unexpected shape."""
+    r = httpx.get(f"{BASE_API}/api/reports")
+    assert r.status_code == 200
+    data = r.json()
+    assert isinstance(data.get("items"), list), "reports response missing items array"
+    assert len(data["items"]) == 5  # D1–D5
+    for item in data["items"]:
+        assert "report_id" in item
+        assert "sections_total" in item
+
+
+def test_candidates_response_shape_has_items():
+    """Regression: /api/candidates must return {count, items} — the Ideation
+    00 view iterates candRes.items. The 'candRes.items is not iterable'
+    defect occurred when the response shape was unexpected."""
+    r = httpx.get(f"{BASE_API}/api/candidates")
+    assert r.status_code == 200
+    data = r.json()
+    assert isinstance(data.get("items"), list), "candidates response missing items array"
+    assert len(data["items"]) == 34
+
+
+def test_evidence_response_shape_has_items():
+    """Regression: /api/evidence must return {count, items}."""
+    r = httpx.get(f"{BASE_API}/api/evidence")
+    assert r.status_code == 200
+    data = r.json()
+    assert isinstance(data.get("items"), list)
+
+
+def test_sources_response_shape_has_items():
+    """Regression: /api/sources must return {count, items}."""
+    r = httpx.get(f"{BASE_API}/api/sources")
+    assert r.status_code == 200
+    data = r.json()
+    assert isinstance(data.get("items"), list)
+
+
+def test_candidate_detail_includes_sources_and_jira():
+    """Regression: the candidate detail must include sources + jira arrays
+    (prevents 'Cannot read properties of undefined (reading sources)')."""
+    r = httpx.get(f"{BASE_API}/api/candidates/F01")
+    assert r.status_code == 200
+    d = r.json()
+    assert isinstance(d.get("jira"), list)
+    assert "capability_description" in d
+    assert d.get("enrichment") is not None

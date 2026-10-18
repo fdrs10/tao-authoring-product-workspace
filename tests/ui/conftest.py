@@ -157,7 +157,8 @@ def page(server):
     pkg = os.path.join(REPO, "data", "source-analysis", "v1_4")
     for script in ("scripts/import/import_milestones.py",
                    "scripts/import/materialize_source_documents.py",
-                   "scripts/import/ingest_source_analysis.py"):
+                   "scripts/import/ingest_source_analysis.py",
+                   "scripts/product_review/enrich_candidates.py"):
         args = [sys.executable, script]
         if "ingest" in script:
             args.append(pkg)
