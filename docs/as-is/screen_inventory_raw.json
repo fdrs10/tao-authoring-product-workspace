@@ -1,0 +1,129 @@
+{
+ "#/ideation/00": {
+  "buttons": 35,
+  "inputs": 7,
+  "tables": 1,
+  "modals": 0,
+  "editable_fields": 6,
+  "errors": [],
+  "text_sample": "00 \u00b7 Capability Candidates \u2014 Product Review workspace\nThe active working population: 34 reconciled c"
+ },
+ "#/ideation/01": {
+  "buttons": 5,
+  "inputs": 0,
+  "tables": 0,
+  "modals": 0,
+  "editable_fields": 0,
+  "errors": [],
+  "text_sample": "00Capability Candidates (active)\n01V2 Position / Product Definition\n02V1 Carry-forward\n033.x Direct "
+ },
+ "#/ideation/02": {
+  "buttons": 0,
+  "inputs": 0,
+  "tables": 20,
+  "modals": 0,
+  "editable_fields": 0,
+  "errors": [],
+  "text_sample": "00Capability Candidates (active)\n01V2 Position / Product Definition\n02V1 Carry-forward\n033.x Direct "
+ },
+ "#/ideation/03": {
+  "buttons": 0,
+  "inputs": 0,
+  "tables": 19,
+  "modals": 0,
+  "editable_fields": 0,
+  "errors": [],
+  "text_sample": "00Capability Candidates (active)\n01V2 Position / Product Definition\n02V1 Carry-forward\n033.x Direct "
+ },
+ "#/ideation/04": {
+  "buttons": 0,
+  "inputs": 0,
+  "tables": 18,
+  "modals": 0,
+  "editable_fields": 0,
+  "errors": [],
+  "text_sample": "00Capability Candidates (active)\n01V2 Position / Product Definition\n02V1 Carry-forward\n033.x Direct "
+ },
+ "#/ideation/05": {
+  "buttons": 0,
+  "inputs": 0,
+  "tables": 1,
+  "modals": 0,
+  "editable_fields": 0,
+  "errors": [],
+  "text_sample": "00Capability Candidates (active)\n01V2 Position / Product Definition\n02V1 Carry-forward\n033.x Direct "
+ },
+ "#/ideation/06": {
+  "buttons": 1,
+  "inputs": 44,
+  "tables": 1,
+  "modals": 0,
+  "editable_fields": 43,
+  "errors": [],
+  "text_sample": "00Capability Candidates (active)\n01V2 Position / Product Definition\n02V1 Carry-forward\n033.x Direct "
+ },
+ "#/backlog": {
+  "buttons": 0,
+  "inputs": 6,
+  "tables": 1,
+  "modals": 0,
+  "editable_fields": 6,
+  "errors": [],
+  "text_sample": "Product Backlog \u2014 TAO Studio V2 Authoring Target Scope\nSTRATEGIC CATEGORY\nCategory \u00b7 All\nCreate & De"
+ },
+ "#/roadmap": {
+  "buttons": 9,
+  "inputs": 4,
+  "tables": 0,
+  "modals": 0,
+  "editable_fields": 4,
+  "errors": [],
+  "text_sample": "Roadmap \u2014 Action Plan & Migration\nEditable executive roadmap \u00b7 Oct 2026 \u2192 Dec 2028 (27 months) \u00b7 TAO"
+ },
+ "#/outcomes": {
+  "buttons": 5,
+  "inputs": 0,
+  "tables": 0,
+  "modals": 0,
+  "editable_fields": 0,
+  "errors": [],
+  "text_sample": "November Outcomes \u2014 Authoring Product Definition to Customer Migration Plans\nThe Product workflow: S"
+ },
+ "#/reports": {
+  "buttons": 11,
+  "inputs": 1,
+  "tables": 0,
+  "modals": 0,
+  "editable_fields": 1,
+  "errors": [],
+  "text_sample": "Reports / Deliverables \u2014 November Product deliverables\nApplication Product Truth \u2192 Report Contract \u2192"
+ },
+ "#/migration": {
+  "buttons": 7,
+  "inputs": 0,
+  "tables": 1,
+  "modals": 0,
+  "editable_fields": 0,
+  "errors": [],
+  "text_sample": "Migration Path \u2014 3.x \u2192 transition \u2192 Target Authoring\nONE Product Roadmap \u2192 ONE common Migration Path"
+ },
+ "#/sources": {
+  "buttons": 20,
+  "inputs": 0,
+  "tables": 1,
+  "modals": 0,
+  "editable_fields": 0,
+  "errors": [],
+  "text_sample": "10 Sources\n\u2192\n426 Evidence Signals\n\u2192\n34 Capability Candidates\n\u2192\n15 Focus Capabilities\nSources & Evide"
+ },
+ "candidate-modal": {
+  "exists": true,
+  "editable_fields": 0,
+  "edit_btn": 1,
+  "text": "CAND-F01 \u00b7 Core item authoring & editing\nCANDIDATE \u00b7 PRODUCT CONFIRMATION REQUIRED\nEdit\nClose\nCAP-ID\nCAND-F01\nWorking name\nCore item authoring & editing\nFull functional description\nConsolidated capabi"
+ },
+ "candidate-edit-mode": {
+  "inputs": 21,
+  "save_btn": 1
+ }
+}

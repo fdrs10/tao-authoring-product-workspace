@@ -1,0 +1,20 @@
+{
+  "generated": "2026-10-16",
+  "base_url": "http://127.0.0.1:8080",
+  "routes": [
+    {"route": "/#/ideation/00", "nav": "IDEATION", "title": "Capability Candidates — Product Review workspace", "editable_fields": 6, "buttons": 35, "actions": ["open-cap-modal", "search", "filter-market", "filter-mexcbt", "filter-focus", "filter-review", "filter-disposition", "filter-source", "clear-filters", "toggle-include-not-selected"], "population": "active"},
+    {"route": "/#/ideation/01", "nav": "IDEATION", "title": "V2 Position / Product Definition", "editable_fields": 0, "buttons": 5, "actions": ["navigate-to-sheets"], "population": "static-reference"},
+    {"route": "/#/ideation/02", "nav": "IDEATION", "title": "V1 Carry-forward Analysis", "editable_fields": 0, "buttons": 0, "actions": [], "population": "evidence-lens", "data_source": "source_evidence WHERE source_id='SRC-V1-001'"},
+    {"route": "/#/ideation/03", "nav": "IDEATION", "title": "3.x Direct Migration Analysis", "editable_fields": 0, "buttons": 0, "actions": [], "population": "evidence-lens", "data_source": "source_evidence WHERE source_id='SRC-3X-001'"},
+    {"route": "/#/ideation/04", "nav": "IDEATION", "title": "New Needs & Gaps Analysis", "editable_fields": 0, "buttons": 0, "actions": [], "population": "evidence-lens", "data_source": "source_evidence WHERE source_id IN ('SRC-NEW-001','SRC-NYSED-001')"},
+    {"route": "/#/ideation/05", "nav": "IDEATION", "title": "Discontinued Analysis", "editable_fields": 0, "buttons": 0, "actions": [], "population": "historical-decision-input", "data_source": "capabilities WHERE ideation_sheet='Discontinued' AND population='HISTORICAL_BASELINE_V1'"},
+    {"route": "/#/ideation/06", "nav": "IDEATION", "title": "Cross-analysis / Target Scope", "editable_fields": 43, "buttons": 1, "actions": ["edit-roadmap-admission", "open-cap-modal", "filter"], "population": "active"},
+    {"route": "/#/backlog", "nav": "IDEATION", "title": "Product Backlog", "editable_fields": 6, "buttons": 0, "actions": ["edit-roadmap-admission", "open-cap-modal", "filter-moscow", "filter-category", "filter-market", "filter-visibility", "filter-source", "filter-admission"], "population": "active"},
+    {"route": "/#/roadmap", "nav": "ROADMAP", "title": "Product Roadmap", "editable_fields": 4, "buttons": 9, "actions": ["edit-timing-drag", "edit-timing-resize", "edit-milestone-drag", "edit-milestone", "add-milestone", "edit-outcome", "switch-features", "switch-horizons", "quarter-drilldown", "open-cap-modal", "filter"], "population": "active"},
+    {"route": "/#/outcomes", "nav": "NOVEMBER OUTCOMES", "title": "November Outcomes", "editable_fields": 0, "buttons": 5, "actions": ["navigate-to-working-areas"], "population": "static-orientation"},
+    {"route": "/#/reports", "nav": "REPORTS / DELIVERABLES", "title": "Reports / Deliverables", "editable_fields": 1, "buttons": 11, "actions": ["preview-report", "generate-html", "generate-pilot-set", "select-d5-customer"], "population": "current-truth"},
+    {"route": "/#/migration", "nav": "MIGRATION PATH", "title": "Migration Path (tab: Migration Path)", "editable_fields": 0, "buttons": 7, "actions": ["add-milestone", "edit-milestone", "switch-to-plans"], "population": "current-truth"},
+    {"route": "/#/migration?tab=plans", "nav": "MIGRATION PATH", "title": "Customer Migration Plans", "editable_fields": 0, "buttons": 7, "actions": ["register-customer", "open-customer-plan", "edit-customer-plan", "edit-milestone"], "population": "current-truth"},
+    {"route": "/#/sources", "nav": "SOURCES & EVIDENCE", "title": "Sources & Evidence (tab: Source Registry)", "editable_fields": 0, "buttons": 20, "actions": ["open-source", "view-extracted", "switch-to-capabilities", "switch-to-customers"], "population": "current-truth"}
+  ]
+}

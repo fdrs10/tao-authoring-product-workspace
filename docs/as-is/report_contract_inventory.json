@@ -1,0 +1,136 @@
+{
+  "generated": "2026-10-16",
+  "reports": [
+    {
+      "report_id": "D1",
+      "title": "Authoring Product Definition — Ideation & Target Scope",
+      "target_date": "30 October 2026",
+      "sections_total": 11,
+      "sections_available_on_governed_db": 10,
+      "status": "INCOMPLETE",
+      "template_sections": [
+        {"section": "Executive Summary", "state": "AVAILABLE", "data_source": "derived counts"},
+        {"section": "Product Vision and Authoring Objective", "state": "AVAILABLE", "data_source": "static statement"},
+        {"section": "Sources and Evidence", "state": "INCOMPLETE", "data_source": "sources + artifact availability", "missing": "some artifacts unmaterialised"},
+        {"section": "TAO Studio V1 Carry-forward", "state": "AVAILABLE", "data_source": "source_evidence WHERE source_id='SRC-V1-001'"},
+        {"section": "TAO 3.x Direct Migration", "state": "AVAILABLE", "data_source": "source_evidence WHERE source_id='SRC-3X-001'"},
+        {"section": "New Needs & Gaps", "state": "AVAILABLE", "data_source": "source_evidence WHERE source_id='SRC-NEW-001'"},
+        {"section": "Discontinued", "state": "AVAILABLE", "data_source": "historical caps ideation_sheet='Discontinued'"},
+        {"section": "Cross-analysis", "state": "AVAILABLE", "data_source": "traceability coverage"},
+        {"section": "Target Authoring V2 Scope", "state": "PRODUCT DECISION REQUIRED", "data_source": "roadmap_admission", "missing": "no capabilities admitted yet"},
+        {"section": "Market and MEXCBT / Uchida Relevance", "state": "AVAILABLE", "data_source": "capability_markets + markets"},
+        {"section": "Open Product Decisions", "state": "AVAILABLE", "data_source": "derived pending counts"}
+      ],
+      "output": {"format": "HTML", "print_friendly": true, "versioned": true, "snapshotted": true}
+    },
+    {
+      "report_id": "D2",
+      "title": "TAO Studio Creator V2 — Product Backlog",
+      "target_date": "30 October 2026",
+      "sections_total": 10,
+      "sections_available_on_governed_db": 8,
+      "status": "INCOMPLETE",
+      "template_sections": [
+        {"section": "Executive Summary", "state": "AVAILABLE"},
+        {"section": "Product Backlog Overview", "state": "AVAILABLE"},
+        {"section": "Canonical Capabilities", "state": "AVAILABLE", "data_source": "capabilities (active population)"},
+        {"section": "Strategic Categories", "state": "AVAILABLE", "data_source": "capabilities GROUP BY"},
+        {"section": "Market Coverage", "state": "AVAILABLE", "data_source": "capability_markets + markets"},
+        {"section": "Feature Composition", "state": "INCOMPLETE", "data_source": "features", "missing": "no Features created yet"},
+        {"section": "Product Review Status", "state": "AVAILABLE", "data_source": "capabilities.product_review_status"},
+        {"section": "Source / Evidence Traceability", "state": "AVAILABLE", "data_source": "traceability_status"},
+        {"section": "MoSCoW and Roadmap Admission", "state": "AVAILABLE", "data_source": "capabilities"},
+        {"section": "Open Decisions and Gaps", "state": "AVAILABLE", "data_source": "derived counts"}
+      ],
+      "output": {"format": "HTML", "print_friendly": true, "versioned": true, "snapshotted": true}
+    },
+    {
+      "report_id": "D3",
+      "title": "TAO Studio Creator V2 — Product Roadmap",
+      "target_date": "13 November 2026",
+      "sections_total": 11,
+      "sections_available_on_governed_db": 10,
+      "status": "INCOMPLETE",
+      "template_sections": [
+        {"section": "Executive Summary", "state": "AVAILABLE", "data_source": "timed capability counts"},
+        {"section": "Roadmap Principles", "state": "AVAILABLE", "data_source": "static hierarchy statement"},
+        {"section": "Roadmap Timeline", "state": "AVAILABLE", "data_source": "roadmap_timing (0 timed)"},
+        {"section": "Full / 0–6m / 7–24m / Tail Horizons", "state": "AVAILABLE", "data_source": "horizon buckets"},
+        {"section": "Capabilities by Strategic Category", "state": "AVAILABLE", "data_source": "capabilities GROUP BY"},
+        {"section": "Priorities and Sequencing", "state": "AVAILABLE", "data_source": "MoSCoW distribution"},
+        {"section": "Feature Composition View", "state": "INCOMPLETE", "data_source": "features", "missing": "no features created"},
+        {"section": "Market Views", "state": "AVAILABLE", "data_source": "capability_markets"},
+        {"section": "Dependencies", "state": "AVAILABLE", "data_source": "untimed capabilities"},
+        {"section": "M1–M6 Alignment", "state": "AVAILABLE", "data_source": "milestones"},
+        {"section": "Risks and Open Product Decisions", "state": "AVAILABLE", "data_source": "derived pending counts"}
+      ],
+      "output": {"format": "HTML", "print_friendly": true, "versioned": true, "snapshotted": true}
+    },
+    {
+      "report_id": "D4",
+      "title": "TAO 3.x → TAO Studio Authoring — Common Migration Path",
+      "target_date": "13 November 2026",
+      "sections_total": 15,
+      "sections_available_on_governed_db": 15,
+      "status": "AVAILABLE",
+      "template_sections": [
+        {"section": "Executive Summary", "state": "AVAILABLE"},
+        {"section": "Migration Objective", "state": "AVAILABLE"},
+        {"section": "Current → Target Authoring Model", "state": "AVAILABLE"},
+        {"section": "Common Migration Principles", "state": "AVAILABLE"},
+        {"section": "M1 — Target Authoring agreed", "state": "AVAILABLE", "data_source": "milestones"},
+        {"section": "M2 — Migration foundation proven", "state": "AVAILABLE", "data_source": "milestones"},
+        {"section": "M3 — First production cutovers", "state": "AVAILABLE", "data_source": "milestones"},
+        {"section": "M4 — No new 3.x Authoring deployments", "state": "AVAILABLE", "data_source": "milestones"},
+        {"section": "M5 — 3.x read-only / final exceptions", "state": "AVAILABLE", "data_source": "milestones"},
+        {"section": "M6 — TAO 3.x Authoring EOL", "state": "AVAILABLE", "data_source": "milestones"},
+        {"section": "Capabilities and Value Available by Milestone", "state": "AVAILABLE", "data_source": "roadmap_timing + capabilities"},
+        {"section": "Roadmap Dependencies", "state": "AVAILABLE", "data_source": "roadmap_timing"},
+        {"section": "Migration Conditions", "state": "AVAILABLE", "data_source": "static"},
+        {"section": "Common Blockers and Exceptions", "state": "AVAILABLE", "data_source": "customers"},
+        {"section": "Customer Transition Approach", "state": "AVAILABLE", "data_source": "customers count"}
+      ],
+      "output": {"format": "HTML", "print_friendly": true, "versioned": true, "snapshotted": true}
+    },
+    {
+      "report_id": "D5",
+      "title": "Customer Migration Plan",
+      "target_date": "20 November 2026",
+      "sections_total": 19,
+      "sections_available_on_governed_db": 0,
+      "status": "INCOMPLETE",
+      "requires_customer": true,
+      "template_sections": [
+        {"section": "Executive Summary", "state": "AVAILABLE", "data_source": "customer + derivation"},
+        {"section": "Customer Context", "state": "AVAILABLE", "data_source": "customers"},
+        {"section": "Current Authoring Situation", "state": "AVAILABLE", "data_source": "customers.current_use"},
+        {"section": "Current TAO Environment", "state": "AVAILABLE", "data_source": "customers.current_environment"},
+        {"section": "Required Functionality", "state": "AVAILABLE", "data_source": "customers.min_functionality_studio"},
+        {"section": "Required Canonical Capabilities", "state": "AVAILABLE", "data_source": "customer_capabilities + roadmap_timing"},
+        {"section": "Relevant Features", "state": "NOT APPLICABLE", "data_source": "feature_capabilities (derived)"},
+        {"section": "Product Roadmap Availability", "state": "AVAILABLE", "data_source": "roadmap_timing (derived)"},
+        {"section": "Proposed Migration Milestone / Interval", "state": "AVAILABLE", "data_source": "customers.earliest_milestone_interval"},
+        {"section": "Proposed Migration Window", "state": "AVAILABLE", "data_source": "customers.proposed_migration_window"},
+        {"section": "Customer-specific Dependencies", "state": "AVAILABLE", "data_source": "customers.customer_dependencies"},
+        {"section": "Blockers", "state": "AVAILABLE", "data_source": "customers.blockers"},
+        {"section": "Assumptions", "state": "AVAILABLE", "data_source": "customers.assumptions"},
+        {"section": "Exceptions", "state": "AVAILABLE", "data_source": "customers.exceptions"},
+        {"section": "Customer Feedback / Evidence", "state": "AVAILABLE", "data_source": "customers.customer_feedback"},
+        {"section": "Migration Readiness", "state": "AVAILABLE", "data_source": "derived"},
+        {"section": "Product Decisions Required", "state": "AVAILABLE", "data_source": "derived"},
+        {"section": "Validation Status", "state": "AVAILABLE", "data_source": "customers.validation_status"},
+        {"section": "Next Actions", "state": "AVAILABLE", "data_source": "derived"}
+      ],
+      "output": {"format": "HTML", "print_friendly": true, "versioned": true, "snapshotted": true}
+    },
+    {
+      "report_id": "D5a",
+      "title": "Customer Migration Pilot Set",
+      "target_date": "27 November 2026",
+      "type": "packaged D5 reports",
+      "intended_customers": ["DEPP", "INVALSI", "NSA", "NCCER"],
+      "status": "BLOCKED BY PRODUCT DATA",
+      "governed_customers_required": true
+    }
+  ]
+}

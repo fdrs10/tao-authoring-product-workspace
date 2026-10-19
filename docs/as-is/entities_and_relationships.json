@@ -1,0 +1,27 @@
+{
+  "generated": "2026-10-16",
+  "entities": [
+    {"entity": "Source", "table": "sources", "count_governed": 9, "count_total": 10, "active": true, "ui_workspace": "Sources & Evidence → Source Registry", "editable_in_ui": false},
+    {"entity": "Evidence Signal", "table": "source_evidence", "count": 426, "active": true, "ui_workspace": "Sources → Extracted Authoring Evidence / Capability Analysis", "editable_in_ui": false, "search_filter_ui": false, "promote_ui": false},
+    {"entity": "Capability Candidate (governance)", "table": "capability_candidates", "count": 34, "active": true, "ui_workspace": "Ideation 00 + Sources → Capability Candidates tab", "editable_in_ui": false, "disposition_editable_api": true},
+    {"entity": "Capability (active Candidate)", "table": "capabilities WHERE population='SOURCE_ANALYSIS_CANDIDATE'", "count": 34, "active": true, "ui_workspace": "Ideation 00 / Cross-analysis / Backlog / Roadmap / Reports", "editable_in_ui": true, "editable_fields": ["working_name", "description", "strategic_category", "moscow", "roadmap_admission", "visibility", "owner", "decision", "ideation_sheet", "notes", "analysis_budget_hours", "execution_budget_hours", "product_review_status", "product_rationale"]},
+    {"entity": "Capability (historical baseline)", "table": "capabilities WHERE population='HISTORICAL_BASELINE_V1'", "count": 135, "active": false, "ui_workspace": "API only (?population=historical)", "editable_in_ui": false},
+    {"entity": "Feature", "table": "features", "count": 0, "active": true, "ui_workspace": "Roadmap → Features tab (view only)", "editable_in_ui": false, "api_crud": true},
+    {"entity": "Milestone", "table": "milestones", "count": 6, "active": true, "ui_workspace": "Roadmap + Migration Path", "editable_in_ui": true},
+    {"entity": "Customer", "table": "customers", "count": 0, "active": true, "ui_workspace": "Migration → Customer Plans", "editable_in_ui": true, "governed_data": false},
+    {"entity": "Market", "table": "markets", "count": 6, "active": true, "ui_workspace": "filter + legend only", "editable_in_ui": false},
+    {"entity": "Jira Ticket", "table": "jira_tickets", "count": 28, "active": true, "ui_workspace": "Candidate modal (delivery evidence only)", "editable_in_ui": false},
+    {"entity": "Outcome", "table": "roadmap_outcomes", "count": 3, "active": true, "ui_workspace": "Roadmap → Outcome tab", "editable_in_ui": true},
+    {"entity": "Report Generation", "table": "report_generations", "count": "dynamic", "active": true, "ui_workspace": "Reports / Deliverables → Generate HTML"}
+  ],
+  "relationships": [
+    {"from": "Capability", "to": "Market", "via": "capability_markets", "cardinality": "M:N", "ui_display": "dots + legend + filter"},
+    {"from": "Capability", "to": "Source", "via": "capability_sources", "cardinality": "M:N", "ui_display": "Sources & Evidence table in modal"},
+    {"from": "Capability", "to": "Jira Ticket", "via": "capability_jira", "cardinality": "M:N", "ui_display": "Jira evidence in modal + delivery evidence sections"},
+    {"from": "Candidate", "to": "Evidence Signal", "via": "reconciled_family_id (source_evidence)", "cardinality": "1:N", "ui_display": "Analysis lenses (per-source grouping)"},
+    {"from": "Feature", "to": "Capability", "via": "feature_capabilities", "cardinality": "M:N", "ui_display": "Roadmap → Features tab (constituent list)"},
+    {"from": "Customer", "to": "Capability", "via": "customer_capabilities", "cardinality": "M:N", "ui_display": "Customer Plan → Required capabilities table"},
+    {"from": "Customer", "to": "Feature", "via": null, "cardinality": null, "ui_display": null, "status": "NOT IMPLEMENTED"},
+    {"from": "Capability Candidate", "to": "Capability", "via": "cap_id (CAND-Fxx row in capabilities)", "cardinality": "1:1", "ui_display": "same record, different views"}
+  ]
+}

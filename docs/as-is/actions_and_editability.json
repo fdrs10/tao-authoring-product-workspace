@@ -1,0 +1,28 @@
+{
+  "generated": "2026-10-16",
+  "actions": [
+    {"action": "Browse 426 evidence signals", "exists": true, "backend": true, "ui": true, "editable": false, "audited": false, "usable_by_pm": "PARTIAL", "where": "Sources → Extracted Authoring Evidence tab (flat table, no search/filter)", "gap": "No search, no filter, no pagination, no evidence-detail modal"},
+    {"action": "Promote Evidence → Candidate", "exists": true, "backend": true, "ui": false, "editable": false, "audited": true, "usable_by_pm": false, "where": "API: POST /api/candidates/{id}/promote", "gap": "No promote button in the UI; PM must use the API directly"},
+    {"action": "Create new Capability", "exists": true, "backend": true, "ui": false, "editable": false, "audited": true, "usable_by_pm": false, "where": "API: promote or direct SQL", "gap": "No 'Create Capability' button in the UI"},
+    {"action": "Edit Candidate (name, definition, category, markets, MoSCoW, Admission)", "exists": true, "backend": true, "ui": true, "editable": true, "audited": true, "usable_by_pm": true, "where": "Universal CAP modal → Edit → Save"},
+    {"action": "Change Ideation disposition (ACTIVE/NOT SELECTED)", "exists": true, "backend": true, "ui": false, "editable": false, "audited": true, "usable_by_pm": false, "where": "API: PATCH /api/candidates/{id}", "gap": "No UI control for disposition"},
+    {"action": "Candidate → Capability lifecycle (CONFIRMED)", "exists": true, "backend": true, "ui": true, "editable": true, "audited": true, "usable_by_pm": true, "where": "CAP modal → Edit → Product Review → CONFIRMED", "gap": "No automatic transition; stays CAND-Fxx"},
+    {"action": "Ideation 01–06 Product decisions", "exists": false, "backend": false, "ui": false, "editable": false, "audited": false, "usable_by_pm": false, "where": "Sheets are read-only analysis lenses", "gap": "No sheet-specific Product decision controls (except Admission in 06)"},
+    {"action": "Feature CRUD", "exists": true, "backend": true, "ui": false, "editable": false, "audited": true, "usable_by_pm": false, "where": "API: /api/features", "gap": "No Feature creation or editing workspace"},
+    {"action": "Feature ↔ Capability M:N", "exists": true, "backend": true, "ui": true, "editable": true, "audited": true, "usable_by_pm": "PARTIAL", "where": "Roadmap → Features → Edit (add/remove via CAP-ID input)", "gap": "No dedicated Feature editor; add-by-CAP-ID is not PM-friendly"},
+    {"action": "Customer CRUD", "exists": true, "backend": true, "ui": true, "editable": true, "audited": true, "usable_by_pm": true, "where": "Migration → Customer Plans → Register / Edit plan"},
+    {"action": "Customer ↔ Capability (required capabilities)", "exists": true, "backend": true, "ui": false, "editable": false, "audited": true, "usable_by_pm": false, "where": "API: POST/DELETE /api/customers/{id}/capabilities/{cap_id}", "gap": "No UI for linking capabilities to customers"},
+    {"action": "Customer ↔ Feature (Key Features)", "exists": false, "backend": false, "ui": false, "editable": false, "audited": false, "usable_by_pm": false, "where": null, "gap": "NOT IMPLEMENTED — no Customer↔Feature relationship"},
+    {"action": "Common Migration Path (M1–M6)", "exists": true, "backend": true, "ui": true, "editable": true, "audited": true, "usable_by_pm": true, "where": "Migration Path tab + Roadmap milestone lines"},
+    {"action": "Customer Migration Plan (context, readiness, availability)", "exists": true, "backend": true, "ui": true, "editable": true, "audited": true, "usable_by_pm": true, "where": "Migration → Customer Plans → Open Plan"},
+    {"action": "Customer milestone-by-milestone plan", "exists": false, "backend": false, "ui": false, "editable": false, "audited": false, "usable_by_pm": false, "where": null, "gap": "Only earliest_milestone_interval; no per-interval customer plan"},
+    {"action": "Roadmap/customer conflict detection", "exists": false, "backend": false, "ui": false, "editable": false, "audited": false, "usable_by_pm": false, "where": null, "gap": "Readiness says BLOCKED but does not identify the milestone gap"},
+    {"action": "View Journey / end-to-end traceability", "exists": false, "backend": false, "ui": false, "editable": false, "audited": false, "usable_by_pm": false, "where": null, "gap": "Lineage is inspectable per-layer but not unified"},
+    {"action": "D1 report generation", "exists": true, "backend": true, "ui": true, "editable": false, "audited": true, "usable_by_pm": true, "where": "Reports → D1 → Preview / Generate HTML"},
+    {"action": "D2 report generation", "exists": true, "backend": true, "ui": true, "editable": false, "audited": true, "usable_by_pm": true, "where": "Reports → D2 → Preview / Generate HTML"},
+    {"action": "D3 report generation", "exists": true, "backend": true, "ui": true, "editable": false, "audited": true, "usable_by_pm": true, "where": "Reports → D3 → Preview / Generate HTML"},
+    {"action": "D4 report generation", "exists": true, "backend": true, "ui": true, "editable": false, "audited": true, "usable_by_pm": true, "where": "Reports → D4 → Preview / Generate HTML"},
+    {"action": "D5 report generation (per customer)", "exists": true, "backend": true, "ui": true, "editable": false, "audited": true, "usable_by_pm": "PARTIAL", "where": "Reports → D5 → Select customer → Preview / Generate", "gap": "Requires governed customer records (D3)"},
+    {"action": "D5a Pilot Set generation", "exists": true, "backend": true, "ui": true, "editable": false, "audited": true, "usable_by_pm": "PARTIAL", "where": "Reports → D5 → Generate Pilot Set", "gap": "Requires governed customer records (D3)"}
+  ]
+}
