@@ -81,6 +81,7 @@ async function renderCandidates(container) {
     sel('disposition', 'Ideation status', [['', 'All'], ['ACTIVE FOR IDEATION', 'ACTIVE FOR IDEATION'], ['NOT SELECTED FOR IDEATION', 'NOT SELECTED FOR IDEATION']]),
     sel('source', 'Source', [['', 'Source · All'], ...sources.items.map((s) => [s.source_id, s.source_id])]),
     el('button', { dataset: { testid: 'cand-filter-clear' }, onclick: () => { bar.querySelectorAll('select, input').forEach((n) => { n.value = ''; }); Object.keys(state).forEach((k) => state[k] = ''); apply(res.items); } }, 'Clear filters'),
+    el('button', { dataset: { testid: 'new-capability' }, onclick: () => openNewCapabilityModal() }, '+ New Capability'),
     countNote);
   container.appendChild(bar);
   const mount = el('div', { dataset: { testid: 'candidates-mount' } });
@@ -117,6 +118,47 @@ async function renderCandidates(container) {
   bar.addEventListener('input', (e) => { const k = e.target.dataset?.cf; if (k) { state[k] = e.target.value; apply(res.items); } });
   bar.addEventListener('change', (e) => { const k = e.target.dataset?.cf; if (k) { state[k] = e.target.value; apply(res.items); } });
   apply(res.items);
+}
+
+function openNewCapabilityModal() {
+  document.querySelectorAll('.modal-overlay[data-newcap]').forEach((n) => n.remove());
+  const overlay = el('div', { class: 'modal-overlay', dataset: { newcap: '1', testid: 'new-capability-modal' } });
+  overlay.addEventListener('click', (ev) => { if (ev.target === overlay) overlay.remove(); });
+  const drawer = el('div', { class: 'modal-drawer', style: 'width:min(560px,94vw)' });
+  overlay.appendChild(drawer);
+  document.body.appendChild(overlay);
+  drawer.appendChild(el('h1', {}, 'New Capability (Product-created)'));
+  drawer.appendChild(el('p', { class: 'small dim' }, 'Origin: PRODUCT_CREATED. Requires Product rationale. No Source evidence needed.'));
+  drawer.appendChild(el('div', { class: 'edit-form', dataset: { testid: 'new-cap-form' } },
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Working name (required)'),
+      el('input', { type: 'text', name: 'working_name', style: 'width:100%' })),
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Description'),
+      el('textarea', { name: 'description', rows: 3, style: 'width:100%' })),
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Strategic Category'),
+      el('select', { name: 'strategic_category' },
+        el('option', { value: '' }, '— Awaiting Product data —'),
+        ...['Create & Design', 'Manage & Govern', 'Collaborate & Assure Quality', 'Standards & Portability', 'AI-assisted Authoring'].map((c) => el('option', { value: c }, c)))),
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Product rationale (required)'),
+      el('textarea', { name: 'rationale', rows: 2, style: 'width:100%' })),
+    el('div', { class: 'actions', style: 'margin-top:10px' },
+      el('button', { class: 'primary', dataset: { testid: 'new-cap-save' }, onclick: async () => {
+        const g = (n) => overlay.querySelector(`[name="${n}"]`);
+        const name = g('working_name').value.trim();
+        const rationale = g('rationale').value.trim();
+        if (!name || !rationale) { overlay.querySelector('.modal-drawer').appendChild(notice('error', 'Name and rationale are required.')); return; }
+        try {
+          const markets = [];
+          await api.post('/api/funnel/capabilities/create-product-created',
+            { working_name: name, description: g('description').value.trim() || null,
+              strategic_category: g('strategic_category').value || null,
+              rationale, markets });
+          overlay.remove();
+          window.dispatchEvent(new CustomEvent('cap:changed'));
+        } catch (err) {
+          overlay.querySelector('.modal-drawer').appendChild(notice('error', `Create failed: ${err.message}`));
+        }
+      } }, 'Create'),
+      el('button', { onclick: () => overlay.remove() }, 'Cancel'))));
 }
 
 function renderV2Position(content) {
@@ -168,6 +210,7 @@ async function renderSheet(content, sheetName, isDisc) {
     el('span', { class: 'badge' }, `${signals.length} evidence signals`),
     el('span', { class: 'small dim', dataset: { testid: 'lens-count' } },
       ` · ${Object.keys(families).filter((k) => k !== 'UNREPRESENTED').length} consolidated families`)));
+  const lensDecisions = {};
   const mount = el('div', { dataset: { testid: 'lens-mount' } });
   content.appendChild(mount);
 
@@ -184,7 +227,7 @@ async function renderSheet(content, sheetName, isDisc) {
         cand && cand.is_focus ? el('span', { class: 'badge ok-badge', style: 'margin-left:8px' }, 'FOCUS') : null),
       el('div', { class: 'small', style: 'margin:2px 0' },
         `Current definition: consolidated from ${group.signals.length} signal(s).`),
-      table(['Evidence ID', 'Signal', 'Historical CAP reference', 'Treatment', 'What carries forward / Product question'],
+      table(['Evidence ID', 'Signal', 'Historical CAP reference', 'Treatment', 'Carries forward / Product question'],
         group.signals.map((e) => el('tr', { dataset: { testid: 'lens-evidence-row' } },
           el('td', { class: 'mono' }, e.evidence_id),
           el('td', {}, e.signal_name),
@@ -192,6 +235,33 @@ async function renderSheet(content, sheetName, isDisc) {
           el('td', { class: 'small' }, e.current_treatment || '—'),
           el('td', { class: 'small' },
             cand && cand.is_focus ? 'Carries forward into the Focus set.' : 'Contributes to the active Candidate set — Product review pending.'))))));
+    // lens-specific Product decision (editable treatment + rationale)
+    const decisionKey = `${sheetName}:${fam}`;
+    if (!lensDecisions[decisionKey]) lensDecisions[decisionKey] = { treatment: '', rationale: '' };
+    const ld = lensDecisions[decisionKey];
+    mount.appendChild(el('div', { class: 'small', style: 'margin:4px 0 8px' },
+      el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Treatment (this lens)'),
+        el('input', { type: 'text', value: ld.treatment, style: 'width:100%',
+          dataset: { lens_decision: decisionKey, field: 'treatment' } })),
+      el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Rationale (this lens)'),
+        el('textarea', { rows: 2, style: 'width:100%',
+          dataset: { lens_decision: decisionKey, field: 'rationale' } }, ld.rationale || '')),
+      el('button', { class: 'small', dataset: { testid: 'lens-decision-save' },
+        onclick: async (e) => {
+          const capId = cand ? cand.cap_id : null;
+          if (!capId) return;
+          const form = e.target.closest('.small');
+          const treatment = form.parentElement.querySelector('[data-field="treatment"]').value;
+          const rationale = form.parentElement.querySelector('[data-field="rationale"]').value;
+          try {
+            await api.patch(`/api/ideation-decisions/${capId}/${sheetName.toUpperCase().replace(/ /g, '_')}`,
+              { version: 1, treatment, rationale });
+            e.target.textContent = 'Saved ✓';
+            setTimeout(() => { e.target.textContent = 'Save'; }, 2000);
+          } catch (err) {
+            e.target.textContent = `Error: ${err.message}`;
+          }
+        } }, 'Save decision')));
   }
   if (!signals.length) mount.appendChild(notice('info', AWAITING));
 }

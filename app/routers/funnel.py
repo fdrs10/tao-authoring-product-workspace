@@ -300,3 +300,125 @@ def request_review(candidate_id: str, body: dict = None,
                      {"review_requested": True}, ["review_requested"])
         conn.commit()
     return {"review_requested": True, "candidate_id": candidate_id, "version": version + 1}
+
+
+class NewCapabilityBody(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    working_name: str = Field(min_length=1, max_length=300)
+    description: str | None = None
+    strategic_category: str | None = None
+    rationale: str = Field(min_length=5)
+    markets: list[str] | None = None
+
+
+@router.post("/capabilities/create-product-created", status_code=201)
+def create_product_created_capability(body: NewCapabilityBody,
+                                      conn: psycopg.Connection = Depends(db_conn),
+                                      actor: Actor = Depends(get_actor)):
+    """Create a new Capability with Origin = PRODUCT_CREATED.
+    Requires Product rationale. No fake Source evidence."""
+    from ..models import STRATEGIC_CATEGORIES
+    if body.strategic_category and body.strategic_category not in STRATEGIC_CATEGORIES:
+        raise HTTPException(status_code=422, detail="invalid strategic_category")
+    # generate CAP-ID
+    cur = conn.cursor()
+    cur.execute("SELECT count(*) FROM capabilities WHERE cap_id LIKE 'CAND-%'")
+    n = cur.fetchone()[0]
+    cap_id = f"CAND-NEW-{n + 1:04d}"
+    cur.execute(
+        """INSERT INTO capabilities (cap_id, working_name, description,
+             strategic_category, roadmap_admission, notes,
+             extraction_origin, population, review_status,
+             product_rationale, created_by_product)
+           VALUES (%s,%s,%s,%s,NULL,NULL,'PRODUCT_CREATED',
+                   'SOURCE_ANALYSIS_CANDIDATE',
+                   'PRODUCT CREATED · AWAITING REVIEW',%s,true)""",
+        (cap_id, body.working_name, body.description,
+         body.strategic_category or 'Awaiting Product data',
+         body.rationale))
+    if body.markets:
+        for name in body.markets:
+            cur.execute("SELECT market_id FROM markets WHERE name=%s", (name,))
+            row = cur.fetchone()
+            if row:
+                cur.execute("INSERT INTO capability_markets (cap_id, market_id) VALUES (%s,%s) ON CONFLICT DO NOTHING",
+                            (cap_id, row[0]))
+    record_audit(cur, "capability", cap_id, "create_product_created",
+                 actor.user_ref, None,
+                 {"working_name": body.working_name, "rationale": body.rationale},
+                 ["capability"])
+    conn.commit()
+    return {"created": True, "cap_id": cap_id}
+
+
+class IdeationDecisionPatch(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    version: int = Field(ge=1)
+    treatment: str | None = None
+    rationale: str | None = None
+    notes: str | None = None
+
+
+@router.get("/ideation-decisions/{cap_id}")
+def get_ideation_decisions(cap_id: str, conn: psycopg.Connection = Depends(db_conn)):
+    with conn.cursor() as cur:
+        cur.execute("""SELECT decision_id, cap_id, lens, treatment, rationale, notes,
+                              owner, version, created_at, updated_at
+                       FROM capability_ideation_decisions WHERE cap_id=%s
+                       ORDER BY lens""", (cap_id,))
+        cols = [d.name for d in cur.description]
+        items = [dict(zip(cols, r)) for r in cur.fetchall()]
+    return {"count": len(items), "items": items}
+
+
+@router.patch("/ideation-decisions/{cap_id}/{lens}")
+def patch_ideation_decision(cap_id: str, lens: str, body: IdeationDecisionPatch,
+                            conn: psycopg.Connection = Depends(db_conn),
+                            actor: Actor = Depends(get_actor)):
+    LENSES = ("V2_POSITION", "V1_CARRY_FORWARD", "DIRECT_3X_MIGRATION", "NEW_NEEDS_GAPS", "DISCONTINUED")
+    if lens not in LENSES:
+        raise HTTPException(status_code=404, detail=f"unknown lens {lens}")
+    provided = body.model_dump(exclude_unset=True)
+    version = provided.pop("version")
+    if not provided:
+        raise HTTPException(status_code=400, detail="no fields to update")
+    with conn.cursor() as cur:
+        cur.execute("SELECT count(*) FROM capability_ideation_decisions WHERE cap_id=%s AND lens=%s",
+                    (cap_id, lens))
+        exists = cur.fetchone()[0] > 0
+        if not exists:
+            cur.execute(
+                """INSERT INTO capability_ideation_decisions (cap_id, lens, treatment, rationale, notes, owner, version)
+                   VALUES (%s,%s,%s,%s,%s,%s,1)""",
+                (cap_id, lens, provided.get("treatment"), provided.get("rationale"),
+                 provided.get("notes"), actor.user_ref))
+        else:
+            cur.execute("""SELECT version FROM capability_ideation_decisions
+                           WHERE cap_id=%s AND lens=%s""", (cap_id, lens))
+            db_version = cur.fetchone()[0]
+            if db_version != version:
+                raise HTTPException(status_code=409, detail={"error": "version_conflict", "current_version": db_version})
+            sets = ", ".join(f"{k}=%s" for k in provided)
+            cur.execute(f"""UPDATE capability_ideation_decisions SET {sets}, version=version+1, updated_at=now()
+                           WHERE cap_id=%s AND lens=%s AND version=%s""",
+                        (*provided.values(), cap_id, lens, version))
+        record_audit(cur, "ideation_decision", f"{cap_id}:{lens}", "update",
+                     actor.user_ref,
+                     {k: before.get(k) for k in provided},
+                     dict(provided), list(provided))
+        conn.commit()
+    return {"updated": True, "cap_id": cap_id, "lens": lens, "version": version + 1}
+
+
+@router.get("/evidence/{evidence_id}")
+def get_evidence_detail(evidence_id: str, conn: psycopg.Connection = Depends(db_conn)):
+    with conn.cursor() as cur:
+        cur.execute("SELECT * FROM source_evidence WHERE evidence_id=%s", (evidence_id,))
+        if cur.rowcount == 0:
+            raise HTTPException(status_code=404, detail="evidence not found")
+        cols = [d.name for d in cur.description]
+        row = dict(zip(cols, cur.fetchone()))
+        cur.execute("SELECT title FROM sources WHERE source_id=%s", (row.get("source_id"),))
+        src = cur.fetchone()
+        row["source_title"] = src[0] if src else None
+    return row

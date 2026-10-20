@@ -66,7 +66,7 @@ export async function renderEvidenceExplorer(container) {
     if (state.family) rows = rows.filter((e) => e.reconciled_family_id === state.family);
     countNote.textContent = `Showing ${rows.length} of ${allEvidence.length} evidence signals`;
     mount.replaceChildren(table(
-      ['Evidence ID', 'Source', 'Signal', 'Strategic Category', 'Treatment', 'Candidate Family'],
+      ['Evidence ID', 'Source', 'Signal', 'Strategic Category', 'Treatment', 'Candidate Family', 'Action'],
       rows.slice(0, 200).map((e) => el('tr', { dataset: { testid: 'evidence-explorer-row' } },
         el('td', { class: 'mono' }, e.evidence_id),
         el('td', { class: 'mono small' }, e.source_id),
@@ -75,7 +75,9 @@ export async function renderEvidenceExplorer(container) {
         el('td', { class: 'small' }, e.current_treatment || 'UNRECONCILED'),
         el('td', {}, e.reconciled_family_id
           ? el('span', { class: 'badge' }, e.reconciled_family_id)
-          : el('span', { class: 'badge dim' }, 'unlinked'))))));
+          : el('span', { class: 'badge dim' }, 'unlinked')),
+        el('td', {}, el('button', { class: 'small', dataset: { testid: 'evidence-open' },
+          onclick: () => openEvidenceDetail(e) }, 'Open'))))));
     if (rows.length > 200) {
       mount.appendChild(el('p', { class: 'small dim' }, `Showing first 200 of ${rows.length} matching signals. Refine filters to narrow.`));
     }
@@ -87,6 +89,65 @@ export async function renderEvidenceExplorer(container) {
     for (const r of rows) t.appendChild(r);
     return t;
   }
+
+function openEvidenceDetail(e) {
+  document.querySelectorAll('.modal-overlay[data-evidmodal]').forEach((n) => n.remove());
+  const overlay = el('div', { class: 'modal-overlay', dataset: { evidmodal: '1', testid: 'evidence-modal' } });
+  overlay.addEventListener('click', (ev) => { if (ev.target === overlay) overlay.remove(); });
+  const drawer = el('div', { class: 'modal-drawer', style: 'width:min(640px,94vw)' });
+  overlay.appendChild(drawer);
+  document.body.appendChild(overlay);
+  drawer.appendChild(el('h1', {}, `Evidence ${e.evidence_id}`));
+  drawer.appendChild(el('div', { class: 'kv' },
+    ...[['Source', e.source_id], ['Signal', e.signal_name],
+        ['Description', e.full_description], ['Evidence type', e.evidence_type],
+        ['Extraction type', e.extraction_type], ['Confidence', e.source_confidence],
+        ['Strategic category', e.strategic_category], ['Authoring scope', e.authoring_scope],
+        ['Treatment', e.current_treatment || 'UNRECONCILED'],
+        ['Candidate family', e.reconciled_family_id || 'not consolidated'],
+        ['Reference', e.evidence_reference]]
+      .flatMap(([k, v]) => [el('div', { class: 'k' }, k), el('div', { class: 'v' }, v || '—')])));
+  // markets
+  const mkts = [];
+  if (e.market_k12) mkts.push('Traditional / K-12');
+  if (e.market_prof) mkts.push('Professional / Credentialing');
+  if (e.market_hed) mkts.push('Higher Education');
+  if (e.market_formative) mkts.push('Governed Formative');
+  if (e.market_ale) mkts.push('Assessment-led Learning');
+  if (e.mexcbt_relevance) mkts.push('MEXCBT / Uchida');
+  if (mkts.length) drawer.appendChild(el('div', { class: 'small', style: 'margin:4px 0' },
+    'Markets: ' + mkts.join(', ')));
+  drawer.appendChild(el('div', { class: 'actions', style: 'margin-top:10px;display:flex;gap:6px;flex-wrap:wrap' },
+    el('button', { class: 'small', dataset: { testid: 'evidence-promote' },
+      onclick: () => promoteEvidence(overlay, e) }, 'Promote to Product Consideration'),
+    el('button', { class: 'small', onclick: () => overlay.remove() }, 'Close')));
+}
+
+function promoteEvidence(overlay, e) {
+  const prompt_section = el('div', { class: 'edit-form', style: 'margin-top:10px;border-top:1px solid var(--border-2);padding-top:8px' },
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Capability name (required)'),
+      el('input', { type: 'text', name: 'promote_name', style: 'width:100%' })),
+    el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Product rationale (required)'),
+      el('textarea', { name: 'promote_rationale', rows: 2, style: 'width:100%' })),
+    el('div', { class: 'actions' },
+      el('button', { class: 'primary small', dataset: { testid: 'promote-confirm' },
+        onclick: async () => {
+          const name = overlay.querySelector('[name="promote_name"]').value.trim();
+          const rationale = overlay.querySelector('[name="promote_rationale"]').value.trim();
+          if (!name || !rationale) { overlay.querySelector('.modal-drawer').appendChild(notice('error', 'Name and rationale are required.')); return; }
+          try {
+            const r = await api.post(`/api/candidates/F01/promote`, {
+              evidence_id: e.evidence_id, name, rationale });
+            overlay.querySelector('.modal-drawer').appendChild(notice('ok',
+              `Promoted to ${r.candidate_id}.`));
+          } catch (err) {
+            overlay.querySelector('.modal-drawer').appendChild(notice('error',
+              `Promotion failed: ${err.message}`));
+          }
+        } }, 'Promote'),
+      el('button', { class: 'small', onclick: (ev) => { ev.target.closest('.edit-form').remove(); } }, 'Cancel')));
+  overlay.querySelector('.modal-drawer').appendChild(prompt_section);
+}
 
   bar.addEventListener('input', (e) => { const k = e.target.dataset?.ef; if (k) { state[k] = e.target.value; apply(); } });
   bar.addEventListener('change', (e) => { const k = e.target.dataset?.ef; if (k) { state[k] = e.target.value; apply(); } });

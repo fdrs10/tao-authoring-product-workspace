@@ -6,6 +6,7 @@ field (e.g. Roadmap Admission back to UNSET), omission leaves it intact.
 """
 
 from datetime import date
+from pydantic import BaseModel as _BM
 
 from pydantic import BaseModel, ConfigDict, Field
 
