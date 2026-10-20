@@ -270,3 +270,73 @@ def unlink_customer_capability(customer_id: str, cap_id: str,
                      ["customer_capability_link"])
         conn.commit()
     return {"deleted": True}
+
+
+@router.get("/{customer_id}/migration-intervals")
+def get_migration_intervals(customer_id: str,
+                            conn: psycopg.Connection = Depends(db_conn)):
+    """Per-interval Customer Migration Plan over shared M1–M6."""
+    with conn.cursor() as cur:
+        cur.execute("""SELECT milestone_id, name, milestone_date, position_month
+                       FROM milestones ORDER BY position_month NULLS LAST""")
+        milestones = [dict(zip([d.name for d in cur.description], r))
+                      for r in cur.fetchall()]
+        cur.execute("""SELECT cc.cap_id, c.working_name, c.roadmap_admission,
+                              r.start_month, r.duration_months
+                       FROM customer_capabilities cc
+                       JOIN capabilities c ON c.cap_id = cc.cap_id
+                       LEFT JOIN roadmap_timing r ON r.cap_id = cc.cap_id
+                       WHERE cc.customer_id=%s ORDER BY c.cap_id""", (customer_id,))
+        req_caps = [dict(zip([d.name for d in cur.description], r))
+                    for r in cur.fetchall()]
+        cur.execute("SELECT * FROM customers WHERE customer_id=%s", (customer_id,))
+        cust_cols = [d.name for d in cur.description]
+        cust_row = cur.fetchone()
+        cust = dict(zip(cust_cols, cust_row)) if cust_row else {}
+        interval_str = cust.get("earliest_milestone_interval") or ""
+        start_mid = interval_str.split("->")[0].strip() if "->" in interval_str else None
+
+    intervals = []
+    sorted_ms = [m for m in milestones if m["position_month"] is not None]
+    sorted_ms.sort(key=lambda m: m["position_month"])
+    prev = None
+    for m in sorted_ms:
+        if prev is not None:
+            intervals.append({"from": prev["milestone_id"], "to": m["milestone_id"],
+                              "from_pos": prev["position_month"], "to_pos": m["position_month"],
+                              "from_name": prev["name"], "to_name": m["name"]})
+        elif m["position_month"] > 0:
+            intervals.append({"from": "START", "to": m["milestone_id"],
+                              "from_pos": 0, "to_pos": m["position_month"],
+                              "from_name": "Start", "to_name": m["name"]})
+        prev = m
+    if sorted_ms:
+        last = sorted_ms[-1]
+        intervals.append({"from": last["milestone_id"], "to": "POST_EOL",
+                          "from_pos": last["position_month"], "to_pos": 27,
+                          "from_name": last["name"], "to_name": "Post-EOL"})
+
+    result = []
+    for iv in intervals:
+        start = iv["to_pos"]  # capabilities must be available by END of interval
+        available = [c for c in req_caps
+                     if c["start_month"] is not None
+                     and c["start_month"] + (c["duration_months"] or 0) <= start]
+        blocked = [c for c in req_caps if c not in available]
+        # conflict: required but roadmap delivers later than this interval
+        roadmap_blockers = [c for c in blocked if c["start_month"] is not None]
+        customer_blockers = [c for c in blocked if c["start_month"] is None]
+        result.append({
+            "from_milestone": iv["from"], "to_milestone": iv["to"],
+            "from_pos": iv["from_pos"], "to_pos": iv["to_pos"],
+            "available_count": len(available),
+            "blocked_count": len(blocked),
+            "available": [{"cap_id": c["cap_id"], "name": c["working_name"]} for c in available],
+            "blocked": [{"cap_id": c["cap_id"], "name": c["working_name"],
+                         "roadmap_end": c["start_month"] + (c["duration_months"] or 0) if c["start_month"] is not None else None,
+                         "type": "PRODUCT_ROADMAP_BLOCKER" if c["start_month"] is not None else "CUSTOMER_BLOCKER",
+                         "detail": ("Roadmap timing completes month " + str(c["start_month"] + (c["duration_months"] or 0)) +
+                                    ", after this interval ends (month " + str(start) + ")")
+                                    if c["start_month"] is not None else "untimed"} for c in blocked],
+        })
+    return {"customer_id": customer_id, "intervals": result}
