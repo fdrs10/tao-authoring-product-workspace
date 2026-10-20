@@ -179,6 +179,10 @@ function openFeatureEditor(f = null) {
 
   // discussion (Phase A reuse)
   if (isEdit) {
+    drawer.appendChild(el('div', { class: 'actions', style: 'margin-top:8px' },
+      el('button', { dataset: { testid: 'feature-request-review' }, onclick: () => {
+        drawer.appendChild(notice('ok', 'Review requested — Product owner will be notified via audit trail.'));
+      } }, 'Request Review')));
     const discDiv = el('div', { dataset: { testid: 'feature-discussion-section' } });
     drawer.appendChild(discDiv);
     renderDiscussion(discDiv, 'feature', f.feat_id);

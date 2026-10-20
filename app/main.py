@@ -13,7 +13,7 @@ from fastapi import FastAPI
 
 from .config import settings
 from .db import ping
-from .routers import capabilities, customers, export, collaboration, features, funnel, jira, markets, outcomes, reports, roadmap, sources
+from .routers import capabilities, customers, export, collaboration, customer_features, features, funnel, jira, markets, outcomes, reports, roadmap, sources
 
 
 class JsonFormatter(logging.Formatter):
@@ -46,7 +46,7 @@ app = FastAPI(title="TAO Authoring Product Workspace", version=settings.version)
 
 for r in (capabilities.router, sources.router, jira.router,
           roadmap.router, customers.router, markets.router, outcomes.router,
-          features.router, export.router, reports.router, funnel.router, collaboration.router):
+          features.router, export.router, reports.router, funnel.router, collaboration.router, customer_features.router):
     app.include_router(r)
 
 from pathlib import Path

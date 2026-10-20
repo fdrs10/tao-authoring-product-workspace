@@ -12,6 +12,7 @@ body {
   font: 12.5px/1.45 -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   color: var(--ink); background: var(--bg);
 }
+#main-nav { display: flex; flex-wrap: wrap; gap: 2px; overflow: hidden; }
 #app-header {
   display: flex; align-items: center; gap: 18px;
   padding: 6px 14px; border-bottom: 1px solid var(--border-2);
