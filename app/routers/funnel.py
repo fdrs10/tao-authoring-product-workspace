@@ -115,7 +115,7 @@ def list_candidates(conn: psycopg.Connection = Depends(db_conn),
     with conn.cursor() as cur:
         cur.execute(f"SELECT count(*) FROM capability_candidates {w}", params)
         total = cur.fetchone()[0]
-        cur.execute(f"""SELECT candidate_id, name, COALESCE(cap_id, 'CAND-' || candidate_id) AS cap_id, markets, signals,
+        cur.execute(f"""SELECT candidate_id, name, COALESCE(cap_id, 'CAND-' || candidate_id) AS cap_id, markets, signals, owner, review_requested,
                source_ids, evidence_strength, cross_market_leverage, strategy_alignment,
                mexcbt_signals, package_status, is_focus, focus_markets,
                ideation_disposition, disposition_rationale, promotion_rationale,
@@ -129,7 +129,7 @@ def list_candidates(conn: psycopg.Connection = Depends(db_conn),
 @router.get("/candidates/{candidate_id}")
 def get_candidate(candidate_id: str, conn: psycopg.Connection = Depends(db_conn)):
     with conn.cursor() as cur:
-        cur.execute("""SELECT candidate_id, name, COALESCE(cap_id, 'CAND-' || candidate_id) AS cap_id, markets, signals,
+        cur.execute("""SELECT candidate_id, name, COALESCE(cap_id, 'CAND-' || candidate_id) AS cap_id, markets, signals, owner, review_requested,
                source_ids, evidence_strength, cross_market_leverage, strategy_alignment,
                mexcbt_signals, package_status, is_focus, focus_markets,
                ideation_disposition, disposition_rationale, promotion_rationale,
@@ -275,3 +275,28 @@ def promote_evidence(candidate_id: str, body: PromoteBody,
     return {"promoted": True, "candidate_id": new_id, "cap_id": cap_id,
             "evidence_id": body.evidence_id, "lineage": {
                 "source_evidence": body.evidence_id, "source_id": src_id}}
+
+
+@router.post("/candidates/{candidate_id}/request-review")
+def request_review(candidate_id: str, body: dict = None,
+                   conn: psycopg.Connection = Depends(db_conn),
+                   actor: Actor = Depends(get_actor)):
+    """Request Product Review on a Candidate (Phase A closure)."""
+    body = body or {}
+    with conn.cursor() as cur:
+        cur.execute("SELECT version, review_requested FROM capability_candidates WHERE candidate_id=%s",
+                    (candidate_id,))
+        if cur.rowcount == 0:
+            raise HTTPException(status_code=404, detail=f"candidate {candidate_id} not found")
+        version, current = cur.fetchone()
+        cur.execute(
+            """UPDATE capability_candidates SET review_requested=true, version=version+1,
+               updated_at=now() WHERE candidate_id=%s AND version=%s""",
+            (candidate_id, version))
+        if cur.rowcount == 0:
+            raise HTTPException(status_code=409, detail={"error": "version_conflict"})
+        record_audit(cur, "capability_candidate", candidate_id, "request_review",
+                     actor.user_ref, {"review_requested": current},
+                     {"review_requested": True}, ["review_requested"])
+        conn.commit()
+    return {"review_requested": True, "candidate_id": candidate_id, "version": version + 1}

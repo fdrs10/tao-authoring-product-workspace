@@ -33,6 +33,25 @@ export async function openCapModal(capId) {
         renderCandidateEnrichment(drawer, ce.enrichment, ce);
       } catch (_) { /* enrichment is additive */ }
     }
+    // Discussion (Phase A: reusable component)
+    const discussionDiv = el('div', { dataset: { testid: 'cap-discussion' } });
+    drawer.appendChild(discussionDiv);
+    renderDiscussion(discussionDiv, 'capability', capId);
+    // Request Review (Phase A)
+    drawer.appendChild(el('div', { class: 'actions', style: 'margin-top:8px' },
+      el('button', { dataset: { testid: 'request-review' }, onclick: async () => {
+        try {
+          await api.post(`/api/candidates/${capId.replace('CAND-', '')}/request-review`);
+          drawer.appendChild(notice('ok', 'Review requested.'));
+        } catch (err2) {
+          if (err2.status === 404) {
+            // not a candidate — no review workflow for non-candidate capabilities
+            drawer.appendChild(notice('info', 'Review workflow applies to Capability Candidates only.'));
+          } else {
+            drawer.appendChild(notice('error', `Request failed: ${err2.message}`));
+          }
+        }
+      } }, 'Request Review')));
   } catch (err) {
     drawer.appendChild(notice('error', `Failed to load ${capId}: ${err.detail || err.message}`));
   }
@@ -93,6 +112,55 @@ function renderCandidateEnrichment(drawer, e, ce) {
             el('td', {}, j.target_release || '—'))))
       : el('span', { class: 'dim' }, 'No Jira relationships recorded for this candidate.')));
   const pr = e.product_review || {};
+  // Discussion / Comments (Phase A)
+  drawer.appendChild(sec('DISCUSSION'));
+  const commentsSection = el('div', { dataset: { testid: 'cap-comments' } });
+  drawer.appendChild(commentsSection);
+  const commentInput = el('input', { type: 'text', name: 'new_comment', placeholder: 'Add a comment…',
+    style: 'width:100%;margin:4px 0', dataset: { testid: 'comment-input' } });
+  commentsSection.appendChild(commentInput);
+  const commentBtn = el('button', { class: 'small', dataset: { testid: 'comment-add' },
+    onclick: async () => {
+      const text = commentInput.value.trim();
+      if (!text) return;
+      await api.post('/api/comments/create', { entity_type: 'capability', entity_id: cap.cap_id, comment: text });
+      loadComments(commentsSection, cap.cap_id);
+      commentInput.value = '';
+    } }, 'Add comment');
+  commentsSection.appendChild(commentBtn);
+
+  async function loadComments(section, capId) {
+    const r = await api.get(`/api/comments?entity_type=capability&entity_id=${capId}`);
+    section.replaceChildren(
+      el('h3', {}, 'DISCUSSION'),
+      el('input', { type: 'text', name: 'new_comment', placeholder: 'Add a comment…',
+        style: 'width:100%;margin:4px 0', dataset: { testid: 'comment-input' } }),
+      el('button', { class: 'small', dataset: { testid: 'comment-add' },
+        onclick: async () => {
+          const inp = section.querySelector('[name="new_comment"]');
+          if (inp && inp.value.trim()) {
+            await api.post('/api/comments/create', { entity_type: 'capability', entity_id: capId, comment: inp.value.trim() });
+            loadComments(section, capId);
+          }
+        } }, 'Add comment'),
+      ...r.items.map((c) => el('div', { class: 'jira-row', style: c.resolved ? 'opacity:0.5' : '' },
+        el('span', { class: 'small' }, `${c.author}: ${c.comment}`),
+        el('span', { class: 'small dim' }, c.created_at ? c.created_at.slice(0, 16) : ''),
+        !c.resolved ? el('button', { class: 'small', onclick: async () => {
+          await api.patch(`/api/comments/${c.comment_id}/resolve?resolved=true`);
+          loadComments(section, capId);
+        } }, 'resolve') : null)));
+  }
+  loadComments(commentsSection, cap.cap_id);
+
+  // Request Review (Phase A)
+  drawer.appendChild(el('div', { class: 'actions', style: 'margin-top:8px' },
+    el('button', { dataset: { testid: 'request-review' }, onclick: async () => {
+      const capId = cap.cap_id.replace('CAND-', '');
+      await api.post(`/api/candidates/${capId}/request-review`);
+      drawer.appendChild(notice('ok', 'Review requested.'));
+    } }, 'Request Review')));
+
   drawer.appendChild(sec('PRODUCT DECISIONS REQUIRED'));
   drawer.appendChild(el('div', { class: 'notice warn small', dataset: { testid: 'candidate-open-questions' } },
     (pr.open_questions || []).map((q) => `• ${q}`).join('  ') || 'None recorded.'));
@@ -127,7 +195,7 @@ function renderDetail(drawer, cap, markets, justSaved = false) {
     kv('MoSCoW', moscowBadge(cap.moscow)),
     kv('Roadmap Admission', admissionBadge(cap.roadmap_admission)),
     kv('Visibility', cap.visibility), kv('Scope', cap.scope),
-    kv('Owner', cap.owner), kv('Origin (ideation provenance)', cap.origin),
+    kv('Owner', cap.owner || '—'), kv('Decision rationale', cap.decision_rationale || '—'), kv('Origin (ideation provenance)', cap.origin),
     kv('Decision', cap.decision), kv('V2 mapping', el('pre', {}, cap.v2_mapping)),
     kv('Origin / Extraction provenance', el('span', {
       class: 'badge', dataset: { testid: 'extraction-origin' },
@@ -184,6 +252,7 @@ function renderEdit(drawer, cap, markets) {
       el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Roadmap Admission (NULL = UNSET)'), sel('roadmap_admission', ADMISSIONS, cap.roadmap_admission ?? undefined)),
       el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Visibility'), el('input', { type: 'text', name: 'visibility', value: cap.visibility || '' })),
       el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Owner'), el('input', { type: 'text', name: 'owner', value: cap.owner || '' })),
+      el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Decision rationale (required for material decisions)'), el('input', { type: 'text', name: 'decision_rationale', value: cap.decision_rationale || '', style: 'width:100%' })),
       el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Decision'), el('input', { type: 'text', name: 'decision', value: cap.decision || '' })),
       el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Product Review (separate from extraction provenance)'), sel('product_review_status', PRODUCT_REVIEW_OPTIONS, cap.product_review_status ?? undefined)),
       el('label', { class: 'fld' }, el('span', { class: 'lbl' }, 'Ideation sheet'), el('input', { type: 'text', name: 'ideation_sheet', value: cap.ideation_sheet || '' })),
@@ -216,7 +285,7 @@ async function save(e, cap, markets) {
   const body = { version: cap.version };
   const fields = ['working_name', 'strategic_category', 'moscow', 'roadmap_admission',
     'visibility', 'owner', 'decision', 'ideation_sheet', 'notes',
-    'product_review_status', 'product_rationale'];
+    'product_review_status', 'product_rationale', 'decision_rationale'];
   for (const f of fields) {
     const v = g(f).value;
     const norm = v === '' ? null : v;

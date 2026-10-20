@@ -28,7 +28,8 @@ CAP_COLS = """
   visibility, scope, origin, owner, decision, v2_mapping, ideation_sheet,
   roadmap_admission, analysis_budget_hours, execution_budget_hours,
   notes, review_status, version, created_at, updated_at,
-  extraction_origin, product_review_status, product_rationale, population
+  extraction_origin, product_review_status, product_rationale, population,
+  decision_rationale
 """
 
 LIST_FILTER = {
