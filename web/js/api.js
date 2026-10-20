@@ -104,6 +104,11 @@ export const endpoints = {
   evidence: () => '/api/evidence',
   candidates: () => '/api/candidates',
   reports: () => '/api/reports',
+  home: () => '/api/home',
+  funnel: () => '/api/funnel',
+  evidence: () => '/api/evidence',
+  candidates: () => '/api/candidates',
+  features: () => '/api/features',
   customers: () => '/api/customers',
   customer: (id) => `/api/customers/${encodeURIComponent(id)}`,
 };

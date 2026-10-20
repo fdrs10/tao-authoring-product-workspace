@@ -10,6 +10,8 @@ import { renderRoadmap } from './views/roadmap.js';
 import { renderMigration } from './views/migration.js';
 import { renderOutcomes } from './views/outcomes.js';
 import { renderReports } from './views/reports.js';
+import { renderHome } from './views/home.js';
+import { renderEvidenceExplorer } from './views/evidence.js';
 import { openCapModal } from './components/capmodal.js';
 import { el } from './ui.js';
 
@@ -25,7 +27,7 @@ function setActive(route) {
 // changes) must interleave destructively — last requested render wins.
 let routeChain = Promise.resolve();
 async function runRoute() {
-  const hash = location.hash || '#/ideation/01';
+  const hash = location.hash || '#/home';
   const parts = hash.replace(/^#\//, '').split('/');
   const [root, sub] = parts;
   try {
@@ -36,7 +38,9 @@ async function runRoute() {
     else if (root === 'outcomes') { setActive('outcomes'); await renderOutcomes(main); }
     else if (root === 'reports') { setActive('reports'); await renderReports(main); }
     else if (root === 'backlog') { setActive('ideation'); await renderBacklog(main); }
-    else { location.hash = '#/ideation/01'; }
+    else if (root === 'home') { setActive('home'); await renderHome(main); }
+    else if (root === 'evidence') { setActive('evidence'); await renderEvidenceExplorer(main); }
+    else { location.hash = '#/home'; }
   } catch (err) {
     main.replaceChildren(el('div', { class: 'notice error' },
       `Render failed: ${err.detail ? JSON.stringify(err.detail) : err.message}`));

@@ -235,3 +235,5 @@ label.fld .lbl { display: block; font-size: 11px; color: var(--ink-2); margin-bo
 .flow-step { border: 1px solid var(--border-2); background: #fff; padding: 4px 9px; font-size: 11px; font-weight: 700; border-radius: 2px; }
 .flow-arrow { color: var(--ink-2); font-weight: 800; }
 .badge.ok-badge { background: #e3efd7; border: 1px solid #6f9c40; color: #46672a; }
+
+.nav-sep { font-size: 9px; font-weight: 800; color: var(--ink-2); text-transform: uppercase; letter-spacing: .5px; padding: 0 2px; }

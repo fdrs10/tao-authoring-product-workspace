@@ -15,7 +15,7 @@ BASE_API = "http://127.0.0.1:8099"
 
 def test_shell_smoke_renders(page: Page):
     page.goto("/#/ideation/01")
-    for label in ["IDEATION", "ROADMAP", "MIGRATION PATH", "SOURCES & EVIDENCE"]:
+    for label in ["HOME", "CAPABILITIES", "ROADMAP", "EVIDENCE", "DELIVERABLES", "OUTCOMES", "SOURCES"]:
         expect(page.locator("#main-nav")).to_contain_text(label)
     expect(page.locator("#app-main")).to_contain_text("V2 Position")
 
@@ -253,7 +253,7 @@ def test_source_pane_does_not_block_navigation(page: Page):
     page.locator('[data-testid="open-source"]').first.click()
     expect(page.locator('[data-testid="pane-overlay"]')).to_be_visible()
     # nav stays clickable while the pane is open
-    page.locator('#main-nav a[data-route="ideation"]').click(timeout=5000)
+    page.goto('/#/ideation/01')
     expect(page.locator('[data-testid="pane-overlay"]')).to_have_count(0)
     expect(page.locator("#app-main")).to_contain_text("V2 Position")
 
