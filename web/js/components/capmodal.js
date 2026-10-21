@@ -153,13 +153,36 @@ function renderCandidateEnrichment(drawer, e, ce) {
   }
   loadComments(commentsSection, cap.cap_id);
 
-  // Request Review (Phase A)
-  drawer.appendChild(el('div', { class: 'actions', style: 'margin-top:8px' },
+  // Request Review (Phase A) + View Journey (Phase G)
+  drawer.appendChild(el('div', { class: 'actions', style: 'margin-top:8px;display:flex;gap:6px' },
     el('button', { dataset: { testid: 'request-review' }, onclick: async () => {
       const capId = cap.cap_id.replace('CAND-', '');
-      await api.post(`/api/candidates/${capId}/request-review`);
+      await api.post('/api/candidates/' + capId + '/request-review');
       drawer.appendChild(notice('ok', 'Review requested.'));
-    } }, 'Request Review')));
+    } }, 'Request Review'),
+    el('button', { dataset: { testid: 'view-journey' }, onclick: async () => {
+      try {
+        const j = await api.get('/api/journey/capability/' + cap.cap_id);
+        const jDiv = el('div', { dataset: { testid: 'cap-journey' } });
+        drawer.appendChild(jDiv);
+        jDiv.appendChild(el('h3', {}, 'JOURNEY'));
+        for (const step of (j.lineage || [])) {
+          jDiv.appendChild(el('div', { class: 'jira-row' },
+            el('span', { class: 'small', style: 'font-weight:700' }, step.step),
+            el('span', { class: 'small' }, step.detail)));
+        }
+        if (j.decisions) {
+          jDiv.appendChild(el('h3', {}, 'DECISIONS'));
+          for (const d of j.decisions) {
+            jDiv.appendChild(el('div', { class: 'jira-row' },
+              el('span', { class: 'small', style: 'font-weight:700' }, d.decision),
+              el('span', { class: 'small' }, d.value)));
+          }
+        }
+      } catch (err2) {
+        drawer.appendChild(notice('error', 'Journey failed: ' + err2.message));
+      }
+    } }, 'View Journey')));
 
   drawer.appendChild(sec('PRODUCT DECISIONS REQUIRED'));
   drawer.appendChild(el('div', { class: 'notice warn small', dataset: { testid: 'candidate-open-questions' } },

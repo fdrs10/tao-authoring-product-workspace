@@ -422,3 +422,92 @@ def get_evidence_detail(evidence_id: str, conn: psycopg.Connection = Depends(db_
         src = cur.fetchone()
         row["source_title"] = src[0] if src else None
     return row
+
+
+@router.get("/journey/{entity_type}/{entity_id}")
+def view_journey(entity_type: str, entity_id: str,
+                 conn: psycopg.Connection = Depends(db_conn)):
+    """End-to-end traceability: lineage + decisions for any entity (§34)."""
+    journey = {"entity_type": entity_type, "entity_id": entity_id, "lineage": [], "decisions": []}
+    with conn.cursor() as cur:
+        if entity_type == "capability":
+            cur.execute("SELECT cap_id, working_name, population, extraction_origin, product_review_status, owner, decision_rationale FROM capabilities WHERE cap_id=%s", (entity_id,))
+            cap = cur.fetchone()
+            if not cap:
+                raise HTTPException(status_code=404, detail="capability not found")
+            cols = [d.name for d in cur.description]
+            c = dict(zip(cols, cap))
+            journey["name"] = c["working_name"]
+            journey["lineage"] = [
+                {"step": "Origin", "detail": c.get("extraction_origin") or "unknown"},
+                {"step": "Population", "detail": c.get("population") or "unassigned"},
+            ]
+            cur.execute("""SELECT sc.source_id, s.title FROM source_capabilities sc
+                           JOIN sources s ON s.source_id = sc.source_id WHERE sc.canonical_cap_id=%s""", (entity_id,))
+            for r in cur.fetchall():
+                journey["lineage"].append({"step": "Source", "detail": f"{r[0]} · {r[1]}"})
+            cur.execute("""SELECT sc.evidence_id, sc.source_id, sc.signal_name
+                           FROM source_evidence sc WHERE sc.current_canonical_cap_id=%s""", (entity_id,))
+            for r in cur.fetchall():
+                journey["lineage"].append({"step": "Evidence", "detail": f"{r[0]} · {r[2]}"})
+            cur.execute("""SELECT f.feat_id, f.name FROM feature_capabilities fc
+                           JOIN features f ON f.feat_id = fc.feat_id WHERE fc.cap_id=%s""", (entity_id,))
+            for r in cur.fetchall():
+                journey["lineage"].append({"step": "Feature", "detail": f"{r[0]} · {r[1]}"})
+            cur.execute("""SELECT cc.customer_id, cu.name FROM customer_capabilities cc
+                           JOIN customers cu ON cu.customer_id = cc.customer_id WHERE cc.cap_id=%s""", (entity_id,))
+            for r in cur.fetchall():
+                journey["lineage"].append({"step": "Customer", "detail": f"{r[0]} · {r[1]}"})
+            journey["decisions"] = [
+                {"decision": "Extraction provenance", "value": c.get("extraction_origin") or "unknown"},
+                {"decision": "Product Review", "value": c.get("product_review_status") or "not reviewed"},
+                {"decision": "Decision rationale", "value": c.get("decision_rationale") or "not recorded"},
+                {"decision": "Owner", "value": c.get("owner") or "not assigned"},
+            ]
+        elif entity_type == "evidence":
+            cur.execute("SELECT signal_name, source_id, current_treatment, reconciled_family_id, provenance FROM source_evidence WHERE evidence_id=%s", (entity_id,))
+            ev = cur.fetchone()
+            if not ev:
+                raise HTTPException(status_code=404, detail="evidence not found")
+            cols = [d.name for d in cur.description]
+            e = dict(zip(cols, ev))
+            journey["name"] = e["signal_name"]
+            journey["lineage"] = [
+                {"step": "Source", "detail": e["source_id"]},
+                {"step": "Treatment", "detail": e["current_treatment"] or "UNRECONCILED"},
+            ]
+            if e["reconciled_family_id"]:
+                journey["lineage"].append({"step": "Candidate", "detail": e["reconciled_family_id"]})
+            journey["decisions"] = [{"decision": "Provenance", "value": e.get("provenance") or "unknown"}]
+        elif entity_type == "feature":
+            cur.execute("SELECT feat_id, name, owner, status FROM features WHERE feat_id=%s", (entity_id,))
+            f = cur.fetchone()
+            if not f:
+                raise HTTPException(status_code=404, detail="feature not found")
+            cols = [d.name for d in cur.description]
+            feat = dict(zip(cols, f))
+            journey["name"] = feat["name"]
+            journey["lineage"] = [{"step": "Feature", "detail": feat["feat_id"]}]
+            cur.execute("""SELECT fc.cap_id, c.working_name FROM feature_capabilities fc
+                           JOIN capabilities c ON c.cap_id = fc.cap_id WHERE fc.feat_id=%s""", (entity_id,))
+            for r in cur.fetchall():
+                journey["lineage"].append({"step": "Capability", "detail": f"{r[0]} · {r[1]}"})
+            journey["decisions"] = [{"decision": "Owner", "value": feat.get("owner") or "not assigned"},
+                                    {"decision": "Status", "value": feat.get("status") or "not set"}]
+        elif entity_type == "customer":
+            cur.execute("SELECT customer_id, name, validation_status FROM customers WHERE customer_id=%s", (entity_id,))
+            cu = cur.fetchone()
+            if not cu:
+                raise HTTPException(status_code=404, detail="customer not found")
+            cols = [d.name for d in cur.description]
+            customer = dict(zip(cols, cu))
+            journey["name"] = customer["name"]
+            journey["lineage"] = [{"step": "Customer", "detail": customer["customer_id"]}]
+            cur.execute("""SELECT cc.cap_id, c.working_name FROM customer_capabilities cc
+                           JOIN capabilities c ON c.cap_id = cc.cap_id WHERE cc.customer_id=%s""", (entity_id,))
+            for r in cur.fetchall():
+                journey["lineage"].append({"step": "Required Capability", "detail": f"{r[0]} · {r[1]}"})
+            journey["decisions"] = [{"decision": "Validation status", "value": customer.get("validation_status") or "not assessed"}]
+        else:
+            raise HTTPException(status_code=404, detail=f"unknown entity type {entity_type}")
+    return journey
